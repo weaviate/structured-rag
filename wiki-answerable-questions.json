@@ -1,0 +1,56 @@
+[
+    {
+      "title": "Explorer 20",
+      "abstract": "Explorer 20, also known Ionosphere Explorer-A, IE-A, S-48, TOPSI and Topside Explorer, was a NASA satellite launched as part of Explorer program. Its purpose was two-fold: long-term investigation of the ionosphere from above, and in situ investigation of ion concentrations and temperatures.",
+      "answerable_question": "What was the purpose of Explorer 20?",
+      "unanswerable_question": "In which year was Explorer 20 launched?"
+    },
+    {
+      "title": "MAP4K3",
+      "abstract": "Mitogen-activated protein kinase kinase kinase kinase 3 is a protein that in humans is encoded by the MAP4K3 gene. [5]",
+      "answerable_question": "What does MAP4K3 encode in humans?",
+      "unanswerable_question": "What are the specific functions of the MAP4K3 protein?"
+    },
+    {
+      "title": "Heggholmen Lighthouse",
+      "abstract": "Heggholmen Lighthouse (Norwegian: Heggholmen fyr) is a coastal lighthouse located in the Oslofjord, in the municipality of Oslo, Norway. It was established in 1827, and automated in 1972. The lighthouse was listed as a protected site in 1998.[2][3][4]",
+      "answerable_question": "In which year was Heggholmen Lighthouse automated?",
+      "unanswerable_question": "How tall is the Heggholmen Lighthouse?"
+    },
+    {
+      "title": "Antonio Nachura",
+      "abstract": "Antonio Eduardo Bermejo Nachura (June 13, 1941 – March 13, 2022) was a Filipino jurist who was an Associate Justice of the Supreme Court of the Philippines. He took his oath of office as Associate Justice on February 7, 2007, and occupied the position until his mandatory retirement on June 13, 2011. Previously, Nachura had been Solicitor-General of the Philippines at the time his appointment to the Court was announced on January 31, 2007, by then-Philippine President Gloria Macapagal Arroyo.[1]",
+      "answerable_question": "When did Antonio Nachura retire from his position as Associate Justice?",
+      "unanswerable_question": "What specific cases did Antonio Nachura preside over during his time as Associate Justice?"
+    },
+    {
+      "title": "Roman Gergel",
+      "abstract": "Roman Gergel (born 22 February 1988) is a Slovak professional footballer who plays as a forward.",
+      "answerable_question": "What position does Roman Gergel play in football?",
+      "unanswerable_question": "For which teams has Roman Gergel played throughout his career?"
+    },
+    {
+      "title": "Ragigudda Anjaneya Temple",
+      "abstract": "The Ragigudda Sree Prasanna Anjaneyaswamy Temple, commonly referred to as Ragigudda Temple or Ragigudda Anjaneya Temple[1] is a temple dedicated to Lord Hanuman, spread across 5 acres also having a hillock in Jayanagara 9th Block suburb of Bengaluru, Karnataka, India.[2] The temple[3] also houses a Shivalinga along with Lord Rama, Goddess Sita, Lord Lakshmana along with the main deity of Lord Hanuman in the same precinct. The temple is on a hillock. There is a smaller temple dedicated to Lord Ganesha, Navagrahas and the Goddess Rajarajeshwari at the base of the hillock. It also plays host a Thrimurthy Sannidhi to the Hindu holy trinity of Lord Brahma, Lord Vishnu and Lord Shiva on huge engraved rocks at the side of the temple.[2] An image of Lord Hanuman Currently Bengaluru's Namma Metro work is underway a few 100m from the temple with a Yellow Line Metro station planned as well.[4]",
+      "answerable_question": "Which deities are housed in the main precinct of the Ragigudda Anjaneya Temple?",
+      "unanswerable_question": "When was the Ragigudda Anjaneya Temple built?"
+    },
+    {
+      "title": "Vincenzo Civerchio",
+      "abstract": "Vincenzo Civerchio or Civercio (c. 1470 – c. 1544) was an Italian painter of the Renaissance, born at Crema, and active also in Brescia, where there are some of his alter-pieces.[1] One of his works is at the National Gallery of Art, Washington D.C., others in the Pinacoteca di Brera, Milan, Italy. He is said to be an imitator of Bernardino Butinone, Bernardino Zenale, and influenced by Vincenzo Foppa.",
+      "answerable_question": "Where can some of Vincenzo Civerchio's works be found?",
+      "unanswerable_question": "What was Vincenzo Civerchio's most famous painting?"
+    },
+    {
+      "title": "Kanieae",
+      "abstract": "Kanieae is a tribe in the plant family Myrtaceae[1] from Oceania and south-East Asia with a main diversity center in Australia.",
+      "answerable_question": "Where is the main diversity center of Kanieae?",
+      "unanswerable_question": "How many species are included in the Kanieae tribe?"
+    },
+    {
+      "title": "List of named storms (B)",
+      "abstract": "Storms are named for historical reasons to avoid confusion when communicating with the public, as more than one storm can exist at a time. Names are drawn in order from predetermined lists. For tropical cyclones, names are assigned when a system has one-, three-, or ten-minute winds of more than 65 km/h (40 mph). Standards, however, vary from basin to basin. For example, some tropical depressions are named in the Western Pacific, while within the Australian and Southern Pacific regions, the naming of tropical cyclones are delayed until they have gale-force winds occurring more than halfway around the storm center.",
+      "answerable_question": "At what wind speed are tropical cyclones typically assigned names?",
+      "unanswerable_question": "What is the most common letter used for naming storms?"
+    }
+  ]
