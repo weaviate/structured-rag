@@ -17,3 +17,5 @@ The benchmarker explores different RAG inspired tasks with structured outputs as
 | List[string]                | ParaphraseQuestions         | {"paraphrased_questions": ["Where can some of Vincenzo Civerchio’s works be found?", "Where are some pieces by Vincenzo Civerchio displayed?", "Where can I find some of Vincenzo Civerchio’s art?"]} |
 | AnswerWithConfidence        | GenerateAnswerWithConfidence| {"Answer": "The National Gallery of Art, Washington D.C., and the Pinacoteca di Brera, Milan, Italy.", "Confidence": 5}                            |
 | List[AnswerWithConfidence]  | GenerateAnswersWithConfidence| {"Answer": "National Gallery of Art, Washington D.C.", "Confidence": 5}, {"Answer": "Pinacoteca di Brera, Milan, Italy", "Confidence": 4}         |
+
+![Experimental Results](./results.png)
