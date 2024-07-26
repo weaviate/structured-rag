@@ -1,6 +1,7 @@
 import json
 import os
 import argparse
+import time
 from dspy_program import dspy_Program
 from fstring_inference import fstring_Program
 import dspy
@@ -52,19 +53,46 @@ def is_valid_json_output(output, test_type):
         return False
 
 def run_test(program, test_type, context, question):
-    if test_type == "ParaphraseQuestions":
-        output = program.forward(test_type, question=question)
-    else:
-        output = program.forward(test_type, context, question)
+    try:
+        if test_type == "ParaphraseQuestions":
+            output = program.forward(test_type, question=question)
+        else:
+            output = program.forward(test_type, context, question)
+        
+        print(f"{Colors.CYAN}{program.__class__.__name__} Output: {output}{Colors.ENDC}\n")
+        
+        if is_valid_json_output(output, test_type):
+            print(f"{Colors.GREEN}Valid output for {test_type}{Colors.ENDC}")
+            return 1, True  # Success, count this attempt
+        else:
+            print(f"{Colors.RED}Invalid output for {test_type}{Colors.ENDC}")
+            return 0, True  # Failure, but still count this attempt
     
-    print(f"{Colors.CYAN}{program.__class__.__name__} Output: {output}{Colors.ENDC}\n")
-    
-    if is_valid_json_output(output, test_type):
-        print(f"{Colors.GREEN}Valid output for {test_type}{Colors.ENDC}")
-        return 1
-    else:
-        print(f"{Colors.RED}Invalid output for {test_type}{Colors.ENDC}")
+    except Exception as e:
+        print(f"{Colors.YELLOW}Error occurred: {str(e)}{Colors.ENDC}")
+        print(f"{Colors.RED}Skipping this test due to error.{Colors.ENDC}")
+        return 0, False  # Failure due to error, don't count this attempt
+
+def get_latest_trial_number():
+    trial_dirs = [d for d in os.listdir('.') if d.startswith("results-trial-")]
+    if not trial_dirs:
         return 0
+    return max(int(d.split("-")[-1]) for d in trial_dirs)
+
+def get_or_create_trial_directory(test_type):
+    latest_trial = get_latest_trial_number()
+    
+    if latest_trial > 0:
+        latest_trial_dir = f"results-trial-{latest_trial}"
+        # Check if the test_type result already exists in the latest trial
+        if not any(f.startswith(f"{test_type}-") and f.endswith(".json") for f in os.listdir(latest_trial_dir)):
+            return latest_trial_dir
+    
+    # Create a new trial directory
+    new_trial = latest_trial + 1
+    new_trial_dir = f"results-trial-{new_trial}"
+    os.makedirs(new_trial_dir, exist_ok=True)
+    return new_trial_dir
 
 def main(args):
     filename = "wiki-answerable-questions.json"
@@ -79,30 +107,52 @@ def main(args):
         "model_provider": args.model_provider,
         "dspy_score": 0,
         "fstring_score": 0,
-        "total_questions": 0
+        "dspy_total_attempts": 0,
+        "fstring_total_attempts": 0
     }
+
+    total_start_time = time.time()
 
     for entry in json_data:
         context = entry.get('abstract', '')
-        question = entry.get('answerable_question', '')
-        results["total_questions"] += 1
+        answerable_question = entry.get('answerable_question', '')
+        unanswerable_question = entry.get('unanswerable_question', '')
         
-        print(f"{Colors.UNDERLINE}Question: {question}{Colors.ENDC}\n")
-        
-        results["dspy_score"] += run_test(dspy_program, args.test, context, question)
-        results["fstring_score"] += run_test(fstring_program, args.test, context, question)
+        # Test with answerable question
+        print(f"{Colors.UNDERLINE}Answerable Question: {answerable_question}{Colors.ENDC}\n")
+        dspy_score, dspy_counted = run_test(dspy_program, args.test, context, answerable_question)
+        fstring_score, fstring_counted = run_test(fstring_program, args.test, context, answerable_question)
+        results["dspy_score"] += dspy_score
+        results["fstring_score"] += fstring_score
+        results["dspy_total_attempts"] += int(dspy_counted)
+        results["fstring_total_attempts"] += int(fstring_counted)
         
         print(f"\n{Colors.BOLD}==============={Colors.ENDC}\n")
+        
+        # Test with unanswerable question
+        print(f"{Colors.UNDERLINE}Unanswerable Question: {unanswerable_question}{Colors.ENDC}\n")
+        dspy_score, dspy_counted = run_test(dspy_program, args.test, context, unanswerable_question)
+        fstring_score, fstring_counted = run_test(fstring_program, args.test, context, unanswerable_question)
+        results["dspy_score"] += dspy_score
+        results["fstring_score"] += fstring_score
+        results["dspy_total_attempts"] += int(dspy_counted)
+        results["fstring_total_attempts"] += int(fstring_counted)
+        
+        print(f"\n{Colors.BOLD}==============={Colors.ENDC}\n")
+    
+    print(f"{Colors.HEADER}Time to run test {args.test} with model {args.model_name} = {time.time() - total_start_time} seconds.")
 
     # Print final scores
     print(f"{Colors.HEADER}Final Scores:{Colors.ENDC}")
-    print(f"{Colors.BOLD}DSPy: {Colors.GREEN}{results['dspy_score']}/{results['total_questions']} ({results['dspy_score']/results['total_questions']:.2%}){Colors.ENDC}")
-    print(f"{Colors.BOLD}f-string: {Colors.GREEN}{results['fstring_score']}/{results['total_questions']} ({results['fstring_score']/results['total_questions']:.2%}){Colors.ENDC}")
+    print(f"{Colors.BOLD}DSPy: {Colors.GREEN}{results['dspy_score']}/{results['dspy_total_attempts']} ({results['dspy_score']/results['dspy_total_attempts']:.2%}){Colors.ENDC}")
+    print(f"{Colors.BOLD}f-string: {Colors.GREEN}{results['fstring_score']}/{results['fstring_total_attempts']} ({results['fstring_score']/results['fstring_total_attempts']:.2%}){Colors.ENDC}")
 
-    # Save results to JSON file
-    os.makedirs("results", exist_ok=True)
-    with open(f"results/{args.test}-{args.model_name}.json", "w") as f:
+    # Save results to JSON file in the appropriate trial directory
+    trial_dir = get_or_create_trial_directory(args.test)
+    with open(f"{trial_dir}/{args.test}-{args.model_name}.json", "w") as f:
         json.dump(results, f, indent=2)
+
+    print(f"\nResults saved in {trial_dir}")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Run LLM testing with different models.")

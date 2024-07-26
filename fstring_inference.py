@@ -1,7 +1,7 @@
-from typing import Optional
+from typing import Optional, Dict
 import ollama
 import google.generativeai as genai
-from fstring_prompts import *
+from fstring_prompts import get_prompt
 
 class fstring_Program():
     def __init__(self, model_name: str, model_provider: str, api_key: Optional[str]) -> None:
@@ -23,20 +23,13 @@ class fstring_Program():
             return response['message']['content']
 
     def forward(self, test: str, context: str = "", question: str = "") -> str:
-        if test == "GenerateAnswer":
-            prompt = get_generate_answer_prompt(context, question)
-        elif test == "RateContext":
-            prompt = get_rate_context_prompt(context, question)
-        elif test == "AssessAnswerability":
-            prompt = get_assess_answerability_prompt(context, question)
-        elif test == "ParaphraseQuestions":
-            prompt = get_paraphrase_questions_prompt(question)
-        elif test == "GenerateAnswerWithConfidence":
-            prompt = get_generate_answer_with_confidence_prompt(context, question)
-        elif test == "GenerateAnswersWithConfidence":
-            prompt = get_generate_answers_with_confidence_prompt(context, question)
+        references: Dict[str, str] = {}
+        if test != "ParaphraseQuestions":
+            references = {"context": context, "question": question}
         else:
-            raise ValueError(f"Unsupported test: {test}")
+            references = {"question": question}
+
+        prompt = get_prompt(test, references)
 
         if self.model_provider == "ollama":
             response = ollama.chat(model=self.model_name, messages=[{"role": "user", "content": prompt}])

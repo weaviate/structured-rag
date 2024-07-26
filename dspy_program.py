@@ -1,6 +1,6 @@
 import dspy
-from typing import Optional, Any
-from dspy_signatures import *
+from typing import Optional, Any, Dict
+from dspy_signatures import GenerateResponse
 
 class dspy_Program(dspy.Module):
     def __init__(self, model_name: str, model_provider: str, api_key: Optional[str] = None) -> None:
@@ -8,12 +8,7 @@ class dspy_Program(dspy.Module):
         self.model_name = model_name
         self.model_provider = model_provider
         self.configure_llm(api_key)
-        self.answer_question = dspy.Predict(AnswerQuestion)
-        self.rate_context = dspy.Predict(RateContext)
-        self.assess_answerability = dspy.Predict(AssessAnswerability)
-        self.paraphrase_questions = dspy.Predict(ParaphraseQuestions)
-        self.generate_answer_with_confidence = dspy.Predict(GenerateAnswerWithConfidence)
-        self.generate_answers_with_confidence = dspy.Predict(GenerateAnswersWithConfidence)
+        self.generate_response = dspy.ChainOfThought(GenerateResponse)
 
     def configure_llm(self, api_key: Optional[str] = None):
         if self.model_provider == "ollama":
@@ -28,17 +23,46 @@ class dspy_Program(dspy.Module):
         dspy.settings.configure(lm=llm)
 
     def forward(self, test: str, question: str, context: Optional[str] = "") -> Any:
-        if test == "GenerateAnswer":
-            return self.answer_question(context=context, question=question).answer
-        elif test == "RateContext":
-            return self.rate_context(context=context, question=question).context_score
-        elif test == "AssessAnswerability":
-            return self.assess_answerability(context=context, question=question).answerable_question
-        elif test == "ParaphraseQuestions":
-            return self.paraphrase_questions(question=question).paraphrased_questions
-        elif test == "GenerateAnswerWithConfidence":
-            return self.generate_answer_with_confidence(context=context, question=question).answer_with_confidence
-        elif test == "GenerateAnswersWithConfidence":
-            return self.generate_answers_with_confidence(context=context, question=question).answers_with_confidence
-        else:
+        test_params = self.get_test_parameters(test)
+        references = {"context": context, "question": question}
+        references = "".join(f"{k}: {v}" for k, v in references.items())
+        response = self.generate_response(
+            task_instructions=test_params['task_instructions'],
+            response_format=test_params['response_format'],
+            references=references
+        ).response
+
+        return response
+
+    def get_test_parameters(self, test: str) -> Dict[str, str]:
+        test_params = {
+            "GenerateAnswer": {
+                "task_instructions": "Assess the context and answer the question. If the context does not contain sufficient information to answer the question, respond with \"NOT ENOUGH CONTEXT\".",
+                "response_format": '{"answer": "string"}'
+            },
+            "RateContext": {
+                "task_instructions": "Assess how well the context helps answer the question.",
+                "response_format": '{"context_score": "int (0-5)"}'
+            },
+            "AssessAnswerability": {
+                "task_instructions": "Determine if the question is answerable based on the context.",
+                "response_format": '{"answerable_question": "bool"}'
+            },
+            "ParaphraseQuestions": {
+                "task_instructions": "Generate 3 paraphrased versions of the given question.",
+                "response_format": '{"paraphrased_questions": ["string", "string", "string"]}'
+            },
+            "GenerateAnswerWithConfidence": {
+                "task_instructions": "Generate an answer with a confidence score.",
+                "response_format": '{"Answer": "string", "Confidence": "int (0-5)"}'
+            },
+            "GenerateAnswersWithConfidence": {
+                "task_instructions": "Generate multiple answers with confidence scores.",
+                "response_format": '[{"Answer": "string", "Confidence": "int (0-5)"}, ...]'
+            }
+        }
+        
+        if test not in test_params:
             raise ValueError(f"Unsupported test: {test}")
+        
+        return test_params[test]

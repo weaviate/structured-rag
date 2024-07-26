@@ -1,0 +1,9 @@
+{
+  "test_type": "RateContext",
+  "model_name": "llama3:instruct",
+  "model_provider": "ollama",
+  "dspy_score": 100,
+  "fstring_score": 96,
+  "dspy_total_attempts": 112,
+  "fstring_total_attempts": 112
+}

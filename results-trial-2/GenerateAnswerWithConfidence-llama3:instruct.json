@@ -1,0 +1,9 @@
+{
+  "test_type": "GenerateAnswerWithConfidence",
+  "model_name": "llama3:instruct",
+  "model_provider": "ollama",
+  "dspy_score": 91,
+  "fstring_score": 111,
+  "dspy_total_attempts": 112,
+  "fstring_total_attempts": 112
+}

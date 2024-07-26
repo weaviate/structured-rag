@@ -16,9 +16,9 @@ run_tests_for_model() {
     do
         echo "Running $test for $model_name"
         if [ -z "$api_key" ]; then
-            python run_test.py --model_name "$model_name" --model_provider "$model_provider" --test "$test"
+            python3 run_test.py --model_name "$model_name" --model_provider "$model_provider" --test "$test"
         else
-            python run_test.py --model_name "$model_name" --model_provider "$model_provider" --api_key "$api_key" --test "$test"
+            python3 run_test.py --model_name "$model_name" --model_provider "$model_provider" --api_key "$api_key" --test "$test"
         fi
         echo "-----------------------"
     done
@@ -28,7 +28,7 @@ run_tests_for_model() {
 run_tests_for_model "llama3:instruct" "ollama" ""
 
 # Run tests for Gemini
-run_tests_for_model "gemini-1.5-flash" "google" "$GOOGLE_API_KEY"
+run_tests_for_model "gemini-1.5-pro" "google" "$GOOGLE_API_KEY"
 
 
 python3 aggregate_jsons.py

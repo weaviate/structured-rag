@@ -1,0 +1,9 @@
+{
+  "test_type": "GenerateAnswer",
+  "model_name": "gemini-1.5-pro",
+  "model_provider": "google",
+  "dspy_score": 112,
+  "fstring_score": 112,
+  "dspy_total_attempts": 112,
+  "fstring_total_attempts": 112
+}

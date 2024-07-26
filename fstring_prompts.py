@@ -1,50 +1,42 @@
-def get_generate_answer_prompt(context: str, question: str) -> str:
-    return f"""
-    Assess the context: {context} and answer the question {question}.
-    Output the answer as a JSON string with the key "answer".
-    IMPORTANT!! Do not start the JSON with ```json or end it with ```.
-    """
+from typing import Dict
 
-def get_rate_context_prompt(context: str, question: str) -> str:
-    return f"""
-    Assess how well the context helps answer the question.
-    Context: {context}
-    Question: {question}
-    Rate the relevance of the context to the question on a scale of 0 to 5.
-    Output the rating as a JSON string with the key "context_score".
-    IMPORTANT!! Do not start the JSON with ```json or end it with ```.
-    """
+def get_prompt(test: str, references: Dict[str, str]) -> str:
+    test_params = {
+        "GenerateAnswer": {
+            "instructions": "Assess the context and answer the question. If the context does not contain sufficient information to answer the question, respond with \"NOT ENOUGH CONTEXT\".",
+            "response_format": '{"answer": "string"}'
+        },
+        "RateContext": {
+            "instructions": "Assess how well the context helps answer the question. Rate the relevance of the context to the question on a scale of 0 to 5.",
+            "response_format": '{"context_score": "int (0-5)"}'
+        },
+        "AssessAnswerability": {
+            "instructions": "Determine if the question is answerable based on the context.",
+            "response_format": '{"answerable_question": "bool"}'
+        },
+        "ParaphraseQuestions": {
+            "instructions": "Generate 3 paraphrased versions of the given question.",
+            "response_format": '{"paraphrased_questions": ["string", "string", "string"]}'
+        },
+        "GenerateAnswerWithConfidence": {
+            "instructions": "Generate an answer to the question based on the context, and provide a confidence score (0-5).",
+            "response_format": '{"Answer": "string", "Confidence": "int (0-5)"}'
+        },
+        "GenerateAnswersWithConfidence": {
+            "instructions": "Generate 3 possible answers to the question based on the context, each with a confidence score (0-5).",
+            "response_format": '[{"Answer": "string", "Confidence": "int (0-5)"}, ...]'
+        }
+    }
 
-def get_assess_answerability_prompt(context: str, question: str) -> str:
-    return f"""
-    Determine if the question is answerable based on the context.
-    Context: {context}
-    Question: {question}
-    Output the result as a JSON string with the key "answerable_question" (boolean value).
-    IMPORTANT!! Do not start the JSON with ```json or end it with ```.
-    """
+    if test not in test_params:
+        raise ValueError(f"Unsupported test: {test}")
 
-def get_paraphrase_questions_prompt(question: str) -> str:
-    return f"""
-    Generate 3 paraphrased versions of the given question: {question}
-    Output the result as a JSON string with the key "paraphrased_questions" (list of strings).
-    IMPORTANT!! Do not start the JSON with ```json or end it with ```.
-    """
+    params = test_params[test]
+    references_str = ' | '.join(f"{k}: {v}" for k, v in references.items())
 
-def get_generate_answer_with_confidence_prompt(context: str, question: str) -> str:
     return f"""
-    Generate an answer to the question based on the context, and provide a confidence score (0-5).
-    Context: {context}
-    Question: {question}
-    Output the result as a JSON string with keys "Answer" and "Confidence".
-    IMPORTANT!! Do not start the JSON with ```json or end it with ```.
-    """
-
-def get_generate_answers_with_confidence_prompt(context: str, question: str) -> str:
-    return f"""
-    Generate 3 possible answers to the question based on the context, each with a confidence score (0-5).
-    Context: {context}
-    Question: {question}
-    Output the result as a JSON string with a list of objects containing "Answer" and "Confidence" keys.
+    Instructions: {params['instructions']}
+    References: {references_str}
+    Output the result as a JSON string with the following format: {params['response_format']}
     IMPORTANT!! Do not start the JSON with ```json or end it with ```.
     """
