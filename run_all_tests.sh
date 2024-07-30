@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Set your API key here
-GOOGLE_API_KEY="AIzaSyDSKHjYsiGKhnqMvR6VWcKKR8dlsEfowsg"
+GOOGLE_API_KEY="AI..."
 
 # List of all test types
 TESTS=("GenerateAnswer" "RateContext" "AssessAnswerability" "ParaphraseQuestions" "GenerateAnswerWithConfidence" "GenerateAnswersWithConfidence")
