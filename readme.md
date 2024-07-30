@@ -1,8 +1,4 @@
 # structured-output-benchmarker
-Generic Structured Output Benchmarker for GFL Project.
-
-The goal is to eventually interface this with our GFL system, but for now we spun this up quickly to understand what this kind of thing entails to begin with.
-
 Large Language Models have become extremely powerful at Zero-Shot Instruction Following. This benchmarker aims to target how well LLMs can follow the instruction of formatting its output in a particular JSON template. It is extremely important for processing Generative Feedback Loops that these outputs follow these instructions.
 
 This benchmarker firstly compares `f-String` prompting with the `Follow the Format (FF)` method used in DSPy.
