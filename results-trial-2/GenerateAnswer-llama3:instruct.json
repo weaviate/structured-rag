@@ -1,0 +1,9 @@
+{
+  "test_type": "GenerateAnswer",
+  "model_name": "llama3:instruct",
+  "model_provider": "ollama",
+  "dspy_score": 96,
+  "fstring_score": 109,
+  "dspy_total_attempts": 112,
+  "fstring_total_attempts": 112
+}

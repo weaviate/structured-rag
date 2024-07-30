@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "structured-output-test"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+dspy_ai = { path = "/Users/cshorten/Desktop/dspy/dist/dspy_ai-2.4.10-py3-none-any.whl" }
+ollama = "^0.2.1"
+matplotlib = "^3.9.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
