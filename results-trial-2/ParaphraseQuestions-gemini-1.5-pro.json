@@ -1,9 +1,0 @@
-{
-  "test_type": "ParaphraseQuestions",
-  "model_name": "gemini-1.5-pro",
-  "model_provider": "google",
-  "dspy_score": 82,
-  "fstring_score": 112,
-  "dspy_total_attempts": 112,
-  "fstring_total_attempts": 112
-}

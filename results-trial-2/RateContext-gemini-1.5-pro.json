@@ -1,9 +1,0 @@
-{
-  "test_type": "RateContext",
-  "model_name": "gemini-1.5-pro",
-  "model_provider": "google",
-  "dspy_score": 100,
-  "fstring_score": 109,
-  "dspy_total_attempts": 112,
-  "fstring_total_attempts": 110
-}
