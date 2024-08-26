@@ -41,7 +41,7 @@ def get_latest_trial_number():
     return max(int(d.split("-")[-1]) for d in trial_dirs)
 
 def get_or_create_trial_directory(test_type):
-    base_dir = "experimental-results"
+    base_dir = "tests/experimental-results"
     os.makedirs(base_dir, exist_ok=True)
     
     latest_trial = get_latest_trial_number()
