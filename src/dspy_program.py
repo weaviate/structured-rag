@@ -1,6 +1,6 @@
 import dspy
 from typing import Optional, Any, Dict
-from dspy_signatures import GenerateResponse
+from src.dspy_signatures import GenerateResponse
 
 class dspy_Program(dspy.Module):
     def __init__(self, model_name: str, model_provider: str, api_key: Optional[str] = None) -> None:

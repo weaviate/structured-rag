@@ -1,7 +1,7 @@
 from typing import Optional, Dict
 import ollama
 import google.generativeai as genai
-from fstring_prompts import get_prompt
+from src.fstring_prompts import get_prompt
 
 class fstring_Program():
     def __init__(self, model_name: str, model_provider: str, api_key: Optional[str]) -> None:

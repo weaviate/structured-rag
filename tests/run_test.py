@@ -2,8 +2,8 @@ import json
 import os
 import argparse
 import time
-from dspy_program import dspy_Program
-from fstring_inference import fstring_Program
+from src.dspy_program import dspy_Program
+from src.fstring_inference import fstring_Program
 import dspy
 
 class Colors:
