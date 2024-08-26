@@ -5,16 +5,18 @@ from collections import defaultdict
 import matplotlib.pyplot as plt
 import matplotlib.colors as mcolors
 import numpy as np
+import argparse
 
-def read_json_files() -> List[Dict]:
+def read_json_files(base_dir: str) -> List[Dict]:
     results = []
-    for directory in os.listdir('.'):
-        if directory.startswith("results-trial-"):
-            for filename in os.listdir(directory):
+    for trial_dir in os.listdir(base_dir):
+        if trial_dir.startswith("trial-"):
+            trial_path = os.path.join(base_dir, trial_dir)
+            for filename in os.listdir(trial_path):
                 if filename.endswith(".json"):
-                    with open(os.path.join(directory, filename), "r") as f:
+                    with open(os.path.join(trial_path, filename), "r") as f:
                         data = json.load(f)
-                        data['file_path'] = os.path.join(directory, filename)
+                        data['file_path'] = os.path.join(trial_path, filename)
                         results.append(data)
     return results
 
@@ -159,7 +161,11 @@ def create_bar_chart(summary: Dict, trial: str = None):
     print(f"Bar chart saved as '{filename}'")
 
 def main():
-    results = read_json_files()
+    parser = argparse.ArgumentParser(description="Aggregate JSON results and create visualizations.")
+    parser.add_argument("results_dir", help="Directory containing the experimental results")
+    args = parser.parse_args()
+
+    results = read_json_files(args.results_dir)
     summary = aggregate_results(results)
     
     print_summary(summary)
@@ -178,10 +184,11 @@ def main():
     create_bar_chart(summary)
     
     # Save aggregated results
-    with open("aggregated_results.json", "w") as f:
+    with open(f"./{args.results_dir}/aggregated_results.json", "w") as f:
         json.dump(summary, f, indent=2)
     
     print("\nAggregated results saved to aggregated_results.json")
+
 
 if __name__ == "__main__":
     main()
