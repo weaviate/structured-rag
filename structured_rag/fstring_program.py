@@ -1,7 +1,7 @@
 from typing import Optional, Dict
 import ollama
 import google.generativeai as genai
-from src.fstring_prompts import get_prompt
+from structured_rag.fstring_prompts import get_prompt
 
 class fstring_Program():
     def __init__(self,
@@ -32,7 +32,7 @@ class fstring_Program():
         else:
             references = {"question": question}
 
-        prompt = get_prompt(test, references)
+        prompt = get_prompt(test, references, self.test_params)
 
         if self.model_provider == "ollama":
             response = ollama.chat(model=self.model_name, messages=[{"role": "user", "content": prompt}])

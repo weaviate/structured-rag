@@ -2,12 +2,12 @@ import json
 import os
 import argparse
 import time
-from src.dspy_program import dspy_Program
-from src.fstring_program import fstring_Program
+from structured_rag.dspy_program import dspy_Program
+from structured_rag.fstring_program import fstring_Program
 import dspy
 
-from tests.helpers import Colors, load_json_from_file
-from tests.metrics import is_valid_json_output
+from helpers import Colors, load_json_from_file
+from metrics import is_valid_json_output
 
 def run_test(program, test_type, context, question):
     try:
@@ -59,7 +59,7 @@ def get_or_create_trial_directory(test_type):
     return new_trial_dir
 
 def main(args):
-    filename = "wiki-answerable-questions.json"
+    filename = "./data/wiki-answerable-questions.json"
     json_data = load_json_from_file(filename)
     # would also like to refactor this into a config file
     test_params = {

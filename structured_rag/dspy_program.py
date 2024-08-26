@@ -1,6 +1,6 @@
 import dspy
 from typing import Optional, Any, Dict
-from src.dspy_signatures import GenerateResponse
+from structured_rag.dspy_signatures import GenerateResponse
 
 class dspy_Program(dspy.Module):
     def __init__(self, 
@@ -26,7 +26,6 @@ class dspy_Program(dspy.Module):
         dspy.settings.configure(lm=llm)
 
     def forward(self, test: str, question: str, context: Optional[str] = "") -> Any:
-        test_params = self.get_test_parameters(test)
         references = {"context": context, "question": question}
         references = "".join(f"{k}: {v}" for k, v in references.items())
         response = self.generate_response(
