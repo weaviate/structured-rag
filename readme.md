@@ -21,10 +21,10 @@ The benchmarker explores different RAG inspired tasks with structured outputs as
 
 The WikiQuestions dataset can also be found on [HuggingFace Datasets](https://huggingface.co/datasets/weaviate/Wiki-Answerable-Questions)!
 
-![Experimental Results](./model_comparison.png)
+![Experimental Results](./tests/model_comparison.png)
 
 ## Citation
-Please cite our paper if you use this code or part of it in your work:
+Please consider citing our paper if you find this work useful:
 
 ```bibtex
 @misc{shorten2024,
