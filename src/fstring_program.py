@@ -4,7 +4,10 @@ import google.generativeai as genai
 from src.fstring_prompts import get_prompt
 
 class fstring_Program():
-    def __init__(self, model_name: str, model_provider: str, api_key: Optional[str]) -> None:
+    def __init__(self,
+                 test_params: Dict[str, str],
+                 model_name: str, model_provider: str, api_key: Optional[str]) -> None:
+        self.test_params = test_params
         self.model_name = model_name
         self.model_provider = model_provider
         if self.model_provider == "google":

@@ -19,3 +19,5 @@ StructuredRAG currently supports the following tests:
 - `ParaphraseQuestions` (list of strings)
 - `GenerateAnswerWithConfidence` (AnswerWithConfidence)
 - `GenerateAnswersWithConfidence` (list of AnswerWithConfidence)
+
+You can also run all tests by using the `--all` flag.

@@ -3,57 +3,15 @@ import os
 import argparse
 import time
 from src.dspy_program import dspy_Program
-from src.fstring_inference import fstring_Program
+from src.fstring_program import fstring_Program
 import dspy
 
-class Colors:
-    HEADER = '\033[95m'
-    BLUE = '\033[94m'
-    CYAN = '\033[96m'
-    GREEN = '\033[92m'
-    YELLOW = '\033[93m'
-    RED = '\033[91m'
-    ENDC = '\033[0m'
-    BOLD = '\033[1m'
-    UNDERLINE = '\033[4m'
-
-def load_json_from_file(filename):
-    try:
-        with open(filename, 'r') as json_file:
-            data = json.load(json_file)
-        return data
-    except FileNotFoundError:
-        print(f"{Colors.RED}Error: File '{filename}' not found.{Colors.ENDC}")
-        return None
-    except json.JSONDecodeError:
-        print(f"{Colors.RED}Error: Invalid JSON format in '{filename}'.{Colors.ENDC}")
-        return None
-
-def is_valid_json_output(output, test_type):
-    try:
-        parsed = json.loads(output)
-        if test_type == "GenerateAnswer":
-            return isinstance(parsed.get("answer"), str)
-        elif test_type == "RateContext":
-            score = parsed.get("context_score")
-            return isinstance(score, int) and 0 <= score <= 5
-        elif test_type == "AssessAnswerability":
-            return isinstance(parsed.get("answerable_question"), bool)
-        elif test_type == "ParaphraseQuestions":
-            questions = parsed.get("paraphrased_questions")
-            return isinstance(questions, list) and all(isinstance(q, str) for q in questions)
-        elif test_type == "GenerateAnswerWithConfidence":
-            return isinstance(parsed.get("Answer"), str) and isinstance(parsed.get("Confidence"), int) and 0 <= parsed["Confidence"] <= 5
-        elif test_type == "GenerateAnswersWithConfidence":
-            answers = parsed
-            return isinstance(answers, list) and all(isinstance(a.get("Answer"), str) and isinstance(a.get("Confidence"), int) and 0 <= a["Confidence"] <= 5 for a in answers)
-        else:
-            return False
-    except json.JSONDecodeError:
-        return False
+from tests.helpers import Colors, load_json_from_file
+from tests.metrics import is_valid_json_output
 
 def run_test(program, test_type, context, question):
     try:
+        # probably a better way to do this
         if test_type == "ParaphraseQuestions":
             output = program.forward(test_type, question=question)
         else:
@@ -74,32 +32,72 @@ def run_test(program, test_type, context, question):
         return 0, False  # Failure due to error, don't count this attempt
 
 def get_latest_trial_number():
-    trial_dirs = [d for d in os.listdir('.') if d.startswith("results-trial-")]
+    base_dir = "experimental-results"
+    if not os.path.exists(base_dir):
+        return 0
+    trial_dirs = [d for d in os.listdir(base_dir) if d.startswith("trial-")]
     if not trial_dirs:
         return 0
     return max(int(d.split("-")[-1]) for d in trial_dirs)
 
 def get_or_create_trial_directory(test_type):
+    base_dir = "experimental-results"
+    os.makedirs(base_dir, exist_ok=True)
+    
     latest_trial = get_latest_trial_number()
     
     if latest_trial > 0:
-        latest_trial_dir = f"results-trial-{latest_trial}"
+        latest_trial_dir = os.path.join(base_dir, f"trial-{latest_trial}")
         # Check if the test_type result already exists in the latest trial
         if not any(f.startswith(f"{test_type}-") and f.endswith(".json") for f in os.listdir(latest_trial_dir)):
             return latest_trial_dir
     
     # Create a new trial directory
     new_trial = latest_trial + 1
-    new_trial_dir = f"results-trial-{new_trial}"
+    new_trial_dir = os.path.join(base_dir, f"trial-{new_trial}")
     os.makedirs(new_trial_dir, exist_ok=True)
     return new_trial_dir
 
 def main(args):
     filename = "wiki-answerable-questions.json"
     json_data = load_json_from_file(filename)
+    # would also like to refactor this into a config file
+    test_params = {
+        "GenerateAnswer": {
+            "task_instructions": "Assess the context and answer the question. If the context does not contain sufficient information to answer the question, respond with \"NOT ENOUGH CONTEXT\".",
+            "response_format": '{"answer": "string"}'
+        },
+        "RateContext": {
+            "task_instructions": "Assess how well the context helps answer the question.",
+            "response_format": '{"context_score": "int (0-5)"}'
+        },
+        "AssessAnswerability": {
+            "task_instructions": "Determine if the question is answerable based on the context.",
+            "response_format": '{"answerable_question": "bool"}'
+        },
+        "ParaphraseQuestions": {
+            "task_instructions": "Generate 3 paraphrased versions of the given question.",
+            "response_format": '{"paraphrased_questions": ["string", "string", "string"]}'
+        },
+        "GenerateAnswerWithConfidence": {
+            "task_instructions": "Generate an answer with a confidence score.",
+            "response_format": '{"Answer": "string", "Confidence": "int (0-5)"}'
+        },
+        "GenerateAnswersWithConfidence": {
+            "task_instructions": "Generate multiple answers with confidence scores.",
+            "response_format": '[{"Answer": "string", "Confidence": "int (0-5)"}, ...]'
+        }
+    }
 
-    dspy_program = dspy_Program(model_name=args.model_name, model_provider=args.model_provider, api_key=args.api_key)
-    fstring_program = fstring_Program(model_name=args.model_name, model_provider=args.model_provider, api_key=args.api_key)
+    if args.test not in test_params:
+        raise ValueError(f"Unsupported test: {args.test}")
+    
+    test_to_run = test_params[args.test]
+
+    dspy_program = dspy_Program(test_params=test_to_run, 
+                                model_name=args.model_name, model_provider=args.model_provider, api_key=args.api_key)
+    fstring_program = fstring_Program(test_params=test_to_run, 
+                                     model_name=args.model_name, model_provider=args.model_provider, api_key=args.api_key)
 
     results = {
         "test_type": args.test,
@@ -149,10 +147,11 @@ def main(args):
 
     # Save results to JSON file in the appropriate trial directory
     trial_dir = get_or_create_trial_directory(args.test)
-    with open(f"{trial_dir}/{args.test}-{args.model_name}.json", "w") as f:
+    result_file = os.path.join(trial_dir, f"{args.test}-{args.model_name}.json")
+    with open(result_file, "w") as f:
         json.dump(results, f, indent=2)
 
-    print(f"\nResults saved in {trial_dir}")
+    print(f"\nResults saved in {result_file}")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Run LLM testing with different models.")
