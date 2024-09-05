@@ -24,18 +24,18 @@ headers = {
 }
 
 def prepare_prompts_for_llama3(prompts: List[str]) -> List[str]:
-    prompt_preface = """
-<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+    prompt_preface = """<|begin_of_text|>
+<|start_header_id|>system<|end_header_id|>
 
-    Cutting Knowledge Date: December 2023
-    Today Date: 23 Jul 2024
+Cutting Knowledge Date: December 2023
+Today Date: 23 Jul 2024
 
-    You are a helpful assistant that follows the provided instructions to complete the task in the desired JSON format.<|eot_id|>
-
+You are a helpful assistant<|eot_id|>
 <|start_header_id|>user<|end_header_id|>
 """
 
-    prompt_ending = "<|eot_id|><|start_header_id|>assistant<|end_header_id|>"
+    prompt_ending = """<|eot_id|>
+<|start_header_id|>assistant<|end_header_id|>"""
 
     # Preface each prompt and append the ending
     return [prompt_preface + prompt + prompt_ending for prompt in prompts]
@@ -93,10 +93,11 @@ def run_test(dataset, test_type, with_outlines):
     print(f"Average time per task: {(end_time-start_time) / len(prompts):.2f} seconds")
 
     if response.status_code == 200:
+        response_list = ast.literal_eval(response.text)
         success_count, total_count = 0, 0
-        for idx, output in enumerate(response):
+        for idx, output in enumerate(response_list):
             print(f"Response for prompt: {prompts_for_llama3[idx]}\n")
-            print(f"{output}\n\n")
+            print(f"\033[92m{output}\033[0m\n\n")
             if is_valid_json_output(output, test_type):
                 print(f"{Colors.GREEN}Valid output:\n{output}{Colors.ENDC}")
                 success_count += 1

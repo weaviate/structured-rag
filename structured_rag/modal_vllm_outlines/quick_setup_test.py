@@ -39,18 +39,18 @@ prompts = [
     "What is the capital of Bulgaria?"
 ]
 
-prompt_preface = """
-<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+prompt_preface = """<|begin_of_text|>
+<|start_header_id|>system<|end_header_id|>
 
-    Cutting Knowledge Date: December 2023
-    Today Date: 23 Jul 2024
+Cutting Knowledge Date: December 2023
+Today Date: 23 Jul 2024
 
-    You are a helpful assistant that follows the provided instructions to complete the task in the desired JSON format.<|eot_id|>
-
+You are a helpful assistant<|eot_id|>
 <|start_header_id|>user<|end_header_id|>
 """
 
-prompt_ending = "<|eot_id|><|start_header_id|>assistant<|end_header_id|>"
+prompt_ending = """<|eot_id|>
+<|start_header_id|>assistant<|end_header_id|>"""
 
 # Loops through `prompts` and prefaces each with the prompt_preface
 prefaced_prompts = [prompt_preface + prompt for prompt in prompts]
