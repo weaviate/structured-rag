@@ -45,7 +45,7 @@ prompt_preface = """
     Cutting Knowledge Date: December 2023
     Today Date: 23 Jul 2024
 
-    You are a helpful assistant that only returns a new value for the property, nothing else.<|eot_id|>
+    You are a helpful assistant that follows the provided instructions to complete the task in the desired JSON format.<|eot_id|>
 
 <|start_header_id|>user<|end_header_id|>
 """
@@ -73,7 +73,7 @@ def run_test(with_outlines):
         response_list = ast.literal_eval(response.text)
         print(f"\nResults {'with' if with_outlines else 'without'} Outlines:")
         for i, result in enumerate(response_list):
-            print(f"Prompt {i + 1}: {prompts[i]}")
+            print(f"Prompt {i + 1}: {prefaced_prompts_with_ending[i]}")
             print("=" * 50)
             print(result)
             print("=" * 50)

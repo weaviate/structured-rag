@@ -17,8 +17,8 @@ N_GPUS=1
 GPU_CONFIG = modal.gpu.A100(count=N_GPUS)
 MINUTES = 60
 DTYPE = "float16"
-MAX_INPUT_LEN = 256
-MAX_OUTPUT_LEN = 256
+MAX_INPUT_LEN = 1024
+MAX_OUTPUT_LEN = 1024
 
 app = modal.App("example-vllm-outlines", image=vllm_image)
 
