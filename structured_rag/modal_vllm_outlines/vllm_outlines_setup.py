@@ -52,14 +52,6 @@ class Model:
 
         self.engine = LLMEngine.from_engine_args(engine_args)
 
-        logits_processor = JSONLogitsProcessor(schema=Answer, llm=self.engine)
-
-        self.sampling_params = SamplingParams(
-            max_tokens=MAX_OUTPUT_LEN,
-            temperature=0.7,
-            logits_processors=[logits_processor],
-        )
-
     @modal.method(is_generator=True)
     def generate(self, prompts: list[str], settings=None):
         """Generate responses to a batch of prompts, optionally with custom inference settings."""
@@ -69,8 +61,37 @@ class Model:
 
         # Add all prompts to the engine
         for prompt in prompts:
-            sampling_params = (
-                self.sampling_params if settings is None else SamplingParams(**settings)
+            sampling_params = SamplingParams(
+                max_tokens=MAX_OUTPUT_LEN,
+                temperature=0.7
+            )
+            self.engine.add_request(str(request_id), prompt, sampling_params)
+            request_id += 1
+
+        # Process requests and yield results
+        while self.engine.has_unfinished_requests():
+            request_outputs = self.engine.step()
+            for request_output in request_outputs:
+                if request_output.finished:
+                    yield request_output.outputs[0].text
+
+    @modal.method(is_generator=True)
+    def generate_with_outlines(self, prompts: list[str], output_model: BaseModel, settings=None):
+        """Generate responses to a batch of prompts using Outlines structured outputs according to the provided Pydantic model."""
+
+        from vllm import SamplingParams
+        from outlines.integrations.vllm import JSONLogitsProcessor
+
+        request_id = 0
+
+        logits_processor = JSONLogitsProcessor(schema=output_model, llm=self.engine)
+
+        # Add all prompts to the engine
+        for prompt in prompts:
+            sampling_params = SamplingParams(
+                max_tokens=MAX_OUTPUT_LEN,
+                temperature=0.7,
+                logits_processors=[logits_processor]
             )
             self.engine.add_request(str(request_id), prompt, sampling_params)
             request_id += 1

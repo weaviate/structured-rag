@@ -23,4 +23,7 @@ def generate_web(
     data: dict, token: HTTPAuthorizationCredentials = Depends(auth_scheme)
 ):
     import os
-    return Model.generate.remote_gen(data["prompts"], settings=None)
+    if data["with_outlines"] == True:
+        return Model.generate_with_outlines.remote_gen(data["prompts"], data["output_model"], settings=None)
+    else:
+        return Model.generate.remote_gen(data["prompts"], settings=None)
