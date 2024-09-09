@@ -18,6 +18,12 @@ class dspy_Program(dspy.Module):
             llm = dspy.OllamaLocal(model=self.model_name, max_tokens=4000, timeout_s=480)
         elif self.model_provider == "google":
             llm = dspy.Google(model=self.model_name, api_key=api_key)
+        elif self.model_provider == "openai":
+            import openai
+
+            openai.api_key = api_key
+            llm = dspy.OpenAI(model=self.model_name)
+        # ToDo, add Anthropic, Cohere
         else:
             raise ValueError(f"Unsupported model provider: {self.model_provider}")
 

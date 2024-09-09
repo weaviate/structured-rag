@@ -1,4 +1,6 @@
 import json
+import os
+import datetime
 
 class Colors:
     HEADER = '\033[95m'
@@ -22,3 +24,15 @@ def load_json_from_file(filename):
     except json.JSONDecodeError:
         print(f"{Colors.RED}Error: Invalid JSON format in '{filename}'.{Colors.ENDC}")
         return None
+
+import json
+
+def count_objects_in_json_file(filename):
+  """Loads JSON data from a file and returns the number of objects in the list."""
+  with open(filename, "r") as f:
+      data = json.load(f)
+  
+  if isinstance(data, list):  # Check if data is a list of objects
+      return len(data)
+  else:
+      raise ValueError("The JSON file does not contain a list of objects.")
