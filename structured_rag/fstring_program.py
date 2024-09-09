@@ -17,6 +17,9 @@ class fstring_Program():
         elif self.model_provider == "openai":
             import openai
             self.model = openai.OpenAI(api_key=api_key)
+        elif self.model_provider == "anthropic":
+            import anthropic
+            self.model = anthropic.Anthropic(api_key=api_key)
         print("Running LLM connection test (say hello)...")
         print(self.test_connection())
 
@@ -37,6 +40,15 @@ class fstring_Program():
                 ]
             )
             return response.choices[0].message.content
+        elif self.model_provider == "anthropic":
+            response = self.model.messages.create(
+                model=self.model_name,
+                max_tokens=2048,
+                messages=[
+                    {"role": "user", "content": connection_prompt}
+                ]
+            )
+            return response.content
 
     def forward(self, test: str, context: str = "", question: str = "") -> str:
         references: Dict[str, str] = {}
@@ -62,3 +74,12 @@ class fstring_Program():
                 ]
             )
             return response.choices[0].message.content
+        elif self.model_provider == "anthropic":
+            response = self.model.messages.create(
+                model=self.model_name,
+                max_tokens=2048,
+                messages=[
+                    {"role": "user", "content": prompt}
+                ]
+            )
+            return response.content

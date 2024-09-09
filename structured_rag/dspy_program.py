@@ -23,7 +23,10 @@ class dspy_Program(dspy.Module):
 
             openai.api_key = api_key
             llm = dspy.OpenAI(model=self.model_name)
-        # ToDo, add Anthropic, Cohere
+        elif self.model_provider == "anthropic":
+            import anthropic
+            llm = dspy.Claude(model=self.model_name, api_key=api_key)
+        # ToDo, add Cohere
         else:
             raise ValueError(f"Unsupported model provider: {self.model_provider}")
 
