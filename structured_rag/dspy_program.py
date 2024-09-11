@@ -34,8 +34,8 @@ class dspy_Program(dspy.Module):
         print(llm("say hello"))
         dspy.settings.configure(lm=llm)
 
-    def forward(self, test: str, question: str, context: Optional[str] = "") -> Any:
-        references = {"context": context, "question": question}
+    def forward(self, test: str, question: str, context: Optional[str] = "", answer: Optional[str] = "") -> Any:
+        references = {"context": context, "question": question, "answer": answer}
         references = "".join(f"{k}: {v}" for k, v in references.items())
         response = self.generate_response(
             task_instructions=self.test_params['task_instructions'],
