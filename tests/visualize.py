@@ -99,7 +99,7 @@ def boxplot_success_rate_per_task(df: pd.DataFrame):
     plt.figure(figsize=(12, 10))
     
     # Create the box plot
-    sns.boxplot(x='success_rate', y='test_name', data=df, orient='h', color='lightblue', width=0.5, showfliers=False)
+    sns.boxplot(x='success_rate', y='test_name', data=df, orient='h', color='lightblue', width=0.5)
     
     # Customize the plot
     plt.title('Success Rates by Test', fontsize=16)
@@ -120,7 +120,7 @@ def boxplot_success_rate_per_model(df: pd.DataFrame):
     plt.figure(figsize=(12, 10))
     
     # Create the box plot
-    sns.boxplot(x='model_name', y='success_rate', data=df, color='lightblue', width=0.5, showfliers=False)
+    sns.boxplot(x='model_name', y='success_rate', data=df, color='lightblue', width=0.5)
     
     # Customize the plot
     plt.title('Success Rates by Model', fontsize=16)
