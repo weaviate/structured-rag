@@ -26,7 +26,7 @@ class GenerateAnswersWithConfidence(BaseModel):
     answers: List[GenerateAnswerWithConfidence]
 
 # ToDo, get `test_params` from here instead of hardcoded in `run_test.py`
-test_parameters = {
+test_params = {
     "GenerateAnswer": {
         "task_instructions": "Assess the context and answer the question. If the context does not contain sufficient information to answer the question, respond with \"NOT ENOUGH CONTEXT\".",
         "response_format": '{"answer": "string"}'
