@@ -28,9 +28,14 @@ def load_experiments(directory: str) -> pd.DataFrame:
                 })
     return pd.DataFrame(experiments)
 
-def plot_success_rates(df: pd.DataFrame):
+def barplot_success_rates(df: pd.DataFrame):
+    """
+    This function plots the success rates of the models, averaged over the two prompting methods.
+    """
+    # compute the average success rate over the two prompting methods
+    df_avg = df.groupby(['model_name', 'prompting_method'])['success_rate'].mean().reset_index()
     plt.figure(figsize=(12, 6))
-    sns.barplot(x='model_name', y='success_rate', hue='prompting_method', data=df)
+    sns.barplot(x='model_name', y='success_rate', data=df_avg)
     plt.title('Success Rates by Model and Prompting Method')
     plt.xlabel('Model Name')
     plt.ylabel('Success Rate')
@@ -65,16 +70,16 @@ def plot_success_rate_heatmap(df: pd.DataFrame):
 
 def visualize_experiments(df: pd.DataFrame):
     # Set the style for all plots
-    plt.style.use('seaborn')
+    plt.style.use('ggplot')
 
-    plot_success_rates(df)
-    plot_success_rate_vs_response_time(df)
-    plot_response_time_distribution(df)
-    plot_success_rate_heatmap(df)
+    barplot_success_rates(df)
+    #plot_success_rate_vs_response_time(df)
+    #plot_response_time_distribution(df)
+    #plot_success_rate_heatmap(df)
 
 if __name__ == "__main__":
     # Load experiments from the 'experiments' directory
-    df = load_experiments('experiments')
+    df = load_experiments('experimental-results-9-11-24')
     
     # Generate visualizations
     visualize_experiments(df)
