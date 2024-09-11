@@ -28,6 +28,7 @@ run_tests_for_model() {
 }
 
 # Run tests for Llama3
+# Need to clean this up, this is actually the only "model directory" in the repo.
 run_tests_for_model "llama3:instruct" "ollama" ""
 
 # Run tests for Gemini
