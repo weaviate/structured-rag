@@ -16,8 +16,22 @@ The benchmarker explores different RAG inspired tasks with structured outputs as
 | `integer`                     | RateContext                 | {"context_score": 5}                                                                                                                              |
 | `boolean`                     | AssessAnswerability         | {"answerable_question": True}                                                                                                                     |
 | `List[string]`                | ParaphraseQuestions         | {"paraphrased_questions": ["Where can some of Vincenzo Civerchio’s works be found?", "Where are some pieces by Vincenzo Civerchio displayed?", "Where can I find some of Vincenzo Civerchio’s art?"]} |
+| `RAGASmetrics`                 | RAGAS                       | {"faithfulness_score": 2.5, "answer_relevance_score": 1.0, "context_relevance_score": 3.5}
 | `AnswerWithConfidence`        | GenerateAnswerWithConfidence| {"answer": "The National Gallery of Art, Washington D.C., and the Pinacoteca di Brera, Milan, Italy.", "confidence": 5}                            |
 | `List[AnswerWithConfidence]`  | GenerateAnswersWithConfidence| [{"answer": "National Gallery of Art, Washington D.C.", "confidence": 5}, {"answer": "Pinacoteca di Brera, Milan, Italy", "confidence": 4}]         |
+
+## Additional Models
+
+```python
+class RAGASmetrics(BaseModel):
+  faithfulness_score: float
+  answer_relevance_score: float
+  context_relevance_score: float
+
+class AnswerWithConfidence(BaseModel):
+  answer: str
+  confidence: float
+```
 
 The WikiQuestions dataset can also be found on [HuggingFace Datasets](https://huggingface.co/datasets/weaviate/Wiki-Answerable-Questions)!
 
