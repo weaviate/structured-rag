@@ -22,5 +22,35 @@ def load_experiments(directory: str) -> pd.DataFrame:
                 })
     return pd.DataFrame(experiments)
 
-def calculate_averages(experiments: pd.DataFrame) -> pd.DataFrame:
-    return experiments.groupby(['test_name', 'model_name', 'prompting_method']).mean().reset_index()
+def calculate_avg_accuracy_per_prompting_method(experiments: pd.DataFrame) -> pd.DataFrame:
+    return experiments.groupby(['prompting_method'])['success_rate'].mean().reset_index()
+
+def calculate_avg_accuracy_per_prompting_method_per_model(experiments: pd.DataFrame) -> pd.DataFrame:
+    return experiments.groupby(['model_name', 'prompting_method'])['success_rate'].mean().reset_index()
+
+def calculate_avg_accuracy_per_prompting_method_per_test(experiments: pd.DataFrame) -> pd.DataFrame:
+    return experiments.groupby(['test_name', 'prompting_method'])['success_rate'].mean().reset_index()
+
+def calculate_avg_accuracy_per_model_per_test(experiments: pd.DataFrame) -> pd.DataFrame:
+    return experiments.groupby(['model_name', 'test_name'])['success_rate'].mean().reset_index()
+
+def calculate_overall_average(experiments: pd.DataFrame) -> pd.DataFrame:
+    return experiments['success_rate'].mean()
+
+def calculate_avg_response_time_per_model(experiments: pd.DataFrame) -> pd.DataFrame:
+    return experiments.groupby(['model_name'])['avg_response_time'].mean().reset_index()
+
+if __name__ == "__main__":
+    experiments = load_experiments("experimental-results-9-11-24")
+    print("\033[92m\nAverage accuracy per prompting method:\n\033[0m")
+    print(calculate_avg_accuracy_per_prompting_method(experiments))
+    print("\033[92m\nAverage response time per prompting method per model:\n\033[0m")
+    print(calculate_avg_accuracy_per_prompting_method_per_model(experiments))
+    print("\033[92m\nAverage accuracy per prompting method per test:\n\033[0m")
+    print(calculate_avg_accuracy_per_prompting_method_per_test(experiments))
+    print("\033[92m\nAverage accuracy per model per test:\n\033[0m")
+    print(calculate_avg_accuracy_per_model_per_test(experiments))
+    print("\033[92m\nOverall average accuracy:\n\033[0m")
+    print(calculate_overall_average(experiments))
+    print("\033[92m\nAverage response time per model:\n\033[0m")
+    print(calculate_avg_response_time_per_model(experiments))
