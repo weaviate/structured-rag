@@ -13,6 +13,11 @@ class AssessAnswerability(BaseModel):
 class ParaphraseQuestions(BaseModel):
     paraphrased_questions: List[str]
 
+class RAGAS(BaseModel):
+    faithfulness_score: float
+    answer_relevance_score: float
+    context_relevance_score: float
+
 class GenerateAnswerWithConfidence(BaseModel):
     answer: str
     confidence: int
@@ -21,7 +26,7 @@ class GenerateAnswersWithConfidence(BaseModel):
     answers: List[GenerateAnswerWithConfidence]
 
 # ToDo, get `test_params` from here instead of hardcoded in `run_test.py`
-test_parameters = {
+test_params = {
     "GenerateAnswer": {
         "task_instructions": "Assess the context and answer the question. If the context does not contain sufficient information to answer the question, respond with \"NOT ENOUGH CONTEXT\".",
         "response_format": '{"answer": "string"}'
@@ -37,6 +42,10 @@ test_parameters = {
     "ParaphraseQuestions": {
         "task_instructions": "Generate 3 paraphrased versions of the given question.",
         "response_format": '{"paraphrased_questions": ["string", "string", "string"]}'
+    },
+    "RAGAS": {
+        "task_instructions": "Assess the faithfulness, answer relevance, and context relevance given a question, context, and answer.",
+        "response_format": '{"faithfulness_score": "float (0-5)", "answer_relevance_score": "float (0-5)", "context_relevance_score": "float (0-5)"}'
     },
     "GenerateAnswerWithConfidence": {
         "task_instructions": "Generate an answer with a confidence score.",

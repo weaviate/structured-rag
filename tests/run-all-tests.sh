@@ -7,7 +7,7 @@ GOOGLE_API_KEY="AI..."
 SAVE_DIR="9-8-24"
 
 # List of all test types
-TESTS=("GenerateAnswer" "RateContext" "AssessAnswerability" "ParaphraseQuestions" "GenerateAnswerWithConfidence" "GenerateAnswersWithConfidence")
+TESTS=("GenerateAnswer" "RateContext" "AssessAnswerability" "ParaphraseQuestions" "RAGAS" "GenerateAnswerWithConfidence" "GenerateAnswersWithConfidence")
 
 # Function to run tests for a specific model
 run_tests_for_model() {
@@ -28,6 +28,7 @@ run_tests_for_model() {
 }
 
 # Run tests for Llama3
+# Need to clean this up, this is actually the only "model directory" in the repo.
 run_tests_for_model "llama3:instruct" "ollama" ""
 
 # Run tests for Gemini
