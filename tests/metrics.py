@@ -1,5 +1,6 @@
 import json
 
+# This needs a refactor to validate based on the models
 def is_valid_json_output(output, test_type):
     try:
         parsed = json.loads(output)
@@ -13,6 +14,11 @@ def is_valid_json_output(output, test_type):
         elif test_type == "ParaphraseQuestions":
             questions = parsed.get("paraphrased_questions")
             return isinstance(questions, list) and all(isinstance(q, str) for q in questions)
+        elif test_type == "RAGAS":
+            faithfulness_score = parsed.get("faithfulness_score")
+            answer_relevance_score = parsed.get("answer_relevance_score")
+            context_relevance_score = parsed.get("context_relevance_score")
+            return isinstance(faithfulness_score, float) and isinstance(answer_relevance_score, float) and isinstance(context_relevance_score, float) and 0 <= faithfulness_score <= 5 and 0 <= answer_relevance_score <= 5 and 0 <= context_relevance_score <= 5
         elif test_type == "GenerateAnswerWithConfidence":
             return isinstance(parsed.get("Answer"), str) and isinstance(parsed.get("Confidence"), int) and 0 <= parsed["Confidence"] <= 5
         elif test_type == "GenerateAnswersWithConfidence":

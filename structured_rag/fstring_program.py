@@ -50,10 +50,12 @@ class fstring_Program():
             )
             return response.content[0].text
 
-    def forward(self, test: str, context: str = "", question: str = "") -> str:
+    def forward(self, test: str, context: str = "", question: str = "", answer: str = "") -> str:
         references: Dict[str, str] = {}
         if test != "ParaphraseQuestions":
             references = {"context": context, "question": question}
+        elif test == "RAGAS":
+            references = {"context": context, "question": question, "answer": answer}
         else:
             references = {"question": question}
 

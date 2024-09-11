@@ -10,8 +10,6 @@ class PromptingMethod(str, Enum):
     dspy = "dspy"
     fstring = "fstring"
 
-# Need to add `success_rate` to the Experiment class
-
 class Experiment(BaseModel):
     test_name: str
     model_name: str

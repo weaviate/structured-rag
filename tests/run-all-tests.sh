@@ -31,6 +31,8 @@ run_tests_for_model() {
 # Need to clean this up, this is actually the only "model directory" in the repo.
 run_tests_for_model "llama3:instruct" "ollama" ""
 
+# claude-3-5-sonnet-20240620 gpt-4o
+
 # Run tests for Gemini
 run_tests_for_model "gemini-1.5-pro" "google" "$GOOGLE_API_KEY"
 
