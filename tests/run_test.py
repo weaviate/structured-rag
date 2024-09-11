@@ -13,11 +13,12 @@ from metrics import is_valid_json_output
 from models import Experiment, PromptWithResponse, PromptingMethod
 from models import test_params
 
-def run_single_test(program, test_type, context, question):
+def run_single_test(program, test_type, title, context, question, answer=None):
     try:
-        # probably a better way to do this
         if test_type == "ParaphraseQuestions":
             output = program.forward(test_type, question=question)
+        elif test_type == "RAGAS":
+            output = program.forward(test_type, context, question, answer)
         else:
             output = program.forward(test_type, context, question)
         
@@ -25,24 +26,20 @@ def run_single_test(program, test_type, context, question):
         
         if is_valid_json_output(output, test_type):
             print(f"{Colors.GREEN}Valid output for {test_type}{Colors.ENDC}")
-            return PromptWithResponse(prompt=f"{context}\n{question}", response=output), True
+            return PromptWithResponse(prompt=f"Title: {title}\nContext: {context}\nQuestion: {question}", response=output), True
         else:
             print(f"{Colors.RED}Invalid output for {test_type}{Colors.ENDC}")
-            return PromptWithResponse(prompt=f"{context}\n{question}", response=output), False
+            return PromptWithResponse(prompt=f"Title: {title}\nContext: {context}\nQuestion: {question}", response=output), False
     
     except Exception as e:
         print(f"{Colors.YELLOW}Error occurred: {str(e)}{Colors.ENDC}")
         print(f"{Colors.RED}Skipping this test due to error.{Colors.ENDC}")
         return None, False
 
-# ToDo, add calculation of success rate to the Experiment object
-
 def run_test(args):
-    filename = "../data/wiki-answerable-questions.json"
+    filename = "../data/WikiQuestions.json"
     json_data = load_json_from_file(filename)
-    # would also like to refactor this into a config file
     
-    # test_params imported from `models.py`
     if args.test not in test_params:
         raise ValueError(f"Unsupported test: {args.test}")
     
@@ -80,37 +77,16 @@ def run_test(args):
     total_start_time = time.time()
 
     for entry in json_data:
-        context = entry.get('abstract', '')
-        answerable_question = entry.get('answerable_question', '')
-        unanswerable_question = entry.get('unanswerable_question', '')
+        title = entry.get('title', '')
+        context = entry.get('context', '')
+        question = entry.get('question', '')
+        answer = entry.get('answer', '')
         
-        # Test with answerable question
-        print(f"{Colors.UNDERLINE}Answerable Question: {answerable_question}{Colors.ENDC}\n")
-        dspy_response, dspy_success = run_single_test(dspy_program, args.test, context, answerable_question)
-        fstring_response, fstring_success = run_single_test(fstring_program, args.test, context, answerable_question)
+        print(f"{Colors.UNDERLINE}Title: {title}{Colors.ENDC}")
+        print(f"{Colors.UNDERLINE}Question: {question}{Colors.ENDC}\n")
         
-        if dspy_response:
-            dspy_experiment.all_responses.append(dspy_response)
-            dspy_experiment.num_attempts += 1
-            if dspy_success:
-                dspy_experiment.num_successes += 1
-            else:
-                dspy_experiment.failed_responses.append(dspy_response)
-        
-        if fstring_response:
-            fstring_experiment.all_responses.append(fstring_response)
-            fstring_experiment.num_attempts += 1
-            if fstring_success:
-                fstring_experiment.num_successes += 1
-            else:
-                fstring_experiment.failed_responses.append(fstring_response)
-        
-        print(f"\n{Colors.BOLD}==============={Colors.ENDC}\n")
-        
-        # Test with unanswerable question
-        print(f"{Colors.UNDERLINE}Unanswerable Question: {unanswerable_question}{Colors.ENDC}\n")
-        dspy_response, dspy_success = run_single_test(dspy_program, args.test, context, unanswerable_question)
-        fstring_response, fstring_success = run_single_test(fstring_program, args.test, context, unanswerable_question)
+        dspy_response, dspy_success = run_single_test(dspy_program, args.test, title, context, question, answer)
+        fstring_response, fstring_success = run_single_test(fstring_program, args.test, title, context, question, answer)
         
         if dspy_response:
             dspy_experiment.all_responses.append(dspy_response)
