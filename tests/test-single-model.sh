@@ -1,8 +1,8 @@
 # Runs all tests for a single model
-model_name="llama3:instruct" # claude-3-5-sonnet-20240620
-model_provider="ollama"
-api_key=""
-save_dir="9-11-24"
+model_name="gemini-1.5-pro" # claude-3-5-sonnet-20240620
+model_provider="google"
+api_key="sk-foobar"
+save_dir="9-10-24"
 
 # List of all test types
 TESTS=("GenerateAnswer" "RateContext" "AssessAnswerability" "ParaphraseQuestions" "RAGAS" "GenerateAnswerWithConfidence" "GenerateAnswersWithConfidence")
