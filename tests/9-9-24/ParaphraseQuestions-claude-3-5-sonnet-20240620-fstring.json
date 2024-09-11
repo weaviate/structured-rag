@@ -1,0 +1,460 @@
+{
+  "test_name": "ParaphraseQuestions",
+  "model_name": "claude-3-5-sonnet-20240620",
+  "prompting_method": "fstring",
+  "num_successes": 112,
+  "num_attempts": 112,
+  "success_rate": 1.0,
+  "total_time": 620,
+  "all_responses": [
+    {
+      "prompt": "Explorer 20, also known Ionosphere Explorer-A, IE-A, S-48, TOPSI and Topside Explorer, was a NASA satellite launched as part of Explorer program. Its purpose was two-fold: long-term investigation of the ionosphere from above, and in situ investigation of ion concentrations and temperatures.\nWhat was the purpose of Explorer 20?",
+      "response": "{\"paraphrased_questions\": [\n  \"What was the main objective of the Explorer 20 mission?\",\n  \"For what reason was Explorer 20 launched?\",\n  \"What goal did Explorer 20 aim to achieve?\"\n]}"
+    },
+    {
+      "prompt": "Explorer 20, also known Ionosphere Explorer-A, IE-A, S-48, TOPSI and Topside Explorer, was a NASA satellite launched as part of Explorer program. Its purpose was two-fold: long-term investigation of the ionosphere from above, and in situ investigation of ion concentrations and temperatures.\nIn which year was Explorer 20 launched?",
+      "response": "{\"paraphrased_questions\": [\n  \"What year saw the launch of Explorer 20?\",\n  \"When was Explorer 20 sent into space?\",\n  \"During which year did the Explorer 20 mission commence?\"\n]}"
+    },
+    {
+      "prompt": "Mitogen-activated protein kinase kinase kinase kinase 3 is a protein that in humans is encoded by the MAP4K3 gene. [5]\nWhat does MAP4K3 encode in humans?",
+      "response": "{\"paraphrased_questions\": [\n  \"In the human genome, what protein is encoded by the MAP4K3 gene?\",\n  \"What is the function of the human MAP4K3 gene in terms of protein encoding?\",\n  \"Which protein is produced as a result of MAP4K3 gene expression in humans?\"\n]}"
+    },
+    {
+      "prompt": "Mitogen-activated protein kinase kinase kinase kinase 3 is a protein that in humans is encoded by the MAP4K3 gene. [5]\nWhat are the specific functions of the MAP4K3 protein?",
+      "response": "{\"paraphrased_questions\": [\n  \"Can you explain the particular roles of the MAP4K3 protein?\",\n  \"What are the distinct purposes served by the MAP4K3 protein?\",\n  \"Could you describe the unique tasks performed by the MAP4K3 protein?\"\n]}"
+    },
+    {
+      "prompt": "Heggholmen Lighthouse (Norwegian: Heggholmen fyr) is a coastal lighthouse located in the Oslofjord, in the municipality of Oslo, Norway. It was established in 1827, and automated in 1972. The lighthouse was listed as a protected site in 1998.[2][3][4]\nIn which year was Heggholmen Lighthouse automated?",
+      "response": "{\"paraphrased_questions\": [\n  \"What year did Heggholmen Lighthouse become automated?\",\n  \"When was automation implemented at Heggholmen Lighthouse?\",\n  \"During which year was the Heggholmen Lighthouse converted to automatic operation?\"\n]}"
+    },
+    {
+      "prompt": "Heggholmen Lighthouse (Norwegian: Heggholmen fyr) is a coastal lighthouse located in the Oslofjord, in the municipality of Oslo, Norway. It was established in 1827, and automated in 1972. The lighthouse was listed as a protected site in 1998.[2][3][4]\nHow tall is the Heggholmen Lighthouse?",
+      "response": "{\"paraphrased_questions\": [\n  \"What is the height of the Heggholmen Lighthouse?\",\n  \"Can you tell me the elevation of the Heggholmen Lighthouse?\",\n  \"What's the vertical measurement of the Heggholmen Lighthouse?\"\n]}"
+    },
+    {
+      "prompt": "Antonio Eduardo Bermejo Nachura (June 13, 1941 \u2013 March 13, 2022) was a Filipino jurist who was an Associate Justice of the Supreme Court of the Philippines. He took his oath of office as Associate Justice on February 7, 2007, and occupied the position until his mandatory retirement on June 13, 2011. Previously, Nachura had been Solicitor-General of the Philippines at the time his appointment to the Court was announced on January 31, 2007, by then-Philippine President Gloria Macapagal Arroyo.[1]\nWhen did Antonio Nachura retire from his position as Associate Justice?",
+      "response": "{\"paraphrased_questions\": [\n  \"What year did Antonio Nachura step down from his role as Associate Justice?\",\n  \"In which year did Antonio Nachura end his tenure as Associate Justice?\",\n  \"When was Antonio Nachura's retirement from the position of Associate Justice?\"\n]}"
+    },
+    {
+      "prompt": "Antonio Eduardo Bermejo Nachura (June 13, 1941 \u2013 March 13, 2022) was a Filipino jurist who was an Associate Justice of the Supreme Court of the Philippines. He took his oath of office as Associate Justice on February 7, 2007, and occupied the position until his mandatory retirement on June 13, 2011. Previously, Nachura had been Solicitor-General of the Philippines at the time his appointment to the Court was announced on January 31, 2007, by then-Philippine President Gloria Macapagal Arroyo.[1]\nWhat specific cases did Antonio Nachura preside over during his time as Associate Justice?",
+      "response": "{\"paraphrased_questions\": [\n  \"During his tenure as Associate Justice, which notable cases did Antonio Nachura oversee?\",\n  \"Can you provide examples of significant legal matters that Antonio Nachura adjudicated while serving as Associate Justice?\",\n  \"What were some of the key judicial proceedings handled by Antonio Nachura in his role as Associate Justice?\"\n]}"
+    },
+    {
+      "prompt": "Roman Gergel (born 22 February 1988) is a Slovak professional footballer who plays as a forward.\nWhat position does Roman Gergel play in football?",
+      "response": "{\"paraphrased_questions\": [\n  \"In which role does Roman Gergel perform on the football field?\",\n  \"What is Roman Gergel's designated position in soccer?\",\n  \"On a football team, what specific position is Roman Gergel known for playing?\"\n]}"
+    },
+    {
+      "prompt": "Roman Gergel (born 22 February 1988) is a Slovak professional footballer who plays as a forward.\nFor which teams has Roman Gergel played throughout his career?",
+      "response": "{\"paraphrased_questions\": [\n  \"Which football clubs has Roman Gergel been a part of during his professional career?\",\n  \"What are the various teams Roman Gergel has represented over the course of his playing career?\",\n  \"Throughout his time as a footballer, which squads has Roman Gergel been affiliated with?\"\n]}"
+    },
+    {
+      "prompt": "The Ragigudda Sree Prasanna Anjaneyaswamy Temple, commonly referred to as Ragigudda Temple or Ragigudda Anjaneya Temple[1] is a temple dedicated to Lord Hanuman, spread across 5 acres also having a hillock in Jayanagara 9th Block suburb of Bengaluru, Karnataka, India.[2] The temple[3] also houses a Shivalinga along with Lord Rama, Goddess Sita, Lord Lakshmana along with the main deity of Lord Hanuman in the same precinct. The temple is on a hillock. There is a smaller temple dedicated to Lord Ganesha, Navagrahas and the Goddess Rajarajeshwari at the base of the hillock. It also plays host a Thrimurthy Sannidhi to the Hindu holy trinity of Lord Brahma, Lord Vishnu and Lord Shiva on huge engraved rocks at the side of the temple.[2] An image of Lord Hanuman Currently Bengaluru's Namma Metro work is underway a few 100m from the temple with a Yellow Line Metro station planned as well.[4]\nWhich deities are housed in the main precinct of the Ragigudda Anjaneya Temple?",
+      "response": "{\"paraphrased_questions\": [\n    \"What gods or goddesses are enshrined in the central area of the Ragigudda Anjaneya Temple?\",\n    \"Can you name the divine entities that reside in the primary sanctuary of the Ragigudda Anjaneya Temple?\",\n    \"Which religious figures are worshipped in the main section of the Ragigudda Anjaneya Temple?\"\n]}"
+    },
+    {
+      "prompt": "The Ragigudda Sree Prasanna Anjaneyaswamy Temple, commonly referred to as Ragigudda Temple or Ragigudda Anjaneya Temple[1] is a temple dedicated to Lord Hanuman, spread across 5 acres also having a hillock in Jayanagara 9th Block suburb of Bengaluru, Karnataka, India.[2] The temple[3] also houses a Shivalinga along with Lord Rama, Goddess Sita, Lord Lakshmana along with the main deity of Lord Hanuman in the same precinct. The temple is on a hillock. There is a smaller temple dedicated to Lord Ganesha, Navagrahas and the Goddess Rajarajeshwari at the base of the hillock. It also plays host a Thrimurthy Sannidhi to the Hindu holy trinity of Lord Brahma, Lord Vishnu and Lord Shiva on huge engraved rocks at the side of the temple.[2] An image of Lord Hanuman Currently Bengaluru's Namma Metro work is underway a few 100m from the temple with a Yellow Line Metro station planned as well.[4]\nWhen was the Ragigudda Anjaneya Temple built?",
+      "response": "{\"paraphrased_questions\": [\n  \"What year was the Ragigudda Anjaneya Temple constructed?\",\n  \"In which period was the Ragigudda Anjaneya Temple erected?\",\n  \"Can you provide the date of the Ragigudda Anjaneya Temple's establishment?\"\n]}"
+    },
+    {
+      "prompt": "Vincenzo Civerchio or Civercio (c. 1470 \u2013 c. 1544) was an Italian painter of the Renaissance, born at Crema, and active also in Brescia, where there are some of his alter-pieces.[1] One of his works is at the National Gallery of Art, Washington D.C., others in the Pinacoteca di Brera, Milan, Italy. He is said to be an imitator of Bernardino Butinone, Bernardino Zenale, and influenced by Vincenzo Foppa.\nWhere can some of Vincenzo Civerchio's works be found?",
+      "response": "{\"paraphrased_questions\": [\n  \"In which locations can one view paintings by Vincenzo Civerchio?\",\n  \"What museums or galleries display artwork created by Vincenzo Civerchio?\",\n  \"Where are examples of Vincenzo Civerchio's artistic creations exhibited?\"\n]}"
+    },
+    {
+      "prompt": "Vincenzo Civerchio or Civercio (c. 1470 \u2013 c. 1544) was an Italian painter of the Renaissance, born at Crema, and active also in Brescia, where there are some of his alter-pieces.[1] One of his works is at the National Gallery of Art, Washington D.C., others in the Pinacoteca di Brera, Milan, Italy. He is said to be an imitator of Bernardino Butinone, Bernardino Zenale, and influenced by Vincenzo Foppa.\nWhat was Vincenzo Civerchio's most famous painting?",
+      "response": "{\"paraphrased_questions\": [\n  \"Which artwork is considered Vincenzo Civerchio's most renowned masterpiece?\",\n  \"What is the most well-known painting created by Vincenzo Civerchio?\",\n  \"Among Vincenzo Civerchio's works, which painting is regarded as his most celebrated piece?\"\n]}"
+    },
+    {
+      "prompt": "Kanieae is a tribe in the plant family Myrtaceae[1] from Oceania and south-East Asia with a main diversity center in Australia.\nWhere is the main diversity center of Kanieae?",
+      "response": "{\"paraphrased_questions\": [\n  \"In which region is the primary diversity center of Kanieae located?\",\n  \"What area serves as the principal center of diversity for Kanieae?\",\n  \"Where can the major diversity hub for Kanieae be found?\"\n]}"
+    },
+    {
+      "prompt": "Kanieae is a tribe in the plant family Myrtaceae[1] from Oceania and south-East Asia with a main diversity center in Australia.\nHow many species are included in the Kanieae tribe?",
+      "response": "{\"paraphrased_questions\": [\n  \"What is the total number of species found in the Kanieae tribe?\",\n  \"How many different species make up the Kanieae tribe?\",\n  \"Can you tell me the count of species belonging to the Kanieae tribe?\"\n]}"
+    },
+    {
+      "prompt": "Storms are named for historical reasons to avoid confusion when communicating with the public, as more than one storm can exist at a time. Names are drawn in order from predetermined lists. For tropical cyclones, names are assigned when a system has one-, three-, or ten-minute winds of more than 65 km/h (40 mph). Standards, however, vary from basin to basin. For example, some tropical depressions are named in the Western Pacific, while within the Australian and Southern Pacific regions, the naming of tropical cyclones are delayed until they have gale-force winds occurring more than halfway around the storm center.\nAt what wind speed are tropical cyclones typically assigned names?",
+      "response": "{\"paraphrased_questions\": [\n  \"What is the minimum wind velocity required for a tropical cyclone to receive a name?\",\n  \"When do meteorologists usually give names to tropical storms based on their wind speeds?\",\n  \"How strong must the winds be for a tropical cyclone to be deemed worthy of a name?\"\n]}"
+    },
+    {
+      "prompt": "Storms are named for historical reasons to avoid confusion when communicating with the public, as more than one storm can exist at a time. Names are drawn in order from predetermined lists. For tropical cyclones, names are assigned when a system has one-, three-, or ten-minute winds of more than 65 km/h (40 mph). Standards, however, vary from basin to basin. For example, some tropical depressions are named in the Western Pacific, while within the Australian and Southern Pacific regions, the naming of tropical cyclones are delayed until they have gale-force winds occurring more than halfway around the storm center.\nWhat is the most common letter used for naming storms?",
+      "response": "{\"paraphrased_questions\": [\n    \"Which letter is most frequently used to designate storm names?\",\n    \"In storm naming conventions, what is the predominant initial letter?\",\n    \"When it comes to naming storms, which alphabetical character is utilized most often?\"\n]}"
+    },
+    {
+      "prompt": "Tagetes minuta is a tall upright marigold plant from the genus Tagetes, with small flowers, native to the southern half of South America.[2] Since Spanish colonization, it has been introduced around the world, and has become naturalized in Europe, Asia, Australasia, North America, and Africa.[2] Tagetes minuta has numerous local names that vary by region. In the Andes it is known as Huacatay or Wacatay, and in other regions it is common as chinchilla, chiquilla, chilca, zuico, suico, or anisillo.[3] Other names include muster John Henry,[4] southern marigold,[5] khakibos, stinking roger,[6] wild marigold,[2] and black mint. It is called by the Quechua terms huacatay in Peru[7] or wakataya in Bolivia.[8] It is used as a culinary herb in Peru, Ecuador, and parts of Chile and Bolivia. It is commonly sold in Latin grocery stores in a bottled, paste format as black mint paste.\nWhere is Tagetes minuta native to?",
+      "response": "{\"paraphrased_questions\": [\n  \"What region is Tagetes minuta originally from?\",\n  \"In which area did Tagetes minuta naturally originate?\",\n  \"What is the native habitat of Tagetes minuta?\"\n]}"
+    },
+    {
+      "prompt": "Tagetes minuta is a tall upright marigold plant from the genus Tagetes, with small flowers, native to the southern half of South America.[2] Since Spanish colonization, it has been introduced around the world, and has become naturalized in Europe, Asia, Australasia, North America, and Africa.[2] Tagetes minuta has numerous local names that vary by region. In the Andes it is known as Huacatay or Wacatay, and in other regions it is common as chinchilla, chiquilla, chilca, zuico, suico, or anisillo.[3] Other names include muster John Henry,[4] southern marigold,[5] khakibos, stinking roger,[6] wild marigold,[2] and black mint. It is called by the Quechua terms huacatay in Peru[7] or wakataya in Bolivia.[8] It is used as a culinary herb in Peru, Ecuador, and parts of Chile and Bolivia. It is commonly sold in Latin grocery stores in a bottled, paste format as black mint paste.\nWhat is the average height of a Tagetes minuta plant?",
+      "response": "{\"paraphrased_questions\": [\n  \"On average, how tall does a Tagetes minuta plant grow?\",\n  \"What is the typical height of a Tagetes minuta species?\",\n  \"How high does a Tagetes minuta plant usually reach?\"\n]}"
+    },
+    {
+      "prompt": "George Spencer (1878\u20131950) was a New Zealand rugby football player who represented New Zealand in both rugby union and rugby league. His brother, John, also was a dual-international.\nIn which two rugby codes did George Spencer represent New Zealand?",
+      "response": "{\"paraphrased_questions\": [\n  \"Which pair of rugby variants did George Spencer play for New Zealand?\",\n  \"For New Zealand, in what two forms of rugby did George Spencer compete?\",\n  \"What were the two types of rugby that George Spencer played at the national level for New Zealand?\"\n]}"
+    },
+    {
+      "prompt": "George Spencer (1878\u20131950) was a New Zealand rugby football player who represented New Zealand in both rugby union and rugby league. His brother, John, also was a dual-international.\nHow many international matches did George Spencer play?",
+      "response": "{\"paraphrased_questions\": [\n  \"In how many international matches did George Spencer participate?\",\n  \"What was the total number of international games George Spencer played in?\",\n  \"How many times did George Spencer represent his country in international fixtures?\"\n]}"
+    },
+    {
+      "prompt": "Kalevan Pallo (KalPa) is a professional ice hockey team which competes in the Finnish Liiga. They play in Kuopio, Finland at the Olvi Areena.\nIn which city does KalPa play their home games?",
+      "response": "{\"paraphrased_questions\": [\n  \"Where is the home arena for KalPa's matches located?\",\n  \"What city hosts KalPa's home games?\",\n  \"Which urban area serves as the venue for KalPa's home fixtures?\"\n]}"
+    },
+    {
+      "prompt": "Kalevan Pallo (KalPa) is a professional ice hockey team which competes in the Finnish Liiga. They play in Kuopio, Finland at the Olvi Areena.\nWho is the current captain of KalPa?",
+      "response": "{\"paraphrased_questions\": [\n  \"Who currently leads the KalPa team as captain?\",\n  \"Which player holds the position of captain for KalPa at present?\",\n  \"Can you name the individual serving as KalPa's captain right now?\"\n]}"
+    },
+    {
+      "prompt": "Alphonsus Petrus Johannes Mathildus Maria \"Fons\" van der Stee (30 July 1928 \u2013 9 September 1999) was a Dutch politician of the defunct Catholic People's Party (KVP) and later the Christian Democratic Appeal (CDA) party and economist.[1] Van der Stee applied at the Radboud University Nijmegen in June 1950 majoring in Tax law and obtaining a Bachelor of Laws degree in June 1952 before graduating with a Master of Laws degree on 29 February 1956. Van der Stee worked as a tax advisor in Arnhem from May 1956 until July 1971. Van der Stee served as Chairman of the Catholic People's Party from 30 March 1968 until 14 July 1971. Van der Stee was elected as a Member of the Senate after the Senate election of 1971, taking office on 11 May 1971. After the election of 1971 Van der Stee was appointed as State Secretary for Finance in the Cabinet Biesheuvel I, taking office on 14 July 1971. The Cabinet Biesheuvel I fell just one year later on 19 July 1972 and continued to serve in a demissionary capacity until it was replaced by the caretaker Cabinet Biesheuvel II with Van der Stee continuing as State Secretary for Finance, taking office on 9 August 1972. Van der Stee was elected as a Member of the House of Representatives after the election of 1972, taking office on 12 December 1972 but he was still serving in the cabinet and because of dualism customs in the constitutional convention of Dutch politics he couldn't serve a dual mandate he subsequently resigned as State Secretary for Finance on 12 March 1973. Following the cabinet formation of 1972 Van der Stee was again appointed as State Secretary for Finance in the Cabinet Den Uyl, taking office on 11 May 1973. Van der Stee was appointed as Minister of Agriculture and Fisheries following the resignation of Tiemen Brouwer, taking office on 1 November 1973. The Cabinet Den Uyl fell on 22 March 1977 after four years of tensions in the coalition and continued to serve in a demissionary capacity. After the election of 1977 Van der Stee returned as a Member of the House of Representatives, taking office on 8 June 1977 but again because of the dualism customs in Dutch politics he subsequently resigned as Member of the House of Representatives on 8 September 1977. Following the cabinet formation of 1977 Van der Stee remained Minister of Agriculture and Fisheries and was also appointed as Minister for Netherlands Antilles Affairs in the Cabinet Van Agt\u2013Wiegel, taking office on 19 December 1977. Van der Stee was appointed as Minister of Finance following the resignation of Frans Andriessen, taking office on 5 March 1980. In December 1980 Van der Stee announced that he wouldn't stand for the election of 1981. Following the cabinet formation of 1981 Van der Stee continued as Minister of Finance in the Cabinet Van Agt II, taking office on 11 September 1981. The Cabinet Van Agt II fell just seven months into its term on 12 May 1982 and continued to serve in a demissionary capacity until it was replaced by the caretaker Cabinet Van Agt III with Van der Stee remaining as Minister of Finance on 29 May 1982. In June 1982 Van der Stee announced his retirement from national politics and that he wouldn't stand for the election of 1982. The Cabinet Van Agt III was replaced by the Cabinet Lubbers I following the cabinet formation of 1982 on 4 November 1982. Van der Stee retired after spending 14 years in national politics and became active in the private sector and public sector and occupied numerous seats as a corporate director and nonprofit director on several boards of directors and supervisory boards (General Bank of the Netherlands, Tulip Computers, Apollo Vredestein and the HMC Westeinde Hospital).\nWhat was Fons van der Stee's last position in the Dutch government before retiring?",
+      "response": "{\"paraphrased_questions\": [\n  \"Before retiring, what was the final role Fons van der Stee held in the Dutch government?\",\n  \"What position did Fons van der Stee occupy in his last governmental role in the Netherlands prior to retirement?\",\n  \"In the Dutch government, what was Fons van der Stee's ultimate post before he stepped down?\"\n]}"
+    },
+    {
+      "prompt": "Alphonsus Petrus Johannes Mathildus Maria \"Fons\" van der Stee (30 July 1928 \u2013 9 September 1999) was a Dutch politician of the defunct Catholic People's Party (KVP) and later the Christian Democratic Appeal (CDA) party and economist.[1] Van der Stee applied at the Radboud University Nijmegen in June 1950 majoring in Tax law and obtaining a Bachelor of Laws degree in June 1952 before graduating with a Master of Laws degree on 29 February 1956. Van der Stee worked as a tax advisor in Arnhem from May 1956 until July 1971. Van der Stee served as Chairman of the Catholic People's Party from 30 March 1968 until 14 July 1971. Van der Stee was elected as a Member of the Senate after the Senate election of 1971, taking office on 11 May 1971. After the election of 1971 Van der Stee was appointed as State Secretary for Finance in the Cabinet Biesheuvel I, taking office on 14 July 1971. The Cabinet Biesheuvel I fell just one year later on 19 July 1972 and continued to serve in a demissionary capacity until it was replaced by the caretaker Cabinet Biesheuvel II with Van der Stee continuing as State Secretary for Finance, taking office on 9 August 1972. Van der Stee was elected as a Member of the House of Representatives after the election of 1972, taking office on 12 December 1972 but he was still serving in the cabinet and because of dualism customs in the constitutional convention of Dutch politics he couldn't serve a dual mandate he subsequently resigned as State Secretary for Finance on 12 March 1973. Following the cabinet formation of 1972 Van der Stee was again appointed as State Secretary for Finance in the Cabinet Den Uyl, taking office on 11 May 1973. Van der Stee was appointed as Minister of Agriculture and Fisheries following the resignation of Tiemen Brouwer, taking office on 1 November 1973. The Cabinet Den Uyl fell on 22 March 1977 after four years of tensions in the coalition and continued to serve in a demissionary capacity. After the election of 1977 Van der Stee returned as a Member of the House of Representatives, taking office on 8 June 1977 but again because of the dualism customs in Dutch politics he subsequently resigned as Member of the House of Representatives on 8 September 1977. Following the cabinet formation of 1977 Van der Stee remained Minister of Agriculture and Fisheries and was also appointed as Minister for Netherlands Antilles Affairs in the Cabinet Van Agt\u2013Wiegel, taking office on 19 December 1977. Van der Stee was appointed as Minister of Finance following the resignation of Frans Andriessen, taking office on 5 March 1980. In December 1980 Van der Stee announced that he wouldn't stand for the election of 1981. Following the cabinet formation of 1981 Van der Stee continued as Minister of Finance in the Cabinet Van Agt II, taking office on 11 September 1981. The Cabinet Van Agt II fell just seven months into its term on 12 May 1982 and continued to serve in a demissionary capacity until it was replaced by the caretaker Cabinet Van Agt III with Van der Stee remaining as Minister of Finance on 29 May 1982. In June 1982 Van der Stee announced his retirement from national politics and that he wouldn't stand for the election of 1982. The Cabinet Van Agt III was replaced by the Cabinet Lubbers I following the cabinet formation of 1982 on 4 November 1982. Van der Stee retired after spending 14 years in national politics and became active in the private sector and public sector and occupied numerous seats as a corporate director and nonprofit director on several boards of directors and supervisory boards (General Bank of the Netherlands, Tulip Computers, Apollo Vredestein and the HMC Westeinde Hospital).\nWhat specific policies did Fons van der Stee implement as Minister of Finance?",
+      "response": "{\"paraphrased_questions\": [\n  \"Which particular financial measures were introduced by Fons van der Stee during his tenure as Minister of Finance?\",\n  \"What notable economic initiatives did Fons van der Stee enact while serving as the Finance Minister?\",\n  \"How did Fons van der Stee shape fiscal policy in his role as Minister of Finance?\"\n]}"
+    },
+    {
+      "prompt": "Areva is a genus of moths in the subfamily Arctiinae.\nTo which subfamily does the genus Areva belong?",
+      "response": "{\"paraphrased_questions\": [\n  \"What subfamily is the genus Areva classified under?\",\n  \"In which subfamily can the genus Areva be found?\",\n  \"Which taxonomic subfamily includes the genus Areva?\"\n]}"
+    },
+    {
+      "prompt": "Areva is a genus of moths in the subfamily Arctiinae.\nHow many species are in the Areva genus?",
+      "response": "{\"paraphrased_questions\": [\n  \"What is the total number of species classified under the Areva genus?\",\n  \"How many different species belong to the genus Areva?\",\n  \"Can you tell me the count of species within the Areva genus?\"\n]}"
+    },
+    {
+      "prompt": "Amanda Doman (born 24 October 1977 in Gladstone, Queensland) is a softball player from Australia, who won a silver medal at the 2004 Summer Olympics.[1]\nIn which Olympic Games did Amanda Doman win a silver medal?",
+      "response": "{\"paraphrased_questions\": [\n  \"At which Olympics did Amanda Doman secure a silver medal?\",\n  \"During which Olympic event did Amanda Doman earn a second-place finish?\",\n  \"Which year's Olympic Games saw Amanda Doman achieve silver medal status?\"\n]}"
+    },
+    {
+      "prompt": "Amanda Doman (born 24 October 1977 in Gladstone, Queensland) is a softball player from Australia, who won a silver medal at the 2004 Summer Olympics.[1]\nWhat position did Amanda Doman play in softball?",
+      "response": "{\"paraphrased_questions\": [\n  \"In softball, which position was Amanda Doman's specialty?\",\n  \"What role did Amanda Doman take on the softball field?\",\n  \"During her softball career, where on the field did Amanda Doman play?\"\n]}"
+    },
+    {
+      "prompt": "Kalpataru (born in 1937 as K Parvez) was an Indian film director best known for several hit movies such as Ghar Dwaar, Khoon Ka Badla Khoon, Ghar Ghar Ki Kahani and Bade Ghar Ki Beti.He was known for his melodramatic family dramas.[1][2] He died at a hospital in Santacruz West on 17 May 2015 at the age of 78. He is survived by his wife and two daughters.[3]\nWhat type of films was Kalpataru known for directing?",
+      "response": "{\"paraphrased_questions\": [\n  \"Which genre of movies was Kalpataru famous for making?\",\n  \"In what category of cinema did Kalpataru specialize as a director?\",\n  \"What kind of motion pictures was Kalpataru recognized for producing?\"\n]}"
+    },
+    {
+      "prompt": "Kalpataru (born in 1937 as K Parvez) was an Indian film director best known for several hit movies such as Ghar Dwaar, Khoon Ka Badla Khoon, Ghar Ghar Ki Kahani and Bade Ghar Ki Beti.He was known for his melodramatic family dramas.[1][2] He died at a hospital in Santacruz West on 17 May 2015 at the age of 78. He is survived by his wife and two daughters.[3]\nHow many films did Kalpataru direct in his career?",
+      "response": "{\"paraphrased_questions\": [\n  \"What is the total number of movies Kalpataru directed throughout his career?\",\n  \"During his time as a filmmaker, how many productions did Kalpataru helm?\",\n  \"Can you provide the count of films that were under Kalpataru's direction in his professional life?\"\n]}"
+    },
+    {
+      "prompt": "Erismatopterus is an extinct genus of percopsiform fish which lived during the early to middle Eocene epoch and containing the single species Erismatopterus levatus. A report of the genus in sediments of similar age in Washington State have been discredited. Erismatopterus is treated as part of the family Percopsidae, but formerly was the type genus of the extinct family Erismatopteridae. The genus is closely related to Amphiplaga of related lake sediments. Shoaling behavior has been reported from a mass mortality fossil of E. levatus and attributed as a predator-evasion response behavior.\nDuring which geological epoch did Erismatopterus live?",
+      "response": "{\n  \"paraphrased_questions\": [\n    \"In what geological time period was Erismatopterus known to exist?\",\n    \"Which epoch of Earth's history was home to the Erismatopterus species?\",\n    \"What era in the geological timeline did Erismatopterus inhabit?\"\n  ]\n}"
+    },
+    {
+      "prompt": "Erismatopterus is an extinct genus of percopsiform fish which lived during the early to middle Eocene epoch and containing the single species Erismatopterus levatus. A report of the genus in sediments of similar age in Washington State have been discredited. Erismatopterus is treated as part of the family Percopsidae, but formerly was the type genus of the extinct family Erismatopteridae. The genus is closely related to Amphiplaga of related lake sediments. Shoaling behavior has been reported from a mass mortality fossil of E. levatus and attributed as a predator-evasion response behavior.\nWhat was the average size of Erismatopterus levatus?",
+      "response": "{\"paraphrased_questions\": [\n  \"How large was the typical Erismatopterus levatus specimen?\",\n  \"What were the average dimensions of Erismatopterus levatus?\",\n  \"On average, what size did Erismatopterus levatus reach?\"\n]}"
+    },
+    {
+      "prompt": "Ocean Kinetics is a private limited engineering company based in Lerwick, Scotland. The company was established by John Henderson in 1992 to specialise in marine engineering solutions.\nWho founded Ocean Kinetics and in what year?",
+      "response": "{\"paraphrased_questions\": [\n  \"In which year was Ocean Kinetics established, and who was its founder?\",\n  \"What is the name of the person who started Ocean Kinetics, and when did they do so?\",\n  \"Can you provide information about the inception of Ocean Kinetics, including its creator and the year it began?\"\n]}"
+    },
+    {
+      "prompt": "Ocean Kinetics is a private limited engineering company based in Lerwick, Scotland. The company was established by John Henderson in 1992 to specialise in marine engineering solutions.\nHow many employees does Ocean Kinetics currently have?",
+      "response": "{\"paraphrased_questions\": [\n  \"What is the current number of staff members at Ocean Kinetics?\",\n  \"Can you tell me the size of Ocean Kinetics' workforce at present?\",\n  \"How large is the employee base at Ocean Kinetics right now?\"\n]}"
+    },
+    {
+      "prompt": "Doctor in Clover is a British comedy film released in 1966, starring Leslie Phillips. The film is based on the novel of the same title by Richard Gordon. It is the sixth of the seven films in the Doctor series. The film was released in the US as Carnaby, MD. British singer Kiki Dee sang the film's title track.\nWho starred in the film Doctor in Clover?",
+      "response": "{\"paraphrased_questions\": [\n  \"Which actors were featured in the movie Doctor in Clover?\",\n  \"Can you name the main cast members of the film Doctor in Clover?\",\n  \"Who were the leading performers in the Doctor in Clover motion picture?\"\n]}"
+    },
+    {
+      "prompt": "Doctor in Clover is a British comedy film released in 1966, starring Leslie Phillips. The film is based on the novel of the same title by Richard Gordon. It is the sixth of the seven films in the Doctor series. The film was released in the US as Carnaby, MD. British singer Kiki Dee sang the film's title track.\nWhat was the box office performance of Doctor in Clover?",
+      "response": "{\"paraphrased_questions\": [\n  \"How well did Doctor in Clover perform financially at the box office?\",\n  \"What were the box office results for the film Doctor in Clover?\",\n  \"Can you provide information on the commercial success of Doctor in Clover in theaters?\"\n]}"
+    },
+    {
+      "prompt": "Ludi Boeken (born 1951 in Amsterdam) is a Dutch film producer, director and actor.[1] His daughter, Julia Levy-Boeken, is an actress.\nWhat is Ludi Boeken's daughter's name and profession?",
+      "response": "{\"paraphrased_questions\": [\n  \"Can you provide the name and occupation of Ludi Boeken's daughter?\",\n  \"What is the professional field and given name of Ludi Boeken's female offspring?\",\n  \"Who is Ludi Boeken's daughter, and what does she do for a living?\"\n]}"
+    },
+    {
+      "prompt": "Ludi Boeken (born 1951 in Amsterdam) is a Dutch film producer, director and actor.[1] His daughter, Julia Levy-Boeken, is an actress.\nHow many films has Ludi Boeken produced?",
+      "response": "{\"paraphrased_questions\": [\n  \"What is the total number of movies Ludi Boeken has produced?\",\n  \"How many productions has Ludi Boeken been involved in as a producer?\",\n  \"Can you tell me the count of films that Ludi Boeken has produced?\"\n]}"
+    },
+    {
+      "prompt": "The Battle of Mansura was fought near Mansura, Louisiana, on May 16, 1864, during the Red River Campaign of the American Civil War. A Union force defeated elements of the Confederate States Army.[1]\nOn what date was the Battle of Mansura fought?",
+      "response": "{\"paraphrased_questions\": [\n  \"When did the Battle of Mansura take place?\",\n  \"What was the date of the Battle of Mansura?\",\n  \"In which day and year was the Battle of Mansura conducted?\"\n]}"
+    },
+    {
+      "prompt": "The Battle of Mansura was fought near Mansura, Louisiana, on May 16, 1864, during the Red River Campaign of the American Civil War. A Union force defeated elements of the Confederate States Army.[1]\nHow many casualties were there in the Battle of Mansura?",
+      "response": "{\"paraphrased_questions\": [\n  \"What was the number of casualties recorded during the Battle of Mansura?\",\n  \"How many people lost their lives or were injured in the Mansura Battle?\",\n  \"Can you provide the casualty count from the conflict at Mansura?\"\n]}"
+    },
+    {
+      "prompt": "Andrea D'Antoni (1811 \u2013 1868) was an Italian painter of the Neoclassical period. He studied under Giuseppe Patania. One of his pupils was Pietro Volpes.[1] Some of his works are displayed in the Galleria d'Arte Moderna di Sant'Anna in Palermo. He painted a Deposition from the Cross (1852) for the church of Santissima Trinit\u00e0, Petralia Sottana.\nWho was Andrea D'Antonio's teacher?",
+      "response": "{\"paraphrased_questions\": [\n    \"Under whose tutelage did Andrea D'Antonio study?\",\n    \"Which instructor mentored Andrea D'Antonio?\",\n    \"Can you identify the person who taught Andrea D'Antonio?\"\n]}"
+    },
+    {
+      "prompt": "Andrea D'Antoni (1811 \u2013 1868) was an Italian painter of the Neoclassical period. He studied under Giuseppe Patania. One of his pupils was Pietro Volpes.[1] Some of his works are displayed in the Galleria d'Arte Moderna di Sant'Anna in Palermo. He painted a Deposition from the Cross (1852) for the church of Santissima Trinit\u00e0, Petralia Sottana.\nHow many paintings did Andrea D'Antonio create in his lifetime?",
+      "response": "{\"paraphrased_questions\": [\n  \"What was the total number of artworks produced by Andrea D'Antonio throughout his career?\",\n  \"During his life, how many pieces of art did Andrea D'Antonio complete?\",\n  \"Can you provide the count of paintings that Andrea D'Antonio made during his entire lifetime?\"\n]}"
+    },
+    {
+      "prompt": "NVS-01 is the first in the series of second generation navigation satellite and the ninth satellite in the Navigation with Indian Constellation (NavIC), with an alternate name of, IRNSS-1J. It will augment the existing satellite and bolster the capability of the NavIC constellation by adding more robustness and new features.[3] ISRO already launched IRNSS 1A, 1B, 1C, 1D, 1E, 1F, 1G, 1H and 1I. The satellite is intended to replace IRNSS-1G and augment the constellation of geosynchronous navigation satellites after IRNSS-1I.[4]\nWhich satellite is NVS-01 intended to replace?",
+      "response": "{\"paraphrased_questions\": [\n  \"What is the satellite that NVS-01 is designed to succeed?\",\n  \"Which space-based asset is NVS-01 meant to take over from?\",\n  \"What orbiting device is NVS-01 scheduled to supersede?\"\n]}"
+    },
+    {
+      "prompt": "NVS-01 is the first in the series of second generation navigation satellite and the ninth satellite in the Navigation with Indian Constellation (NavIC), with an alternate name of, IRNSS-1J. It will augment the existing satellite and bolster the capability of the NavIC constellation by adding more robustness and new features.[3] ISRO already launched IRNSS 1A, 1B, 1C, 1D, 1E, 1F, 1G, 1H and 1I. The satellite is intended to replace IRNSS-1G and augment the constellation of geosynchronous navigation satellites after IRNSS-1I.[4]\nWhat is the expected lifespan of the NVS-01 satellite?",
+      "response": "{\"paraphrased_questions\": [\n  \"How long is the NVS-01 satellite expected to operate?\",\n  \"What is the predicted operational duration of the NVS-01 satellite?\",\n  \"For how many years is the NVS-01 satellite anticipated to function?\"\n]}"
+    },
+    {
+      "prompt": "The Meridian Mets were a Mississippi State League (1921) and Cotton States League (1922\u20131923; 1925\u20131929) baseball team based in Meridian, Mississippi, United States. Multiple major leaguers played for the team.[1]\nIn which leagues did the Meridian Mets play?",
+      "response": "{\"paraphrased_questions\": [\n  \"What leagues were the Meridian Mets affiliated with?\",\n  \"Which baseball associations did the Meridian Mets participate in?\",\n  \"Can you name the leagues that the Meridian Mets competed in?\"\n]}"
+    },
+    {
+      "prompt": "The Meridian Mets were a Mississippi State League (1921) and Cotton States League (1922\u20131923; 1925\u20131929) baseball team based in Meridian, Mississippi, United States. Multiple major leaguers played for the team.[1]\nWho was the most famous player to play for the Meridian Mets?",
+      "response": "{\"paraphrased_questions\": [\n    \"Which player is considered the most renowned to have been part of the Meridian Mets?\",\n    \"What individual stands out as the most celebrated athlete to have represented the Meridian Mets?\",\n    \"Can you name the most iconic player who ever competed for the Meridian Mets?\"\n]}"
+    },
+    {
+      "prompt": "The NWA World Women's Tag Team Championship is a women's professional wrestling tag team championship defended in member promotions of the National Wrestling Alliance (NWA).\nIn which organization is the NWA World Women's Tag Team Championship defended?",
+      "response": "{\"paraphrased_questions\": [\n  \"Which wrestling promotion features the NWA World Women's Tag Team Championship?\",\n  \"What organization hosts matches for the NWA World Women's Tag Team Championship?\",\n  \"Where can one see the NWA World Women's Tag Team Championship being contested?\"\n]}"
+    },
+    {
+      "prompt": "The NWA World Women's Tag Team Championship is a women's professional wrestling tag team championship defended in member promotions of the National Wrestling Alliance (NWA).\nWho are the current holders of the NWA World Women's Tag Team Championship?",
+      "response": "{\"paraphrased_questions\": [\n  \"Which team currently holds the NWA World Women's Tag Team Championship titles?\",\n  \"What pair of wrestlers are the reigning NWA World Women's Tag Team Champions?\",\n  \"Can you name the present champions of the NWA World Women's Tag Team division?\"\n]}"
+    },
+    {
+      "prompt": "Dusan Benda is a Slovak professional ice hockey player who played with HC Slovan Bratislava in the Slovak Extraliga.[1]\nWhich team did Dusan Benda play for in the Slovak Extraliga?",
+      "response": "{\"paraphrased_questions\": [\n  \"In the Slovak Extraliga, what team was Dusan Benda a member of?\",\n  \"Can you name the Slovak Extraliga team that Dusan Benda was associated with?\",\n  \"During his time in the Slovak Extraliga, which squad did Dusan Benda represent?\"\n]}"
+    },
+    {
+      "prompt": "Dusan Benda is a Slovak professional ice hockey player who played with HC Slovan Bratislava in the Slovak Extraliga.[1]\nHow many seasons did Dusan Benda play in the Slovak Extraliga?",
+      "response": "{\"paraphrased_questions\": [\n  \"For how many seasons was Dusan Benda a player in the Slovak Extraliga?\",\n  \"What is the total number of seasons Dusan Benda competed in the Slovak Extraliga?\",\n  \"In the Slovak Extraliga, how many seasons did Dusan Benda's career span?\"\n]}"
+    },
+    {
+      "prompt": "Thyrocopa alterna is a moth belonging to the family Xyloryctidae. It was first described by Lord Walsingham in 1907. It is endemic to the Hawaiian islands of Maui and Hawaii. The length of the forewings is 8\u201315 mm. Adults are on wing at least from May to November. It is very similar to Thyrocopa abusa, but the male antennae are surrounded by cilia, and the male genitalia are without a dorsal ridge. Individuals from Maui generally are smaller than those from the island of Hawaii.\nOn which Hawaiian islands is Thyrocopa alterna endemic?",
+      "response": "{\"paraphrased_questions\": [\n  \"Which Hawaiian islands are home to the endemic species Thyrocopa alterna?\",\n  \"Where in Hawaii can the native Thyrocopa alterna moth be found exclusively?\",\n  \"What specific islands in Hawaii are the only habitat for Thyrocopa alterna?\"\n]}"
+    },
+    {
+      "prompt": "Thyrocopa alterna is a moth belonging to the family Xyloryctidae. It was first described by Lord Walsingham in 1907. It is endemic to the Hawaiian islands of Maui and Hawaii. The length of the forewings is 8\u201315 mm. Adults are on wing at least from May to November. It is very similar to Thyrocopa abusa, but the male antennae are surrounded by cilia, and the male genitalia are without a dorsal ridge. Individuals from Maui generally are smaller than those from the island of Hawaii.\nWhat is the lifespan of a Thyrocopa alterna moth?",
+      "response": "{\"paraphrased_questions\": [\n  \"How long does a Thyrocopa alterna moth typically live?\",\n  \"What is the average life expectancy of a Thyrocopa alterna moth?\",\n  \"How many days or months does a Thyrocopa alterna moth usually survive?\"\n]}"
+    },
+    {
+      "prompt": "Acantharachne is a genus of African orb-weaver spiders first described by Albert Tullgren in 1910.[2]\nWho first described the Acantharachne genus?",
+      "response": "{\"paraphrased_questions\": [\n  \"Which scientist initially characterized the Acantharachne genus?\",\n  \"What researcher is credited with the original description of the Acantharachne genus?\",\n  \"Who was the first to identify and classify the Acantharachne genus?\"\n]}"
+    },
+    {
+      "prompt": "Acantharachne is a genus of African orb-weaver spiders first described by Albert Tullgren in 1910.[2]\nHow many species are in the Acantharachne genus?",
+      "response": "{\"paraphrased_questions\": [\n  \"What is the total number of species classified under the Acantharachne genus?\",\n  \"How many different species are categorized within the Acantharachne genus?\",\n  \"What quantity of distinct species belongs to the genus Acantharachne?\"\n]}"
+    },
+    {
+      "prompt": "George Olliver is a Canadian music artist. A singer and organist, he was the lead singer for Mandala in the 1960s. He also founded the late 1960s, early 1970s jazz rock group Natural Gas.\nWhat musical group did George Olliver found in the late 1960s?",
+      "response": "{\"paraphrased_questions\": [\n  \"Which band was established by George Olliver towards the end of the 1960s?\",\n  \"In the late sixties, what musical ensemble did George Olliver create?\",\n  \"Who was the founder of a musical act formed by George Olliver near the close of the 1960s decade?\"\n]}"
+    },
+    {
+      "prompt": "George Olliver is a Canadian music artist. A singer and organist, he was the lead singer for Mandala in the 1960s. He also founded the late 1960s, early 1970s jazz rock group Natural Gas.\nHow many albums did George Olliver release as a solo artist?",
+      "response": "{\"paraphrased_questions\": [\n  \"What is the number of solo albums released by George Olliver?\",\n  \"As a solo performer, how many records did George Olliver put out?\",\n  \"How many solo projects did George Olliver produce during his career?\"\n]}"
+    },
+    {
+      "prompt": "Adenylyl cyclase 10 also known as ADCY10 is an enzyme that, in humans, is encoded by the ADCY10 gene.[5]\nWhat is the full name of the enzyme encoded by the ADCY10 gene?",
+      "response": "{\n  \"paraphrased_questions\": [\n    \"What is the complete name of the enzyme that the ADCY10 gene encodes?\",\n    \"Can you provide the entire name of the enzyme associated with the ADCY10 gene?\",\n    \"What enzyme is produced by the ADCY10 gene, and what is its full designation?\"\n  ]\n}"
+    },
+    {
+      "prompt": "Adenylyl cyclase 10 also known as ADCY10 is an enzyme that, in humans, is encoded by the ADCY10 gene.[5]\nWhat is the specific function of the ADCY10 enzyme in the human body?",
+      "response": "{\"paraphrased_questions\": [\n  \"In the human body, what particular role does the ADCY10 enzyme play?\",\n  \"How does the ADCY10 enzyme specifically contribute to human physiological processes?\",\n  \"What unique purpose does the ADCY10 enzyme serve within the human system?\"\n]}"
+    },
+    {
+      "prompt": "The 1989 Turkish Cup final was a football match played over two legs in June 1989. It was the final and deciding match of the 1988\u201389 Turkish Cup. Les Ferdinand scored the winning goal to win Besiktas the cup.[1][2][3][4]\nWho scored the winning goal in the 1989 Turkish Cup final?",
+      "response": "{\"paraphrased_questions\": [\n  \"Which player secured victory with the decisive goal in the 1989 Turkish Cup final?\",\n  \"In the 1989 Turkish Cup final, who was responsible for netting the game-winning goal?\",\n  \"Can you name the individual who scored the crucial goal that won the 1989 Turkish Cup final?\"\n]}"
+    },
+    {
+      "prompt": "The 1989 Turkish Cup final was a football match played over two legs in June 1989. It was the final and deciding match of the 1988\u201389 Turkish Cup. Les Ferdinand scored the winning goal to win Besiktas the cup.[1][2][3][4]\nWhat was the final score of the 1989 Turkish Cup final?",
+      "response": "{\"paraphrased_questions\": [\n  \"Can you tell me the end result of the Turkish Cup championship match in 1989?\",\n  \"What was the outcome, in terms of score, for the 1989 Turkish Cup's final game?\",\n  \"How did the 1989 Turkish Cup conclude, specifically regarding the final score?\"\n]}"
+    },
+    {
+      "prompt": "\"Invisible\" is a song by English singer Alison Moyet, written by Lamont Dozier (of the songwriting team Holland\u2013Dozier\u2013Holland) for her debut album, Alf. Released in November 1984, \"Invisible\" peaked at No. 21 on the UK Singles Chart and became Moyet's highest-charting solo single in the United States, peaking at No. 31 on the Billboard Hot 100. The song reached the top 10 in Ireland and New Zealand, peaking at No. 6 and No. 4, respectively. The single's B-side is the Marvin Gaye song \"Hitch Hike\", which has backing from Darts. In interviews for her 2017 tour, Moyet said she would not be performing the song again. She explained that it was not a slam against the song itself, but that the lyrics and message of the song, written more than 30 years earlier, did not resonate with her any more.[2]\nWho wrote the song \"Invisible\" for Alison Moyet?",
+      "response": "{\"paraphrased_questions\": [\n  \"Which songwriter is credited with composing 'Invisible' for Alison Moyet?\",\n  \"Can you identify the author of Alison Moyet's track 'Invisible'?\",\n  \"What is the name of the person who penned 'Invisible' for singer Alison Moyet?\"\n]}"
+    },
+    {
+      "prompt": "\"Invisible\" is a song by English singer Alison Moyet, written by Lamont Dozier (of the songwriting team Holland\u2013Dozier\u2013Holland) for her debut album, Alf. Released in November 1984, \"Invisible\" peaked at No. 21 on the UK Singles Chart and became Moyet's highest-charting solo single in the United States, peaking at No. 31 on the Billboard Hot 100. The song reached the top 10 in Ireland and New Zealand, peaking at No. 6 and No. 4, respectively. The single's B-side is the Marvin Gaye song \"Hitch Hike\", which has backing from Darts. In interviews for her 2017 tour, Moyet said she would not be performing the song again. She explained that it was not a slam against the song itself, but that the lyrics and message of the song, written more than 30 years earlier, did not resonate with her any more.[2]\nWhat inspired Lamont Dozier to write \"Invisible\"?",
+      "response": "{\"paraphrased_questions\": [\n  \"What was the source of inspiration for Lamont Dozier's composition of 'Invisible'?\",\n  \"Can you explain the creative spark behind Lamont Dozier's song 'Invisible'?\",\n  \"What influenced Lamont Dozier in writing the track 'Invisible'?\"\n]}"
+    },
+    {
+      "prompt": "Grim Reaper were a British heavy metal band from the new wave of British heavy metal era. The band was formed in 1979 in Droitwich, England, by guitarist Nick Bowcott,[1] and there have been numerous lineup changes over the years, with frontman Steve Grimmett being the longest running member, from 1982 to 1988, then 2006 until his death in 2022. They are best known for several of their 1980s songs, including the respective title tracks from their first three albums: See You in Hell (1983), Fear No Evil (1985) and Rock You to Hell (1987); each of those songs gained notoriety in the 1990s for appearing on Beavis and Butt-Head.[2] After disbanding in 1988, the band reformed in 2006 around Grimmett, and due to legal issues surrounding the rights to the original band name, they went by Steve Grimmett's Grim Reaper. Two albums under that name \u2013 Walking in the Shadows (2016) and At the Gates (2019) \u2013 were released before Grimmett died in 2022, after which the band disbanded again.\nWho was the longest-running member of Grim Reaper?",
+      "response": "{\"paraphrased_questions\": [\n  \"Which musician had the longest tenure in the band Grim Reaper?\",\n  \"What member of Grim Reaper remained with the group for the most extended period?\",\n  \"In the history of Grim Reaper, who was the band's longest-serving participant?\"\n]}"
+    },
+    {
+      "prompt": "Grim Reaper were a British heavy metal band from the new wave of British heavy metal era. The band was formed in 1979 in Droitwich, England, by guitarist Nick Bowcott,[1] and there have been numerous lineup changes over the years, with frontman Steve Grimmett being the longest running member, from 1982 to 1988, then 2006 until his death in 2022. They are best known for several of their 1980s songs, including the respective title tracks from their first three albums: See You in Hell (1983), Fear No Evil (1985) and Rock You to Hell (1987); each of those songs gained notoriety in the 1990s for appearing on Beavis and Butt-Head.[2] After disbanding in 1988, the band reformed in 2006 around Grimmett, and due to legal issues surrounding the rights to the original band name, they went by Steve Grimmett's Grim Reaper. Two albums under that name \u2013 Walking in the Shadows (2016) and At the Gates (2019) \u2013 were released before Grimmett died in 2022, after which the band disbanded again.\nWhat was Grim Reaper's highest-charting single?",
+      "response": "{\"paraphrased_questions\": [\n  \"Which song by Grim Reaper reached the highest position on the charts?\",\n  \"What is considered Grim Reaper's most successful single in terms of chart performance?\",\n  \"Can you identify Grim Reaper's top-performing track on the music charts?\"\n]}"
+    },
+    {
+      "prompt": "Michael Richard Adair (born January 19, 1958) is an American former pitching coach for the Baltimore Orioles and a former minor league baseball player. He was succeeded as pitching coach by Bill Castro.\nFor which Major League Baseball team was Rick Adair a pitching coach?",
+      "response": "{\"paraphrased_questions\": [\n  \"Which MLB team employed Rick Adair as their pitching coach?\",\n  \"On what Major League Baseball roster did Rick Adair serve as the pitching coach?\",\n  \"What professional baseball organization had Rick Adair in the role of pitching coach?\"\n]}"
+    },
+    {
+      "prompt": "Michael Richard Adair (born January 19, 1958) is an American former pitching coach for the Baltimore Orioles and a former minor league baseball player. He was succeeded as pitching coach by Bill Castro.\nHow many years did Rick Adair play in the minor leagues?",
+      "response": "{\"paraphrased_questions\": [\n  \"For how many seasons did Rick Adair participate in minor league baseball?\",\n  \"What was the duration of Rick Adair's career in the minor leagues?\",\n  \"How long did Rick Adair spend playing in the minor league system?\"\n]}"
+    },
+    {
+      "prompt": "Karl Jakobs is Professor of Particle Physics at the University of Freiburg, Germany.[1] He was the Spokesperson (scientific head) of the ATLAS Collaboration at the Large Hadron Collider at CERN from 2017 to 2021.[2]\nWhat position did Karl Jakobs hold at the ATLAS Collaboration from 2017 to 2021?",
+      "response": "{\"paraphrased_questions\": [\n  \"From 2017 to 2021, what role did Karl Jakobs have within the ATLAS Collaboration?\",\n  \"During the period of 2017-2021, what was Karl Jakobs' title or job at the ATLAS Collaboration?\",\n  \"Which position was occupied by Karl Jakobs in the ATLAS Collaboration between 2017 and 2021?\"\n]}"
+    },
+    {
+      "prompt": "Karl Jakobs is Professor of Particle Physics at the University of Freiburg, Germany.[1] He was the Spokesperson (scientific head) of the ATLAS Collaboration at the Large Hadron Collider at CERN from 2017 to 2021.[2]\nWhat specific research contributions has Karl Jakobs made in particle physics?",
+      "response": "{\"paraphrased_questions\": [\n  \"In the field of particle physics, what notable research advancements can be attributed to Karl Jakobs?\",\n  \"How has Karl Jakobs specifically contributed to the advancement of particle physics through his research?\",\n  \"What are the key research findings or discoveries made by Karl Jakobs in the realm of particle physics?\"\n]}"
+    },
+    {
+      "prompt": "The 2009 Rexall Edmonton Indy was the eleventh round of the 2009 IndyCar Series season, and was held on July 26, 2009 at the 1.973-mile (3.175 km) Rexall Speedway in Edmonton, Alberta, Canada.\nWhen and where was the 2009 Rexall Edmonton Indy held?",
+      "response": "{\"paraphrased_questions\": [\n  \"In what location and on what date did the 2009 Rexall Edmonton Indy take place?\",\n  \"What was the venue and timing of the 2009 Rexall Edmonton Indy race?\",\n  \"Can you provide the time and place details for the 2009 Rexall Edmonton Indy event?\"\n]}"
+    },
+    {
+      "prompt": "The 2009 Rexall Edmonton Indy was the eleventh round of the 2009 IndyCar Series season, and was held on July 26, 2009 at the 1.973-mile (3.175 km) Rexall Speedway in Edmonton, Alberta, Canada.\nWho won the 2009 Rexall Edmonton Indy?",
+      "response": "{\n  \"paraphrased_questions\": [\n    \"Which driver emerged victorious in the 2009 Rexall Edmonton Indy race?\",\n    \"Can you name the winner of the Rexall Edmonton Indy held in 2009?\",\n    \"In the 2009 edition of the Rexall Edmonton Indy, who took first place?\"\n  ]\n}"
+    },
+    {
+      "prompt": "Kathryn Lueders (pronounced \"Leaders\") is an American engineer and business manager. Lueders has led NASA's human spaceflight program as the Associate Administrator of the Human Exploration and Operations (HEO) Mission Directorate.[1][2][3] She became the first woman to head human spaceflight.[4] She was the program manager for NASA's Commercial Crew Program and oversaw the return of human spaceflight capabilities to NASA.[5][6] She currently works at SpaceX as Starbase General Manager.[7]\nWhat is Kathy Lueders' current job position?",
+      "response": "{\"paraphrased_questions\": [\n  \"What role does Kathy Lueders currently hold in her profession?\",\n  \"In what capacity is Kathy Lueders presently employed?\",\n  \"What is the current professional title of Kathy Lueders?\"\n]}"
+    },
+    {
+      "prompt": "Kathryn Lueders (pronounced \"Leaders\") is an American engineer and business manager. Lueders has led NASA's human spaceflight program as the Associate Administrator of the Human Exploration and Operations (HEO) Mission Directorate.[1][2][3] She became the first woman to head human spaceflight.[4] She was the program manager for NASA's Commercial Crew Program and oversaw the return of human spaceflight capabilities to NASA.[5][6] She currently works at SpaceX as Starbase General Manager.[7]\nWhat specific projects did Kathy Lueders work on during her time at NASA?",
+      "response": "{\"paraphrased_questions\": [\n  \"During her tenure at NASA, what particular initiatives was Kathy Lueders involved in?\",\n  \"Which notable assignments did Kathy Lueders undertake while employed at NASA?\",\n  \"Can you list the key programs Kathy Lueders contributed to throughout her NASA career?\"\n]}"
+    },
+    {
+      "prompt": "The nuclear receptor coactivator 3 also known as NCOA3 is a protein that, in humans, is encoded by the NCOA3 gene.[5][6] NCOA3 is also frequently called 'amplified in breast 1' (AIB1), steroid receptor coactivator-3 (SRC-3), or thyroid hormone receptor activator molecule 1 (TRAM-1).\nWhat are some alternative names for the NCOA3 protein?",
+      "response": "{\"paraphrased_questions\": [\n  \"Can you provide other names for the protein known as NCOA3?\",\n  \"What are different designations used to refer to the NCOA3 protein?\",\n  \"Besides NCOA3, what other labels are used to identify this particular protein?\"\n]}"
+    },
+    {
+      "prompt": "The nuclear receptor coactivator 3 also known as NCOA3 is a protein that, in humans, is encoded by the NCOA3 gene.[5][6] NCOA3 is also frequently called 'amplified in breast 1' (AIB1), steroid receptor coactivator-3 (SRC-3), or thyroid hormone receptor activator molecule 1 (TRAM-1).\nWhat is the specific function of the NCOA3 protein in human cells?",
+      "response": "{\"paraphrased_questions\": [\n  \"In human cellular biology, what role does the NCOA3 protein play?\",\n  \"How does the NCOA3 protein contribute to the functioning of human cells?\",\n  \"What particular purpose does the NCOA3 protein serve within human cellular processes?\"\n]}"
+    },
+    {
+      "prompt": "These are lists of church buildings in Indonesia, based on: Completion year of the building Region Around 10.5% of Indonesia's total population are Christians, and there are approximately 76,517 churches across Indonesia.[1] This list strictly includes notable church buildings and their historic significance in Indonesian history.\nApproximately how many churches are there in Indonesia?",
+      "response": "{\"paraphrased_questions\": [\n  \"What is the estimated number of churches in Indonesia?\",\n  \"How many religious buildings for Christian worship can be found in Indonesia, roughly?\",\n  \"In Indonesia, what is the approximate count of church structures?\"\n]}"
+    },
+    {
+      "prompt": "These are lists of church buildings in Indonesia, based on: Completion year of the building Region Around 10.5% of Indonesia's total population are Christians, and there are approximately 76,517 churches across Indonesia.[1] This list strictly includes notable church buildings and their historic significance in Indonesian history.\nWhat is the oldest church building in Indonesia?",
+      "response": "{\"paraphrased_questions\": [\n  \"Which church structure in Indonesia has the longest history?\",\n  \"Can you identify the most ancient house of worship in Indonesia?\",\n  \"In Indonesia, which religious building holds the title of being the earliest constructed church?\"\n]}"
+    },
+    {
+      "prompt": "Duck Lake is a town in the boreal forest of central Saskatchewan, Canada. Its location is 88 km (55 mi) north of Saskatoon and 44 kilometres (27 mi) south of Prince Albert on Highway 11, in the Rural Municipality of Duck Lake No. 463. Immediately to the north of Duck Lake is the south block of the Nisbet Provincial Forest. The First Nations people are Cree and the band government of the Beardy's and Okemasis' Cree Nation is located here. Duck Lake was home to one of the last operating schools in the Canadian Indian residential school system, the St. Michael's Indian Residential School (Duck Lake Indian Residential School), which closed in 1996.\nWhen did the St. Michael's Indian Residential School in Duck Lake close?",
+      "response": "{\"paraphrased_questions\": [\n  \"In which year was the St. Michael's Indian Residential School in Duck Lake shut down?\",\n  \"What date marked the closure of the Indian Residential School known as St. Michael's in Duck Lake?\",\n  \"When did operations cease at the Duck Lake-based St. Michael's Indian Residential School?\"\n]}"
+    },
+    {
+      "prompt": "Duck Lake is a town in the boreal forest of central Saskatchewan, Canada. Its location is 88 km (55 mi) north of Saskatoon and 44 kilometres (27 mi) south of Prince Albert on Highway 11, in the Rural Municipality of Duck Lake No. 463. Immediately to the north of Duck Lake is the south block of the Nisbet Provincial Forest. The First Nations people are Cree and the band government of the Beardy's and Okemasis' Cree Nation is located here. Duck Lake was home to one of the last operating schools in the Canadian Indian residential school system, the St. Michael's Indian Residential School (Duck Lake Indian Residential School), which closed in 1996.\nWhat is the current population of Duck Lake?",
+      "response": "{\"paraphrased_questions\": [\n  \"How many people currently reside in Duck Lake?\",\n  \"What is the present-day population count of Duck Lake?\",\n  \"Can you tell me the number of inhabitants living in Duck Lake today?\"\n]}"
+    },
+    {
+      "prompt": "\"Gemini Dream\" is a song written by Justin Hayward and John Lodge that was released by The Moody Blues on their 1981 album Long Distance Voyager and also as the lead single from the album. It reached number 12 on the US Hot 100, as well as number 1 on the Canada RPM Top 100 Singles chart. It ranked as the 28th biggest Canadian hit of 1981.\nWho wrote the song \"Gemini Dream\"?",
+      "response": "{\"paraphrased_questions\": [\n    \"Which artist composed the track 'Gemini Dream'?\",\n    \"Can you identify the songwriter behind 'Gemini Dream'?\",\n    \"What musician is credited with creating 'Gemini Dream'?\"\n]}"
+    },
+    {
+      "prompt": "\"Gemini Dream\" is a song written by Justin Hayward and John Lodge that was released by The Moody Blues on their 1981 album Long Distance Voyager and also as the lead single from the album. It reached number 12 on the US Hot 100, as well as number 1 on the Canada RPM Top 100 Singles chart. It ranked as the 28th biggest Canadian hit of 1981.\nWhat inspired the lyrics of \"Gemini Dream\"?",
+      "response": "{\"paraphrased_questions\": [\n  \"What was the source of inspiration for the words in 'Gemini Dream'?\",\n  \"Where did the ideas for the lyrics of 'Gemini Dream' come from?\",\n  \"What influenced the writing of the song 'Gemini Dream'?\"\n]}"
+    },
+    {
+      "prompt": "E. S. Johnny Walker (June 18, 1911 \u2013 October 8, 2000) was an American World War II veteran and politician who served two terms in the United States House of Representatives from 1965 to 1969.\nHow many terms did E. S. Johnny Walker serve in the United States House of Representatives?",
+      "response": "{\"paraphrased_questions\": [\n  \"For how many terms was E. S. Johnny Walker a member of the United States House of Representatives?\",\n  \"What was the duration of E. S. Johnny Walker's service in the U.S. House of Representatives, measured in terms?\",\n  \"How many times was E. S. Johnny Walker elected to serve in the United States House of Representatives?\"\n]}"
+    },
+    {
+      "prompt": "E. S. Johnny Walker (June 18, 1911 \u2013 October 8, 2000) was an American World War II veteran and politician who served two terms in the United States House of Representatives from 1965 to 1969.\nWhat specific legislation did E. S. Johnny Walker sponsor during his time in Congress?",
+      "response": "{\"paraphrased_questions\": [\n  \"During his congressional tenure, which particular bills did E. S. Johnny Walker introduce or support?\",\n  \"What notable laws or acts did E. S. Johnny Walker propose or champion while serving in Congress?\",\n  \"Can you identify any specific legislative initiatives that E. S. Johnny Walker put forward in his time as a congressman?\"\n]}"
+    },
+    {
+      "prompt": "Wikivoyage is a free web-based travel guide for travel destinations and travel topics written by volunteer authors. It is a sister project of Wikipedia and supported and hosted by the same non-profit Wikimedia Foundation (WMF). Wikivoyage has been called the \"Wikipedia of travel guides\".[2] The project began when editors at the German and then Italian versions of Wikitravel decided in September 2006 to move their editing activities and then current content to a new site, in accordance with the site copyright license, a procedure known as \"forking\". The resulting site went live as \"Wikivoyage\" on December 10, 2006, and was owned and operated by a German association set up for that purpose, Wikivoyage e.V. (which continues to be its representative association). Content was published under the copyleft license Creative Commons Attribution-ShareAlike. In 2012, after a long history of problems with their existing host,[3] the English-language version community of Wikitravel also decided as a community to fork their project. In a two-way move, the English Wikitravel community re-merged with Wikivoyage under the Wikivoyage brand. In addition, all Wikivoyage language versions moved their operations to be hosted by the Wikimedia Foundation, a non-profit organization hosting several of the world's largest wiki-based communities such as Wikipedia.[4][5] Following agreements by the various communities involved and the Wikimedia Foundation, the site was moved to the WMF servers in December 2012 and the whole of Wikivoyage was officially re-launched as a Wikimedia project on January 15, 2013, the day of the 12th anniversary of Wikipedia's launch.[6]\nWhen was Wikivoyage officially re-launched as a Wikimedia project?",
+      "response": "{\"paraphrased_questions\": [\n  \"What date marked the official relaunch of Wikivoyage under the Wikimedia umbrella?\",\n  \"On which day did Wikivoyage become an official part of the Wikimedia family?\",\n  \"In what year was Wikivoyage formally reintroduced as a Wikimedia initiative?\"\n]}"
+    },
+    {
+      "prompt": "Wikivoyage is a free web-based travel guide for travel destinations and travel topics written by volunteer authors. It is a sister project of Wikipedia and supported and hosted by the same non-profit Wikimedia Foundation (WMF). Wikivoyage has been called the \"Wikipedia of travel guides\".[2] The project began when editors at the German and then Italian versions of Wikitravel decided in September 2006 to move their editing activities and then current content to a new site, in accordance with the site copyright license, a procedure known as \"forking\". The resulting site went live as \"Wikivoyage\" on December 10, 2006, and was owned and operated by a German association set up for that purpose, Wikivoyage e.V. (which continues to be its representative association). Content was published under the copyleft license Creative Commons Attribution-ShareAlike. In 2012, after a long history of problems with their existing host,[3] the English-language version community of Wikitravel also decided as a community to fork their project. In a two-way move, the English Wikitravel community re-merged with Wikivoyage under the Wikivoyage brand. In addition, all Wikivoyage language versions moved their operations to be hosted by the Wikimedia Foundation, a non-profit organization hosting several of the world's largest wiki-based communities such as Wikipedia.[4][5] Following agreements by the various communities involved and the Wikimedia Foundation, the site was moved to the WMF servers in December 2012 and the whole of Wikivoyage was officially re-launched as a Wikimedia project on January 15, 2013, the day of the 12th anniversary of Wikipedia's launch.[6]\nHow many active contributors does Wikivoyage currently have?",
+      "response": "{\"paraphrased_questions\": [\n  \"What is the current number of active contributors on Wikivoyage?\",\n  \"At present, how many people actively contribute to Wikivoyage?\",\n  \"Can you tell me the count of current active contributors on Wikivoyage?\"\n]}"
+    },
+    {
+      "prompt": "Dawson Walker (14 March 1916 \u2013 17 August 1973) was manager of the Scotland national football team in 1958.[1] Walker was left in charge of the players due to the Munich air disaster, in which official manager Matt Busby was seriously injured.[2][3]\nWhy did Dawson Walker become manager of the Scotland national football team in 1958?",
+      "response": "{\n  \"paraphrased_questions\": [\n    \"What circumstances led to Dawson Walker taking over as the manager of Scotland's national football team in 1958?\",\n    \"For what reason was Dawson Walker appointed as the head coach of the Scottish national soccer team in 1958?\",\n    \"How did Dawson Walker come to be in charge of Scotland's national football squad in 1958?\"\n  ]\n}"
+    },
+    {
+      "prompt": "Dawson Walker (14 March 1916 \u2013 17 August 1973) was manager of the Scotland national football team in 1958.[1] Walker was left in charge of the players due to the Munich air disaster, in which official manager Matt Busby was seriously injured.[2][3]\nWhat was Scotland's win-loss record under Dawson Walker's management?",
+      "response": "{\"paraphrased_questions\": [\n  \"How did Scotland's team perform in terms of victories and defeats during Dawson Walker's tenure as manager?\",\n  \"What was the ratio of wins to losses for Scotland's national team while Dawson Walker was in charge?\",\n  \"Under Dawson Walker's leadership, what was the overall record of Scotland's victories and defeats?\"\n]}"
+    },
+    {
+      "prompt": "David Jeffrey Bednar (born October 10, 1994), nicknamed \"The Renegade\", is an American professional baseball pitcher for the Pittsburgh Pirates of Major League Baseball (MLB). The San Diego Padres selected Bednar in the 35th round of the 2016 MLB draft. He previously played in MLB for the San Diego Padres.\nWhich team drafted David Bednar in 2016?",
+      "response": "{\"paraphrased_questions\": [\n  \"In the 2016 draft, which organization selected David Bednar?\",\n  \"What baseball team chose David Bednar during the 2016 draft?\",\n  \"Who picked David Bednar in the 2016 MLB draft?\"\n]}"
+    },
+    {
+      "prompt": "David Jeffrey Bednar (born October 10, 1994), nicknamed \"The Renegade\", is an American professional baseball pitcher for the Pittsburgh Pirates of Major League Baseball (MLB). The San Diego Padres selected Bednar in the 35th round of the 2016 MLB draft. He previously played in MLB for the San Diego Padres.\nWhat is David Bednar's career earned run average (ERA)?",
+      "response": "{\"paraphrased_questions\": [\n  \"Can you tell me David Bednar's career ERA?\",\n  \"What is the career earned run average for pitcher David Bednar?\",\n  \"How does David Bednar's career ERA measure up?\"\n]}"
+    },
+    {
+      "prompt": "Heaven or Vegas was a 1996 movie which was a romantic drama that starred Yasmine Bleeth and Richard Grieco.\nWho were the stars of the 1996 movie Heaven or Vegas?",
+      "response": "{\"paraphrased_questions\": [\n  \"Which actors headlined the 1996 film Heaven or Vegas?\",\n  \"Can you name the lead performers in the movie Heaven or Vegas from 1996?\",\n  \"Who played the main roles in Heaven or Vegas, released in 1996?\"\n]}"
+    },
+    {
+      "prompt": "Heaven or Vegas was a 1996 movie which was a romantic drama that starred Yasmine Bleeth and Richard Grieco.\nWhat was the box office performance of Heaven or Vegas?",
+      "response": "{\"paraphrased_questions\": [\n  \"How successful was Heaven or Vegas at the box office?\",\n  \"What were the financial results for Heaven or Vegas in theaters?\",\n  \"How well did Heaven or Vegas perform commercially in cinemas?\"\n]}"
+    },
+    {
+      "prompt": "Bill Diddel (1882\u2013February 25, 1985) was an American amateur golfer and renowned golf course designer. He was born in Indianapolis, Indiana.[1][2][3][4] Diddel designed approximately three hundred golf courses, primarily in the Midwest, beginning with Ulen Country Club in Lebanon, Indiana. Diddel designed the golf course at Northwood Club in Dallas, Texas, which was the site of the U.S. Open in 1952. Diddel was one of the founders and a charter member of the American Society of Golf Course Architects. He was elected president of that body in 1954. Diddel was the recipient of numerous awards and recognitions, including: The Fred Waring Sportsmanship Award. The American Seniors Golf Association Hall of Honor. Indiana Golf Hall of Fame. Sagamore of The Wabash. Honorary Sergeant of Arms of the Tennessee State Senat. Diddel died February 25, 1985, in Zionsville, Indiana.\nHow many golf courses did Bill Diddel design approximately?",
+      "response": "{\"paraphrased_questions\": [\n  \"Approximately how many golf courses were designed by Bill Diddel?\",\n  \"What is the estimated number of golf courses created by Bill Diddel?\",\n  \"Roughly how many golf course designs can be attributed to Bill Diddel?\"\n]}"
+    },
+    {
+      "prompt": "Bill Diddel (1882\u2013February 25, 1985) was an American amateur golfer and renowned golf course designer. He was born in Indianapolis, Indiana.[1][2][3][4] Diddel designed approximately three hundred golf courses, primarily in the Midwest, beginning with Ulen Country Club in Lebanon, Indiana. Diddel designed the golf course at Northwood Club in Dallas, Texas, which was the site of the U.S. Open in 1952. Diddel was one of the founders and a charter member of the American Society of Golf Course Architects. He was elected president of that body in 1954. Diddel was the recipient of numerous awards and recognitions, including: The Fred Waring Sportsmanship Award. The American Seniors Golf Association Hall of Honor. Indiana Golf Hall of Fame. Sagamore of The Wabash. Honorary Sergeant of Arms of the Tennessee State Senat. Diddel died February 25, 1985, in Zionsville, Indiana.\nWhat was Bill Diddel's most famous golf course design?",
+      "response": "{\"paraphrased_questions\": [\n  \"Which golf course is considered Bill Diddel's most renowned creation?\",\n  \"Can you name the most notable golf course designed by Bill Diddel?\",\n  \"What is widely regarded as Bill Diddel's signature golf course design?\"\n]}"
+    },
+    {
+      "prompt": "UFC 58: USA vs. Canada was a mixed martial arts event held by the Ultimate Fighting Championship on March 4, 2006. It was held at the Mandalay Bay Events Center on the Las Vegas Strip in Nevada, and broadcast live on pay-per-view in the United States.\nWhere was UFC 58: USA vs. Canada held?",
+      "response": "{\"paraphrased_questions\": [\n  \"In which location did UFC 58: USA vs. Canada take place?\",\n  \"What was the venue for the UFC 58 event featuring USA vs. Canada?\",\n  \"Can you tell me where they hosted UFC 58, which was titled USA vs. Canada?\"\n]}"
+    },
+    {
+      "prompt": "UFC 58: USA vs. Canada was a mixed martial arts event held by the Ultimate Fighting Championship on March 4, 2006. It was held at the Mandalay Bay Events Center on the Las Vegas Strip in Nevada, and broadcast live on pay-per-view in the United States.\nWho won the main event of UFC 58: USA vs. Canada?",
+      "response": "{\"paraphrased_questions\": [\n  \"Which fighter emerged victorious in the headlining bout of UFC 58, featuring USA vs. Canada?\",\n  \"At UFC 58, pitting USA against Canada, who claimed victory in the primary match?\",\n  \"In the main event of UFC 58's USA vs. Canada showdown, who came out on top?\"\n]}"
+    },
+    {
+      "prompt": "Survivor's Quest is a novel set in the Star Wars expanded universe, published by Del Rey on February 1, 2004. Written by Timothy Zahn, it is a sequel to Zahn's 1998 Star Wars novel Vision of the Future.\nWho wrote the novel Survivor's Quest?",
+      "response": "{\"paraphrased_questions\": [\n  \"Which author is responsible for penning the book Survivor's Quest?\",\n  \"Can you identify the writer of the novel titled Survivor's Quest?\",\n  \"What is the name of the person who authored Survivor's Quest?\"\n]}"
+    },
+    {
+      "prompt": "Survivor's Quest is a novel set in the Star Wars expanded universe, published by Del Rey on February 1, 2004. Written by Timothy Zahn, it is a sequel to Zahn's 1998 Star Wars novel Vision of the Future.\nWhat is the plot of Survivor's Quest?",
+      "response": "{\"paraphrased_questions\": [\n  \"Can you summarize the storyline of Survivor's Quest?\",\n  \"What happens in the narrative of Survivor's Quest?\",\n  \"Could you provide an overview of the main events in Survivor's Quest?\"\n]}"
+    },
+    {
+      "prompt": "Nymphon gracile is a species of sea spider first described by William Elford Leach in 1863.[1][2] The species highly resembles other members of the genus Nymphon, and species identification from morphological traits alone is, therefore, a complex task.[3]\nWho first described the species Nymphon gracile?",
+      "response": "{\"paraphrased_questions\": [\n  \"Which scientist initially identified and characterized Nymphon gracile?\",\n  \"What researcher is credited with the original description of the species Nymphon gracile?\",\n  \"Can you name the person who originally documented and classified Nymphon gracile as a distinct species?\"\n]}"
+    },
+    {
+      "prompt": "Nymphon gracile is a species of sea spider first described by William Elford Leach in 1863.[1][2] The species highly resembles other members of the genus Nymphon, and species identification from morphological traits alone is, therefore, a complex task.[3]\nWhat is the average lifespan of Nymphon gracile?",
+      "response": "{\"paraphrased_questions\": [\n  \"How long does Nymphon gracile typically live?\",\n  \"What is the usual life expectancy of Nymphon gracile?\",\n  \"On average, what is the duration of life for Nymphon gracile?\"\n]}"
+    },
+    {
+      "prompt": "Lyncina carneola, common name the carnelian cowrie, is a species of sea snail, a cowry, a marine gastropod mollusk in the family Cypraeidae, the cowries.[1]\nWhat is the common name for Lyncina carneola?",
+      "response": "{\"paraphrased_questions\": [\n  \"By what familiar name is Lyncina carneola known?\",\n  \"What is the popular or everyday name for the species Lyncina carneola?\",\n  \"How is Lyncina carneola commonly referred to in non-scientific terms?\"\n]}"
+    },
+    {
+      "prompt": "Lyncina carneola, common name the carnelian cowrie, is a species of sea snail, a cowry, a marine gastropod mollusk in the family Cypraeidae, the cowries.[1]\nWhat is the average size of a Lyncina carneola shell?",
+      "response": "{\"paraphrased_questions\": [\n  \"How large is a typical Lyncina carneola shell on average?\",\n  \"What are the usual dimensions of a Lyncina carneola shell?\",\n  \"On average, what size can one expect for a shell of the Lyncina carneola species?\"\n]}"
+    },
+    {
+      "prompt": "The men's 1500 metre freestyle at the 2007 World Aquatics Championships was held on the morning of 31 March (heats) and the evening of 1 April (final) at Rod Laver Arena in Melbourne, Australia. 50 swimmers were entered in the event, of which 47 swam. The existing records at the start of the event were: World record (WR): 14:34.56, Grant Hackett (Australia), 29 July 2001, Fukuoka, Japan Championship record (CR): same.\nWhere was the men's 1500 metre freestyle event held during the 2007 World Aquatics Championships?",
+      "response": "{\n  \"paraphrased_questions\": [\n    \"During the 2007 World Aquatics Championships, at which location did the men's 1500 metre freestyle competition take place?\",\n    \"What was the venue for the men's 1500 metre freestyle race in the 2007 World Aquatics Championships?\",\n    \"In which city or facility was the men's 1500 metre freestyle event hosted as part of the 2007 World Aquatics Championships?\"\n  ]\n}"
+    },
+    {
+      "prompt": "The men's 1500 metre freestyle at the 2007 World Aquatics Championships was held on the morning of 31 March (heats) and the evening of 1 April (final) at Rod Laver Arena in Melbourne, Australia. 50 swimmers were entered in the event, of which 47 swam. The existing records at the start of the event were: World record (WR): 14:34.56, Grant Hackett (Australia), 29 July 2001, Fukuoka, Japan Championship record (CR): same.\nWho won the gold medal in the men's 1500 metre freestyle at the 2007 World Aquatics Championships?",
+      "response": "{\"paraphrased_questions\": [\n  \"In the 2007 World Aquatics Championships, which athlete claimed the gold medal in the men's 1500 metre freestyle event?\",\n  \"At the 2007 World Aquatics Championships, who emerged victorious in the men's 1500 metre freestyle, securing the gold medal?\",\n  \"Which swimmer took home the gold medal for the men's 1500 metre freestyle competition during the 2007 World Aquatics Championships?\"\n]}"
+    },
+    {
+      "prompt": "Frederick Elizur Goodrich (January 15, 1843 \u2013 January 12, 1925) was an American journalist and political figure who worked for The Boston Post for 54 years.\nHow long did Frederick E. Goodrich work for The Boston Post?",
+      "response": "{\"paraphrased_questions\": [\n  \"What was the duration of Frederick E. Goodrich's employment at The Boston Post?\",\n  \"For how many years was Frederick E. Goodrich employed by The Boston Post?\",\n  \"What period of time did Frederick E. Goodrich spend working at The Boston Post?\"\n]}"
+    },
+    {
+      "prompt": "Frederick Elizur Goodrich (January 15, 1843 \u2013 January 12, 1925) was an American journalist and political figure who worked for The Boston Post for 54 years.\nWhat was Frederick E. Goodrich's most notable article during his career at The Boston Post?",
+      "response": "{\"paraphrased_questions\": [\n  \"Which article written by Frederick E. Goodrich during his time at The Boston Post is considered his most significant?\",\n  \"During his tenure at The Boston Post, what was Frederick E. Goodrich's most renowned piece of writing?\",\n  \"What is regarded as the most important article authored by Frederick E. Goodrich while working for The Boston Post?\"\n]}"
+    },
+    {
+      "prompt": "The Wunderlichioideae are a subfamily of flowering plants belonging to the family Asteraceae. The subfamily includes eight genera and about 24 species that are concentrated in Brazil (Wunderlichia) and Guyana (Chimantaea, Stenopadus, and Stomatochaeta), with some species in other South America countries (Hyalis and Ianthopappus) and others (Nouelia and Leucomeris) in Southeast Asia and the Himalayas.[1] Distinguishing features of the members of this subfamily are presence of styles with glabrous style branches and a deletion in the rpoB gene. Two tribes, Wunderlicheae and Hyalideae, are recognised.\nHow many genera are included in the Wunderlichioideae subfamily?",
+      "response": "{\"paraphrased_questions\": [\n  \"What is the number of genera contained within the Wunderlichioideae subfamily?\",\n  \"How many different genera can be found in the subfamily Wunderlichioideae?\",\n  \"In the Wunderlichioideae subfamily, what is the total count of genera?\"\n]}"
+    },
+    {
+      "prompt": "The Wunderlichioideae are a subfamily of flowering plants belonging to the family Asteraceae. The subfamily includes eight genera and about 24 species that are concentrated in Brazil (Wunderlichia) and Guyana (Chimantaea, Stenopadus, and Stomatochaeta), with some species in other South America countries (Hyalis and Ianthopappus) and others (Nouelia and Leucomeris) in Southeast Asia and the Himalayas.[1] Distinguishing features of the members of this subfamily are presence of styles with glabrous style branches and a deletion in the rpoB gene. Two tribes, Wunderlicheae and Hyalideae, are recognised.\nWhat is the evolutionary history of the Wunderlichioideae subfamily?",
+      "response": "{\n  \"paraphrased_questions\": [\n    \"How did the Wunderlichioideae subfamily evolve over time?\",\n    \"Can you describe the evolutionary development of the Wunderlichioideae subfamily?\",\n    \"What is known about the evolutionary progression of the Wunderlichioideae subfamily?\"\n  ]\n}"
+    },
+    {
+      "prompt": "Sword Boys is a street gang in Perth, Western Australia, consisting mostly of Lebanese Australians,[1][2] that has been known to authorities since mid-1990s.[3][4] Gang members have been reported to wear a miniature gold scimitar on a chain around their necks.[5][6] Sword Boys has been responsible for amphetamine and ecstasy distribution in Western Australia,[7] and has also been linked to car rebirthing by Western Sydney gangs, where stolen cars are stripped and reassembled.[2]\nWhat distinctive item do Sword Boys gang members reportedly wear?",
+      "response": "{\"paraphrased_questions\": [\n  \"According to reports, what unique accessory is worn by members of the Sword Boys gang?\",\n  \"What specific article of clothing or attire is said to identify Sword Boys gang affiliates?\",\n  \"What characteristic piece of apparel do individuals associated with the Sword Boys gang allegedly don?\"\n]}"
+    },
+    {
+      "prompt": "Sword Boys is a street gang in Perth, Western Australia, consisting mostly of Lebanese Australians,[1][2] that has been known to authorities since mid-1990s.[3][4] Gang members have been reported to wear a miniature gold scimitar on a chain around their necks.[5][6] Sword Boys has been responsible for amphetamine and ecstasy distribution in Western Australia,[7] and has also been linked to car rebirthing by Western Sydney gangs, where stolen cars are stripped and reassembled.[2]\nHow many active members are currently in the Sword Boys gang?",
+      "response": "{\"paraphrased_questions\": [\n  \"What is the current number of active participants in the Sword Boys gang?\",\n  \"How many individuals are presently active in the Sword Boys gang membership?\",\n  \"Can you provide the count of current active affiliates in the Sword Boys gang?\"\n]}"
+    },
+    {
+      "prompt": "Kemar Donaldson popularly known as Kranium, is a Jamaican reggae and dancehall singer known for his 2013 hit single \"Nobody Has To Know\" which gave him international recognition and led him to the Atlantic Records record label.[1]\nWhat is Kranium's real name?",
+      "response": "{\"paraphrased_questions\": [\n  \"Can you tell me the birth name of Kranium?\",\n  \"What is the actual name of the artist known as Kranium?\",\n  \"By what legal name is Kranium officially recognized?\"\n]}"
+    },
+    {
+      "prompt": "Kemar Donaldson popularly known as Kranium, is a Jamaican reggae and dancehall singer known for his 2013 hit single \"Nobody Has To Know\" which gave him international recognition and led him to the Atlantic Records record label.[1]\nHow many albums has Kranium released throughout his career?",
+      "response": "{\"paraphrased_questions\": [\n  \"Throughout his musical journey, how many albums has Kranium put out?\",\n  \"What is the total number of albums released by Kranium during his time as an artist?\",\n  \"In Kranium's discography, how many full-length albums can be found?\"\n]}"
+    }
+  ],
+  "failed_responses": []
+}

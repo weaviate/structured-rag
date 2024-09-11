@@ -185,7 +185,7 @@ def run_test(args):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Run LLM testing with different models.")
     parser.add_argument("--model_name", type=str, required=True, help="Name of the model to use")
-    parser.add_argument("--model_provider", type=str, required=True, choices=["ollama", "google", "openai"], help="Provider of the model")
+    parser.add_argument("--model_provider", type=str, required=True, choices=["ollama", "google", "openai", "anthropic"], help="Provider of the model")
     parser.add_argument("--api_key", type=str, required=False, help="API key for the model provider (if required)")
     parser.add_argument("--test", type=str, required=True, choices=[
         "GenerateAnswer", "RateContext", "AssessAnswerability", "ParaphraseQuestions",

@@ -48,7 +48,7 @@ class fstring_Program():
                     {"role": "user", "content": connection_prompt}
                 ]
             )
-            return response.content
+            return response.content[0].text
 
     def forward(self, test: str, context: str = "", question: str = "") -> str:
         references: Dict[str, str] = {}
@@ -82,4 +82,4 @@ class fstring_Program():
                     {"role": "user", "content": prompt}
                 ]
             )
-            return response.content
+            return response.content[0].text
