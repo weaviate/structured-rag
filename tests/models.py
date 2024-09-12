@@ -21,6 +21,9 @@ class Experiment(BaseModel):
     all_responses: list[PromptWithResponse]
     failed_responses: list[PromptWithResponse]
 
+    class Config:
+        protected_namespaces = ()
+
 # Models used in `structured_rag`
 
 class GenerateAnswer(BaseModel):

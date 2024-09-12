@@ -1,8 +1,8 @@
-model_name="gpt-4o" # claude-3-5-sonnet-20240620
-model_provider="openai"
-api_key="sk-foobar"
-test="RAGAS"
-save_dir="9-8-24"
+model_name="gemini-1.5-pro" # claude-3-5-sonnet-20240620
+model_provider="google"
+api_key="AI-foobar"
+test="AssessAnswerability"
+save_dir="rerun-gemini-tests"
 
 # ToDo:
 # # Load environment variables from a .env file
