@@ -75,7 +75,7 @@ class Model:
                 if request_output.finished:
                     yield request_output.outputs[0].text
 
-    @modal.method(is_generator=True)
+    @modal.method()
     def generate_with_outlines(self, prompts: list[str], output_model: BaseModel, settings=None):
         """Generate responses to a batch of prompts using Outlines structured outputs according to the provided Pydantic model."""
 
@@ -83,6 +83,7 @@ class Model:
         from outlines.integrations.vllm import JSONLogitsProcessor
 
         request_id = 0
+        results = []
 
         logits_processor = JSONLogitsProcessor(schema=output_model, llm=self.engine)
 
@@ -96,9 +97,14 @@ class Model:
             self.engine.add_request(str(request_id), prompt, sampling_params)
             request_id += 1
 
-        # Process requests and yield results
+        # Process requests and collect results
         while self.engine.has_unfinished_requests():
             request_outputs = self.engine.step()
             for request_output in request_outputs:
                 if request_output.finished:
-                    yield request_output.outputs[0].text
+                    results.append({
+                        "id": request_output.request_id,
+                        "answer": request_output.outputs[0].text
+                    })
+
+        return results
