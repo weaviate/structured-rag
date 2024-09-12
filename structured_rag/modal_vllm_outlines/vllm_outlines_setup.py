@@ -75,6 +75,7 @@ class Model:
                 if request_output.finished:
                     yield request_output.outputs[0].text
 
+    # TODO: Add the generator back in
     @modal.method()
     def generate_with_outlines(self, prompts: list[str], output_model: BaseModel, settings=None):
         """Generate responses to a batch of prompts using Outlines structured outputs according to the provided Pydantic model."""
