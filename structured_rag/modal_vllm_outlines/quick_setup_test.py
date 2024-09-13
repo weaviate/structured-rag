@@ -57,6 +57,13 @@ prefaced_prompts = [prompt_preface + prompt for prompt in prompts]
 # Loops through `prefaced_prompts` and appends the prompt_ending to each
 prefaced_prompts_with_ending = [prompt + prompt_ending for prompt in prefaced_prompts]
 
+'''
+prompts_with_ids = []
+
+for idx, prompt in enumerate(prefaced_prompts_with_ending):
+    prompts_with_ids.append(PromptWithID(prompt=prompt, id=idx))
+'''
+    
 def run_test(with_outlines):
     payload = {
         "prompts": prefaced_prompts_with_ending,
@@ -67,15 +74,21 @@ def run_test(with_outlines):
 
     start_time = time.time()
     response = requests.post(url, headers=headers, json=payload)
+    
+
     end_time = time.time()
 
     if response.status_code == 200:
         response_list = ast.literal_eval(response.text)
         print(f"\nResults {'with' if with_outlines else 'without'} Outlines:")
-        for i, result in enumerate(response_list):
-            print(f"Prompt {i + 1}: {prefaced_prompts_with_ending[i]}")
+        results_dict = {int(result["id"]): result["answer"] for result in response_list}
+        sorted_results = dict(sorted(results_dict.items()))
+        
+        for id, answer in sorted_results.items():
+            print(f"Prompt {id + 1}: {prompts[id]}")
             print("=" * 50)
-            print(result)
+            print(f"ID: {id+1}")
+            print(f"Answer: {answer}")
             print("=" * 50)
         
         total_time = end_time - start_time

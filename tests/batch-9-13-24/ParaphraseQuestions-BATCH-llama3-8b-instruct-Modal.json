@@ -1,0 +1,460 @@
+{
+  "test_name": "ParaphraseQuestions",
+  "model_name": "llama3-8b-instruct-Modal",
+  "prompting_method": "fstring",
+  "num_successes": 112,
+  "num_attempts": 112,
+  "success_rate": 1.0,
+  "total_time": 7,
+  "all_responses": [
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"What was Explorer 20's main mission objective?\", \"What were the scientific goals of the Ionosphere Explorer-A?\", \"What were the primary objectives of the S-48 satellite?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"What year did the Explorer 20 satellite take off?\", \"When was the Ionosphere Explorer-A, also known as S-48, launched?\", \"What is the launch year of the TOPSI and Topside Explorer, also known as Explorer 20?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"What protein is encoded by the MAP4K3 gene in humans?\", \"The MAP4K3 gene in humans encodes what protein?\", \"What human protein is encoded by the MAP4K3 gene?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"What are the known roles of the MAP4K3 protein in cell signaling pathways?\", \"What functions does the MAP4K3 protein perform in regulating cell signaling processes?\", \"How does the MAP4K3 protein influence the activity of enzymes involved in cell signaling?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"When was the Heggholmen Lighthouse's operation taken over by a machine?\", \"In what year did the Heggholmen Lighthouse transition to automation?\", \"At what point in time was Heggholmen Lighthouse made self-operating?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"What is the height of the Heggholmen Lighthouse, Norway?\", \"How many meters tall is the Heggholmen Lighthouse in Oslofjord?\", \"What is the elevation of the Heggholmen Lighthouse in Oslo, Norway?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"At what date did Antonio Nachura end his tenure as Associate Justice of the Supreme Court?\", \"When did Antonio Nachura conclude his term as Associate Justice?\", \"On what day did Antonio Nachura leave his position as a Justice of the Supreme Court?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"What notable cases did Antonio Nachura oversee as a member of the Supreme Court of the Philippines?\", \"What specific court cases did Antonio Nachura lead as Associate Justice of the Supreme Court?\", \"Which notable cases did Antonio Nachura preside over during his tenure as Associate Justice of the Supreme Court of the Philippines?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"In what football position does Roman Gergel compete?\", \"What is Roman Gergel's role in a football team?\", \"At which football position is Roman Gergel known to play?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"What football clubs has Roman Gergel represented throughout his career?\", \"Which football teams has Roman Gergel played for during his professional football career?\", \"At what football clubs has Roman Gergel played a part of his playing career?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"What deities besides Lord Hanuman are found in the main part of the Ragigudda Anjaneya Temple?\", \"Which deities are found in the main area of the Ragigudda Anjaneya Temple besides Lord Hanuman?\", \"Who are the other deities housed in the central part of the Ragigudda Anjaneya Temple along with Lord Hanuman?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"What is the historical date of the construction of the Ragigudda Anjaneya Temple?\", \"How old is the Ragigudda Sree Prasanna Anjaneyaswamy Temple?\", \"In what year was the Ragigudda Sree Prasanna Anjaneyaswamy Temple initially constructed?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"Some of Vincenzo Civerchio's works can be seen at which specific art galleries?\", \"Where are some of the notable artworks of Vincenzo Civerchio on display?\", \"In which museums can one find some of Vincenzo Civerchio's paintings?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"What artwork did Vincenzo Civerchio create that is most widely recognized?\", \"What is Vincenzo Civerchio's most notable artistic achievement?\", \"Can we identify Vincenzo Civerchio's most celebrated painting?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"What is the primary location of the Kanieae tribe's species variety?\", \"In which region do we find the greatest variety of Kanieae plants?\", \"Where does Kanieae exhibit its highest level of species diversity?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"What is the approximate number of species within the Kanieae tribe?\", \"How many species are found within the Kanieae tribe?\", \"What is the total number of species in the Kanieae tribe?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"At what wind speed do tropical cyclones usually receive their names?\", \"How fast must the wind be blowing for a tropical cyclone to get a name?\", \"At what wind speed are tropical cyclones assigned a name by meteorologists?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"What letter is most frequently selected for tagging storms to prevent confusion?\", \"What is the most common letter in storm naming conventions?\", \"What is the typical letter used in the naming of severe weather systems?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"What region is the origin of Tagetes minuta?\", \"In which geographical area did Tagetes minuta originate?\", \"What is the native land of the Tagetes minuta plant?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"What is the typical growth span of a Tagetes minuta plant?\", \"How tall on average does a Tagetes minuta plant grow?\", \"What is the average height of a mature Tagetes minuta plant?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"Which two sports did George Spencer represent New Zealand in during his rugby career?\", \"What types of rugby football did George Spencer play for the New Zealand national team?\", \"In which two forms of rugby did George Spencer achieve international recognition?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"What is the total number of international rugby matches George Spencer participated in?\", \"How many international rugby games did George Spencer compete in?\", \"Can we determine the exact amount of international rugby matches George Spencer played?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"What is the city where KalPa conducts its home games?\", \"In which Finnish city does KalPa play its home matches?\", \"At which location does KalPa host its home games?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"What is the current leader of KalPa hockey team in Finland?\", \"Who leads the Finnish ice hockey team KalPa currently?\", \"What is the name of the captain of the Finnish ice hockey team KalPa?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"What was the last government position held by Fons van der Stee before he stepped down from politics\", \"What was Fons van der Stee's final role in the Dutch government before his retirement\", \"What was Fons van der Stee's position in the Dutch government at the time of his retirement\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"What particular fiscal policies did Fons van der Stee introduce during his time as Minister of Finance?\", \"What specific economic measures did Fons van der Stee implement as the Minister of Finance?\", \"What key financial policies did Fons van der Stee implement as the Minister of Finance?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"What subfamily is the Areva moth genus classified under?\", \"To which subfamily does Areva, a genus of moths, belong?\", \"What family of moths does the Areva genus fall under?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"What is the total number of moth species in the Areva genus?\", \"How many moth species belong to the Areva genus?\", \"What is the approximate number of Arctiinae subfamily moths in the Areva genus?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"In which Olympic Games did Amanda Doman receive a silver medal?\", \"At which Olympics did Amanda Doman win the silver medal?\", \"In which Olympics did Amanda Doman claim a silver medal?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"What softball position was Amanda Doman known for holding during her time in the sport?\", \"What role did Amanda Doman play while participating in the sport of softball?\", \"What was Amanda Doman's primary position when competing in softball?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"What kind of dramas made Kalpataru famous as a director?\", \"Which film genres did Kalpataru specialize in?\", \"What genre of films is Kalpataru particularly known for making?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"What is the total number of films directed by Kalpataru?\", \"How many films were directed by Kalpataru throughout his career?\", \"In how many films did Kalpataru take the director's chair?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"In what geological era did Erismatopterus exist?\", \"During which time period did the Erismatopterus genus live?\", \"At what period in geological history was Erismatopterus known to have lived?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"What was the typical length of Erismatopterus levatus?\", \"What size is generally associated with Erismatopterus levatus?\", \"How big was an average Erismatopterus levatus?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"Who is the person behind the establishment of Ocean Kinetics in 1992?\", \"What year did John Henderson establish Ocean Kinetics?\", \"Who founded the marine engineering company, Ocean Kinetics, in Scotland?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"What is the current employee count at Ocean Kinetics in Lerwick, Scotland?\", \"How many staff members are working for Ocean Kinetics, a marine engineering company based in Scotland?\", \"Can you provide the current number of employees at Ocean Kinetics, a private limited engineering firm in Lerwick, Scotland?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"The main character in the 1966 British comedy film Doctor in Clover was which actor?\", \"Who played the lead role in the movie Doctor in Clover, a 1966 British comedy?\", \"In the 1966 British comedy film Doctor in Clover, who was the lead actor?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"What can be determined about the box office success of the 1966 British comedy film Doctor in Clover?\", \"How well did the film Doctor in Clover perform at the box office in 1966?\", \"What is known about the commercial performance of the film Doctor in Clover released in 1966?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"What is Ludi Boeken's child's profession and name?\", \"What is Ludi Boeken's daughter's name and occupation?\", \"What is the name and profession of Ludi Boeken's daughter?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"How many films has Ludi Boeken produced in his career?\", \"What is the number of films produced by Ludi Boeken?\", \"How many movies is Ludi Boeken credited to have produced?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"What was the day that the Battle of Mansura took place?\", \"When did the Union forces clash with the Confederate Army at Mansura?\", \"On which day did the Union army defeat the Confederate States Army in the Battle of Mansura?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"What is the estimated number of casualties incurred during the Battle of Mansura?\", \"How many soldiers were killed or wounded in the Battle of Mansura?\", \"Can you provide information on the military losses suffered by both sides in the Battle of Mansura?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"Who did Andrea D'Antoni learn painting from?\", \"Who taught Andrea D'Antoni how to paint?\", \"Under whose tutelage did Andrea D'Antoni study painting?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"What is the total count of Andrea D'Antoni's known artworks?\", \"How many artworks did Andrea D'Antoni produce during his lifetime?\", \"Can the number of paintings created by Andrea D'Antoni be determined?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"What satellite is NVS-01 meant to replace in the NavIC constellation?\", \"In the NavIC constellation, which satellite will be replaced by NVS-01?\", \"What satellite is intended to be replaced by NVS-01 in the NavIC system?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"What is the estimated duration that NVS-01 satellite is expected to be operational?\", \"How long is the lifespan of the NVS-01 satellite?\", \"What is the expected operational lifetime of NVS-01 satellite?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"What baseball leagues featured the Meridian Mets as a team?\", \"Which baseball leagues had the Meridian Mets as a part of their roster?\", \"In which baseball leagues did the Meridian Mets participate?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"Who was the top performer for the Meridian Mets?\", \"What was the name of the most notable player for the Meridian Mets?\", \"Can you identify the most prominent player to have played for the Meridian Mets?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"In which promotion is the NWA World Women's Tag Team Championship title defended?\", \"What organization is home to the NWA World Women's Tag Team Championship title?\", \"Which wrestling organization sanctions the NWA World Women's Tag Team Championship title?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"What wrestling duo currently holds the prestigious NWA Women's Tag Team Championship title?\", \"Which pair of female wrestlers is currently reigning as champions of the NWA World Women's Tag Team Championship?\", \"Who are the reigning champions of the NWA World Women's Tag Team Championship in the National Wrestling Alliance?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"Which team in the Slovak Extraliga did Dusan Benda represent?\", \"In the Slovak Extraliga, which hockey team was Dusan Benda a part of?\", \"Who was Dusan Benda's Slovak Extraliga team?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"What is the number of seasons Dusan Benda spent playing for HC Slovan Bratislava in the Slovak Extraliga?\", \"How many years of hockey experience does Dusan Benda have in the Slovak Extraliga playing with HC Slovan Bratislava?\", \"What is the duration of Dusan Benda's tenure in the Slovak Extraliga with HC Slovan Bratislava?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"What islands in Hawaii are home to the Thyrocopa alterna moth?\", \"On which islands within Hawaii does Thyrocopa alterna primarily inhabit?\", \"In which islands of Hawaii is the Thyrocopa alterna moth species found?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"What is the duration of life of Thyrocopa alterna moths?\", \"How long do Thyrocopa alterna moths live?\", \"At what length of time do Thyrocopa alterna moths typically exist?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"Who identified the Acantharachne genus for the first time?\", \"Who was responsible for the initial description of the Acantharachne genus?\", \"To whom do we owe the first discovery of the Acantharachne genus?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"How many Acantharachne species were identified by Albert Tullgren in 1910?\", \"How many Acantharachne species are currently classified under the Acantharachne genus?\", \"In 1910, Albert Tullgren discovered how many spider species that are now classified under Acantharachne?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"In the late 1960s, what group did George Olliver establish?\", \"George Olliver formed a group in the late 1960s, what was its name?\", \"George Olliver's late 1960s creation was which musical group?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"What is the total number of solo albums released by George Olliver?\", \"How many albums are there in George Olliver's solo music discography?\", \"What is the number of albums George Olliver released under his own name?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"What enzyme is encoded by the ADCY10 gene in humans?\", \"What protein is the product of the ADCY10 gene?\", \"What is the name of the enzyme that is encoded by the ADCY10 gene in the human genome?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"What does the ADCY10 enzyme do in the human body?\", \"What is the primary role of the ADCY10 enzyme in human biology?\", \"How does the ADCY10 enzyme function within the human body?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"Who scored the decisive goal in the 1989 Turkish Cup final match?\", \"Who was the player who scored the winning goal in the 1989 Turkish Cup final?\", \"What player scored the winning goal in the 1989 Turkish Cup final?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"What was the final outcome of the 1989 Turkish Cup?\", \"What was the score of the 1989 Turkish Cup championship game?\", \"What was the result of the 1989 Turkish Cup final match?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"Who is the songwriter behind Alison Moyet's song Invisible?\", \"Who penned the song Invisible for Alison Moyet?\", \"Who wrote the hit song Invisible that Alison Moyet recorded?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"What was the motivation behind Lamont Dozier's song writing of 'Invisible',\", \"What inspired Lamont Dozier to compose the song 'Invisible',\", \"What prompted Lamont Dozier to write 'Invisible' for Alison Moyet's debut album,\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"What was the identity of the most enduring member of the British heavy metal band Grim Reaper?\", \"Who was the longest serving musician within the Grim Reaper group?\", \"Which band member was a consistent part of Grim Reaper for the greatest period of time?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"What was Grim Reaper's most successful single?\", \"What was the highest-ranking song from Grim Reaper's discography?\", \"What was Grim Reaper's most popular song to chart on the music charts?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"What was the name of the MLB team that employed Rick Adair as a pitching coach\", \"Which MLB team had Rick Adair as their former pitching coach\", \"To which MLB team was Rick Adair a former pitching coach\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"What was Rick Adair's minor league career span?\", \"How long did Rick Adair contribute to the minor leagues?\", \"What was the duration of Rick Adair's experience in the minor leagues?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"What role did Karl Jakobs hold at ATLAS from 2017 to 2021?\", \"What was Karl Jakobs' position within the ATLAS Collaboration between 2017 and 2021?\", \"At which position was Karl Jakobs working at the ATLAS Collaboration from 2017 through 2021?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"What are Karl Jakobs' most notable contributions to particle physics research?\", \"What areas of particle physics has Karl Jakobs made significant contributions to?\", \"What key research areas has Karl Jakobs focused on in his career?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"The 2009 Rexall Edmonton Indy took place on July 26, 2009 at Edmonton's Rexall Speedway.\", \"On July 26, 2009, the 2009 Rexall Edmonton Indy was held at the Rexall Speedway in Edmonton, Alberta, Canada.\", \"The Rexall Edmonton Indy in 2009 occurred on July 26 at the Rexall Speedway in Edmonton, Alberta, Canada.\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"Who secured the victory at the 2009 Edmonton Indy?\", \"At the 2009 Rexall Edmonton Indy, which driver claimed the top spot?\", \"Who emerged as the winner of the 2009 IndyCar Series event in Edmonton, Canada?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"What is Kathryn Lueders' current role at work?\", \"In what position does Kathryn Lueders currently serve at SpaceX?\", \"What is Kathryn Lueders currently working as at SpaceX?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"What were some key projects that Kathryn Lueders managed during her time at NASA?\", \"What specific initiatives was Kathryn Lueders involved in at NASA?\", \"What projects did Kathryn Lueders oversee as part of her responsibilities at NASA?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"What are other names commonly used for the NCOA3 protein?\", \"What are the alternative designations for the NCOA3 protein?\", \"What are the additional names given to the NCOA3 protein?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"What role does the NCOA3 protein play in the regulation of gene expression within human cells?\", \"How does the NCOA3 protein contribute to the function of transcription factors in human cells?\", \"What is the primary biological function of the NCOA3 protein in human cellular processes?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"What is the approximate number of church buildings in Indonesia?\", \"How many churches exist in Indonesia as of the current data?\", \"What is the total number of churches across Indonesia?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"What is the earliest church structure found in Indonesia?\", \"Which church in Indonesia holds the title of the oldest?\", \"What is the oldest historical church established in Indonesia?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"What was the year the St. Michael's Residential School in Duck Lake, Saskatchewan, closed?\", \"At what point in time did the St. Michael's Residential School in Duck Lake, Saskatchewan, Canada cease operations?\", \"When exactly did the St. Michael's Indian Residential School in Duck Lake, Saskatchewan, Canada shut down?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"What is the current population count of Duck Lake, Saskatchewan?\", \"What number of residents live in Duck Lake at the moment?\", \"What is the current population figure for the town of Duck Lake?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"Who composed the song 'Gemini Dream'?\", \"What artists co-wrote the hit song 'Gemini Dream'?\", \"Who are the songwriters behind the Moody Blues' hit single 'Gemini Dream'?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"What prompted the songwriters of 'Gemini Dream' to express themselves through this song?\", \"What are the possible sources of inspiration behind the lyrics of 'Gemini Dream'?\", \"How did the songwriters' personal lives and emotions influence the creation of 'Gemini Dream'?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"In what capacity did E. S. Johnny Walker hold office for two periods?\", \"How many periods did E. S. Johnny Walker represent in the U.S. House of Representatives?\", \"During his political career, how many times was E. S. Johnny Walker elected to serve in the U.S. House of Representatives?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"What acts can be attributed to E. S. Johnny Walker during his tenure in the US House of Representatives?\", \"List the bills sponsored by E. S. Johnny Walker during his service in Congress\", \"What laws was E. S. Johnny Walker responsible for introducing during his two terms in the US House of Representatives?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"What date did Wikivoyage start functioning as a Wikimedia project?\", \"On what day of the year did Wikivoyage become a Wikimedia project?\", \"At what time in 2013 did Wikivoyage officially become part of the Wikimedia network?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"What is the current number of active contributors for Wikivoyage?\", \"How many active contributors are currently contributing to Wikivoyage?\", \"Can the number of active contributors for Wikivoyage be determined?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"Following Matt Busby's injury in the Munich air disaster, who took over as manager of the Scotland national football team in 1958?\", \"What led to Dawson Walker's appointment as manager of the Scotland national football team in 1958?\", \"Dawson Walker became manager of the Scotland national football team in 1958 due to the circumstances surrounding manager Matt Busby's absence, what was the reason for this?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"What was the win-loss record of Scotland's national team under Dawson Walker's leadership?\", \"Under Dawson Walker's management, what was the final win-loss tally for the Scotland national team?\", \"In what way did the Scotland national football team perform under the management of Dawson Walker?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"Which team chose David Bednar in the 2016 MLB draft?\", \"In 2016, which baseball team selected David Bednar?\", \"Which team picked David Bednar during the 2016 MLB draft?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"What is David Bednar's current ERA as a professional baseball player?\", \"What is David Bednar's career ERA?\", \"What is the current ERA of David Bednar in Major League Baseball?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"Who were the main actors in the 1996 romantic drama movie Heaven or Vegas?\", \"Who starred in the 1996 film Heaven or Vegas?\", \"What were the names of the lead actors in the 1996 movie Heaven or Vegas?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"What was the commercial performance of the 1996 film Heaven or Vegas?\", \"How well did Heaven or Vegas fare at the box office upon its release?\", \"What can be said about the financial success of the romantic drama Heaven or Vegas?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"How many golf courses did Bill Diddel create throughout his career?\", \"Approximately how many golf courses were designed by Bill Diddel?\", \"What is the estimated number of golf courses that Bill Diddel designed?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"What was the most prominent golf course designed by Bill Diddel?\", \"What is Bill Diddel's most renowned golf course design?\", \"Which golf course is considered Bill Diddel's most notable design?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"What was the location of UFC 58: USA vs. Canada?\", \"Where was the event UFC 58: USA vs. Canada taking place?\", \"At which venue did the UFC 58: USA vs. Canada event occur?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"What was the outcome of the main event at UFC 58: USA vs. Canada?\", \"Who emerged victorious in the headlining bout of UFC 58: USA vs. Canada?\", \"What was the winner of the main event at UFC 58: USA vs. Canada in the Ultimate Fighting Championship?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"The author of the novel Survivor's Quest is what person?\", \"Who is the writer behind the sequel to Vision of the Future, published as Survivor's Quest?\", \"Which author composed the novel set in the Star Wars universe, Survivor's Quest?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"What does Survivor's Quest by Timothy Zahn explore in terms of Mara Jade's character development in the Star Wars universe?\", \"In what ways does Survivor's Quest delve into Mara Jade's transition to becoming a Jedi Master following the Yuuzhan Vong War?\", \"What are the key themes and storylines addressed in Timothy Zahn's novel Survivor's Quest, particularly in relation to Mara Jade's journey after the Yuuzhan Vong War?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"Who identified the species Nymphon gracile for the first time?\", \"Who initially identified Nymphon gracile?\", \"Who originally described the species Nymphon gracile?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"What is the typical lifespan of the Nymphon gracile sea spider?\", \"How long does an average Nymphon gracile sea spider live?\", \"What is the average duration of a Nymphon gracile's life?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"What is another name for Lyncina carneola?\", \"What is Lyncina carneola commonly known as?\", \"What do people call Lyncina carneola?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"What is the typical length of a Lyncina carneola shell?\", \"How long is the shell of a Lyncina carneola snail on average?\", \"What is the average length of a carnalin cowrie shell?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"At which venue was the men's 1500 meter freestyle event held during the 2007 World Aquatics Championships?\", \"Where did the 1500 meter men's freestyle World Aquatics Championships take place in 2007?\", \"What was the location of the 1500 meter freestyle men's competition at the 2007 World Aquatics Championships?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"At the 2007 World Aquatics Championships, which swimmer emerged victorious in the men's 1500 metre freestyle competition?\", \"What was the name of the athlete who secured the gold medal in the men's 1500 metre freestyle event at the 2007 World Aquatics Championships?\", \"Who claimed the top spot on the podium in the men's 1500 metre freestyle at the 2007 World Aquatics Championships?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"For how many years was Frederick E. Goodrich a journalist with The Boston Post?\", \"What was the length of Frederick E. Goodrich's tenure at The Boston Post?\", \"How long was Frederick E. Goodrich affiliated with The Boston Post as a journalist?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"What was the most famous piece written by Frederick E. Goodrich during his 54-year tenure at The Boston Post?\", \"What significant article did Frederick E. Goodrich contribute to The Boston Post during his long career?\", \"What was the most renowned article written by Frederick E. Goodrich while working at The Boston Post for over five decades?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"How many genera make up the Wunderlichioideae subfamily?\", \"What is the total number of genera within the Wunderlichioideae subfamily?\", \"How many genera are contained within the Wunderlichioideae subfamily?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"What are the origins and dispersal patterns of the Wunderlichioideae subfamily?\", \"How did the unique characteristics of the Wunderlichioideae subfamily evolve over time?\", \"What are the key factors that have contributed to the diversification of the Wunderlichioideae subfamily?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"What item is typically worn by members of the Sword Boys gang?\", \"What fashion accessory can be found on Sword Boys gang members?\", \"What is a common piece of jewelry associated with the Sword Boys gang?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"What is the current membership size of the Sword Boys gang in Perth?\", \"How many members are currently part of the Sword Boys gang in Western Australia?\", \"What is the approximate number of active members in the Sword Boys gang?\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"What is the birth name of Kranium?\", \"What is Kemar Donaldson's stage name also known as\", \"What is the actual name of the Jamaican reggae singer Kranium\"]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"paraphrased_questions\": [\"What is the total number of albums Kranium has released throughout his musical career?\", \"How many studio albums has Kranium released up until now?\", \"What is the exact number of albums released by Kranium as a professional singer?\"]}"
+    }
+  ],
+  "failed_responses": []
+}

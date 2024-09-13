@@ -24,6 +24,6 @@ def generate_web(
 ):
     import os
     if data["with_outlines"] == True:
-        return Model.generate_with_outlines.remote_gen(data["prompts"], data["output_model"], settings=None)
+        return Model.generate_with_outlines.remote(data["prompts"], data["output_model"], settings=None)
     else:
         return Model.generate.remote_gen(data["prompts"], settings=None)

@@ -13,8 +13,8 @@ from typing import List
 from pydantic import BaseModel
 
 from structured_rag.fstring_prompts import get_prompt
-from structured_rag.models.models import GenerateAnswer, RateContext, AssessAnswerability, ParaphraseQuestions, GenerateAnswerWithConfidence, GenerateAnswersWithConfidence
-from structured_rag.models.models import test_parameters
+from structured_rag.models.models import GenerateAnswer, RateContext, AssessAnswerability, ParaphraseQuestions, RAGAS, GenerateAnswerWithConfidence, GenerateAnswersWithConfidence
+from structured_rag.models.models import test_params
 
 url = "YOUR_MODAL_URL"
 
@@ -40,26 +40,10 @@ You are a helpful assistant<|eot_id|>
     # Preface each prompt and append the ending
     return [prompt_preface + prompt + prompt_ending for prompt in prompts]
 
-def run_test(dataset, test_type, with_outlines):
+def run_batch_test(dataset, test_type, with_outlines):
     payload = {
         "with_outlines": with_outlines
     }
-    test_params = None
-
-    if test_type == "GenerateAnswer":
-        test_params = test_parameters["GenerateAnswer"]
-    elif test_type == "RateContext":
-        test_params = test_parameters["RateContext"]
-    elif test_type == "AssessAnswerability":
-        test_params = test_parameters["AssessAnswerability"]
-    elif test_type == "ParaphraseQuestions":
-        test_params = test_parameters["ParaphraseQuestions"]
-    elif test_type == "GenerateAnswerWithConfidence":
-        test_params = test_parameters["GenerateAnswerWithConfidence"]
-    elif test_type == "GenerateAnswersWithConfidence":
-        test_params = test_parameters["GenerateAnswersWithConfidence"]
-    else:
-        raise ValueError(f"Unsupported test type: {test_type}")
 
     if with_outlines:
         if test_type == "GenerateAnswer":
@@ -70,6 +54,8 @@ def run_test(dataset, test_type, with_outlines):
             payload["output_model"] = AssessAnswerability.schema()
         elif test_type == "ParaphraseQuestions":
             payload["output_model"] = ParaphraseQuestions.schema()
+        elif test_type == "RAGAS":
+            payload["output_model"] = RAGAS.schema()
         elif test_type == "GenerateAnswerWithConfidence":
             payload["output_model"] = GenerateAnswerWithConfidence.schema()
         elif test_type == "GenerateAnswersWithConfidence":
@@ -78,7 +64,9 @@ def run_test(dataset, test_type, with_outlines):
 
     prompts = []
     for item in dataset:
-        references = {"context": item["abstract"], "question": item["answerable_question"]}
+        references = {"context": item["context"], 
+                      "question": item["question"],
+                      "answer": item["answer"]}
         formatted_prompt = get_prompt(test_type, references, test_params)
         prompts.append(formatted_prompt)
 
@@ -116,7 +104,7 @@ if __name__ == "__main__":
     parser.add_argument("--with-outlines", action="store_true", help="Run test with Outlines")
     args = parser.parse_args()
 
-    filename = "./data/wiki-answerable-questions.json"
+    filename = "../data/WikiQuestions.json"
     json_data = load_json_from_file(filename)
 
-    run_test(json_data, "GenerateAnswer", with_outlines=args.with_outlines)
+    run_batch_test(json_data, "GenerateAnswer", with_outlines=args.with_outlines)

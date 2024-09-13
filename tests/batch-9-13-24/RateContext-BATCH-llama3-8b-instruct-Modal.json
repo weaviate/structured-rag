@@ -1,0 +1,460 @@
+{
+  "test_name": "RateContext",
+  "model_name": "llama3-8b-instruct-Modal",
+  "prompting_method": "fstring",
+  "num_successes": 112,
+  "num_attempts": 112,
+  "success_rate": 1.0,
+  "total_time": 4,
+  "all_responses": [
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 5}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 3}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 5}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 5}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 5}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 2}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 5}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 2}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 5}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 5}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 5}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 2}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 5}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 5}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 5}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 5}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 1}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 5}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 5}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 4}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 5}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 2}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 5}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 5}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 5}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 2}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 5}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 5}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 5}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 2}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 5}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 2}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 5}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 4}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 5}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 5}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 5}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 2}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 5}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 1}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 5}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 2}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 5}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 2}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 5}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 5}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 5}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 5}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 5}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 2}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 5}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 5}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 5}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 2}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 5}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 5}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 5}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 1}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 5}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 4}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 5}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 5}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 5}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 5}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 5}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 5}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 5}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 5}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 5}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 5}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 5}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 5}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 5}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 5}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 1}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 5}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 3}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 5}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 2}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 5}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 4}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 3}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 5}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 5}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 4}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 5}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 4}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 5}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 5}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 5}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 5}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 5}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 1}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 5}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 5}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 5}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 5}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 5}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 2}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 5}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 5}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 5}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 2}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 5}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"context_score\": 3}"
+    }
+  ],
+  "failed_responses": []
+}
