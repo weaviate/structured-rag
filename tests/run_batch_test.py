@@ -13,8 +13,10 @@ from typing import List
 from pydantic import BaseModel
 
 from structured_rag.fstring_prompts import get_prompt
-from structured_rag.models.models import GenerateAnswer, RateContext, AssessAnswerability, ParaphraseQuestions, RAGAS, GenerateAnswerWithConfidence, GenerateAnswersWithConfidence
-from structured_rag.models.models import test_params
+from models import GenerateAnswer, RateContext, AssessAnswerability, ParaphraseQuestions, RAGAS, GenerateAnswerWithConfidence, GenerateAnswersWithConfidence
+from models import test_params
+
+from models import Experiment, PromptWithResponse, PromptingMethod
 
 url = "YOUR_MODAL_URL"
 
@@ -40,11 +42,16 @@ You are a helpful assistant<|eot_id|>
     # Preface each prompt and append the ending
     return [prompt_preface + prompt + prompt_ending for prompt in prompts]
 
-def run_batch_test(dataset, test_type, with_outlines):
+# currently doing nearly everything in this single function
+def run_batch_test(dataset_filepath, test_type, save_dir, with_outlines):
+    dataset = load_json_from_file(dataset_filepath)
+
+    # ToD, update to ablate `with_outlines`
     payload = {
-        "with_outlines": with_outlines
+        "with_outlines": True
     }
 
+    # Get Pydantic Model to send to vLLM / Outlines
     if with_outlines:
         if test_type == "GenerateAnswer":
             payload["output_model"] = GenerateAnswer.schema()
@@ -61,13 +68,15 @@ def run_batch_test(dataset, test_type, with_outlines):
         elif test_type == "GenerateAnswersWithConfidence":
             payload["output_model"] = GenerateAnswersWithConfidence.schema()
 
+    # ToDo, ablate interfacing the response_format instructions with structured decoding?
 
     prompts = []
     for item in dataset:
+        # just format all references for all potential tasks
         references = {"context": item["context"], 
                       "question": item["question"],
                       "answer": item["answer"]}
-        formatted_prompt = get_prompt(test_type, references, test_params)
+        formatted_prompt = get_prompt(test_type, references, test_params[test_type])
         prompts.append(formatted_prompt)
 
     prompts_for_llama3 = prepare_prompts_for_llama3(prompts)
@@ -75,25 +84,58 @@ def run_batch_test(dataset, test_type, with_outlines):
     payload["prompts"] = prompts_for_llama3
 
     start_time = time.time()
+    # Run all inferences
     response = requests.post(url, headers=headers, json=payload)
-    end_time = time.time()
-    print(f"Total time taken: {end_time-start_time:.2f} seconds")
-    print(f"Average time per task: {(end_time-start_time) / len(prompts):.2f} seconds")
+    total_time = int(time.time() - start_time)
+    print(f"Total time taken: {total_time} seconds")
+    print(f"Average time per task: {(total_time) / len(prompts):.2f} seconds")
+
+    batch_experiment = Experiment(
+        test_name=args.test,
+        model_name="llama3-8b-instruct-Modal",
+        prompting_method=PromptingMethod.fstring,
+        num_successes=0,
+        num_attempts=0,
+        success_rate=0,
+        total_time=total_time,
+        all_responses=[],
+        failed_responses=[]
+    )
 
     if response.status_code == 200:
         response_list = ast.literal_eval(response.text)
-        success_count, total_count = 0, 0
-        for idx, output in enumerate(response_list):
-            print(f"Response for prompt: {prompts_for_llama3[idx]}\n")
-            print(f"\033[92m{output}\033[0m\n\n")
+        results_dict = {int(result["id"]): result["answer"] for result in response_list}
+        sorted_results = dict(sorted(results_dict.items()))
+        for id, output in sorted_results.items():
+            # currently not using the id, but will use this for task evaluation later on
+            # ... this isn't a problem now, becuase the only metric is the JSON formatting
             if is_valid_json_output(output, test_type):
                 print(f"{Colors.GREEN}Valid output:\n{output}{Colors.ENDC}")
-                success_count += 1
+                batch_experiment.num_successes += 1
             else:
                 print(f"{Colors.RED}Invalid output:\n{output}{Colors.ENDC}")
-            total_count += 1
+                batch_experiment.failed_responses.append(PromptWithResponse(
+                    prompt="placeholder",
+                    response=output
+                ))
+            batch_experiment.num_attempts += 1
+            batch_experiment.all_responses.append(PromptWithResponse(
+                prompt="placeholder",
+                response=output
+            ))
 
-        print(f"Success rate: {success_count / total_count:.2f}")
+        batch_experiment.success_rate = batch_experiment.num_successes / batch_experiment.num_attempts
+        print(f"{Colors.GREEN}Success rate: {batch_experiment.success_rate:.2f}{Colors.ENDC}")
+
+        # serialize experiment to JSON
+        os.makedirs(args.save_dir, exist_ok=True)
+        # ToDo, ablate `args.model_name`
+        batch_result_file = os.path.join(args.save_dir, f"{args.test}-BATCH-llama3-8b-instruct-Modal.json")
+
+        with open(batch_result_file, "w") as f:
+            json.dump(batch_experiment.dict(), f, indent=2)
+        
+        print(f"\nResults saved in {batch_result_file}.")
 
     else:
         print(f"Error: {response.status_code}")
@@ -101,10 +143,11 @@ def run_batch_test(dataset, test_type, with_outlines):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Run test with or without Outlines")
-    parser.add_argument("--with-outlines", action="store_true", help="Run test with Outlines")
+    # ToDo, update to ablate `with_outlines`
+    #parser.add_argument("--with-outlines", action="store_true", help="Run test with Outlines")
+    parser.add_argument("--test", type=str, default="GenerateAnswer", help="Test to run")
+    parser.add_argument("--save-dir", type=str, default="results", help="Directory to save results")
     args = parser.parse_args()
 
-    filename = "../data/WikiQuestions.json"
-    json_data = load_json_from_file(filename)
-
-    run_batch_test(json_data, "GenerateAnswer", with_outlines=args.with_outlines)
+    dataset_filepath = "../data/WikiQuestions.json"
+    run_batch_test(dataset_filepath, args.test, args.save_dir, with_outlines=True)
