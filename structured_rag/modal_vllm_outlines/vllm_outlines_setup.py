@@ -103,6 +103,7 @@ class Model:
             request_outputs = self.engine.step()
             for request_output in request_outputs:
                 if request_output.finished:
+                    # fix this, `answer` is a terribly confusing key -- `response` is better
                     results.append({
                         "id": request_output.request_id,
                         "answer": request_output.outputs[0].text

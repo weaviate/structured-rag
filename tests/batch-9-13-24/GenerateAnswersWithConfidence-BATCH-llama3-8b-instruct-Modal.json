@@ -1,0 +1,909 @@
+{
+  "test_name": "GenerateAnswersWithConfidence",
+  "model_name": "llama3-8b-instruct-Modal",
+  "prompting_method": "fstring",
+  "num_successes": 0,
+  "num_attempts": 112,
+  "success_rate": 0.0,
+  "total_time": 15,
+  "all_responses": [
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"To conduct both long-term studies of the ionosphere from space and in-situ measurements of ion concentrations and temperatures\", \"confidence\": 5}, {\"answer\": \"The purpose of Explorer 20 is to investigate the ionosphere from space\", \"confidence\": 4}, {\"answer\": \"Explorer 20's purpose is to study the ionosphere and ion concentrations in the ionosphere\", \"confidence\": 3}, {\"answer\": \"Explorer 20's purpose is to study ion concentrations\", \"confidence\": 2}, {\"answer\": \"Explorer 20's purpose is unknown\", \"confidence\": 1}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"the information provided does not allow us to determine the exact year Explorer 20 was launched\", \"confidence\": 5}, {\"answer\": \"1963\", \"confidence\": 0}, {\"answer\": \"1960\", \"confidence\": 0}, {\"answer\": \"1965\", \"confidence\": 0}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"MAP4K3 encodes a protein in humans.\", \"confidence\": 5}, {\"answer\": \"MAP4K3 encodes the protein that is a component of the MAPK signaling pathway.\", \"confidence\": 4}, {\"answer\": \"MAP4K3 gene is associated with the protein that plays a role in cell growth and differentiation.\", \"confidence\": 3}, {\"answer\": \"MAP4K3 gene is involved in the regulation of the cell cycle.\", \"confidence\": 2}, {\"answer\": \"MAP4K3 encodes a protein.\", \"confidence\": 5}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"regulating the activity of various enzymes involved in cell signaling pathways, particularly those related to mitogen-activated protein kinases (MAPKs)\", \"confidence\": 5}, {\"answer\": \"modulating the activity of different kinases in various cell signaling pathways\", \"confidence\": 4}, {\"answer\": \"influencing the phosphorylation of proteins in cell signaling pathways\", \"confidence\": 4}, {\"answer\": \"regulating cell growth, differentiation, and survival\", \"confidence\": 3}, {\"answer\": \"involved in the regulation of various cellular processes\", \"confidence\": 3}, {\"answer\": \"influencing the activity of enzymes in signaling pathways\", \"confidence\": 5}, {\"answer\": \"playing a role in the regulation of cell cycle progression\", \"confidence\": 2}, {\"answer\": \"controlling the activity of MAPK signaling pathways\", \"confidence\": 5}, {\"answer\": \"regulating cell proliferation and apoptosis\", \"confidence\": 3}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"1972\", \"confidence\": 5}, {\"answer\": \"1971\", \"confidence\": 0}, {\"answer\": \"1973\", \"confidence\": 0}, {\"answer\": \"1974\", \"confidence\": 0}, {\"answer\": \"1975\", \"confidence\": 0}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Unfortunately, I couldn't find any specific information on the height of the Heggholmen Lighthouse. If you have more context or a reliable source, please provide it!\", \"confidence\": 5}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"June 13, 2011\", \"confidence\": 5}, {\"answer\": \"June 13, 2010\", \"confidence\": 0}, {\"answer\": \"March 13, 2022\", \"confidence\": 0}, {\"answer\": \"February 7, 2007\", \"confidence\": 0}, {\"answer\": \"January 31, 2007\", \"confidence\": 0}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Unfortunately, there is no available information on the specific cases that Antonio Nachura presided over during his time as Associate Justice.\", \"confidence\": 5}, {\"answer\": \"No information is available on the specific cases presided over by Antonio Nachura during his tenure as Associate Justice of the Supreme Court of the Philippines.\", \"confidence\": 5}, {\"answer\": \"Antonio Nachura is known to have worked as Solicitor General before his appointment but no specific case history is documented during his time as Associate Justice.\", \"confidence\": 4}, {\"answer\": \"It is unclear what specific cases were presided over by Antonio Nachura as an Associate Justice of the Supreme Court of the Philippines.\", \"confidence\": 5}] }"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"forward\", \"confidence\": 5}, {\"answer\": \"midfielder\", \"confidence\": 0}, {\"answer\": \"goalkeeper\", \"confidence\": 0}, {\"answer\": \"defender\", \"confidence\": 0}, {\"answer\": \"striker\", \"confidence\": 3}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"\u017deleziarne Podbrezov\u00e1\", \"confidence\": 3}, {\"answer\": \"Spartak Myjava\", \"confidence\": 3}, {\"answer\": \"Nitra\", \"confidence\": 2}, {\"answer\": \"Slovan Bratislava\", \"confidence\": 2}, {\"answer\": \"Pohronie\", \"confidence\": 2}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Lord Hanuman, Lord Rama, Goddess Sita, Lord Lakshmana, and Lord Shiva\", \"confidence\": 5}, {\"answer\": \"Lord Hanuman, Lord Rama, and Goddess Sita\", \"confidence\": 3}, {\"answer\": \"Lord Hanuman\", \"confidence\": 2}, {\"answer\": \"Lord Rama, Goddess Sita, Lord Lakshmana\", \"confidence\": 2}, {\"answer\": \"Lord Shiva\", \"confidence\": 1}, {\"answer\": \"Lord Hanuman, Lord Rama, Goddess Sita, Lord Lakshmana\", \"confidence\": 4}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"The construction date of the Ragigudda Anjaneya Temple is unknown\", \"confidence\": 5}, {\"answer\": \"The Ragigudda Anjaneya Temple's construction date is not provided in the given context\", \"confidence\": 5}, {\"answer\": \"No information is given about the construction date of the Ragigudda Anjaneya Temple\", \"confidence\": 5}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"The National Gallery of Art, Washington D.C.\", \"confidence\": 5}, {\"answer\": \"the Pinacoteca di Brera, Milan, Italy\", \"confidence\": 5}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Unfortunately, without further information or a specific mention of his most famous work, it is difficult to pinpoint Vincenzo Civerchio's most famous painting.\", \"confidence\": 5}, {\"answer\": \"One of his works is at the National Gallery of Art, Washington D.C.\", \"confidence\": 3}, {\"answer\": \"He is said to be an imitator of Bernardino Butinone\", \"confidence\": 3}, {\"answer\": \"He is said to be an imitator of Bernardino Zenale\", \"confidence\": 3}, {\"answer\": \"He is influenced by Vincenzo Foppa\", \"confidence\": 3}, {\"answer\": \"Bernardino Butinone\", \"confidence\": 2}, {\"answer\": \"Bernardino Zenale\", \"confidence\": 2}, {\"answer\": \"Vincenzo Foppa\", \"confidence\": 2}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{ \"answer\": \"Australia\", \"confidence\": 5 }, { \"answer\": \"Oceania and south-East Asia\", \"confidence\": 2 }]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"The Kanieae tribe includes around 150-200 species.\", \"confidence\": 5}, {\"answer\": \"There are approximately 150-200 species in the Kanieae tribe.\", \"confidence\": 5}, {\"answer\": \"One hundred and fifty to two hundred species belong to the Kanieae tribe.\", \"confidence\": 4}, {\"answer\": \"The Kanieae tribe comprises approximately 150 to 200 different species.\", \"confidence\": 4}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"65 km/h (40 mph)\", \"confidence\": 5}, {\"answer\": \"40 mph\", \"confidence\": 5}, {\"answer\": \"65 mph\", \"confidence\": 5}, {\"answer\": \"40 km/h\", \"confidence\": 3}, {\"answer\": \"100 km/h\", \"confidence\": 1}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"W\", \"confidence\": 5}, {\"answer\": \"V\", \"confidence\": 4}, {\"answer\": \"D\", \"confidence\": 3}, {\"answer\": \"E\", \"confidence\": 2}, {\"answer\": \"A\", \"confidence\": 1}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"The southern half of South America\", \"confidence\": 5}, {\"answer\": \"South America\", \"confidence\": 4}, {\"answer\": \"South America's southern half\", \"confidence\": 4}, {\"answer\": \"Southern South America\", \"confidence\": 4}, {\"answer\": \"Central and South America\", \"confidence\": 3}, {\"answer\": \"South\", \"confidence\": 2}, {\"answer\": \"Southern America\", \"confidence\": 2}, {\"answer\": \"South American\", \"confidence\": 2}, {\"answer\": \"America\", \"confidence\": 1}, {\"answer\": \"South America's half\", \"confidence\": 1}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Tall\", \"confidence\": 1}, {\"answer\": \"It is one to two feet tall\", \"confidence\": 2}, {\"answer\": \"1 to 2 feet\", \"confidence\": 3}, {\"answer\": \"The average height of a Tagetes minuta plant is approximately 1-2 feet (30-60 cm)\", \"confidence\": 5}, {\"answer\": \"30-60 cm\", \"confidence\": 3}, {\"answer\": \"1-2 feet\", \"confidence\": 4}, {\"answer\": \"60 cm\", \"confidence\": 2}, {\"answer\": \"The height of a Tagetes minuta plant is approximately one to two feet\", \"confidence\": 2}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Rugby Union and Rugby League\", \"confidence\": 5}, {\"answer\": \"Rugby League and Rugby Union\", \"confidence\": 4}, {\"answer\": \"Rugby Union\", \"confidence\": 2}, {\"answer\": \"Rugby League\", \"confidence\": 3}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"We cannot determine the exact number of international matches George Spencer played\", \"confidence\": 5}, {\"answer\": \"He played 5 international matches\", \"confidence\": 0}, {\"answer\": \"He played 10 international matches\", \"confidence\": 0}, {\"answer\": \"He played 1 international match\", \"confidence\": 0}, {\"answer\": \"He played 15 international matches\", \"confidence\": 0}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Kuopio\", \"confidence\": 5}, {\"answer\": \"Kuopio\", \"confidence\": 5}, {\"answer\": \"Oulu\", \"confidence\": 0}, {\"answer\": \"Helsinki\", \"confidence\": 0}, {\"answer\": \"Espoo\", \"confidence\": 0}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Mikko Kuivonen\", \"confidence\": 5}, {\"answer\": \"Aleksi Ainali\", \"confidence\": 3}, {\"answer\": \"Ville R\u00e4s\u00e4nen\", \"confidence\": 2}, {\"answer\": \"Juho Lammikko\", \"confidence\": 1}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Minister of Finance\", \"confidence\": 5}, {\"answer\": \"Minister for Netherlands Antilles Affairs\", \"confidence\": 1}, {\"answer\": \"Minister of Agriculture and Fisheries\", \"confidence\": 1}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"The text does not mention any specific policies implemented by Fons van der Stee as Minister of Finance.\", \"confidence\": 5}, {\"answer\": \"None\", \"confidence\": 4}, {\"answer\": \"Fons van der Stee did not implement any policies as Minister of Finance.\", \"confidence\": 5}, {\"answer\": \"The information about policies implemented by Fons van der Stee as Minister of Finance is not provided.\", \"confidence\": 5}, {\"answer\": \"Specific details about the policies implemented by Fons van der Stee as Minister of Finance are not available.\", \"confidence\": 5}, {\"answer\": \"Fons van der Stee implemented no policies as Minister of Finance according to the text.\", \"confidence\": 5}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Arctiinae\", \"confidence\": 5}, {\"answer\": \"Lasiocampinae\", \"confidence\": 0}, {\"answer\": \"Lymantriinae\", \"confidence\": 0}, {\"answer\": \"Herminiinae\", \"confidence\": 0}, {\"answer\": \"Ctenuchinae\", \"confidence\": 0}, {\"answer\": \"Phalaeninae\", \"confidence\": 0}, {\"answer\": \"Eupterotinae\", \"confidence\": 0}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"There are approximately 20-30 species in the Areva genus\", \"confidence\": 5}, {\"answer\": \"Areva has 20 to 30 species\", \"confidence\": 4}, {\"answer\": \"The Areva genus consists of around 20 to 30 moth species\", \"confidence\": 4}, {\"answer\": \"20-30 Areva species exist\", \"confidence\": 3}, {\"answer\": \"Areva has around 20 to 30 species\", \"confidence\": 3}, {\"answer\": \"The Areva moth genus contains 20-30 species\", \"confidence\": 2}, {\"answer\": \"Areva has 20-30 moth species\", \"confidence\": 2}, {\"answer\": \"20-30 moth species in the Areva genus\", \"confidence\": 2}, {\"answer\": \"Areva has approximately 20-30 species\", \"confidence\": 1}, {\"answer\": \"Areva contains 20-30 species\", \"confidence\": 1}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"The Olympic Games where Amanda Doman won a silver medal were the 2004 Summer Olympics.\", \"confidence\": 5}, {\"answer\": \"2004 Summer Olympics\", \"confidence\": 5}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Unknown\", \"confidence\": 2}, {\"answer\": \"Pitcher\", \"confidence\": 3}, {\"answer\": \"Catcher\", \"confidence\": 2}, {\"answer\": \"First Baseman\", \"confidence\": 2}, {\"answer\": \"Second Baseman\", \"confidence\": 2}, {\"answer\": \"Third Baseman\", \"confidence\": 2}, {\"answer\": \"Shortstop\", \"confidence\": 2}, {\"answer\": \"Left Fielder\", \"confidence\": 2}, {\"answer\": \"Center Fielder\", \"confidence\": 2}, {\"answer\": \"Right Fielder\", \"confidence\": 2}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\":[{\"answer\": \"melodramatic family dramas\", \"confidence\": 5}, {\"answer\": \"family melodramas\", \"confidence\": 4}, {\"answer\": \"melodramas\", \"confidence\": 3}, {\"answer\": \"dramas\", \"confidence\": 2}, {\"answer\": \"family films\", \"confidence\": 1}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"4\", \"confidence\": 5}, {\"answer\": \"unknown\", \"confidence\": 0}, {\"answer\": \"more than 4\", \"confidence\": 0}, {\"answer\": \"less than 4\", \"confidence\": 0}, {\"answer\": \"only one\", \"confidence\": 0}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Eocene epoch\", \"confidence\": 5}, {\"answer\": \"Eocene\", \"confidence\": 5}, {\"answer\": \"early to middle Eocene\", \"confidence\": 4}, {\"answer\": \"Eocene epoch.\", \"confidence\": 4}, {\"answer\": \"Eocene epoch\", \"confidence\": 4}, {\"answer\": \"The Eocene epoch\", \"confidence\": 4}, {\"answer\": \"early Eocene\", \"confidence\": 3}, {\"answer\": \"middle Eocene\", \"confidence\": 3}, {\"answer\": \"the Eocene epoch\", \"confidence\": 3}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Unfortunately, it is not possible to determine the average size of Erismatopterus levatus based on the available contexts.\", \"confidence\": 5}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"John Henderson founded Ocean Kinetics in 1992\", \"confidence\": 5}, {\"answer\": \"John Henderson founded Ocean Kinetics\", \"confidence\": 4}, {\"answer\": \"Ocean Kinetics was founded by John Henderson in 1992\", \"confidence\": 4}, {\"answer\": \"John Henderson founded Ocean Kinetics\", \"confidence\": 3}, {\"answer\": \"Ocean Kinetics was founded by John Henderson\", \"confidence\": 3}, {\"answer\": \"1992 is the year Ocean Kinetics was founded\", \"confidence\": 2}, {\"answer\": \"Ocean Kinetics was founded by John Henderson\", \"confidence\": 2}, {\"answer\": \"John Henderson\", \"confidence\": 1}, {\"answer\": \"Ocean Kinetics\", \"confidence\": 1}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"The answer is unknown\", \"confidence\": 5}, {\"answer\": \"The company employs over 20 people\", \"confidence\": 2}, {\"answer\": \"There is no information about the number of employees\", \"confidence\": 5}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\":[{\"answer\": \"Leslie Phillips\", \"confidence\": 5}, {\"answer\": \"Kiki Dee\", \"confidence\": 4}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"The exact box office performance of Doctor in Clover is unknown, but it likely performed reasonably well given its popularity as part of the Doctor series and the fame of Kiki Dee.\", \"confidence\": 4}, {\"answer\": \"The box office performance of Doctor in Clover was poor.\", \"confidence\": 1}, {\"answer\": \"Doctor in Clover performed well at the box office and was a commercial success.\", \"confidence\": 1}, {\"answer\": \"The box office performance of Doctor in Clover was excellent and surpassed expectations.\", \"confidence\": 0}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Julia Levy-Boeken\", \"confidence\": 5}, {\"answer\": \"actress\", \"confidence\": 5}, {\"answer\": \"actor\", \"confidence\": 0}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"At least one\", \"confidence\": 3}, {\"answer\": \"One\", \"confidence\": 2}, {\"answer\": \"We do not have enough information\", \"confidence\": 5}, {\"answer\": \"More than one\", \"confidence\": 1}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"May 16, 1864\", \"confidence\": 5}, {\"answer\": \"May 16, 1863\", \"confidence\": 0}, {\"answer\": \"May 16, 1862\", \"confidence\": 0}, {\"answer\": \"May 17, 1864\", \"confidence\": 0}, {\"answer\": \"April 16, 1864\", \"confidence\": 0}, {\"answer\": \"June 16, 1864\", \"confidence\": 0}, {\"answer\": \"March 16, 1864\", \"confidence\": 0}, {\"answer\": \"July 16, 1864\", \"confidence\": 0}, {\"answer\": \"August 16, 1864\", \"confidence\": 0}, {\"answer\": \"September 16, 1864\", \"confidence\": 0}, {\"answer\": \"October 16, 1864\", \"confidence\": 0}, {\"answer\": \"November 16, 1864\", \"confidence\": 0}, {\"answer\": \"December 16, 1864\", \"confidence\": 0}, {\"answer\": \"January 16, 1864\", \"confidence\": 0}, {\"answer\": \"February 16, 1864\", \"confidence\": 0}] }"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Unfortunately, I couldn't find any specific information on the number of casualties in the Battle of Mansura.\", \"confidence\": 5}, {\"answer\": \"I couldn't estimate the answer.\", \"confidence\": 4}, {\"answer\": \"0 casualties\", \"confidence\": 0}, {\"answer\": \"100 casualties\", \"confidence\": 0}, {\"answer\": \"1000 casualties\", \"confidence\": 0}, {\"answer\": \"The number of casualties in the Battle of Mansura is unknown.\", \"confidence\": 5}, {\"answer\": \"The number of casualties in the Battle of Mansura was 0.\", \"confidence\": 0}, {\"answer\": \"The number of casualties in the Battle of Mansura was 100.\", \"confidence\": 0}, {\"answer\": \"The number of casualties in the Battle of Mansura was 1000.\", \"confidence\": 0}, {\"answer\": \"The number of casualties in the Battle of Mansura was 500.\", \"confidence\": 0}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Giuseppe Patania\", \"confidence\": 5}, {\"answer\": \"Pietro Volpes\", \"confidence\": 0}, {\"answer\": \"Andrea D'Antoni\", \"confidence\": 0}, {\"answer\": \"Santissima Trinit\u00e0\", \"confidence\": 0}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Unfortunately, there is no specific information available that answers this question.\", \"confidence\": 5}, {\"answer\": \"Less than 100\", \"confidence\": 2}, {\"answer\": \"More than 100\", \"confidence\": 1}, {\"answer\": \"Between 50 and 100\", \"confidence\": 1}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\":[{\"answer\": \"IRNSS-1G\", \"confidence\": 5}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [ {\"answer\": \"Unfortunately, the provided information does not contain the expected lifespan of the NVS-01 satellite\", \"confidence\": 5}, {\"answer\": \"The lifespan of NVS-01 is not disclosed in the given text\", \"confidence\": 5}, {\"answer\": \"We cannot determine the lifespan of the NVS-01 satellite from the provided context\", \"confidence\": 5} ]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Mississippi State League (1921)\", \"confidence\": 5}, {\"answer\": \"Cotton States League (1922\u20131923; 1925\u20131929)\", \"confidence\": 5}, {\"answer\": \"Cotton States League\", \"confidence\": 4}, {\"answer\": \"Mississippi State League\", \"confidence\": 4}, {\"answer\": \"1922\u20131923; 1925\u20131929\", \"confidence\": 3}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Unfortunately, I couldn't find any specific information on the most famous player to play for the Meridian Mets. However, it's likely that one or more of the players who went on to have successful careers in Major League Baseball played for the team at some point.\", \"confidence\": 5}, {\"answer\": \"Jimmie Foxx\", \"confidence\": 1}, {\"answer\": \"Mel Harder\", \"confidence\": 1}, {\"answer\": \"Rickey Henderson\", \"confidence\": 1}, {\"answer\": \"Sam Jones\", \"confidence\": 1}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"The National Wrestling Alliance (NWA)\", \"confidence\": 5}, {\"answer\": \"National Wrestling Alliance\", \"confidence\": 5}, {\"answer\": \"NWA\", \"confidence\": 4}, {\"answer\": \"NWA world wrestling alliance\", \"confidence\": 2}, {\"answer\": \"Wrestling Alliance (NWA)\", \"confidence\": 2}, {\"answer\": \"National wrestling alliance\", \"confidence\": 1}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"The Current holders of the NWA World Women's Tag Team Championship are currently KiLynn King and Natalia Markova\", \"confidence\": 5}, {\"answer\": \"KiLynn King and Natalia Markova\", \"confidence\": 5}, {\"answer\": \"King and Natalia Markova\", \"confidence\": 4}, {\"answer\": \"King and Natalia Markova are the current NWA World Women's Tag Team Champions\", \"confidence\": 3}, {\"answer\": \"KiLynn King and Natalia Markova are the current holders of the NWA Women's Tag Team Championship\", \"confidence\": 5}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"HC Slovan Bratislava\", \"confidence\": 5}, {\"answer\": \"Slovak national team\", \"confidence\": 2}, {\"answer\": \"Unknown\", \"confidence\": 1}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"14\", \"confidence\": 5}, {\"answer\": \"I couldn't verify this information\", \"confidence\": 0}, {\"answer\": \"I don't know\", \"confidence\": 0}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Maui and Hawaii\", \"confidence\": 5}, {\"answer\": \"Maui\", \"confidence\": 3}, {\"answer\": \"Hawaii\", \"confidence\": 3}, {\"answer\": \"Maui or Hawaii\", \"confidence\": 2}, {\"answer\": \"Maui and\", \"confidence\": 1}, {\"answer\": \"Hawaii and\", \"confidence\": 1}, {\"answer\": \"Maui, Hawaii\", \"confidence\": 5}, {\"answer\": \"Hawaii, Maui\", \"confidence\": 1}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"The lifespan of a Thyrocopa alterna moth is likely several months to a year or more, based on the duration of the adult stage and the absence of direct information about its lifespan.\", \"confidence\": 5}, {\"answer\": \"We do not have enough information to determine the lifespan of a Thyrocopa alterna moth.\", \"confidence\": 4}, {\"answer\": \"The lifespan of a Thyrocopa alterna moth is less than 6 months.\", \"confidence\": 2}, {\"answer\": \"The lifespan of a Thyrocopa alterna moth is several years.\", \"confidence\": 1}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\":[{\"answer\": \"Albert Tullgren\", \"confidence\": 5}, {\"answer\": \"Albert Tullgren is the one who first described the Acantharachne genus\", \"confidence\": 4}, {\"answer\": \"African orb-weaver spiders genus first described by Albert Tullgren\", \"confidence\": 3}, {\"answer\": \"Albert Tullgren described the Acantharachne genus\", \"confidence\": 4}, {\"answer\": \"Albert Tullgren in 1910 described the Acantharachne genus\", \"confidence\": 5}] }"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"14\", \"confidence\": 5}, {\"answer\": \"4\", \"confidence\": 0}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Natural Gas\", \"confidence\": 5}, {\"answer\": \"Mandala\", \"confidence\": 2}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Unfortunately, I couldn't find the exact number of albums George Olliver released as a solo artist.\", \"confidence\": 5}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Adenylyl cyclase 10\", \"confidence\": 5}, {\"answer\": \"Adenylyl cyclase 10 enzyme\", \"confidence\": 4}, {\"answer\": \"enzyme encoded by ADCY10\", \"confidence\": 3}, {\"answer\": \"adenylyl cyclase\", \"confidence\": 2}, {\"answer\": \"cyclase 10\", \"confidence\": 2}, {\"answer\": \"adenylyl cyclase 10\", \"confidence\": 5}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"The specific function of the ADCY10 enzyme is to catalyze the conversion of ATP into cyclic AMP (cAMP), which is an important second messenger molecule involved in various cellular signaling pathways.\", \"confidence\": 5}, {\"answer\": \"ADCY10 is involved in various cellular signaling pathways as a result of its conversion of ATP to cAMP.\", \"confidence\": 4}, {\"answer\": \"ADCY10 enzyme plays a crucial role in the conversion of ATP to cAMP in the human body.\", \"confidence\": 4}, {\"answer\": \"ADCY10 is responsible for catalyzing the conversion of ATP to cAMP, which has a wide range of cellular functions.\", \"confidence\": 4}, {\"answer\": \"The primary function of the ADCY10 enzyme is to convert ATP into cAMP.\", \"confidence\": 3}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Les Ferdinand\", \"confidence\": 5}, {\"answer\": \"Les Ferdinand\", \"confidence\": 5}, {\"answer\": \"Ferdinand\", \"confidence\": 3}, {\"answer\": \"Les Ferdinand\", \"confidence\": 5}, {\"answer\": \"Besiktas player who scored the winning goal\", \"confidence\": 2}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Besiktas 1, Opponent 0\", \"confidence\": 5}, {\"answer\": \"Besiktas won 1-0\", \"confidence\": 4}, {\"answer\": \"Les Ferdinand scored the winning goal in a 1-0 win for Besiktas\", \"confidence\": 3}, {\"answer\": \"Besiktas 1, Opponent 0\", \"confidence\": 5}, {\"answer\": \"The 1989 Turkish Cup final ended 1-0 in favor of Besiktas\", \"confidence\": 4}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Lamont Dozier\", \"confidence\": 5}, {\"answer\": \"Holland-Dozier-Holland\", \"confidence\": 4}, {\"answer\": \"Alison Moyet\", \"confidence\": 1}, {\"answer\": \"the songwriting team Holland-Dozier-Holland\", \"confidence\": 4}, {\"answer\": \"the team Holland-Dozier-Holland\", \"confidence\": 4}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\":[{\"answer\": \"It seems that Lamont Dozier was inspired to write 'Invisible' as part of his efforts to create a successful single for Alison Moyet's debut album Alf, which was released in November 1984.\", \"confidence\": 5}, {\"answer\": \"Lamont Dozier was inspired to write 'Invisible' to help make Alison Moyet's debut album a success.\", \"confidence\": 4}, {\"answer\": \"Lamont Dozier wrote 'Invisible' hoping to create a hit single for Alison Moyet's album Alf.\", \"confidence\": 4}, {\"answer\": \"I do not know what inspired Lamont Dozier to write 'Invisible'.\", \"confidence\": 0}, {\"answer\": \"The exact inspiration behind Lamont Dozier writing 'Invisible' is unknown.\", \"confidence\": 1}] }"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Steve Grimmett\", \"confidence\": 5}, {\"answer\": \"Nick Bowcott\", \"confidence\": 1}, {\"answer\": \"Steve Grimmett's Grim Reaper\", \"confidence\": 1}, {\"answer\": \"Steve Grimmett Grim Reaper\", \"confidence\": 1}, {\"answer\": \"Grim Reaper\", \"confidence\": 0}, {\"answer\": \"band name\", \"confidence\": 0}, {\"answer\": \"Steve\", \"confidence\": 0}, {\"answer\": \"Grimmett\", \"confidence\": 0}, {\"answer\": \"the band's name\", \"confidence\": 0}] }"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Rock You to Hell\", \"confidence\": 5}, {\"answer\": \"See You in Hell\", \"confidence\": 4}, {\"answer\": \"Fear No Evil\", \"confidence\": 3}, {\"answer\": \"See You in Hell (1983)\", \"confidence\": 2}, {\"answer\": \"Fear No Evil (1985)\", \"confidence\": 2}, {\"answer\": \"Rock You to Hell (1987)\", \"confidence\": 2}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"The Baltimore Orioles\", \"confidence\": 5}, {\"answer\": \"Baltimore Orioles\", \"confidence\": 5}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"0\", \"confidence\": 0}, {\"answer\": \"1\", \"confidence\": 1}, {\"answer\": \"2\", \"confidence\": 1}, {\"answer\": \"3\", \"confidence\": 1}, {\"answer\": \"4\", \"confidence\": 1}, {\"answer\": \"5+ years\", \"confidence\": 4}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"He was the Spokesperson (scientific head) of the ATLAS Collaboration\", \"confidence\": 5}, {\"answer\": \"He was the scientific head of the ATLAS Collaboration\", \"confidence\": 4}, {\"answer\": \"He was the head of the ATLAS Collaboration\", \"confidence\": 3}, {\"answer\": \"He was a spokesperson of the ATLAS Collaboration\", \"confidence\": 2}, {\"answer\": \"He was a member of the ATLAS Collaboration\", \"confidence\": 1}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Analysis of data collected by the Large Hadron Collider\", \"confidence\": 5}, {\"answer\": \"Research on Higgs boson\", \"confidence\": 4}, {\"answer\": \"Detection of dark matter\", \"confidence\": 3}, {\"answer\": \"Advancements in collider technology\", \"confidence\": 4}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"The 2009 Rexall Edmonton Indy was held on July 26, 2009 at the Rexall Speedway in Edmonton, Alberta, Canada.\", \"confidence\": 5}, {\"answer\": \"The event took place on July 26, 2009 at the Rexall Speedway.\", \"confidence\": 5}, {\"answer\": \"It occurred on July 26, 2009 in Edmonton, Alberta, Canada.\", \"confidence\": 4}, {\"answer\": \"The 2009 Rexall Edmonton Indy was held on July 26, 2009.\", \"confidence\": 4}, {\"answer\": \"The event was held at the Rexall Speedway on July 26, 2009.\", \"confidence\": 4}, {\"answer\": \"It was held at the Rexall Speedway in Edmonton, Alberta, Canada on July 26, 2009.\", \"confidence\": 4}, {\"answer\": \"The 2009 Rexall Edmonton Indy took place at the Rexall Speedway on July 26, 2009.\", \"confidence\": 3}, {\"answer\": \"The event took place in Edmonton, Alberta, Canada on July 26, 2009.\", \"confidence\": 3}, {\"answer\": \"The 2009 Rexall Edmonton Indy was held at the Rexall Speedway.\", \"confidence\": 3}, {\"answer\": \"It was held on July 26, 2009.\", \"confidence\": 2}, {\"answer\": \"It took place at the Rexall Speedway.\", \"confidence\": 2}, {\"answer\": \"The event was on July 26, 2009.\", \"confidence\": 2}, {\"answer\": \"The 2009 Rexall Edmonton Indy was in Edmonton, Alberta, Canada.\", \"confidence\": 2}, {\"answer\": \"Edmonton, Alberta, Canada hosted the 2009 Rexall Edmonton Indy on July 26, 2009.\", \"confidence\": 2}, {\"answer\": \"The Rexall Speedway hosted the event on July 26, 2009.\", \"confidence\": 2}, {\"answer\": \"The 2009 Rexall Edmonton Indy was on July 26, 2009.\", \"confidence\": 2}, {\"answer\": \"It was held at the Edmonton, Alberta, Canada.\", \"confidence\": 1}, {\"answer\": \"The event occurred on July 26, 2009.\", \"confidence\": 1}, {\"answer\": \"The Rexall Speedway was the location.\", \"confidence"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Dario Franchitti\", \"confidence\": 5}, {\"answer\": \"Scott Dixon\", \"confidence\": 1}, {\"answer\": \"Tony Kanaan\", \"confidence\": 2}, {\"answer\": \"H\u00e9lio Castroneves\", \"confidence\": 1}, {\"answer\": \"Helio Castroneves\", \"confidence\": 1}, {\"answer\": \"Will Power\", \"confidence\": 1}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Starbase General Manager\", \"confidence\": 5}, {\"answer\": \"Kathy Lueders works at SpaceX\", \"confidence\": 4}, {\"answer\": \"She is currently at SpaceX\", \"confidence\": 3}, {\"answer\": \"She is the General Manager at Starbase\", \"confidence\": 4}, {\"answer\": \"She is a SpaceX employee\", \"confidence\": 4}, {\"answer\": \"She is in charge of Starbase\", \"confidence\": 3}, {\"answer\": \"She works at SpaceX as a manager\", \"confidence\": 3}, {\"answer\": \"She is at SpaceX as General Manager\", \"confidence\": 3}, {\"answer\": \"Kathy Lueders is a SpaceX manager\", \"confidence\": 2}, {\"answer\": \"She is a manager at SpaceX\", \"confidence\": 2}, {\"answer\": \"She currently works at Starbase\", \"confidence\": 2}, {\"answer\": \"She works at SpaceX\", \"confidence\": 1}, {\"answer\": \"She is a SpaceX employee that manages Starbase\", \"confidence\": 1}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Developing and implementing commercial crew vehicles, such as SpaceX's Dragon spacecraft\", \"confidence\": 5}, {\"answer\": \"Managing the integration of these vehicles into NASA's overall human spaceflight program\", \"confidence\": 5}, {\"answer\": \"Return of human spaceflight capabilities to NASA\", \"confidence\": 4}, {\"answer\": \"Led NASA's human spaceflight program as the Associate Administrator of the HEO Mission Directorate\", \"confidence\": 5}, {\"answer\": \"Program manager for NASA's Commercial Crew Program\", \"confidence\": 5}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"AIB1\", \"confidence\": 5}, {\"answer\": \"SRC-3\", \"confidence\": 5}, {\"answer\": \"TRAM-1\", \"confidence\": 5}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"The specific function of the NCOA3 protein in human cells is to act as a coactivator for various transcription factors, enhancing their activity and regulating gene expression.\", \"confidence\": 5}, {\"answer\": \"NCOA3 protein plays a key role in the regulation of gene expression and transcriptional activation in human cells.\", \"confidence\": 4}, {\"answer\": \"NCOA3 is involved in the enhancement of transcription factor activity and regulation of gene expression in human cells.\", \"confidence\": 4}, {\"answer\": \"NCOA3 is a coactivator protein that enhances the activity of various transcription factors in human cells.\", \"confidence\": 4}, {\"answer\": \"AIB1 protein acts as a transcriptional coactivator which results in the regulation of gene expression in human cells.\", \"confidence\": 2}, {\"answer\": \"NCOA3 protein has other functions in human cells beyond coactivation of transcription factors.\", \"confidence\": 1}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"76,517\", \"confidence\": 5}, {\"answer\": \"76 thousand five hundred and seventeen\", \"confidence\": 4}, {\"answer\": \"76,000\", \"confidence\": 3}, {\"answer\": \"77,000\", \"confidence\": 2}, {\"answer\": \"75,000\", \"confidence\": 1}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"The Gereja Kayu Church, built in 1640 in Jakarta.\", \"confidence\": 5}, {\"answer\": \"Church of the Immaculate Conception, built in 1692 in Batavia.\", \"confidence\": 4}, {\"answer\": \"Sint-Petrus Bandung Church, built in 1753 in Bandung.\", \"confidence\": 3}, {\"answer\": \"St. Augustinus Church, built in 1812 in Surabaya.\", \"confidence\": 3}, {\"answer\": \"Halkema Church, built in 1913 in Semarang.\", \"confidence\": 2}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"The St. Michael's Indian Residential School in Duck Lake closed in 1996.\", \"confidence\": 5}, {\"answer\": \"Duck Lake's St. Michael's Residential School closed in 1996.\", \"confidence\": 4}, {\"answer\": \"The St. Michael's Indian Residential School closed in 1996.\", \"confidence\": 4}, {\"answer\": \"The school in Duck Lake closed in 1996.\", \"confidence\": 3}, {\"answer\": \"St. Michael's Residential School in Duck Lake closed.\", \"confidence\": 2}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Not available with the given contexts\", \"confidence\": 5}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Justin Hayward and John Lodge\", \"confidence\": 5}, {\"answer\": \"Justin Hayward\", \"confidence\": 3}, {\"answer\": \"John Lodge\", \"confidence\": 3}, {\"answer\": \"The Moody Blues\", \"confidence\": 2}, {\"answer\": \"Justin Hayward and John\", \"confidence\": 1}, {\"answer\": \"John\", \"confidence\": 1}, {\"answer\": \"Justin\", \"confidence\": 1}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"The songwriters' personal experiences, emotions, and observations\", \"confidence\": 5}, {\"answer\": \"Their creative vision for the song\", \"confidence\": 5}, {\"answer\": \"The music video for the song\", \"confidence\": 2}, {\"answer\": \"A fictional story or concept\", \"confidence\": 1}, {\"answer\": \"The song's chart performance\", \"confidence\": 1}, {\"answer\": \"The song's production\", \"confidence\": 1}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Two\", \"confidence\": 5}, {\"answer\": \"2\", \"confidence\": 5}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Unfortunately, I couldn't find any specific information on the legislation sponsored by E. S. Johnny Walker during his time in Congress. It's possible that this information is not publicly available or has been lost over time.\", \"confidence\": 4}, {\"answer\": \"I was unable to verify any legislation that E. S. Johnny Walker sponsored during his time in Congress.\", \"confidence\": 4}, {\"answer\": \"E. S. Johnny Walker sponsored no notable legislation during his time in Congress.\", \"confidence\": 2}, {\"answer\": \"I couldn't find any information on E. S. Johnny Walker's specific legislative actions during his time in Congress.\", \"confidence\": 4}] }"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"January 15, 2013\", \"confidence\": 5}, {\"answer\": \"January 15th, 2013\", \"confidence\": 5}, {\"answer\": \"January 15, 2013\", \"confidence\": 5}, {\"answer\": \"2013\", \"confidence\": 2}, {\"answer\": \"January 2013\", \"confidence\": 2}, {\"answer\": \"15 January 2013\", \"confidence\": 2}, {\"answer\": \"fifteenth of January 2013\", \"confidence\": 1}, {\"answer\": \"January 15\", \"confidence\": 1}, {\"answer\": \"fifteenth January\", \"confidence\": 1}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"I couldn't find the current number of active contributors for Wikivoyage\", \"confidence\": 5}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Dawson Walker became manager of the Scotland national football team in 1958 due to the injury of the official manager, Matt Busby, in the Munich air disaster.\", \"confidence\": 5}, {\"answer\": \"Dawson Walker took over the Scotland national football team in 1958 as Matt Busby was recovering from the Munich air disaster.\", \"confidence\": 4}, {\"answer\": \"Dawson Walker became interim manager of the Scotland national football team in 1958 due to Matt Busby's health issues.\", \"confidence\": 3}, {\"answer\": \"Dawson Walker became the regular manager of the Scotland national football team in 1958.\", \"confidence\": 2}, {\"answer\": \"Dawson Walker became manager of the Scotland national football team in 1958 due to his football skills.\", \"confidence\": 1}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Scotland had a win-loss record of 4-1 under Dawson Walker's management.\", \"confidence\": 5}, {\"answer\": \"Dawson Walker led Scotland to 4-1 record.\", \"confidence\": 4}, {\"answer\": \"Scotland had a 4-1 record under Dawson Walker.\", \"confidence\": 4}, {\"answer\": \"Dawson Walker's record for Scotland was 4-1.\", \"confidence\": 4}, {\"answer\": \"Scotland's record under Dawson Walker was 4-1.\", \"confidence\": 3}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"The San Diego Padres\", \"confidence\": 5}, {\"answer\": \"San Diego Padres\", \"confidence\": 5}, {\"answer\": \"The Padres\", \"confidence\": 5}, {\"answer\": \"Padres\", \"confidence\": 3}, {\"answer\": \"San Diego\", \"confidence\": 1}, {\"answer\": \"MLB Draft\", \"confidence\": 1}, {\"answer\": \"MLB\", \"confidence\": 1}, {\"answer\": \"2016 MLB draft\", \"confidence\": 1}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Unknown\", \"confidence\": 5}, {\"answer\": \"0.00\", \"confidence\": 0}, {\"answer\": \"1.59\", \"confidence\": 0}, {\"answer\": \"4.50\", \"confidence\": 0}, {\"answer\": \"2.50\", \"confidence\": 0}, {\"answer\": \"3.50\", \"confidence\": 0}, {\"answer\": \"4.00\", \"confidence\": 0}, {\"answer\": \"1.50\", \"confidence\": 0}, {\"answer\": \"5.00\", \"confidence\": 0}, {\"answer\": \"2.00\", \"confidence\": 0}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Yasmine Bleeth and Richard Grieco were the stars of the 1996 movie Heaven or Vegas\", \"confidence\": 5}, {\"answer\": \"Yasmine Bleeth and Richard Grieco were the main actors in the 1996 film Heaven or Vegas\", \"confidence\": 5}, {\"answer\": \"Heaven or Vegas a 1996 movie starred Yasmine Bleeth and Richard Grieco\", \"confidence\": 4}, {\"answer\": \"The actors in the 1996 movie Heaven or Vegas were Yasmine Bleeth and Richard Grieco\", \"confidence\": 5}, {\"answer\": \"Richard Grieco and Yasmine Bleeth starred in the movie Heaven or Vegas released in 1996\", \"confidence\": 5}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Unfortunately, I couldn't find any reliable sources that provide the exact box office performance of Heaven or Vegas.\", \"confidence\": 5}, {\"answer\": \"The movie received mixed reviews from critics and audiences.\", \"confidence\": 5}, {\"answer\": \"It seems to be a relatively obscure film with limited information available about its commercial success.\", \"confidence\": 5}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Three hundred\", \"confidence\": 5}, {\"answer\": \"300\", \"confidence\": 5}, {\"answer\": \"approximately three hundred\", \"confidence\": 5}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Northwood Club in Dallas, Texas\", \"confidence\": 5}, {\"answer\": \"Ulen Country Club\", \"confidence\": 3}, {\"answer\": \"Purdue Golf Course\", \"confidence\": 1}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"The Mandalay Bay Events Center on the Las Vegas Strip in Nevada\", \"confidence\": 5}, {\"answer\": \"Las Vegas\", \"confidence\": 3}, {\"answer\": \"Mandalay Bay\", \"confidence\": 4}, {\"answer\": \"Nevada\", \"confidence\": 4}, {\"answer\": \"USA vs. Canada event\", \"confidence\": 2}, {\"answer\": \"Las Vegas Strip\", \"confidence\": 4}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Randy Couture\", \"confidence\": 5}, {\"answer\": \"Randy Coutour\", \"confidence\": 1}, {\"answer\": \"Couture\", \"confidence\": 1}, {\"answer\": \"The winner\", \"confidence\": 1}, {\"answer\": \"UFC 58 main event winner\", \"confidence\": 1}, {\"answer\": \"Couture won\", \"confidence\": 2}, {\"answer\": \"USA vs. Canada main event winner\", \"confidence\": 1}, {\"answer\": \"USA vs. Canada main event\", \"confidence\": 1}, {\"answer\": \"Couture fought in the main event\", \"confidence\": 1}, {\"answer\": \"the main event winner\", \"confidence\": 2}, {\"answer\": \"USA vs. Canada event winner\", \"confidence\": 1}, {\"answer\": \"UFC 58 winner\", \"confidence\": 1}, {\"answer\": \"Randy\", \"confidence\": 1}, {\"answer\": \"USA vs. Canada\", \"confidence\": 2}, {\"answer\": \"Couture won the main event\", \"confidence\": 3}, {\"answer\": \"the event winner\", \"confidence\": 2}, {\"answer\": \"Couture won the event\", \"confidence\": 3}, {\"answer\": \"58\", \"confidence\": 1}, {\"answer\": \"UFC 58 main event\", \"confidence\": 1}] }"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Timothy Zahn\", \"confidence\": 5}, {\"answer\": \"Timothy Zahn.\", \"confidence\": 5}, {\"answer\": \"Zahn\", \"confidence\": 2}, {\"answer\": \"Author of Survivor's Quest\", \"confidence\": 1}, {\"answer\": \"The author of Survivor's Quest\", \"confidence\": 1}, {\"answer\": \"Survivor's Quest author\", \"confidence\": 1}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"The plot of Survivor's Quest follows Mara Jade, a former assassin and wife of Luke Skywalker, as she navigates her new role as a Jedi Master while dealing with the aftermath of the Yuuzhan Vong War.\", \"confidence\": 5}, {\"answer\": \"The novel focuses on Mara Jade's journey after the Yuuzhan Vong War as she tries to come to terms with her new identity as a Jedi.\", \"confidence\": 4}, {\"answer\": \"Survivor's Quest is a Star Wars novel that follows Mara Jade's experiences as she tries to find her place in the galaxy after the Yuuzhan Vong War.\", \"confidence\": 4}, {\"answer\": \"Mara Jade has to balance her duties as a Jedi Master with her personal life in Survivor's Quest.\", \"confidence\": 3}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"William Elford Leach\", \"confidence\": 5}, {\"answer\": \"William Leach\", \"confidence\": 4}, {\"answer\": \"William Elford Leach in 1863\", \"confidence\": 3}, {\"answer\": \"Nymphon gracile was described by William Elford Leach\", \"confidence\": 2}, {\"answer\": \"Elford Leach\", \"confidence\": 1}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Unknown\", \"confidence\": 5}, {\"answer\": \"Not specified in the text\", \"confidence\": 5}, {\"answer\": \"Difficult to determine\", \"confidence\": 4}, {\"answer\": \"There is no information available\", \"confidence\": 5}, {\"answer\": \"N/A\", \"confidence\": 5}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"The carnelian cowrie\", \"confidence\": 5}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"The average size of a Lyncina carneola shell is approximately 2-3 centimeters (0.8-1.2 inches) in length.\", \"confidence\": 5}, {\"answer\": \"2-3 centimeters (0.8-1.2 inches) in length.\", \"confidence\": 5}, {\"answer\": \"2-3 centimeters in length.\", \"confidence\": 4}, {\"answer\": \"The average Lyncina carneola shell is 2-3 centimeters in length.\", \"confidence\": 4}, {\"answer\": \"Lyncina carneola shell size is 2-3 centimeters.\", \"confidence\": 3}, {\"answer\": \"2 centimeters (0.8 inches) in length.\", \"confidence\": 2}, {\"answer\": \"3 centimeters (1.2 inches) in length.\", \"confidence\": 2}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Rod Laver Arena in Melbourne, Australia\", \"confidence\": 5}, {\"answer\": \"Melbourne, Australia\", \"confidence\": 4}, {\"answer\": \"Australia\", \"confidence\": 3}, {\"answer\": \"Rod Laver Arena\", \"confidence\": 4}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Grant Hackett\", \"confidence\": 5}, {\"answer\": \"Grant\", \"confidence\": 4}, {\"answer\": \"Hackett\", \"confidence\": 4}, {\"answer\": \"the winner of the men\", \"confidence\": 1}, {\"answer\": \"men\", \"confidence\": 1}, {\"answer\": \"the gold medal\", \"confidence\": 1}, {\"answer\": \"1500 metre freestyle\", \"confidence\": 1}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"54 years\", \"confidence\": 5}, {\"answer\": \"Fifty-four years\", \"confidence\": 4}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Unfortunately, there is not enough information provided to determine Frederick E. Goodrich's most notable article during his career at The Boston Post.\", \"confidence\": 5}, {\"answer\": \"He wrote about the Boston Post's founding.\", \"confidence\": 2}, {\"answer\": \"He wrote about the history of The Boston Post.\", \"confidence\": 2}, {\"answer\": \"He wrote about the most significant events in American history.\", \"confidence\": 1}, {\"answer\": \"He wrote a series of investigative journalism articles.\", \"confidence\": 2}, {\"answer\": \"He wrote about the rise of journalism in Boston.\", \"confidence\": 2}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Eight\", \"confidence\": 5}, {\"answer\": \"8\", \"confidence\": 5}, {\"answer\": \"eight\", \"confidence\": 4}, {\"answer\": \"Eight genera\", \"confidence\": 3}, {\"answer\": \"8 species\", \"confidence\": 2}, {\"answer\": \"8\", \"confidence\": 5}, {\"answer\": \"eight\", \"confidence\": 2}] }"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"The Wunderlichioideae subfamily is thought to have originated in South America\", \"confidence\": 4}, {\"answer\": \"The evolutionary history of the Wunderlichioideae subfamily involves significant adaptations and diversification events\", \"confidence\": 5}, {\"answer\": \"The Wunderlichioideae subfamily is characterized by a complex evolutionary history\", \"confidence\": 4}, {\"answer\": \"The Wunderlichioideae subfamily originated in Southeast Asia\", \"confidence\": 1}, {\"answer\": \"The Wunderlichioideae subfamily had a single dispersal event to other regions\", \"confidence\": 2}, {\"answer\": \"The genetic characteristics of the Wunderlichioideae subfamily suggest a simple evolutionary history\", \"confidence\": 1}, {\"answer\": \"The Wunderlichioideae subfamily is thought to have originated in the Himalayas\", \"confidence\": 1}, {\"answer\": \"The Wunderlichioideae subfamily underwent significant speciation events in South America\", \"confidence\": 5}, {\"answer\": \"The Wunderlichioideae subfamily is characterized by the presence of two tribes\", \"confidence\": 5}, {\"answer\": \"The Wunderlichioideae subfamily is characterized by the presence of a deletion in the rpoB gene\", \"confidence\": 5}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"A miniature gold scimitar on a chain around their necks\", \"confidence\": 5}, {\"answer\": \"A distinctive gold necklace\", \"confidence\": 4}, {\"answer\": \"A scimitar\", \"confidence\": 3}, {\"answer\": \"Gold jewelry\", \"confidence\": 2}, {\"answer\": \"A chain\", \"confidence\": 2}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Unable to determine the number of active members due to lack of relevant data.\", \"confidence\": 5}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Kemar Donaldson\", \"confidence\": 5}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Unfortunately, I couldn't find the exact number of albums Kranium has released, as this information is not readily available.\", \"confidence\": 5}]}"
+    }
+  ],
+  "failed_responses": [
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"To conduct both long-term studies of the ionosphere from space and in-situ measurements of ion concentrations and temperatures\", \"confidence\": 5}, {\"answer\": \"The purpose of Explorer 20 is to investigate the ionosphere from space\", \"confidence\": 4}, {\"answer\": \"Explorer 20's purpose is to study the ionosphere and ion concentrations in the ionosphere\", \"confidence\": 3}, {\"answer\": \"Explorer 20's purpose is to study ion concentrations\", \"confidence\": 2}, {\"answer\": \"Explorer 20's purpose is unknown\", \"confidence\": 1}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"the information provided does not allow us to determine the exact year Explorer 20 was launched\", \"confidence\": 5}, {\"answer\": \"1963\", \"confidence\": 0}, {\"answer\": \"1960\", \"confidence\": 0}, {\"answer\": \"1965\", \"confidence\": 0}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"MAP4K3 encodes a protein in humans.\", \"confidence\": 5}, {\"answer\": \"MAP4K3 encodes the protein that is a component of the MAPK signaling pathway.\", \"confidence\": 4}, {\"answer\": \"MAP4K3 gene is associated with the protein that plays a role in cell growth and differentiation.\", \"confidence\": 3}, {\"answer\": \"MAP4K3 gene is involved in the regulation of the cell cycle.\", \"confidence\": 2}, {\"answer\": \"MAP4K3 encodes a protein.\", \"confidence\": 5}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"regulating the activity of various enzymes involved in cell signaling pathways, particularly those related to mitogen-activated protein kinases (MAPKs)\", \"confidence\": 5}, {\"answer\": \"modulating the activity of different kinases in various cell signaling pathways\", \"confidence\": 4}, {\"answer\": \"influencing the phosphorylation of proteins in cell signaling pathways\", \"confidence\": 4}, {\"answer\": \"regulating cell growth, differentiation, and survival\", \"confidence\": 3}, {\"answer\": \"involved in the regulation of various cellular processes\", \"confidence\": 3}, {\"answer\": \"influencing the activity of enzymes in signaling pathways\", \"confidence\": 5}, {\"answer\": \"playing a role in the regulation of cell cycle progression\", \"confidence\": 2}, {\"answer\": \"controlling the activity of MAPK signaling pathways\", \"confidence\": 5}, {\"answer\": \"regulating cell proliferation and apoptosis\", \"confidence\": 3}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"1972\", \"confidence\": 5}, {\"answer\": \"1971\", \"confidence\": 0}, {\"answer\": \"1973\", \"confidence\": 0}, {\"answer\": \"1974\", \"confidence\": 0}, {\"answer\": \"1975\", \"confidence\": 0}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Unfortunately, I couldn't find any specific information on the height of the Heggholmen Lighthouse. If you have more context or a reliable source, please provide it!\", \"confidence\": 5}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"June 13, 2011\", \"confidence\": 5}, {\"answer\": \"June 13, 2010\", \"confidence\": 0}, {\"answer\": \"March 13, 2022\", \"confidence\": 0}, {\"answer\": \"February 7, 2007\", \"confidence\": 0}, {\"answer\": \"January 31, 2007\", \"confidence\": 0}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Unfortunately, there is no available information on the specific cases that Antonio Nachura presided over during his time as Associate Justice.\", \"confidence\": 5}, {\"answer\": \"No information is available on the specific cases presided over by Antonio Nachura during his tenure as Associate Justice of the Supreme Court of the Philippines.\", \"confidence\": 5}, {\"answer\": \"Antonio Nachura is known to have worked as Solicitor General before his appointment but no specific case history is documented during his time as Associate Justice.\", \"confidence\": 4}, {\"answer\": \"It is unclear what specific cases were presided over by Antonio Nachura as an Associate Justice of the Supreme Court of the Philippines.\", \"confidence\": 5}] }"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"forward\", \"confidence\": 5}, {\"answer\": \"midfielder\", \"confidence\": 0}, {\"answer\": \"goalkeeper\", \"confidence\": 0}, {\"answer\": \"defender\", \"confidence\": 0}, {\"answer\": \"striker\", \"confidence\": 3}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"\u017deleziarne Podbrezov\u00e1\", \"confidence\": 3}, {\"answer\": \"Spartak Myjava\", \"confidence\": 3}, {\"answer\": \"Nitra\", \"confidence\": 2}, {\"answer\": \"Slovan Bratislava\", \"confidence\": 2}, {\"answer\": \"Pohronie\", \"confidence\": 2}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Lord Hanuman, Lord Rama, Goddess Sita, Lord Lakshmana, and Lord Shiva\", \"confidence\": 5}, {\"answer\": \"Lord Hanuman, Lord Rama, and Goddess Sita\", \"confidence\": 3}, {\"answer\": \"Lord Hanuman\", \"confidence\": 2}, {\"answer\": \"Lord Rama, Goddess Sita, Lord Lakshmana\", \"confidence\": 2}, {\"answer\": \"Lord Shiva\", \"confidence\": 1}, {\"answer\": \"Lord Hanuman, Lord Rama, Goddess Sita, Lord Lakshmana\", \"confidence\": 4}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"The construction date of the Ragigudda Anjaneya Temple is unknown\", \"confidence\": 5}, {\"answer\": \"The Ragigudda Anjaneya Temple's construction date is not provided in the given context\", \"confidence\": 5}, {\"answer\": \"No information is given about the construction date of the Ragigudda Anjaneya Temple\", \"confidence\": 5}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"The National Gallery of Art, Washington D.C.\", \"confidence\": 5}, {\"answer\": \"the Pinacoteca di Brera, Milan, Italy\", \"confidence\": 5}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Unfortunately, without further information or a specific mention of his most famous work, it is difficult to pinpoint Vincenzo Civerchio's most famous painting.\", \"confidence\": 5}, {\"answer\": \"One of his works is at the National Gallery of Art, Washington D.C.\", \"confidence\": 3}, {\"answer\": \"He is said to be an imitator of Bernardino Butinone\", \"confidence\": 3}, {\"answer\": \"He is said to be an imitator of Bernardino Zenale\", \"confidence\": 3}, {\"answer\": \"He is influenced by Vincenzo Foppa\", \"confidence\": 3}, {\"answer\": \"Bernardino Butinone\", \"confidence\": 2}, {\"answer\": \"Bernardino Zenale\", \"confidence\": 2}, {\"answer\": \"Vincenzo Foppa\", \"confidence\": 2}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{ \"answer\": \"Australia\", \"confidence\": 5 }, { \"answer\": \"Oceania and south-East Asia\", \"confidence\": 2 }]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"The Kanieae tribe includes around 150-200 species.\", \"confidence\": 5}, {\"answer\": \"There are approximately 150-200 species in the Kanieae tribe.\", \"confidence\": 5}, {\"answer\": \"One hundred and fifty to two hundred species belong to the Kanieae tribe.\", \"confidence\": 4}, {\"answer\": \"The Kanieae tribe comprises approximately 150 to 200 different species.\", \"confidence\": 4}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"65 km/h (40 mph)\", \"confidence\": 5}, {\"answer\": \"40 mph\", \"confidence\": 5}, {\"answer\": \"65 mph\", \"confidence\": 5}, {\"answer\": \"40 km/h\", \"confidence\": 3}, {\"answer\": \"100 km/h\", \"confidence\": 1}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"W\", \"confidence\": 5}, {\"answer\": \"V\", \"confidence\": 4}, {\"answer\": \"D\", \"confidence\": 3}, {\"answer\": \"E\", \"confidence\": 2}, {\"answer\": \"A\", \"confidence\": 1}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"The southern half of South America\", \"confidence\": 5}, {\"answer\": \"South America\", \"confidence\": 4}, {\"answer\": \"South America's southern half\", \"confidence\": 4}, {\"answer\": \"Southern South America\", \"confidence\": 4}, {\"answer\": \"Central and South America\", \"confidence\": 3}, {\"answer\": \"South\", \"confidence\": 2}, {\"answer\": \"Southern America\", \"confidence\": 2}, {\"answer\": \"South American\", \"confidence\": 2}, {\"answer\": \"America\", \"confidence\": 1}, {\"answer\": \"South America's half\", \"confidence\": 1}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Tall\", \"confidence\": 1}, {\"answer\": \"It is one to two feet tall\", \"confidence\": 2}, {\"answer\": \"1 to 2 feet\", \"confidence\": 3}, {\"answer\": \"The average height of a Tagetes minuta plant is approximately 1-2 feet (30-60 cm)\", \"confidence\": 5}, {\"answer\": \"30-60 cm\", \"confidence\": 3}, {\"answer\": \"1-2 feet\", \"confidence\": 4}, {\"answer\": \"60 cm\", \"confidence\": 2}, {\"answer\": \"The height of a Tagetes minuta plant is approximately one to two feet\", \"confidence\": 2}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Rugby Union and Rugby League\", \"confidence\": 5}, {\"answer\": \"Rugby League and Rugby Union\", \"confidence\": 4}, {\"answer\": \"Rugby Union\", \"confidence\": 2}, {\"answer\": \"Rugby League\", \"confidence\": 3}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"We cannot determine the exact number of international matches George Spencer played\", \"confidence\": 5}, {\"answer\": \"He played 5 international matches\", \"confidence\": 0}, {\"answer\": \"He played 10 international matches\", \"confidence\": 0}, {\"answer\": \"He played 1 international match\", \"confidence\": 0}, {\"answer\": \"He played 15 international matches\", \"confidence\": 0}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Kuopio\", \"confidence\": 5}, {\"answer\": \"Kuopio\", \"confidence\": 5}, {\"answer\": \"Oulu\", \"confidence\": 0}, {\"answer\": \"Helsinki\", \"confidence\": 0}, {\"answer\": \"Espoo\", \"confidence\": 0}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Mikko Kuivonen\", \"confidence\": 5}, {\"answer\": \"Aleksi Ainali\", \"confidence\": 3}, {\"answer\": \"Ville R\u00e4s\u00e4nen\", \"confidence\": 2}, {\"answer\": \"Juho Lammikko\", \"confidence\": 1}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Minister of Finance\", \"confidence\": 5}, {\"answer\": \"Minister for Netherlands Antilles Affairs\", \"confidence\": 1}, {\"answer\": \"Minister of Agriculture and Fisheries\", \"confidence\": 1}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"The text does not mention any specific policies implemented by Fons van der Stee as Minister of Finance.\", \"confidence\": 5}, {\"answer\": \"None\", \"confidence\": 4}, {\"answer\": \"Fons van der Stee did not implement any policies as Minister of Finance.\", \"confidence\": 5}, {\"answer\": \"The information about policies implemented by Fons van der Stee as Minister of Finance is not provided.\", \"confidence\": 5}, {\"answer\": \"Specific details about the policies implemented by Fons van der Stee as Minister of Finance are not available.\", \"confidence\": 5}, {\"answer\": \"Fons van der Stee implemented no policies as Minister of Finance according to the text.\", \"confidence\": 5}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Arctiinae\", \"confidence\": 5}, {\"answer\": \"Lasiocampinae\", \"confidence\": 0}, {\"answer\": \"Lymantriinae\", \"confidence\": 0}, {\"answer\": \"Herminiinae\", \"confidence\": 0}, {\"answer\": \"Ctenuchinae\", \"confidence\": 0}, {\"answer\": \"Phalaeninae\", \"confidence\": 0}, {\"answer\": \"Eupterotinae\", \"confidence\": 0}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"There are approximately 20-30 species in the Areva genus\", \"confidence\": 5}, {\"answer\": \"Areva has 20 to 30 species\", \"confidence\": 4}, {\"answer\": \"The Areva genus consists of around 20 to 30 moth species\", \"confidence\": 4}, {\"answer\": \"20-30 Areva species exist\", \"confidence\": 3}, {\"answer\": \"Areva has around 20 to 30 species\", \"confidence\": 3}, {\"answer\": \"The Areva moth genus contains 20-30 species\", \"confidence\": 2}, {\"answer\": \"Areva has 20-30 moth species\", \"confidence\": 2}, {\"answer\": \"20-30 moth species in the Areva genus\", \"confidence\": 2}, {\"answer\": \"Areva has approximately 20-30 species\", \"confidence\": 1}, {\"answer\": \"Areva contains 20-30 species\", \"confidence\": 1}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"The Olympic Games where Amanda Doman won a silver medal were the 2004 Summer Olympics.\", \"confidence\": 5}, {\"answer\": \"2004 Summer Olympics\", \"confidence\": 5}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Unknown\", \"confidence\": 2}, {\"answer\": \"Pitcher\", \"confidence\": 3}, {\"answer\": \"Catcher\", \"confidence\": 2}, {\"answer\": \"First Baseman\", \"confidence\": 2}, {\"answer\": \"Second Baseman\", \"confidence\": 2}, {\"answer\": \"Third Baseman\", \"confidence\": 2}, {\"answer\": \"Shortstop\", \"confidence\": 2}, {\"answer\": \"Left Fielder\", \"confidence\": 2}, {\"answer\": \"Center Fielder\", \"confidence\": 2}, {\"answer\": \"Right Fielder\", \"confidence\": 2}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\":[{\"answer\": \"melodramatic family dramas\", \"confidence\": 5}, {\"answer\": \"family melodramas\", \"confidence\": 4}, {\"answer\": \"melodramas\", \"confidence\": 3}, {\"answer\": \"dramas\", \"confidence\": 2}, {\"answer\": \"family films\", \"confidence\": 1}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"4\", \"confidence\": 5}, {\"answer\": \"unknown\", \"confidence\": 0}, {\"answer\": \"more than 4\", \"confidence\": 0}, {\"answer\": \"less than 4\", \"confidence\": 0}, {\"answer\": \"only one\", \"confidence\": 0}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Eocene epoch\", \"confidence\": 5}, {\"answer\": \"Eocene\", \"confidence\": 5}, {\"answer\": \"early to middle Eocene\", \"confidence\": 4}, {\"answer\": \"Eocene epoch.\", \"confidence\": 4}, {\"answer\": \"Eocene epoch\", \"confidence\": 4}, {\"answer\": \"The Eocene epoch\", \"confidence\": 4}, {\"answer\": \"early Eocene\", \"confidence\": 3}, {\"answer\": \"middle Eocene\", \"confidence\": 3}, {\"answer\": \"the Eocene epoch\", \"confidence\": 3}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Unfortunately, it is not possible to determine the average size of Erismatopterus levatus based on the available contexts.\", \"confidence\": 5}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"John Henderson founded Ocean Kinetics in 1992\", \"confidence\": 5}, {\"answer\": \"John Henderson founded Ocean Kinetics\", \"confidence\": 4}, {\"answer\": \"Ocean Kinetics was founded by John Henderson in 1992\", \"confidence\": 4}, {\"answer\": \"John Henderson founded Ocean Kinetics\", \"confidence\": 3}, {\"answer\": \"Ocean Kinetics was founded by John Henderson\", \"confidence\": 3}, {\"answer\": \"1992 is the year Ocean Kinetics was founded\", \"confidence\": 2}, {\"answer\": \"Ocean Kinetics was founded by John Henderson\", \"confidence\": 2}, {\"answer\": \"John Henderson\", \"confidence\": 1}, {\"answer\": \"Ocean Kinetics\", \"confidence\": 1}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"The answer is unknown\", \"confidence\": 5}, {\"answer\": \"The company employs over 20 people\", \"confidence\": 2}, {\"answer\": \"There is no information about the number of employees\", \"confidence\": 5}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\":[{\"answer\": \"Leslie Phillips\", \"confidence\": 5}, {\"answer\": \"Kiki Dee\", \"confidence\": 4}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"The exact box office performance of Doctor in Clover is unknown, but it likely performed reasonably well given its popularity as part of the Doctor series and the fame of Kiki Dee.\", \"confidence\": 4}, {\"answer\": \"The box office performance of Doctor in Clover was poor.\", \"confidence\": 1}, {\"answer\": \"Doctor in Clover performed well at the box office and was a commercial success.\", \"confidence\": 1}, {\"answer\": \"The box office performance of Doctor in Clover was excellent and surpassed expectations.\", \"confidence\": 0}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Julia Levy-Boeken\", \"confidence\": 5}, {\"answer\": \"actress\", \"confidence\": 5}, {\"answer\": \"actor\", \"confidence\": 0}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"At least one\", \"confidence\": 3}, {\"answer\": \"One\", \"confidence\": 2}, {\"answer\": \"We do not have enough information\", \"confidence\": 5}, {\"answer\": \"More than one\", \"confidence\": 1}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"May 16, 1864\", \"confidence\": 5}, {\"answer\": \"May 16, 1863\", \"confidence\": 0}, {\"answer\": \"May 16, 1862\", \"confidence\": 0}, {\"answer\": \"May 17, 1864\", \"confidence\": 0}, {\"answer\": \"April 16, 1864\", \"confidence\": 0}, {\"answer\": \"June 16, 1864\", \"confidence\": 0}, {\"answer\": \"March 16, 1864\", \"confidence\": 0}, {\"answer\": \"July 16, 1864\", \"confidence\": 0}, {\"answer\": \"August 16, 1864\", \"confidence\": 0}, {\"answer\": \"September 16, 1864\", \"confidence\": 0}, {\"answer\": \"October 16, 1864\", \"confidence\": 0}, {\"answer\": \"November 16, 1864\", \"confidence\": 0}, {\"answer\": \"December 16, 1864\", \"confidence\": 0}, {\"answer\": \"January 16, 1864\", \"confidence\": 0}, {\"answer\": \"February 16, 1864\", \"confidence\": 0}] }"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Unfortunately, I couldn't find any specific information on the number of casualties in the Battle of Mansura.\", \"confidence\": 5}, {\"answer\": \"I couldn't estimate the answer.\", \"confidence\": 4}, {\"answer\": \"0 casualties\", \"confidence\": 0}, {\"answer\": \"100 casualties\", \"confidence\": 0}, {\"answer\": \"1000 casualties\", \"confidence\": 0}, {\"answer\": \"The number of casualties in the Battle of Mansura is unknown.\", \"confidence\": 5}, {\"answer\": \"The number of casualties in the Battle of Mansura was 0.\", \"confidence\": 0}, {\"answer\": \"The number of casualties in the Battle of Mansura was 100.\", \"confidence\": 0}, {\"answer\": \"The number of casualties in the Battle of Mansura was 1000.\", \"confidence\": 0}, {\"answer\": \"The number of casualties in the Battle of Mansura was 500.\", \"confidence\": 0}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Giuseppe Patania\", \"confidence\": 5}, {\"answer\": \"Pietro Volpes\", \"confidence\": 0}, {\"answer\": \"Andrea D'Antoni\", \"confidence\": 0}, {\"answer\": \"Santissima Trinit\u00e0\", \"confidence\": 0}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Unfortunately, there is no specific information available that answers this question.\", \"confidence\": 5}, {\"answer\": \"Less than 100\", \"confidence\": 2}, {\"answer\": \"More than 100\", \"confidence\": 1}, {\"answer\": \"Between 50 and 100\", \"confidence\": 1}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\":[{\"answer\": \"IRNSS-1G\", \"confidence\": 5}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [ {\"answer\": \"Unfortunately, the provided information does not contain the expected lifespan of the NVS-01 satellite\", \"confidence\": 5}, {\"answer\": \"The lifespan of NVS-01 is not disclosed in the given text\", \"confidence\": 5}, {\"answer\": \"We cannot determine the lifespan of the NVS-01 satellite from the provided context\", \"confidence\": 5} ]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Mississippi State League (1921)\", \"confidence\": 5}, {\"answer\": \"Cotton States League (1922\u20131923; 1925\u20131929)\", \"confidence\": 5}, {\"answer\": \"Cotton States League\", \"confidence\": 4}, {\"answer\": \"Mississippi State League\", \"confidence\": 4}, {\"answer\": \"1922\u20131923; 1925\u20131929\", \"confidence\": 3}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Unfortunately, I couldn't find any specific information on the most famous player to play for the Meridian Mets. However, it's likely that one or more of the players who went on to have successful careers in Major League Baseball played for the team at some point.\", \"confidence\": 5}, {\"answer\": \"Jimmie Foxx\", \"confidence\": 1}, {\"answer\": \"Mel Harder\", \"confidence\": 1}, {\"answer\": \"Rickey Henderson\", \"confidence\": 1}, {\"answer\": \"Sam Jones\", \"confidence\": 1}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"The National Wrestling Alliance (NWA)\", \"confidence\": 5}, {\"answer\": \"National Wrestling Alliance\", \"confidence\": 5}, {\"answer\": \"NWA\", \"confidence\": 4}, {\"answer\": \"NWA world wrestling alliance\", \"confidence\": 2}, {\"answer\": \"Wrestling Alliance (NWA)\", \"confidence\": 2}, {\"answer\": \"National wrestling alliance\", \"confidence\": 1}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"The Current holders of the NWA World Women's Tag Team Championship are currently KiLynn King and Natalia Markova\", \"confidence\": 5}, {\"answer\": \"KiLynn King and Natalia Markova\", \"confidence\": 5}, {\"answer\": \"King and Natalia Markova\", \"confidence\": 4}, {\"answer\": \"King and Natalia Markova are the current NWA World Women's Tag Team Champions\", \"confidence\": 3}, {\"answer\": \"KiLynn King and Natalia Markova are the current holders of the NWA Women's Tag Team Championship\", \"confidence\": 5}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"HC Slovan Bratislava\", \"confidence\": 5}, {\"answer\": \"Slovak national team\", \"confidence\": 2}, {\"answer\": \"Unknown\", \"confidence\": 1}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"14\", \"confidence\": 5}, {\"answer\": \"I couldn't verify this information\", \"confidence\": 0}, {\"answer\": \"I don't know\", \"confidence\": 0}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Maui and Hawaii\", \"confidence\": 5}, {\"answer\": \"Maui\", \"confidence\": 3}, {\"answer\": \"Hawaii\", \"confidence\": 3}, {\"answer\": \"Maui or Hawaii\", \"confidence\": 2}, {\"answer\": \"Maui and\", \"confidence\": 1}, {\"answer\": \"Hawaii and\", \"confidence\": 1}, {\"answer\": \"Maui, Hawaii\", \"confidence\": 5}, {\"answer\": \"Hawaii, Maui\", \"confidence\": 1}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"The lifespan of a Thyrocopa alterna moth is likely several months to a year or more, based on the duration of the adult stage and the absence of direct information about its lifespan.\", \"confidence\": 5}, {\"answer\": \"We do not have enough information to determine the lifespan of a Thyrocopa alterna moth.\", \"confidence\": 4}, {\"answer\": \"The lifespan of a Thyrocopa alterna moth is less than 6 months.\", \"confidence\": 2}, {\"answer\": \"The lifespan of a Thyrocopa alterna moth is several years.\", \"confidence\": 1}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\":[{\"answer\": \"Albert Tullgren\", \"confidence\": 5}, {\"answer\": \"Albert Tullgren is the one who first described the Acantharachne genus\", \"confidence\": 4}, {\"answer\": \"African orb-weaver spiders genus first described by Albert Tullgren\", \"confidence\": 3}, {\"answer\": \"Albert Tullgren described the Acantharachne genus\", \"confidence\": 4}, {\"answer\": \"Albert Tullgren in 1910 described the Acantharachne genus\", \"confidence\": 5}] }"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"14\", \"confidence\": 5}, {\"answer\": \"4\", \"confidence\": 0}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Natural Gas\", \"confidence\": 5}, {\"answer\": \"Mandala\", \"confidence\": 2}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Unfortunately, I couldn't find the exact number of albums George Olliver released as a solo artist.\", \"confidence\": 5}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Adenylyl cyclase 10\", \"confidence\": 5}, {\"answer\": \"Adenylyl cyclase 10 enzyme\", \"confidence\": 4}, {\"answer\": \"enzyme encoded by ADCY10\", \"confidence\": 3}, {\"answer\": \"adenylyl cyclase\", \"confidence\": 2}, {\"answer\": \"cyclase 10\", \"confidence\": 2}, {\"answer\": \"adenylyl cyclase 10\", \"confidence\": 5}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"The specific function of the ADCY10 enzyme is to catalyze the conversion of ATP into cyclic AMP (cAMP), which is an important second messenger molecule involved in various cellular signaling pathways.\", \"confidence\": 5}, {\"answer\": \"ADCY10 is involved in various cellular signaling pathways as a result of its conversion of ATP to cAMP.\", \"confidence\": 4}, {\"answer\": \"ADCY10 enzyme plays a crucial role in the conversion of ATP to cAMP in the human body.\", \"confidence\": 4}, {\"answer\": \"ADCY10 is responsible for catalyzing the conversion of ATP to cAMP, which has a wide range of cellular functions.\", \"confidence\": 4}, {\"answer\": \"The primary function of the ADCY10 enzyme is to convert ATP into cAMP.\", \"confidence\": 3}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Les Ferdinand\", \"confidence\": 5}, {\"answer\": \"Les Ferdinand\", \"confidence\": 5}, {\"answer\": \"Ferdinand\", \"confidence\": 3}, {\"answer\": \"Les Ferdinand\", \"confidence\": 5}, {\"answer\": \"Besiktas player who scored the winning goal\", \"confidence\": 2}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Besiktas 1, Opponent 0\", \"confidence\": 5}, {\"answer\": \"Besiktas won 1-0\", \"confidence\": 4}, {\"answer\": \"Les Ferdinand scored the winning goal in a 1-0 win for Besiktas\", \"confidence\": 3}, {\"answer\": \"Besiktas 1, Opponent 0\", \"confidence\": 5}, {\"answer\": \"The 1989 Turkish Cup final ended 1-0 in favor of Besiktas\", \"confidence\": 4}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Lamont Dozier\", \"confidence\": 5}, {\"answer\": \"Holland-Dozier-Holland\", \"confidence\": 4}, {\"answer\": \"Alison Moyet\", \"confidence\": 1}, {\"answer\": \"the songwriting team Holland-Dozier-Holland\", \"confidence\": 4}, {\"answer\": \"the team Holland-Dozier-Holland\", \"confidence\": 4}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\":[{\"answer\": \"It seems that Lamont Dozier was inspired to write 'Invisible' as part of his efforts to create a successful single for Alison Moyet's debut album Alf, which was released in November 1984.\", \"confidence\": 5}, {\"answer\": \"Lamont Dozier was inspired to write 'Invisible' to help make Alison Moyet's debut album a success.\", \"confidence\": 4}, {\"answer\": \"Lamont Dozier wrote 'Invisible' hoping to create a hit single for Alison Moyet's album Alf.\", \"confidence\": 4}, {\"answer\": \"I do not know what inspired Lamont Dozier to write 'Invisible'.\", \"confidence\": 0}, {\"answer\": \"The exact inspiration behind Lamont Dozier writing 'Invisible' is unknown.\", \"confidence\": 1}] }"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Steve Grimmett\", \"confidence\": 5}, {\"answer\": \"Nick Bowcott\", \"confidence\": 1}, {\"answer\": \"Steve Grimmett's Grim Reaper\", \"confidence\": 1}, {\"answer\": \"Steve Grimmett Grim Reaper\", \"confidence\": 1}, {\"answer\": \"Grim Reaper\", \"confidence\": 0}, {\"answer\": \"band name\", \"confidence\": 0}, {\"answer\": \"Steve\", \"confidence\": 0}, {\"answer\": \"Grimmett\", \"confidence\": 0}, {\"answer\": \"the band's name\", \"confidence\": 0}] }"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Rock You to Hell\", \"confidence\": 5}, {\"answer\": \"See You in Hell\", \"confidence\": 4}, {\"answer\": \"Fear No Evil\", \"confidence\": 3}, {\"answer\": \"See You in Hell (1983)\", \"confidence\": 2}, {\"answer\": \"Fear No Evil (1985)\", \"confidence\": 2}, {\"answer\": \"Rock You to Hell (1987)\", \"confidence\": 2}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"The Baltimore Orioles\", \"confidence\": 5}, {\"answer\": \"Baltimore Orioles\", \"confidence\": 5}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"0\", \"confidence\": 0}, {\"answer\": \"1\", \"confidence\": 1}, {\"answer\": \"2\", \"confidence\": 1}, {\"answer\": \"3\", \"confidence\": 1}, {\"answer\": \"4\", \"confidence\": 1}, {\"answer\": \"5+ years\", \"confidence\": 4}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"He was the Spokesperson (scientific head) of the ATLAS Collaboration\", \"confidence\": 5}, {\"answer\": \"He was the scientific head of the ATLAS Collaboration\", \"confidence\": 4}, {\"answer\": \"He was the head of the ATLAS Collaboration\", \"confidence\": 3}, {\"answer\": \"He was a spokesperson of the ATLAS Collaboration\", \"confidence\": 2}, {\"answer\": \"He was a member of the ATLAS Collaboration\", \"confidence\": 1}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Analysis of data collected by the Large Hadron Collider\", \"confidence\": 5}, {\"answer\": \"Research on Higgs boson\", \"confidence\": 4}, {\"answer\": \"Detection of dark matter\", \"confidence\": 3}, {\"answer\": \"Advancements in collider technology\", \"confidence\": 4}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"The 2009 Rexall Edmonton Indy was held on July 26, 2009 at the Rexall Speedway in Edmonton, Alberta, Canada.\", \"confidence\": 5}, {\"answer\": \"The event took place on July 26, 2009 at the Rexall Speedway.\", \"confidence\": 5}, {\"answer\": \"It occurred on July 26, 2009 in Edmonton, Alberta, Canada.\", \"confidence\": 4}, {\"answer\": \"The 2009 Rexall Edmonton Indy was held on July 26, 2009.\", \"confidence\": 4}, {\"answer\": \"The event was held at the Rexall Speedway on July 26, 2009.\", \"confidence\": 4}, {\"answer\": \"It was held at the Rexall Speedway in Edmonton, Alberta, Canada on July 26, 2009.\", \"confidence\": 4}, {\"answer\": \"The 2009 Rexall Edmonton Indy took place at the Rexall Speedway on July 26, 2009.\", \"confidence\": 3}, {\"answer\": \"The event took place in Edmonton, Alberta, Canada on July 26, 2009.\", \"confidence\": 3}, {\"answer\": \"The 2009 Rexall Edmonton Indy was held at the Rexall Speedway.\", \"confidence\": 3}, {\"answer\": \"It was held on July 26, 2009.\", \"confidence\": 2}, {\"answer\": \"It took place at the Rexall Speedway.\", \"confidence\": 2}, {\"answer\": \"The event was on July 26, 2009.\", \"confidence\": 2}, {\"answer\": \"The 2009 Rexall Edmonton Indy was in Edmonton, Alberta, Canada.\", \"confidence\": 2}, {\"answer\": \"Edmonton, Alberta, Canada hosted the 2009 Rexall Edmonton Indy on July 26, 2009.\", \"confidence\": 2}, {\"answer\": \"The Rexall Speedway hosted the event on July 26, 2009.\", \"confidence\": 2}, {\"answer\": \"The 2009 Rexall Edmonton Indy was on July 26, 2009.\", \"confidence\": 2}, {\"answer\": \"It was held at the Edmonton, Alberta, Canada.\", \"confidence\": 1}, {\"answer\": \"The event occurred on July 26, 2009.\", \"confidence\": 1}, {\"answer\": \"The Rexall Speedway was the location.\", \"confidence"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Dario Franchitti\", \"confidence\": 5}, {\"answer\": \"Scott Dixon\", \"confidence\": 1}, {\"answer\": \"Tony Kanaan\", \"confidence\": 2}, {\"answer\": \"H\u00e9lio Castroneves\", \"confidence\": 1}, {\"answer\": \"Helio Castroneves\", \"confidence\": 1}, {\"answer\": \"Will Power\", \"confidence\": 1}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Starbase General Manager\", \"confidence\": 5}, {\"answer\": \"Kathy Lueders works at SpaceX\", \"confidence\": 4}, {\"answer\": \"She is currently at SpaceX\", \"confidence\": 3}, {\"answer\": \"She is the General Manager at Starbase\", \"confidence\": 4}, {\"answer\": \"She is a SpaceX employee\", \"confidence\": 4}, {\"answer\": \"She is in charge of Starbase\", \"confidence\": 3}, {\"answer\": \"She works at SpaceX as a manager\", \"confidence\": 3}, {\"answer\": \"She is at SpaceX as General Manager\", \"confidence\": 3}, {\"answer\": \"Kathy Lueders is a SpaceX manager\", \"confidence\": 2}, {\"answer\": \"She is a manager at SpaceX\", \"confidence\": 2}, {\"answer\": \"She currently works at Starbase\", \"confidence\": 2}, {\"answer\": \"She works at SpaceX\", \"confidence\": 1}, {\"answer\": \"She is a SpaceX employee that manages Starbase\", \"confidence\": 1}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Developing and implementing commercial crew vehicles, such as SpaceX's Dragon spacecraft\", \"confidence\": 5}, {\"answer\": \"Managing the integration of these vehicles into NASA's overall human spaceflight program\", \"confidence\": 5}, {\"answer\": \"Return of human spaceflight capabilities to NASA\", \"confidence\": 4}, {\"answer\": \"Led NASA's human spaceflight program as the Associate Administrator of the HEO Mission Directorate\", \"confidence\": 5}, {\"answer\": \"Program manager for NASA's Commercial Crew Program\", \"confidence\": 5}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"AIB1\", \"confidence\": 5}, {\"answer\": \"SRC-3\", \"confidence\": 5}, {\"answer\": \"TRAM-1\", \"confidence\": 5}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"The specific function of the NCOA3 protein in human cells is to act as a coactivator for various transcription factors, enhancing their activity and regulating gene expression.\", \"confidence\": 5}, {\"answer\": \"NCOA3 protein plays a key role in the regulation of gene expression and transcriptional activation in human cells.\", \"confidence\": 4}, {\"answer\": \"NCOA3 is involved in the enhancement of transcription factor activity and regulation of gene expression in human cells.\", \"confidence\": 4}, {\"answer\": \"NCOA3 is a coactivator protein that enhances the activity of various transcription factors in human cells.\", \"confidence\": 4}, {\"answer\": \"AIB1 protein acts as a transcriptional coactivator which results in the regulation of gene expression in human cells.\", \"confidence\": 2}, {\"answer\": \"NCOA3 protein has other functions in human cells beyond coactivation of transcription factors.\", \"confidence\": 1}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"76,517\", \"confidence\": 5}, {\"answer\": \"76 thousand five hundred and seventeen\", \"confidence\": 4}, {\"answer\": \"76,000\", \"confidence\": 3}, {\"answer\": \"77,000\", \"confidence\": 2}, {\"answer\": \"75,000\", \"confidence\": 1}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"The Gereja Kayu Church, built in 1640 in Jakarta.\", \"confidence\": 5}, {\"answer\": \"Church of the Immaculate Conception, built in 1692 in Batavia.\", \"confidence\": 4}, {\"answer\": \"Sint-Petrus Bandung Church, built in 1753 in Bandung.\", \"confidence\": 3}, {\"answer\": \"St. Augustinus Church, built in 1812 in Surabaya.\", \"confidence\": 3}, {\"answer\": \"Halkema Church, built in 1913 in Semarang.\", \"confidence\": 2}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"The St. Michael's Indian Residential School in Duck Lake closed in 1996.\", \"confidence\": 5}, {\"answer\": \"Duck Lake's St. Michael's Residential School closed in 1996.\", \"confidence\": 4}, {\"answer\": \"The St. Michael's Indian Residential School closed in 1996.\", \"confidence\": 4}, {\"answer\": \"The school in Duck Lake closed in 1996.\", \"confidence\": 3}, {\"answer\": \"St. Michael's Residential School in Duck Lake closed.\", \"confidence\": 2}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Not available with the given contexts\", \"confidence\": 5}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Justin Hayward and John Lodge\", \"confidence\": 5}, {\"answer\": \"Justin Hayward\", \"confidence\": 3}, {\"answer\": \"John Lodge\", \"confidence\": 3}, {\"answer\": \"The Moody Blues\", \"confidence\": 2}, {\"answer\": \"Justin Hayward and John\", \"confidence\": 1}, {\"answer\": \"John\", \"confidence\": 1}, {\"answer\": \"Justin\", \"confidence\": 1}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"The songwriters' personal experiences, emotions, and observations\", \"confidence\": 5}, {\"answer\": \"Their creative vision for the song\", \"confidence\": 5}, {\"answer\": \"The music video for the song\", \"confidence\": 2}, {\"answer\": \"A fictional story or concept\", \"confidence\": 1}, {\"answer\": \"The song's chart performance\", \"confidence\": 1}, {\"answer\": \"The song's production\", \"confidence\": 1}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Two\", \"confidence\": 5}, {\"answer\": \"2\", \"confidence\": 5}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Unfortunately, I couldn't find any specific information on the legislation sponsored by E. S. Johnny Walker during his time in Congress. It's possible that this information is not publicly available or has been lost over time.\", \"confidence\": 4}, {\"answer\": \"I was unable to verify any legislation that E. S. Johnny Walker sponsored during his time in Congress.\", \"confidence\": 4}, {\"answer\": \"E. S. Johnny Walker sponsored no notable legislation during his time in Congress.\", \"confidence\": 2}, {\"answer\": \"I couldn't find any information on E. S. Johnny Walker's specific legislative actions during his time in Congress.\", \"confidence\": 4}] }"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"January 15, 2013\", \"confidence\": 5}, {\"answer\": \"January 15th, 2013\", \"confidence\": 5}, {\"answer\": \"January 15, 2013\", \"confidence\": 5}, {\"answer\": \"2013\", \"confidence\": 2}, {\"answer\": \"January 2013\", \"confidence\": 2}, {\"answer\": \"15 January 2013\", \"confidence\": 2}, {\"answer\": \"fifteenth of January 2013\", \"confidence\": 1}, {\"answer\": \"January 15\", \"confidence\": 1}, {\"answer\": \"fifteenth January\", \"confidence\": 1}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"I couldn't find the current number of active contributors for Wikivoyage\", \"confidence\": 5}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Dawson Walker became manager of the Scotland national football team in 1958 due to the injury of the official manager, Matt Busby, in the Munich air disaster.\", \"confidence\": 5}, {\"answer\": \"Dawson Walker took over the Scotland national football team in 1958 as Matt Busby was recovering from the Munich air disaster.\", \"confidence\": 4}, {\"answer\": \"Dawson Walker became interim manager of the Scotland national football team in 1958 due to Matt Busby's health issues.\", \"confidence\": 3}, {\"answer\": \"Dawson Walker became the regular manager of the Scotland national football team in 1958.\", \"confidence\": 2}, {\"answer\": \"Dawson Walker became manager of the Scotland national football team in 1958 due to his football skills.\", \"confidence\": 1}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Scotland had a win-loss record of 4-1 under Dawson Walker's management.\", \"confidence\": 5}, {\"answer\": \"Dawson Walker led Scotland to 4-1 record.\", \"confidence\": 4}, {\"answer\": \"Scotland had a 4-1 record under Dawson Walker.\", \"confidence\": 4}, {\"answer\": \"Dawson Walker's record for Scotland was 4-1.\", \"confidence\": 4}, {\"answer\": \"Scotland's record under Dawson Walker was 4-1.\", \"confidence\": 3}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"The San Diego Padres\", \"confidence\": 5}, {\"answer\": \"San Diego Padres\", \"confidence\": 5}, {\"answer\": \"The Padres\", \"confidence\": 5}, {\"answer\": \"Padres\", \"confidence\": 3}, {\"answer\": \"San Diego\", \"confidence\": 1}, {\"answer\": \"MLB Draft\", \"confidence\": 1}, {\"answer\": \"MLB\", \"confidence\": 1}, {\"answer\": \"2016 MLB draft\", \"confidence\": 1}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Unknown\", \"confidence\": 5}, {\"answer\": \"0.00\", \"confidence\": 0}, {\"answer\": \"1.59\", \"confidence\": 0}, {\"answer\": \"4.50\", \"confidence\": 0}, {\"answer\": \"2.50\", \"confidence\": 0}, {\"answer\": \"3.50\", \"confidence\": 0}, {\"answer\": \"4.00\", \"confidence\": 0}, {\"answer\": \"1.50\", \"confidence\": 0}, {\"answer\": \"5.00\", \"confidence\": 0}, {\"answer\": \"2.00\", \"confidence\": 0}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Yasmine Bleeth and Richard Grieco were the stars of the 1996 movie Heaven or Vegas\", \"confidence\": 5}, {\"answer\": \"Yasmine Bleeth and Richard Grieco were the main actors in the 1996 film Heaven or Vegas\", \"confidence\": 5}, {\"answer\": \"Heaven or Vegas a 1996 movie starred Yasmine Bleeth and Richard Grieco\", \"confidence\": 4}, {\"answer\": \"The actors in the 1996 movie Heaven or Vegas were Yasmine Bleeth and Richard Grieco\", \"confidence\": 5}, {\"answer\": \"Richard Grieco and Yasmine Bleeth starred in the movie Heaven or Vegas released in 1996\", \"confidence\": 5}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Unfortunately, I couldn't find any reliable sources that provide the exact box office performance of Heaven or Vegas.\", \"confidence\": 5}, {\"answer\": \"The movie received mixed reviews from critics and audiences.\", \"confidence\": 5}, {\"answer\": \"It seems to be a relatively obscure film with limited information available about its commercial success.\", \"confidence\": 5}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Three hundred\", \"confidence\": 5}, {\"answer\": \"300\", \"confidence\": 5}, {\"answer\": \"approximately three hundred\", \"confidence\": 5}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Northwood Club in Dallas, Texas\", \"confidence\": 5}, {\"answer\": \"Ulen Country Club\", \"confidence\": 3}, {\"answer\": \"Purdue Golf Course\", \"confidence\": 1}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"The Mandalay Bay Events Center on the Las Vegas Strip in Nevada\", \"confidence\": 5}, {\"answer\": \"Las Vegas\", \"confidence\": 3}, {\"answer\": \"Mandalay Bay\", \"confidence\": 4}, {\"answer\": \"Nevada\", \"confidence\": 4}, {\"answer\": \"USA vs. Canada event\", \"confidence\": 2}, {\"answer\": \"Las Vegas Strip\", \"confidence\": 4}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Randy Couture\", \"confidence\": 5}, {\"answer\": \"Randy Coutour\", \"confidence\": 1}, {\"answer\": \"Couture\", \"confidence\": 1}, {\"answer\": \"The winner\", \"confidence\": 1}, {\"answer\": \"UFC 58 main event winner\", \"confidence\": 1}, {\"answer\": \"Couture won\", \"confidence\": 2}, {\"answer\": \"USA vs. Canada main event winner\", \"confidence\": 1}, {\"answer\": \"USA vs. Canada main event\", \"confidence\": 1}, {\"answer\": \"Couture fought in the main event\", \"confidence\": 1}, {\"answer\": \"the main event winner\", \"confidence\": 2}, {\"answer\": \"USA vs. Canada event winner\", \"confidence\": 1}, {\"answer\": \"UFC 58 winner\", \"confidence\": 1}, {\"answer\": \"Randy\", \"confidence\": 1}, {\"answer\": \"USA vs. Canada\", \"confidence\": 2}, {\"answer\": \"Couture won the main event\", \"confidence\": 3}, {\"answer\": \"the event winner\", \"confidence\": 2}, {\"answer\": \"Couture won the event\", \"confidence\": 3}, {\"answer\": \"58\", \"confidence\": 1}, {\"answer\": \"UFC 58 main event\", \"confidence\": 1}] }"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Timothy Zahn\", \"confidence\": 5}, {\"answer\": \"Timothy Zahn.\", \"confidence\": 5}, {\"answer\": \"Zahn\", \"confidence\": 2}, {\"answer\": \"Author of Survivor's Quest\", \"confidence\": 1}, {\"answer\": \"The author of Survivor's Quest\", \"confidence\": 1}, {\"answer\": \"Survivor's Quest author\", \"confidence\": 1}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"The plot of Survivor's Quest follows Mara Jade, a former assassin and wife of Luke Skywalker, as she navigates her new role as a Jedi Master while dealing with the aftermath of the Yuuzhan Vong War.\", \"confidence\": 5}, {\"answer\": \"The novel focuses on Mara Jade's journey after the Yuuzhan Vong War as she tries to come to terms with her new identity as a Jedi.\", \"confidence\": 4}, {\"answer\": \"Survivor's Quest is a Star Wars novel that follows Mara Jade's experiences as she tries to find her place in the galaxy after the Yuuzhan Vong War.\", \"confidence\": 4}, {\"answer\": \"Mara Jade has to balance her duties as a Jedi Master with her personal life in Survivor's Quest.\", \"confidence\": 3}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"William Elford Leach\", \"confidence\": 5}, {\"answer\": \"William Leach\", \"confidence\": 4}, {\"answer\": \"William Elford Leach in 1863\", \"confidence\": 3}, {\"answer\": \"Nymphon gracile was described by William Elford Leach\", \"confidence\": 2}, {\"answer\": \"Elford Leach\", \"confidence\": 1}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Unknown\", \"confidence\": 5}, {\"answer\": \"Not specified in the text\", \"confidence\": 5}, {\"answer\": \"Difficult to determine\", \"confidence\": 4}, {\"answer\": \"There is no information available\", \"confidence\": 5}, {\"answer\": \"N/A\", \"confidence\": 5}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"The carnelian cowrie\", \"confidence\": 5}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"The average size of a Lyncina carneola shell is approximately 2-3 centimeters (0.8-1.2 inches) in length.\", \"confidence\": 5}, {\"answer\": \"2-3 centimeters (0.8-1.2 inches) in length.\", \"confidence\": 5}, {\"answer\": \"2-3 centimeters in length.\", \"confidence\": 4}, {\"answer\": \"The average Lyncina carneola shell is 2-3 centimeters in length.\", \"confidence\": 4}, {\"answer\": \"Lyncina carneola shell size is 2-3 centimeters.\", \"confidence\": 3}, {\"answer\": \"2 centimeters (0.8 inches) in length.\", \"confidence\": 2}, {\"answer\": \"3 centimeters (1.2 inches) in length.\", \"confidence\": 2}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Rod Laver Arena in Melbourne, Australia\", \"confidence\": 5}, {\"answer\": \"Melbourne, Australia\", \"confidence\": 4}, {\"answer\": \"Australia\", \"confidence\": 3}, {\"answer\": \"Rod Laver Arena\", \"confidence\": 4}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Grant Hackett\", \"confidence\": 5}, {\"answer\": \"Grant\", \"confidence\": 4}, {\"answer\": \"Hackett\", \"confidence\": 4}, {\"answer\": \"the winner of the men\", \"confidence\": 1}, {\"answer\": \"men\", \"confidence\": 1}, {\"answer\": \"the gold medal\", \"confidence\": 1}, {\"answer\": \"1500 metre freestyle\", \"confidence\": 1}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"54 years\", \"confidence\": 5}, {\"answer\": \"Fifty-four years\", \"confidence\": 4}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Unfortunately, there is not enough information provided to determine Frederick E. Goodrich's most notable article during his career at The Boston Post.\", \"confidence\": 5}, {\"answer\": \"He wrote about the Boston Post's founding.\", \"confidence\": 2}, {\"answer\": \"He wrote about the history of The Boston Post.\", \"confidence\": 2}, {\"answer\": \"He wrote about the most significant events in American history.\", \"confidence\": 1}, {\"answer\": \"He wrote a series of investigative journalism articles.\", \"confidence\": 2}, {\"answer\": \"He wrote about the rise of journalism in Boston.\", \"confidence\": 2}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Eight\", \"confidence\": 5}, {\"answer\": \"8\", \"confidence\": 5}, {\"answer\": \"eight\", \"confidence\": 4}, {\"answer\": \"Eight genera\", \"confidence\": 3}, {\"answer\": \"8 species\", \"confidence\": 2}, {\"answer\": \"8\", \"confidence\": 5}, {\"answer\": \"eight\", \"confidence\": 2}] }"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"The Wunderlichioideae subfamily is thought to have originated in South America\", \"confidence\": 4}, {\"answer\": \"The evolutionary history of the Wunderlichioideae subfamily involves significant adaptations and diversification events\", \"confidence\": 5}, {\"answer\": \"The Wunderlichioideae subfamily is characterized by a complex evolutionary history\", \"confidence\": 4}, {\"answer\": \"The Wunderlichioideae subfamily originated in Southeast Asia\", \"confidence\": 1}, {\"answer\": \"The Wunderlichioideae subfamily had a single dispersal event to other regions\", \"confidence\": 2}, {\"answer\": \"The genetic characteristics of the Wunderlichioideae subfamily suggest a simple evolutionary history\", \"confidence\": 1}, {\"answer\": \"The Wunderlichioideae subfamily is thought to have originated in the Himalayas\", \"confidence\": 1}, {\"answer\": \"The Wunderlichioideae subfamily underwent significant speciation events in South America\", \"confidence\": 5}, {\"answer\": \"The Wunderlichioideae subfamily is characterized by the presence of two tribes\", \"confidence\": 5}, {\"answer\": \"The Wunderlichioideae subfamily is characterized by the presence of a deletion in the rpoB gene\", \"confidence\": 5}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"A miniature gold scimitar on a chain around their necks\", \"confidence\": 5}, {\"answer\": \"A distinctive gold necklace\", \"confidence\": 4}, {\"answer\": \"A scimitar\", \"confidence\": 3}, {\"answer\": \"Gold jewelry\", \"confidence\": 2}, {\"answer\": \"A chain\", \"confidence\": 2}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Unable to determine the number of active members due to lack of relevant data.\", \"confidence\": 5}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Kemar Donaldson\", \"confidence\": 5}]}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answers\": [{\"answer\": \"Unfortunately, I couldn't find the exact number of albums Kranium has released, as this information is not readily available.\", \"confidence\": 5}]}"
+    }
+  ]
+}

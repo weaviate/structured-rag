@@ -1,0 +1,477 @@
+{
+  "test_name": "RAGAS",
+  "model_name": "llama3-8b-instruct-Modal",
+  "prompting_method": "fstring",
+  "num_successes": 108,
+  "num_attempts": 112,
+  "success_rate": 0.9642857142857143,
+  "total_time": 7,
+  "all_responses": [
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 3.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 0.0, \"answer_relevance_score\": 0.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 1.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 0.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5, \"answer_relevance_score\": 5, \"context_relevance_score\": 5}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 4.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 4.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 3.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 4.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 4.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 3.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 3.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 2.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 2.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 3.0, \"answer_relevance_score\": 2.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 4.0, \"answer_relevance_score\": 1.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 4.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 3.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 4.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 4.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 4.5, \"answer_relevance_score\": 5, \"context_relevance_score\": 5}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 4.8, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 0.0, \"answer_relevance_score\": 0.0, \"context_relevance_score\": 1.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 2.5, \"answer_relevance_score\": 5, \"context_relevance_score\": 5}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5, \"answer_relevance_score\": 5, \"context_relevance_score\": 5}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 4.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 0.0, \"answer_relevance_score\": 0.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 0.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 4.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 1.0, \"answer_relevance_score\": 4.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 4.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 4.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 4.0, \"answer_relevance_score\": 5.0, \"context_relevance_score\": 5.0}"
+    }
+  ],
+  "failed_responses": [
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5, \"answer_relevance_score\": 5, \"context_relevance_score\": 5}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 4.5, \"answer_relevance_score\": 5, \"context_relevance_score\": 5}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 2.5, \"answer_relevance_score\": 5, \"context_relevance_score\": 5}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"faithfulness_score\": 5, \"answer_relevance_score\": 5, \"context_relevance_score\": 5}"
+    }
+  ]
+}
