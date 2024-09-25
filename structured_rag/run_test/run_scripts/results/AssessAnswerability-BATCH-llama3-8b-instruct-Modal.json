@@ -1,0 +1,462 @@
+{
+  "test_name": "AssessAnswerability",
+  "model_name": "llama3-8b-instruct-Modal",
+  "prompting_method": "fstring",
+  "num_successes": 112,
+  "total_task_performance": 83,
+  "num_attempts": 112,
+  "success_rate": 1.0,
+  "average_task_performance": 0.7410714285714286,
+  "total_time": 3,
+  "all_responses": [
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": false}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": false}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": false}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": false}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": false}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": false}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": false}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": false}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": false}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": false}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": false}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": false}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": false}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": false}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": false}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": false}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": false}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": false}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": false}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": false}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": false}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": false}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": false}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": false}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": false}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": false}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": true}"
+    },
+    {
+      "prompt": "placeholder",
+      "response": "{\"answerable_question\": false}"
+    }
+  ],
+  "failed_responses": []
+}

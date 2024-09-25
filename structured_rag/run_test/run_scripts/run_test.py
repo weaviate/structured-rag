@@ -137,13 +137,18 @@ def run_test(args):
 
     # Print final scores
     print(f"{Colors.HEADER}Final Scores:{Colors.ENDC}")
+    print(f"{Colors.BOLD}JSON Success Rates{Colors.ENDC}")
     print(f"{Colors.BOLD}DSPy: {Colors.GREEN}{dspy_experiment.num_successes}/{dspy_experiment.num_attempts} ({dspy_experiment.num_successes/dspy_experiment.num_attempts:.2%}){Colors.ENDC}")
     print(f"{Colors.BOLD}f-string: {Colors.GREEN}{fstring_experiment.num_successes}/{fstring_experiment.num_attempts} ({fstring_experiment.num_successes/fstring_experiment.num_attempts:.2%}){Colors.ENDC}")
 
+    print(f"{Colors.BOLD}Average Task Performance{Colors.ENDC}")
+    print(f"{Colors.BOLD}DSPy: {dspy_experiment.average_task_performance:.2f}{Colors.ENDC}")
+    print(f"{Colors.BOLD}f-string: {fstring_experiment.average_task_performance:.2f}{Colors.ENDC}")
+
     # Save results to JSON file in the specified save directory
-    os.makedirs("./results/" + args.save_dir, exist_ok=True)
-    dspy_result_file = os.path.join("./results/" + args.save_dir, f"{args.test}-{args.model_name}-dspy.json")
-    fstring_result_file = os.path.join("./results/" + args.save_dir, f"{args.test}-{args.model_name}-fstring.json")
+    os.makedirs("../results/" + args.save_dir, exist_ok=True)
+    dspy_result_file = os.path.join("../results/" + args.save_dir, f"{args.test}-{args.model_name}-dspy.json")
+    fstring_result_file = os.path.join("../results/" + args.save_dir, f"{args.test}-{args.model_name}-fstring.json")
     
     # calculate success rate
     dspy_experiment.success_rate = dspy_experiment.num_successes / dspy_experiment.num_attempts
