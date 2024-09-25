@@ -1,0 +1,1 @@
+python3 run_test.py --model_name "llama3:instruct" --model_provider "ollama" --test "AssessAnswerability" --save-dir "9-25-24"

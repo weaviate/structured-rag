@@ -10,13 +10,16 @@ class PromptingMethod(str, Enum):
     dspy = "dspy"
     fstring = "fstring"
 
+# ToDo rename to `JSON_success_rate`
 class Experiment(BaseModel):
     test_name: str
     model_name: str
     prompting_method: PromptingMethod
     num_successes: int
+    total_task_performance: int
     num_attempts: int
     success_rate: float
+    average_task_performance: float
     total_time: int
     all_responses: list[PromptWithResponse]
     failed_responses: list[PromptWithResponse]
@@ -24,7 +27,10 @@ class Experiment(BaseModel):
     class Config:
         protected_namespaces = ()
 
-# Models used in `structured_rag`
+class SingleTestResult(BaseModel):
+    prompt_with_response: PromptWithResponse
+    is_valid: bool
+    task_metric: int
 
 class GenerateAnswer(BaseModel):
     answer: str

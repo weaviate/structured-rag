@@ -3,17 +3,18 @@ import os
 import argparse
 import datetime
 import time
-from structured_rag.dspy_program import dspy_Program
-from structured_rag.fstring_program import fstring_Program
+
+from structured_rag.mock_gfl.dspy_program import dspy_Program
+from structured_rag.mock_gfl.fstring_program import fstring_Program
 import dspy
 
-from helpers import Colors, load_json_from_file
-from metrics import is_valid_json_output
+from structured_rag.run_test.utils_and_metrics.helpers import Colors, load_json_from_file
+from structured_rag.run_test.utils_and_metrics.metrics import is_valid_json_output, assess_answerability_metric
 
-from models import Experiment, PromptWithResponse, PromptingMethod
-from models import test_params
+from structured_rag.models import Experiment, PromptWithResponse, PromptingMethod, SingleTestResult
+from structured_rag.models import test_params
 
-def run_single_test(program, test_type, title, context, question, answer=None):
+def run_single_test(program, test_type, title, context, question, task_specific_ground_truth, answer=None) -> SingleTestResult:
     try:
         if test_type == "ParaphraseQuestions":
             output = program.forward(test_type, question=question)
@@ -26,18 +27,27 @@ def run_single_test(program, test_type, title, context, question, answer=None):
         
         if is_valid_json_output(output, test_type):
             print(f"{Colors.GREEN}Valid output for {test_type}{Colors.ENDC}")
-            return PromptWithResponse(prompt=f"Title: {title}\nContext: {context}\nQuestion: {question}", response=output), True
+            is_valid = True
+            if test_type == "AssessAnswerability":
+                assess_answerability_response = json.loads(output)["answerable_question"]
+                print(f"{Colors.BOLD}Assess Answerability Response: {assess_answerability_response}{Colors.ENDC}")
+                task_metric = assess_answerability_metric(assess_answerability_response, task_specific_ground_truth)
+                print(f"{Colors.BOLD}Task Metric: {task_metric}{Colors.ENDC}")
         else:
             print(f"{Colors.RED}Invalid output for {test_type}{Colors.ENDC}")
-            return PromptWithResponse(prompt=f"Title: {title}\nContext: {context}\nQuestion: {question}", response=output), False
+            is_valid = False
+            task_metric = 0
     
+        return SingleTestResult(prompt_with_response=PromptWithResponse(prompt=f"Title: {title}\nContext: {context}\nQuestion: {question}", response=output), is_valid=is_valid, task_metric=task_metric)
+
+
     except Exception as e:
         print(f"{Colors.YELLOW}Error occurred: {str(e)}{Colors.ENDC}")
         print(f"{Colors.RED}Skipping this test due to error.{Colors.ENDC}")
         return None, False
 
 def run_test(args):
-    filename = "../data/WikiQuestions.json"
+    filename = "../../../data/WikiQuestions.json"
     json_data = load_json_from_file(filename)
     
     if args.test not in test_params:
@@ -55,8 +65,10 @@ def run_test(args):
         model_name=args.model_name,
         prompting_method=PromptingMethod.dspy,
         num_successes=0,
+        total_task_performance=0,
         num_attempts=0,
         success_rate=0,
+        average_task_performance=0,
         total_time=0,
         all_responses=[],
         failed_responses=[]
@@ -67,8 +79,10 @@ def run_test(args):
         model_name=args.model_name,
         prompting_method=PromptingMethod.fstring,
         num_successes=0,
+        total_task_performance=0,
         num_attempts=0,
         success_rate=0,
+        average_task_performance=0,
         total_time=0,
         all_responses=[],
         failed_responses=[]
@@ -81,28 +95,37 @@ def run_test(args):
         context = entry.get('context', '')
         question = entry.get('question', '')
         answer = entry.get('answer', '')
+        answerable = entry.get('answerable', '')
         
         print(f"{Colors.UNDERLINE}Title: {title}{Colors.ENDC}")
         print(f"{Colors.UNDERLINE}Question: {question}{Colors.ENDC}\n")
         
-        dspy_response, dspy_success = run_single_test(dspy_program, args.test, title, context, question, answer)
-        fstring_response, fstring_success = run_single_test(fstring_program, args.test, title, context, question, answer)
+        # This is an ugly way to interface the ground truth answerable boolean with the test.
+        # ToDo: Fix this.
+        dspy_single_test_result = run_single_test(dspy_program, args.test, title, context, 
+                                                  question, answerable)
+        fstring_single_test_result = run_single_test(fstring_program, args.test, title, context, 
+                                                     question, answerable)
         
-        if dspy_response:
-            dspy_experiment.all_responses.append(dspy_response)
+        if dspy_single_test_result:
+            dspy_experiment.all_responses.append(dspy_single_test_result.prompt_with_response)
             dspy_experiment.num_attempts += 1
-            if dspy_success:
+            if dspy_single_test_result.is_valid:
                 dspy_experiment.num_successes += 1
+                # ToDo, fix the consistency of `task_performance` vs `task_metric`
+                dspy_experiment.total_task_performance += dspy_single_test_result.task_metric
             else:
-                dspy_experiment.failed_responses.append(dspy_response)
+                dspy_experiment.failed_responses.append(dspy_single_test_result.prompt_with_response)
         
-        if fstring_response:
-            fstring_experiment.all_responses.append(fstring_response)
+        if fstring_single_test_result:
+            fstring_experiment.all_responses.append(fstring_single_test_result.prompt_with_response)
             fstring_experiment.num_attempts += 1
-            if fstring_success:
+            if fstring_single_test_result.is_valid:
                 fstring_experiment.num_successes += 1
+                # ToDo, fix the consistency of `task_performance` vs `task_metric`
+                fstring_experiment.total_task_performance += fstring_single_test_result.task_metric
             else:
-                fstring_experiment.failed_responses.append(fstring_response)
+                fstring_experiment.failed_responses.append(fstring_single_test_result.prompt_with_response)
         
         print(f"\n{Colors.BOLD}==============={Colors.ENDC}\n")
     
@@ -118,13 +141,16 @@ def run_test(args):
     print(f"{Colors.BOLD}f-string: {Colors.GREEN}{fstring_experiment.num_successes}/{fstring_experiment.num_attempts} ({fstring_experiment.num_successes/fstring_experiment.num_attempts:.2%}){Colors.ENDC}")
 
     # Save results to JSON file in the specified save directory
-    os.makedirs(args.save_dir, exist_ok=True)
-    dspy_result_file = os.path.join(args.save_dir, f"{args.test}-{args.model_name}-dspy.json")
-    fstring_result_file = os.path.join(args.save_dir, f"{args.test}-{args.model_name}-fstring.json")
+    os.makedirs("./results/" + args.save_dir, exist_ok=True)
+    dspy_result_file = os.path.join("./results/" + args.save_dir, f"{args.test}-{args.model_name}-dspy.json")
+    fstring_result_file = os.path.join("./results/" + args.save_dir, f"{args.test}-{args.model_name}-fstring.json")
     
     # calculate success rate
     dspy_experiment.success_rate = dspy_experiment.num_successes / dspy_experiment.num_attempts
     fstring_experiment.success_rate = fstring_experiment.num_successes / fstring_experiment.num_attempts
+
+    dspy_experiment.average_task_performance = dspy_experiment.total_task_performance / dspy_experiment.num_attempts
+    fstring_experiment.average_task_performance = fstring_experiment.total_task_performance / fstring_experiment.num_attempts
 
     with open(dspy_result_file, "w") as f:
         json.dump(dspy_experiment.dict(), f, indent=2)

@@ -1,7 +1,8 @@
 import json
+from typing import Any
 
 # This needs a refactor to validate based on the models
-def is_valid_json_output(output, test_type):
+def is_valid_json_output(output: Any, test_type: str) -> bool:
     try:
         parsed = json.loads(output)
         if test_type == "GenerateAnswer":
@@ -28,3 +29,9 @@ def is_valid_json_output(output, test_type):
             return False
     except json.JSONDecodeError:
         return False
+
+def assess_answerability_metric(answer: bool, ground_truth: bool) -> int:
+    if answer == ground_truth:
+        return 1
+    else:
+        return 0

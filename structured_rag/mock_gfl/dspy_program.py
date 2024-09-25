@@ -1,6 +1,6 @@
 import dspy
 from typing import Optional, Any, Dict
-from structured_rag.dspy_signatures import GenerateResponse
+from structured_rag.mock_gfl.dspy_signatures import GenerateResponse
 
 class dspy_Program(dspy.Module):
     def __init__(self, 

@@ -2,7 +2,7 @@ from typing import Optional, Dict
 import ollama
 import google.generativeai as genai
 import openai
-from structured_rag.fstring_prompts import get_prompt
+from structured_rag.mock_gfl.fstring_prompts import get_prompt
 
 class fstring_Program():
     def __init__(self,
