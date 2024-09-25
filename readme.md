@@ -35,7 +35,7 @@ class AnswerWithConfidence(BaseModel):
 
 The WikiQuestions dataset can also be found on [HuggingFace Datasets](https://huggingface.co/datasets/weaviate/Wiki-Answerable-Questions)!
 
-![Experimental Results](./tests/experimental-results-8-26-24/model_comparison.png)
+![Experimental Results](./structured_rag/run_test/rseult_visualization/success_rates_per_task.png)
 
 ## Citation
 Please consider citing our paper if you find this work useful:
