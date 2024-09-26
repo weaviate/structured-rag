@@ -92,7 +92,7 @@ def run_batch_test(dataset_filepath, test_type, save_dir, with_outlines):
 
     batch_experiment = Experiment(
         test_name=args.test,
-        model_name="llama3-8b-instruct-Modal",
+        model_name="llama3.2-3B-Instruct-Modal",
         prompting_method=PromptingMethod.fstring,
         num_successes=0,
         total_task_performance=0,
@@ -134,14 +134,14 @@ def run_batch_test(dataset_filepath, test_type, save_dir, with_outlines):
         batch_experiment.average_task_performance = batch_experiment.total_task_performance / batch_experiment.num_attempts
         print(f"{Colors.GREEN}JSON Success rate: {batch_experiment.success_rate:.2f}{Colors.ENDC}")
         print(f"{Colors.GREEN}Average task performance: {batch_experiment.average_task_performance:.2f}{Colors.ENDC}")
-        print(f"{Colors.GREEN}Time to run experiment: {total_time:.2f} seconds{Colors.ENDC}")
+        print(f"{Colors.GREEN}Time to run experiment: {total_time} seconds{Colors.ENDC}")
         
         # serialize experiment to JSON
         os.makedirs(args.save_dir, exist_ok=True)
         # ToDo, ablate `args.model_name`
 
         # Fix this save path
-        batch_result_file = os.path.join(args.save_dir, f"{args.test}-BATCH-llama3-8b-instruct-Modal.json")
+        batch_result_file = os.path.join(args.save_dir, f"{args.test}-BATCH-llama3.2-1b-instruct-Modal.json")
 
         with open(batch_result_file, "w") as f:
             json.dump(batch_experiment.dict(), f, indent=2)
