@@ -27,12 +27,14 @@ experiments = load_experiments("../results/")
 
 failed_responses = experiments["failed_responses"]
 
-error_analyses = []
-for failed_response in failed_responses:
-    error_analysis = error_analyzer.predict(failed_response).why_it_failed
-    error_analyses.append(error_analysis)
-    print(f"{Colors.GREEN}Error analysis: {error_analysis}{Colors.ENDC}")
+for experiment in experiments:
+    print(f"{Colors.GREEN}Analyzing Failures for Experiment: {experiment.test_name}\n{Colors.ENDC}")
+    error_analyses = []
+    for failed_response in failed_responses:
+        error_analysis = error_analyzer.predict(failed_response).why_it_failed
+        error_analyses.append(error_analysis)
+        print(f"{Colors.GREEN}Error analysis: {error_analysis}{Colors.ENDC}")
 
-summary = SummarizeErrors.predict(error_analyses).error_analysis_report
+    summary = SummarizeErrors.predict(error_analyses).error_analysis_report
 
-print(summary)
+    print(f"{Colors.BOLD}Summary of Errors:{Colors.ENDC}\n{summary}")
