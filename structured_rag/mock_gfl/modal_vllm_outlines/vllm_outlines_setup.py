@@ -5,8 +5,15 @@ vllm_image = modal.Image.debian_slim(python_version="3.10").pip_install(
 )
 
 MODELS_DIR = "/llamas"
-MODEL_NAME = "meta-llama/Meta-Llama-3.1-8B-Instruct"
-MODEL_REVISION = "8c22764a7e3675c50d4c7c9a4edb474456022b16"
+# Model IDs
+Llama_3_1_8B_Instruct_MODEL_ID = "meta-llama/Meta-Llama-3.1-8B-Instruct"
+Llama_3_2_1B_Instruct_MODEL_ID = "meta-llama/Llama-3.2-1B-Instruct"
+Llama_3_2_3B_Instruct_MODEL_ID = "meta-llama/Llama-3.2-3B-Instruct"
+
+# Model Revisions
+Llama_3_1_8B_Instruct_MODEL_REVISION = "8c22764a7e3675c50d4c7c9a4edb474456022b16"  # pin model revisions to prevent unexpected changes!
+Llama_3_2_1B_Instruct_MODEL_REVISION = "e9f8effbab1cbdc515c11ee6e098e3d5a9f51e14"
+Llama_3_2_3B_Instruct_MODEL_REVISION = "392a143b624368100f77a3eafaa4a2468ba50a72"
 
 try:
     volume = modal.Volume.lookup("llamas", create_if_missing=False)
