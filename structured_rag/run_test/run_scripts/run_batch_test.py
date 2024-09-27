@@ -8,6 +8,7 @@ from pydantic import BaseModel
 
 from structured_rag.run_test.utils_and_metrics.helpers import Colors, load_json_from_file
 from structured_rag.run_test.utils_and_metrics.metrics import is_valid_json_output, assess_answerability_metric
+from structured_rag.run_test.utils_and_metrics.metrics import GenerateAnswerTaskMetric
 
 from typing import List
 from pydantic import BaseModel
@@ -19,6 +20,7 @@ from structured_rag.models import test_params
 from structured_rag.models import Experiment, PromptWithResponse, PromptingMethod
 
 url = "YOUR_MODAL_URL"
+openai_api_key = "sk-foobar"
 
 headers = {
     "Content-Type": "application/json",
@@ -55,6 +57,7 @@ def run_batch_test(dataset_filepath, test_type, save_dir, with_outlines):
     if with_outlines:
         if test_type == "GenerateAnswer":
             payload["output_model"] = GenerateAnswer.schema()
+            generate_answer_task_metric = GenerateAnswerTaskMetric(api_key=openai_api_key)
         elif test_type == "RateContext":
             payload["output_model"] = RateContext.schema()
         elif test_type == "AssessAnswerability":
@@ -86,10 +89,11 @@ def run_batch_test(dataset_filepath, test_type, save_dir, with_outlines):
     start_time = time.time()
     # Run all inferences
     response = requests.post(url, headers=headers, json=payload)
-    total_time = int(time.time() - start_time)
+    total_time = time.time() - start_time
     print(f"Total time taken: {total_time} seconds")
     print(f"Average time per task: {(total_time) / len(prompts):.2f} seconds")
 
+    # check the `int` valued total_time, I don't think that's right
     batch_experiment = Experiment(
         test_name=args.test,
         model_name="llama3.2-3B-Instruct-Modal",
@@ -99,7 +103,7 @@ def run_batch_test(dataset_filepath, test_type, save_dir, with_outlines):
         num_attempts=0,
         success_rate=0,
         average_task_performance=0,
-        total_time=total_time,
+        total_time=int(total_time),
         all_responses=[],
         failed_responses=[]
     )
@@ -117,6 +121,17 @@ def run_batch_test(dataset_filepath, test_type, save_dir, with_outlines):
                     print(f"{Colors.BOLD}Assess Answerability Response: {assess_answerability_response}{Colors.ENDC}")
                     task_metric = assess_answerability_metric(assess_answerability_response, dataset[id]["answerable"])
                     print(f"{Colors.BOLD}Task Metric: {task_metric}{Colors.ENDC}")
+                    batch_experiment.total_task_performance += task_metric
+                if test_type == "GenerateAnswer":
+                    answer_response = json.loads(output)["answer"]
+                    print(f"{Colors.BOLD}Answer Response: {answer_response}{Colors.ENDC}")
+                    print(f"{Colors.RED}Ground Truth: {dataset[id]['answer']}{Colors.ENDC}")
+                    task_metric, rationale = generate_answer_task_metric.assess_answer_metric(context=dataset[id]["context"], 
+                                                                                   question=dataset[id]["question"], 
+                                                                                   system_answer=answer_response, 
+                                                                                   ground_truth=dataset[id]["answer"])
+                    print(f"{Colors.BOLD}Task Metric: {task_metric}{Colors.ENDC}\n")
+                    print(f"{Colors.CYAN}Rationale: {rationale}{Colors.ENDC}")
                     batch_experiment.total_task_performance += task_metric
             else:
                 print(f"{Colors.RED}Invalid output:\n{output}{Colors.ENDC}")
