@@ -5,6 +5,8 @@
   "num_successes": 112,
   "num_attempts": 112,
   "success_rate": 1.0,
+  "total_task_performance": 0,
+  "average_task_performance": 0,
   "total_time": 317,
   "all_responses": [
     {

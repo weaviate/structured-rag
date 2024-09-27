@@ -44,7 +44,8 @@ def load_experiments(directory: str) -> pd.DataFrame:
                     'num_attempts': experiment.num_attempts,
                     'success_rate': experiment.success_rate,
                     'total_time': experiment.total_time,
-                    'avg_response_time': experiment.total_time / experiment.num_attempts
+                    'avg_response_time': experiment.total_time / experiment.num_attempts,
+                    'failed_responses': experiment.failed_responses
                 })
     return pd.DataFrame(experiments)
 
