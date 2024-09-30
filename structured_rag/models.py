@@ -66,7 +66,7 @@ def create_enum(enum_name: str, enum_values: List[str]) -> Type[Enum]:
     """Dynamically create an Enum class with given values."""
     return Enum(enum_name, {value: value for value in enum_values})
 
-def create_classify_document_model(categories: List[str]) -> Type[BaseModel]:
+def _ClassifyDocument(categories: List[str]) -> Type[BaseModel]:
     # Dynamically create the Enum for categories
     CategoriesEnum = create_enum("CategoriesEnum", categories)
     
@@ -108,5 +108,9 @@ test_params = {
     "GenerateAnswersWithConfidence": {
         "task_instructions": "Generate multiple answers with confidence scores.",
         "response_format": '[{"Answer": "string", "Confidence": "int (0-5)"}, ...]'
+    },
+    "ClassifyDocument": {
+        "task_instructions": "Classify the document into one of the provided classes.",
+        "response_format": '{"classification": "Enum"}'
     }
 }

@@ -47,12 +47,28 @@ You are a helpful assistant<|eot_id|>
 
 # currently doing nearly everything in this single function
 def run_batch_test(dataset_filepath, test_type, save_dir, with_outlines):
-    dataset = load_json_from_file(dataset_filepath)
+    if dataset_filepath == "../../../data/WikiQuestions.json":
+        dataset = load_json_from_file(dataset_filepath)
+    else:
+        #dataset = load_superbeir()
+        dataset = load_json_from_file("../../data/SuperBEIR/SuperBEIR-small-train.json")
 
-    # LOAD SuperBEIR dataset
+        # Load SuperBEIR categories and their descriptions
+        with open('data/SuperBEIR/SuperBEIR-categories-with-rationales.json', 'r') as file:
+            data = json.load(file)
 
-    # Load SuperBEIR categories and their descriptions
-    mock_categories = ["apple", "banana", "orange"]
+        # Create a list of dictionaries with category name and description
+        categories = [{category: info['category_description']} for category, info in data.items()]
+
+        formatted_categories = ""
+        for category_dict in categories:
+            for category_name, category_description in category_dict.items():
+                formatted_categories += f"{category_name}: {category_description}\n"
+
+        # Remove the trailing newline
+        formatted_categories = formatted_categories.rstrip()
+        categories = list(data.keys())
+
 
     # ToD, update to ablate `with_outlines`
     payload = {
@@ -77,7 +93,7 @@ def run_batch_test(dataset_filepath, test_type, save_dir, with_outlines):
         elif test_type == "GenerateAnswersWithConfidence":
             payload["output_model"] = GenerateAnswersWithConfidence.schema()
         elif test_type == "ClassifyDocument":
-            ClassifyDocumentModel = _ClassifyDocument(mock_categories)
+            ClassifyDocumentModel = _ClassifyDocument(categories)
             payload["output_model"] = ClassifyDocumentModel.schema()
 
     # ToDo, ablate interfacing the response_format instructions with structured decoding?
@@ -85,9 +101,14 @@ def run_batch_test(dataset_filepath, test_type, save_dir, with_outlines):
     prompts = []
     for item in dataset:
         # just format all references for all potential tasks
-        references = {"context": item["context"], 
-                      "question": item["question"],
-                      "answer": item["answer"]}
+        if test_type == "ClassifyDocument":
+            references = {"document": item["document"],
+                          "label": item["label"],
+                          "classes_with_descriptions": formatted_categories}
+        else:
+            references = {"context": item["context"], 
+                          "question": item["question"],
+                          "answer": item["answer"]}
         formatted_prompt = get_prompt(test_type, references, test_params[test_type])
         prompts.append(formatted_prompt)
 
