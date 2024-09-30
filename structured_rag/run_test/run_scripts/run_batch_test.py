@@ -7,7 +7,7 @@ import argparse
 from pydantic import BaseModel
 
 from structured_rag.run_test.utils_and_metrics.helpers import Colors, load_json_from_file
-from structured_rag.run_test.utils_and_metrics.metrics import is_valid_json_output, assess_answerability_metric
+from structured_rag.run_test.utils_and_metrics.metrics import is_valid_json_output, assess_answerability_metric, classification_metric
 from structured_rag.run_test.utils_and_metrics.metrics import GenerateAnswerTaskMetric
 
 from typing import List
@@ -132,6 +132,14 @@ def run_batch_test(dataset_filepath, test_type, save_dir, with_outlines):
                                                                                    ground_truth=dataset[id]["answer"])
                     print(f"{Colors.BOLD}Task Metric: {task_metric}{Colors.ENDC}\n")
                     print(f"{Colors.CYAN}Rationale: {rationale}{Colors.ENDC}")
+                    batch_experiment.total_task_performance += task_metric
+                if test_type == "ClassifyDocument":
+                    classification_response = json.loads(output)["classification"] # extend to return classification and rationale
+                    print(f"{Colors.BOLD}Classification Response: {classification_response}{Colors.ENDC}")
+                    ground_truth = dataset[id]["label"]
+                    print(f"{Colors.RED}Ground Truth: {ground_truth}{Colors.ENDC}")
+                    task_metric = classification_metric(classification_response, ground_truth)
+                    print(f"{Colors.BOLD}Task Metric: {task_metric}{Colors.ENDC}")
                     batch_experiment.total_task_performance += task_metric
             else:
                 print(f"{Colors.RED}Invalid output:\n{output}{Colors.ENDC}")
