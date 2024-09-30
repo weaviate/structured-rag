@@ -30,8 +30,18 @@ def is_valid_json_output(output: Any, test_type: str) -> bool:
     except json.JSONDecodeError:
         return False
 
+# Although assess_answerability_metric and classification_metric currently do the same thing,
+# ==> we want to extend classification_metric in the future to put probabilties on more than one class.
+# ==> and thus we will extend this later on as described.
+
 def assess_answerability_metric(answer: bool, ground_truth: bool) -> int:
     if answer == ground_truth:
+        return 1
+    else:
+        return 0
+
+def classification_metric(predicted_class: str, ground_truth: str) -> int:
+    if predicted_class == ground_truth:
         return 1
     else:
         return 0
