@@ -14,8 +14,9 @@ from typing import List
 from pydantic import BaseModel
 
 from structured_rag.mock_gfl.fstring_prompts import get_prompt
-from structured_rag.models import GenerateAnswer, RateContext, AssessAnswerability, ParaphraseQuestions, RAGAS, GenerateAnswerWithConfidence, GenerateAnswersWithConfidence
+from structured_rag.models import GenerateAnswer, RateContext, AssessAnswerability, ParaphraseQuestions, RAGAS, GenerateAnswerWithConfidence, GenerateAnswersWithConfidence, ClassifyDocument
 from structured_rag.models import test_params
+from structured_rag.models import create_enum, _ClassifyDocument
 
 from structured_rag.models import Experiment, PromptWithResponse, PromptingMethod
 
@@ -48,6 +49,11 @@ You are a helpful assistant<|eot_id|>
 def run_batch_test(dataset_filepath, test_type, save_dir, with_outlines):
     dataset = load_json_from_file(dataset_filepath)
 
+    # LOAD SuperBEIR dataset
+
+    # Load SuperBEIR categories and their descriptions
+    mock_categories = ["apple", "banana", "orange"]
+
     # ToD, update to ablate `with_outlines`
     payload = {
         "with_outlines": True
@@ -70,6 +76,9 @@ def run_batch_test(dataset_filepath, test_type, save_dir, with_outlines):
             payload["output_model"] = GenerateAnswerWithConfidence.schema()
         elif test_type == "GenerateAnswersWithConfidence":
             payload["output_model"] = GenerateAnswersWithConfidence.schema()
+        elif test_type == "ClassifyDocument":
+            ClassifyDocumentModel = _ClassifyDocument(mock_categories)
+            payload["output_model"] = ClassifyDocumentModel.schema()
 
     # ToDo, ablate interfacing the response_format instructions with structured decoding?
 

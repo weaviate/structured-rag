@@ -1,6 +1,6 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, create_model
 from enum import Enum
-from typing import List
+from typing import Type, List
 
 class PromptWithResponse(BaseModel):
     prompt: str
@@ -55,6 +55,29 @@ class GenerateAnswerWithConfidence(BaseModel):
 
 class GenerateAnswersWithConfidence(BaseModel):
     answers: List[GenerateAnswerWithConfidence]
+
+class ClassifyDocument(BaseModel):
+    category: Enum
+
+    class Config:
+        arbitrary_types_allowed = True
+
+def create_enum(enum_name: str, enum_values: List[str]) -> Type[Enum]:
+    """Dynamically create an Enum class with given values."""
+    return Enum(enum_name, {value: value for value in enum_values})
+
+def create_classify_document_model(categories: List[str]) -> Type[BaseModel]:
+    # Dynamically create the Enum for categories
+    CategoriesEnum = create_enum("CategoriesEnum", categories)
+    
+    # Dynamically create the Pydantic model with the Enum field
+    ClassifyDocument = create_model(
+        'ClassifyDocument',
+        category=(CategoriesEnum, ...)
+    )
+    
+    return ClassifyDocument
+
 
 # ToDo, get `test_params` from here instead of hardcoded in `run_test.py`
 test_params = {
