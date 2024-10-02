@@ -51,10 +51,10 @@ def run_batch_test(dataset_filepath, test_type, save_dir, with_outlines):
         dataset = load_json_from_file(dataset_filepath)
     else:
         #dataset = load_superbeir()
-        dataset = load_json_from_file("../../data/SuperBEIR/SuperBEIR-small-train.json")
+        dataset = load_json_from_file("../../../data/SuperBEIR/SuperBEIR-small-train.json")[:3400]
 
         # Load SuperBEIR categories and their descriptions
-        with open('data/SuperBEIR/SuperBEIR-categories-with-rationales.json', 'r') as file:
+        with open('../../../data/SuperBEIR/SuperBEIR-categories-with-rationales.json', 'r') as file:
             data = json.load(file)
 
         # Create a list of dictionaries with category name and description
@@ -118,7 +118,7 @@ def run_batch_test(dataset_filepath, test_type, save_dir, with_outlines):
 
     start_time = time.time()
     # Run all inferences
-    response = requests.post(url, headers=headers, json=payload)
+    response = requests.post(url, headers=headers, json=payload, timeout=3000)  # Increased timeout to 5 minutes
     total_time = time.time() - start_time
     print(f"Total time taken: {total_time} seconds")
     print(f"Average time per task: {(total_time) / len(prompts):.2f} seconds")
@@ -164,10 +164,10 @@ def run_batch_test(dataset_filepath, test_type, save_dir, with_outlines):
                     print(f"{Colors.CYAN}Rationale: {rationale}{Colors.ENDC}")
                     batch_experiment.total_task_performance += task_metric
                 if test_type == "ClassifyDocument":
-                    classification_response = json.loads(output)["classification"] # extend to return classification and rationale
+                    classification_response = json.loads(output)["category"] # extend to return classification and rationale
                     print(f"{Colors.BOLD}Classification Response: {classification_response}{Colors.ENDC}")
                     ground_truth = dataset[id]["label"]
-                    print(f"{Colors.RED}Ground Truth: {ground_truth}{Colors.ENDC}")
+                    print(f"{Colors.CYAN}Ground Truth: {ground_truth}{Colors.ENDC}")
                     task_metric = classification_metric(classification_response, ground_truth)
                     print(f"{Colors.BOLD}Task Metric: {task_metric}{Colors.ENDC}")
                     batch_experiment.total_task_performance += task_metric
@@ -194,7 +194,7 @@ def run_batch_test(dataset_filepath, test_type, save_dir, with_outlines):
         # ToDo, ablate `args.model_name`
 
         # Fix this save path
-        batch_result_file = os.path.join(args.save_dir, f"{args.test}-BATCH-llama3.2-1b-instruct-Modal.json")
+        batch_result_file = os.path.join(args.save_dir, f"{args.test}-Modal-vLLM.json")
 
         with open(batch_result_file, "w") as f:
             json.dump(batch_experiment.dict(), f, indent=2)
@@ -213,5 +213,6 @@ if __name__ == "__main__":
     parser.add_argument("--save-dir", type=str, default="results", help="Directory to save results")
     args = parser.parse_args()
 
-    dataset_filepath = "../../../data/WikiQuestions.json"
+    #dataset_filepath = "../../../data/WikiQuestions.json"
+    dataset_filepath = "SuperBEIR"
     run_batch_test(dataset_filepath, args.test, args.save_dir, with_outlines=True)
