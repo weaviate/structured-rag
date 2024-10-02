@@ -16,7 +16,7 @@ from pydantic import BaseModel
 from structured_rag.mock_gfl.fstring_prompts import get_prompt
 from structured_rag.models import GenerateAnswer, RateContext, AssessAnswerability, ParaphraseQuestions, RAGAS, GenerateAnswerWithConfidence, GenerateAnswersWithConfidence, ClassifyDocument
 from structured_rag.models import test_params
-from structured_rag.models import create_enum, _ClassifyDocument
+from structured_rag.models import create_enum, _ClassifyDocument, _ClassifyDocumentWithRationale
 
 from structured_rag.models import Experiment, PromptWithResponse, PromptingMethod
 
@@ -47,11 +47,13 @@ You are a helpful assistant<|eot_id|>
 
 # currently doing nearly everything in this single function
 def run_batch_test(dataset_filepath, test_type, save_dir, with_outlines):
+    # fix this with a CLI argument `dataset`
+    # Leaving the hardcoded filepath
     if dataset_filepath == "../../../data/WikiQuestions.json":
         dataset = load_json_from_file(dataset_filepath)
     else:
         #dataset = load_superbeir()
-        dataset = load_json_from_file("../../../data/SuperBEIR/SuperBEIR-small-train.json")[:3400]
+        dataset = load_json_from_file("../../../data/SuperBEIR/SuperBEIR-small-balanced.json")[:340]
 
         # Load SuperBEIR categories and their descriptions
         with open('../../../data/SuperBEIR/SuperBEIR-categories-with-rationales.json', 'r') as file:
@@ -95,13 +97,16 @@ def run_batch_test(dataset_filepath, test_type, save_dir, with_outlines):
         elif test_type == "ClassifyDocument":
             ClassifyDocumentModel = _ClassifyDocument(categories)
             payload["output_model"] = ClassifyDocumentModel.schema()
+        elif test_type == "ClassifyDocumentWithRationale":
+            ClassifyDocumentWithRationale = _ClassifyDocumentWithRationale(categories)
+            payload["output_model"] = ClassifyDocumentWithRationale.schema()
 
     # ToDo, ablate interfacing the response_format instructions with structured decoding?
 
     prompts = []
     for item in dataset:
-        # just format all references for all potential tasks
-        if test_type == "ClassifyDocument":
+        # ToDo, fix this
+        if test_type == "ClassifyDocument" or test_type == "ClassifyDocumentWithRationale":
             references = {"document": item["document"],
                           "label": item["label"],
                           "classes_with_descriptions": formatted_categories}
@@ -164,6 +169,15 @@ def run_batch_test(dataset_filepath, test_type, save_dir, with_outlines):
                     print(f"{Colors.CYAN}Rationale: {rationale}{Colors.ENDC}")
                     batch_experiment.total_task_performance += task_metric
                 if test_type == "ClassifyDocument":
+                    classification_response = json.loads(output)["category"] # extend to return classification and rationale
+                    print(f"{Colors.BOLD}Classification Response: {classification_response}{Colors.ENDC}")
+                    ground_truth = dataset[id]["label"]
+                    print(f"{Colors.CYAN}Ground Truth: {ground_truth}{Colors.ENDC}")
+                    task_metric = classification_metric(classification_response, ground_truth)
+                    print(f"{Colors.BOLD}Task Metric: {task_metric}{Colors.ENDC}")
+                    batch_experiment.total_task_performance += task_metric
+                if test_type == "ClassifyDocumentWithRationale":
+                    # ToDo, extend to do something with the rationale as well
                     classification_response = json.loads(output)["category"] # extend to return classification and rationale
                     print(f"{Colors.BOLD}Classification Response: {classification_response}{Colors.ENDC}")
                     ground_truth = dataset[id]["label"]

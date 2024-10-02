@@ -62,6 +62,13 @@ class ClassifyDocument(BaseModel):
     class Config:
         arbitrary_types_allowed = True
 
+class ClassifyDocumentWithRationale(BaseModel):
+    rationale: str
+    category: Enum
+
+    class Config:
+        arbitrary_types_allowed = True
+
 def create_enum(enum_name: str, enum_values: List[str]) -> Type[Enum]:
     """Dynamically create an Enum class with given values."""
     return Enum(enum_name, {value: value for value in enum_values})
@@ -77,6 +84,20 @@ def _ClassifyDocument(categories: List[str]) -> Type[BaseModel]:
     )
     
     return ClassifyDocument
+
+def _ClassifyDocumentWithRationale(categories: List[str]) -> Type[BaseModel]:
+    # Dynamically create the Enum for categories
+    CategoriesEnum = create_enum("CategoriesEnum", categories)
+    
+    # Dynamically create the Pydantic model with the Enum field and rationale
+    ClassifyDocumentWithRationale = create_model(
+        'ClassifyDocumentWithRationale',
+        rationale=(str, ...),
+        category=(CategoriesEnum, ...)
+    )
+    
+    return ClassifyDocumentWithRationale
+
 
 
 # ToDo, get `test_params` from here instead of hardcoded in `run_test.py`
@@ -112,5 +133,9 @@ test_params = {
     "ClassifyDocument": {
         "task_instructions": "Classify the document into one of the provided classes.",
         "response_format": '{"classification": "Enum"}'
+    },
+    "ClassifyDocumentWithRationale": {
+        "task_instructions": "Classify the document into one of the provided classes and provide a rationale explaining why the document belongs in this class.",
+        "response_format": '{"rationale": "string", "classification": "Enum"}'
     }
 }

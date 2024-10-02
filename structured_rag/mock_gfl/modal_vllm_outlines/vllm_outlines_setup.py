@@ -21,7 +21,7 @@ except modal.exception.NotFoundError:
     raise Exception("Download models first with modal run download_llama.py")
 
 # Test this
-N_GPUS=4
+N_GPUS=1
 GPU_CONFIG = modal.gpu.A100(count=N_GPUS)
 MINUTES = 60
 DTYPE = "float16"

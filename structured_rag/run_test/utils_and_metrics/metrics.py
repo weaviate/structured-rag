@@ -25,8 +25,12 @@ def is_valid_json_output(output: Any, test_type: str) -> bool:
         elif test_type == "GenerateAnswersWithConfidence":
             answers = parsed
             return isinstance(answers, list) and all(isinstance(a.get("Answer"), str) and isinstance(a.get("Confidence"), int) and 0 <= a["Confidence"] <= 5 for a in answers)
+        # ToDo, fix these to also test the Enum value
         elif test_type == "ClassifyDocument":
             return isinstance(parsed.get('category'), str)
+        elif test_type == "ClassifyDocumentWithRationale":
+            return isinstance(parsed.get('category'), str) and isinstance(parsed.get('rationale'), str)
+
         else:
             return False
     except json.JSONDecodeError:
