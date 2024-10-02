@@ -20,7 +20,8 @@ try:
 except modal.exception.NotFoundError:
     raise Exception("Download models first with modal run download_llama.py")
 
-N_GPUS=1
+# Test this
+N_GPUS=4
 GPU_CONFIG = modal.gpu.A100(count=N_GPUS)
 MINUTES = 60
 DTYPE = "float16"
@@ -70,7 +71,7 @@ class Model:
         for prompt in prompts:
             sampling_params = SamplingParams(
                 max_tokens=MAX_OUTPUT_LEN,
-                temperature=0.7
+                temperature=0
             )
             self.engine.add_request(str(request_id), prompt, sampling_params)
             request_id += 1
@@ -99,7 +100,7 @@ class Model:
         for prompt in prompts:
             sampling_params = SamplingParams(
                 max_tokens=MAX_OUTPUT_LEN,
-                temperature=0.7,
+                temperature=0,
                 logits_processors=[logits_processor]
             )
             self.engine.add_request(str(request_id), prompt, sampling_params)
