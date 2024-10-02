@@ -16,7 +16,7 @@ from pydantic import BaseModel
 from structured_rag.mock_gfl.fstring_prompts import get_prompt
 from structured_rag.models import GenerateAnswer, RateContext, AssessAnswerability, ParaphraseQuestions, RAGAS, GenerateAnswerWithConfidence, GenerateAnswersWithConfidence, ClassifyDocument
 from structured_rag.models import test_params
-from structured_rag.models import create_enum, _ClassifyDocument
+from structured_rag.models import create_enum, _ClassifyDocument, _ClassifyDocumentWithRationale
 
 from structured_rag.models import Experiment, PromptWithResponse, PromptingMethod
 
@@ -47,11 +47,13 @@ You are a helpful assistant<|eot_id|>
 
 # currently doing nearly everything in this single function
 def run_batch_test(dataset_filepath, test_type, save_dir, with_outlines):
+    # fix this with a CLI argument `dataset`
+    # Leaving the hardcoded filepath
     if dataset_filepath == "../../../data/WikiQuestions.json":
         dataset = load_json_from_file(dataset_filepath)
     else:
         #dataset = load_superbeir()
-        dataset = load_json_from_file("../../../data/SuperBEIR/SuperBEIR-small-train.json")[:3400]
+        dataset = load_json_from_file("../../../data/SuperBEIR/SuperBEIR-small-balanced.json")[:3400]
 
         # Load SuperBEIR categories and their descriptions
         with open('../../../data/SuperBEIR/SuperBEIR-categories-with-rationales.json', 'r') as file:
@@ -95,6 +97,9 @@ def run_batch_test(dataset_filepath, test_type, save_dir, with_outlines):
         elif test_type == "ClassifyDocument":
             ClassifyDocumentModel = _ClassifyDocument(categories)
             payload["output_model"] = ClassifyDocumentModel.schema()
+        elif test_type == "ClassifyDocumentWithRationale":
+            ClassifyDocumentWithRationale = _ClassifyDocumentWithRationale(categories)
+            payload["output_mdoel"] = ClassifyDocumentWithRationale.schema()
 
     # ToDo, ablate interfacing the response_format instructions with structured decoding?
 
