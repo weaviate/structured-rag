@@ -133,5 +133,9 @@ test_params = {
     "ClassifyDocument": {
         "task_instructions": "Classify the document into one of the provided classes.",
         "response_format": '{"classification": "Enum"}'
+    },
+    "ClassifyDocumentWithRationale": {
+        "task_instructions": "Classify the document into one of the provided classes and provide a rationale explaining why the document belongs in this class.",
+        "response_format": '{"rationale": "string", "classification": "Enum"}'
     }
 }
