@@ -72,7 +72,7 @@ class fstring_Program():
             return response['message']['content']
         elif self.model_provider == "google":
             if self.structured_outputs:
-                response = self.model_provider.generate_content(
+                response = self.model.generate_content(
                     prompt,
                     generation_config=genai.GenerationConfig(
                         response_mime_type="application/json", response_schema=output_model
