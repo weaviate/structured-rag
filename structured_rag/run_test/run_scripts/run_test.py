@@ -56,6 +56,9 @@ def run_test(args):
     filename = "../../../data/WikiQuestions.json"
     json_data = load_json_from_file(filename)
     
+    # Print the number of samples in the dataset
+    print(f"{Colors.BOLD}Number of samples in the dataset: {len(json_data)}{Colors.ENDC}")
+    
     if args.test not in test_params:
         raise ValueError(f"Unsupported test: {args.test}")
     
@@ -104,10 +107,13 @@ def run_test(args):
     # ToDo, move to config or cli argument
     PARALLEL_EXECUTION = False
 
+    inference_count = 0  # Initialize inference count
+
     if PARALLEL_EXECUTION:
         lock = threading.Lock()
 
         def process_entry(entry, dspy_program, fstring_program, args):
+            nonlocal inference_count
             title = entry.get('title', '')
             context = entry.get('context', '')
             question = entry.get('question', '')
@@ -133,6 +139,9 @@ def run_test(args):
                                                          question=question, 
                                                          answerable=answerable,
                                                          task_specific_ground_truth=answerable)
+            
+            with lock:
+                inference_count += 2  # Increment by 2 for each pair of inferences
             
             return dspy_single_test_result, fstring_single_test_result
 
@@ -190,6 +199,7 @@ def run_test(args):
                     question=question, 
                     answer=answerable,
                     task_specific_ground_truth=answerable)
+                inference_count += 2  # Increment by 2 for each pair of inferences
             else:
                 print(f"{Colors.RED}NOT IMPLEMENTED YET!!\n{Colors.ENDC}")
                 print(f"{Colors.CYAN}Need to add the `task_specific_ground_truth` for each StructuredRAG test.{Colors.ENDC}")
@@ -223,6 +233,16 @@ def run_test(args):
 
     print(f"{Colors.HEADER}Time to run test {args.test} with model {args.model_name} = {total_time} seconds.")
 
+    # Print the number of inferences run
+    print(f"{Colors.BOLD}Number of inferences run: {inference_count}{Colors.ENDC}")
+
+    # calculate success rate
+    dspy_experiment.success_rate = dspy_experiment.num_successes / dspy_experiment.num_attempts
+    fstring_experiment.success_rate = fstring_experiment.num_successes / fstring_experiment.num_attempts
+
+    dspy_experiment.average_task_performance = dspy_experiment.total_task_performance / dspy_experiment.num_attempts
+    fstring_experiment.average_task_performance = fstring_experiment.total_task_performance / fstring_experiment.num_attempts
+
     # Print final scores
     print(f"{Colors.HEADER}Final Scores:{Colors.ENDC}")
     print(f"{Colors.BOLD}JSON Success Rates{Colors.ENDC}")
@@ -237,13 +257,6 @@ def run_test(args):
     os.makedirs("../results/" + args.save_dir, exist_ok=True)
     dspy_result_file = os.path.join("../results/" + args.save_dir, f"{args.test}-{args.model_name}-dspy.json")
     fstring_result_file = os.path.join("../results/" + args.save_dir, f"{args.test}-{args.model_name}-fstring.json")
-    
-    # calculate success rate
-    dspy_experiment.success_rate = dspy_experiment.num_successes / dspy_experiment.num_attempts
-    fstring_experiment.success_rate = fstring_experiment.num_successes / fstring_experiment.num_attempts
-
-    dspy_experiment.average_task_performance = dspy_experiment.total_task_performance / dspy_experiment.num_attempts
-    fstring_experiment.average_task_performance = fstring_experiment.total_task_performance / fstring_experiment.num_attempts
 
     with open(dspy_result_file, "w") as f:
         json.dump(dspy_experiment.dict(), f, indent=2)

@@ -2,35 +2,49 @@ import json
 from typing import Any, Tuple
 
 # This needs a refactor to validate based on the models
+
+def _validate_int_score(score, min_val=0, max_val=5):
+    if isinstance(score, str):
+        try:
+            score = int(score)
+        except ValueError:
+            return False
+    return isinstance(score, int) and min_val <= score <= max_val
+
+def _validate_float_score(score, min_val=0, max_val=5):
+    if isinstance(score, str):
+        try:
+            score = float(score)
+        except ValueError:
+            return False
+    return isinstance(score, float) and min_val <= score <= max_val
+
 def is_valid_json_output(output: Any, test_type: str) -> bool:
     try:
         parsed = json.loads(output)
         if test_type == "GenerateAnswer":
             return isinstance(parsed.get("answer"), str)
         elif test_type == "RateContext":
-            score = parsed.get("context_score")
-            return isinstance(score, int) and 0 <= score <= 5
+            return _validate_int_score(parsed.get("context_score"))
         elif test_type == "AssessAnswerability":
-            return isinstance(parsed.get("answerable_question"), bool)
+            answerable = parsed.get("answerable_question")
+            if isinstance(answerable, str):
+                return answerable.lower() in ['true', 'false']
+            return isinstance(answerable, bool)
         elif test_type == "ParaphraseQuestions":
             questions = parsed.get("paraphrased_questions")
             return isinstance(questions, list) and all(isinstance(q, str) for q in questions)
         elif test_type == "RAGAS":
-            faithfulness_score = parsed.get("faithfulness_score")
-            answer_relevance_score = parsed.get("answer_relevance_score")
-            context_relevance_score = parsed.get("context_relevance_score")
-            return isinstance(faithfulness_score, float) and isinstance(answer_relevance_score, float) and isinstance(context_relevance_score, float) and 0 <= faithfulness_score <= 5 and 0 <= answer_relevance_score <= 5 and 0 <= context_relevance_score <= 5
+            return all(_validate_float_score(parsed.get(score)) for score in ["faithfulness_score", "answer_relevance_score", "context_relevance_score"])
         elif test_type == "GenerateAnswerWithConfidence":
-            return isinstance(parsed.get("Answer"), str) and isinstance(parsed.get("Confidence"), int) and 0 <= parsed["Confidence"] <= 5
+            return isinstance(parsed.get("Answer"), str) and _validate_int_score(parsed.get("Confidence"))
         elif test_type == "GenerateAnswersWithConfidence":
             answers = parsed
-            return isinstance(answers, list) and all(isinstance(a.get("Answer"), str) and isinstance(a.get("Confidence"), int) and 0 <= a["Confidence"] <= 5 for a in answers)
-        # ToDo, fix these to also test the Enum value
+            return isinstance(answers, list) and all(isinstance(a.get("Answer"), str) and _validate_int_score(a.get("Confidence")) for a in answers)
         elif test_type == "ClassifyDocument":
             return isinstance(parsed.get('category'), str)
         elif test_type == "ClassifyDocumentWithRationale":
             return isinstance(parsed.get('category'), str) and isinstance(parsed.get('rationale'), str)
-
         else:
             return False
     except json.JSONDecodeError:

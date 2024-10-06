@@ -1,1 +1,1 @@
-python3 run_test.py --model_name "llama3.2:3b-instruct-fp16" --model_provider "ollama" --test "AssessAnswerability" --save-dir "9-26-24"
+python3 run_test.py --model_name "llama3.2:3b-instruct-fp16" --model_provider "ollama" --test "AssessAnswerability" --save-dir "10-6-24"
