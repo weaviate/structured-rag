@@ -140,7 +140,7 @@ test_params = {
     }
 }
 
-test_to_BaseModel = {
+test_to_output_model = {
     "GenerateAnswer": GenerateAnswer,
     "RateContext": RateContext,
     "AssessAnswerability": AssessAnswerability,

@@ -15,7 +15,7 @@ from structured_rag.run_test.utils_and_metrics.helpers import Colors, load_json_
 from structured_rag.run_test.utils_and_metrics.metrics import is_valid_json_output, assess_answerability_metric
 
 from structured_rag.models import Experiment, PromptWithResponse, PromptingMethod, SingleTestResult
-from structured_rag.models import test_params, test_to_BaseModel
+from structured_rag.models import test_params, test_to_output_model
 
 def run_single_test(output_model: Optional[BaseModel],
                     program, test_type, title, context, question, task_specific_ground_truth, answer=None) -> SingleTestResult:
@@ -59,7 +59,7 @@ def run_test(args):
         raise ValueError(f"Unsupported test: {args.test}")
     
     test_to_run = test_params[args.test]
-    # test_to_output_model # {"GenerateAnswer': GenerateAnswer, }
+    output_model = test_to_output_model[args.test]
 
     dspy_program = dspy_Program(test_params=test_to_run, 
                                 model_name=args.model_name, model_provider=args.model_provider, api_key=args.api_key)
