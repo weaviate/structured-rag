@@ -61,10 +61,10 @@ def run_test(args):
     test_to_run = test_params[args.test]
     output_model = test_to_output_model[args.test]
 
-    dspy_program = dspy_Program(test_params=test_to_run, 
+    dspy_program = dspy_Program(output_model=output_model, test_params=test_to_run, 
                                 model_name=args.model_name, model_provider=args.model_provider, api_key=args.api_key)
     # ToDo, set Structured Outputs to be `true`, for now just hardcoding it in the `fString_Program`
-    fstring_program = fstring_Program(test_params=test_to_run, 
+    fstring_program = fstring_Program(output_model=output_model, test_params=test_to_run, 
                                      model_name=args.model_name, model_provider=args.model_provider, api_key=args.api_key)
 
     dspy_experiment = Experiment(

@@ -1,6 +1,7 @@
 import dspy
 from typing import Optional, Any, Dict
 from structured_rag.mock_gfl.dspy_signatures import GenerateResponse
+from pydantic import BaseModel
 
 class dspy_Program(dspy.Module):
     def __init__(self, 
@@ -11,6 +12,7 @@ class dspy_Program(dspy.Module):
         self.model_name = model_name
         self.model_provider = model_provider
         self.configure_llm(api_key)
+        # ToDo, Interface `TypedPredictor` here
         self.generate_response = dspy.ChainOfThought(GenerateResponse)
         
     def configure_llm(self, api_key: Optional[str] = None):
@@ -34,7 +36,8 @@ class dspy_Program(dspy.Module):
         print(llm("say hello"))
         dspy.settings.configure(lm=llm)
 
-    def forward(self, test: str, question: str, context: Optional[str] = "", answer: Optional[str] = "") -> Any:
+    # Note, this needs to be cleaned up with the abstraction around DSPy / LLM APIs
+    def forward(self, output_model: Optional[BaseModel], test: str, question: str, context: Optional[str] = "", answer: Optional[str] = "") -> Any:
         references = {"context": context, "question": question, "answer": answer}
         references = "".join(f"{k}: {v}" for k, v in references.items())
         response = self.generate_response(
