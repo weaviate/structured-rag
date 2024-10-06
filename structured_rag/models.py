@@ -139,3 +139,15 @@ test_params = {
         "response_format": '{"rationale": "string", "classification": "Enum"}'
     }
 }
+
+test_to_BaseModel = {
+    "GenerateAnswer": GenerateAnswer,
+    "RateContext": RateContext,
+    "AssessAnswerability": AssessAnswerability,
+    "ParaphraseQuestions": ParaphraseQuestions,
+    "RAGAS": RAGAS,
+    "GenerateAnswerWithConfidence": GenerateAnswerWithConfidence,
+    "GenerateAnswersWithConfidence": GenerateAnswersWithConfidence,
+    "ClassifyDocument": ClassifyDocument,
+    "ClassifyDocumentWithRationale": ClassifyDocumentWithRationale
+}

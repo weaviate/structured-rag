@@ -4,6 +4,9 @@ import argparse
 import datetime
 import time
 
+from typing import Optional
+from pydantic import BaseModel
+
 from structured_rag.mock_gfl.dspy_program import dspy_Program
 from structured_rag.mock_gfl.fstring_program import fstring_Program
 import dspy
@@ -12,16 +15,18 @@ from structured_rag.run_test.utils_and_metrics.helpers import Colors, load_json_
 from structured_rag.run_test.utils_and_metrics.metrics import is_valid_json_output, assess_answerability_metric
 
 from structured_rag.models import Experiment, PromptWithResponse, PromptingMethod, SingleTestResult
-from structured_rag.models import test_params
+from structured_rag.models import test_params, test_to_BaseModel
 
-def run_single_test(program, test_type, title, context, question, task_specific_ground_truth, answer=None) -> SingleTestResult:
+def run_single_test(output_model: Optional[BaseModel],
+                    program, test_type, title, context, question, task_specific_ground_truth, answer=None) -> SingleTestResult:
     try:
         if test_type == "ParaphraseQuestions":
-            output = program.forward(test_type, question=question)
+            # will need to fix this in the `dspy_Program` code
+            output = program.forward(test_type, question=question, output_model=output_model) # output_model if present
         elif test_type == "RAGAS":
-            output = program.forward(test_type, context, question, answer)
+            output = program.forward(test_type, context, question, answer, output_model=output_model) # output_model if present
         else:
-            output = program.forward(test_type, context, question)
+            output = program.forward(test_type, context, question, output_model=output_model) # output_model if present
         
         print(f"{Colors.CYAN}{program.__class__.__name__} Output: {output}{Colors.ENDC}\n")
         
@@ -54,9 +59,11 @@ def run_test(args):
         raise ValueError(f"Unsupported test: {args.test}")
     
     test_to_run = test_params[args.test]
+    # test_to_output_model # {"GenerateAnswer': GenerateAnswer, }
 
     dspy_program = dspy_Program(test_params=test_to_run, 
                                 model_name=args.model_name, model_provider=args.model_provider, api_key=args.api_key)
+    # ToDo, set Structured Outputs to be `true`, for now just hardcoding it in the `fString_Program`
     fstring_program = fstring_Program(test_params=test_to_run, 
                                      model_name=args.model_name, model_provider=args.model_provider, api_key=args.api_key)
 
@@ -156,6 +163,9 @@ def run_test(args):
             
             dspy_single_test_result = run_single_test(dspy_program, args.test, title, context, 
                                                       question, answerable)
+            # add the `output_model` argument here
+            # ah, so the problem is that `run_single_test` assumes a program with the same arguments
+            # now the f-string program requires different arguments. `
             fstring_single_test_result = run_single_test(fstring_program, args.test, title, context, 
                                                          question, answerable)
             
