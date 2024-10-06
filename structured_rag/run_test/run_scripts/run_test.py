@@ -117,10 +117,22 @@ def run_test(args):
             print(f"{Colors.UNDERLINE}Title: {title}{Colors.ENDC}")
             print(f"{Colors.UNDERLINE}Question: {question}{Colors.ENDC}\n")
             
-            dspy_single_test_result = run_single_test(dspy_program, args.test, title, context, 
-                                                      question, answerable)
-            fstring_single_test_result = run_single_test(fstring_program, args.test, title, context, 
-                                                         question, answerable)
+            dspy_single_test_result = run_single_test(output_model=output_model,
+                                                      program=dspy_program, 
+                                                      test_type=args.test, 
+                                                      title=title, 
+                                                      context=context, 
+                                                      question=question, 
+                                                      answerable=answerable,
+                                                      task_specific_ground_truth=answerable)
+            fstring_single_test_result = run_single_test(output_model=output_model,
+                                                         program=fstring_program, 
+                                                         test_type=args.test, 
+                                                         title=title, 
+                                                         context=context, 
+                                                         question=question, 
+                                                         answerable=answerable,
+                                                         task_specific_ground_truth=answerable)
             
             return dspy_single_test_result, fstring_single_test_result
 
