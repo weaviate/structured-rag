@@ -4,6 +4,7 @@ import google.generativeai as genai
 import openai
 from structured_rag.mock_gfl.fstring_prompts import get_prompt
 from pydantic import BaseModel
+import json
 
 class fstring_Program():
     def __init__(self,
@@ -28,6 +29,7 @@ class fstring_Program():
     def test_connection(self) -> str:
         # For now this tests without structured outputs, could be an idea to add this
         connection_prompt = "say hello"
+        print(f"Saying hello to {self.model_provider}'s {self.model_name}...\n")
         if self.model_provider == "google":
             # how to add a BaseModel to this?
             response = self.model.generate_content(connection_prompt)
@@ -82,14 +84,33 @@ class fstring_Program():
                 response = self.model.generate_content(prompt)
             return response.text
         elif self.model_provider == "openai":
-            response = self.model.chat.completions.create(
-                model=self.model_name,
-                messages=[
-                    {"role": "system", "content": "You are a helpful assistant."},
-                    {"role": "user", "content": prompt}
-                ]
-            )
-            return response.choices[0].message.content
+            if self.structured_outputs:
+                # Super likely this is moved out of the `.beta` prefix eventually
+                # Note, this currently suppored with:
+                # -- `gpt-4o-mini-2024-07-18`
+                # -- `gpt-4o-2024-08-06`
+                response = self.model.beta.chat.completions.parse(
+                    model=self.model_name,
+                    messages=[
+                        {"role": "system", "content": "You are a helpful assistant. Follow the response format instructions."},
+                        {"role": "user", "content": prompt}
+                    ],
+                    response_format=output_model
+                )
+                parsed_response = response.choices[0].message.parsed
+                # Convert the parsed response to JSON for the parsing later on
+                json_response = json.dumps({key: value for key, value in parsed_response.__dict__.items()})
+                print(f"\n JSON RESPONSE: \n {json_response}\n")
+                return json_response
+            else:
+                response = self.model.chat.completions.create(
+                    model=self.model_name,
+                    messages=[
+                        {"role": "system", "content": "You are a helpful assistant."},
+                        {"role": "user", "content": prompt}
+                    ]
+                )
+                return response.choices[0].message.content
         elif self.model_provider == "anthropic":
             response = self.model.messages.create(
                 model=self.model_name,
