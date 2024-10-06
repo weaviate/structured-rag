@@ -174,13 +174,22 @@ def run_test(args):
             print(f"{Colors.UNDERLINE}Question: {question}{Colors.ENDC}\n")
             
             if args.test == "AssessAnswerability":
-                dspy_single_test_result = run_single_test(dspy_program, args.test, title, context, 
-                                                        question, answerable, answerable)
-                # add the `output_model` argument here
-                # ah, so the problem is that `run_single_test` assumes a program with the same arguments
-                # now the f-string program requires different arguments. `
-                fstring_single_test_result = run_single_test(fstring_program, args.test, title, context, 
-                                                            question, answerable, answerable)
+                dspy_single_test_result = run_single_test(output_model=output_model,
+                    program=dspy_program, 
+                    test_type=args.test, 
+                    title=title, 
+                    context=context, 
+                    question=question, 
+                    answerable=answerable,
+                    task_specific_ground_truth=answerable)
+                fstring_single_test_result = run_single_test(output_model=output_model,
+                    program=fstring_program, 
+                    test_type=args.test, 
+                    title=title, 
+                    context=context, 
+                    question=question, 
+                    answerable=answerable,
+                    task_specific_ground_truth=answerable)
             else:
                 print(f"{Colors.RED}NOT IMPLEMENTED YET!!\n{Colors.ENDC}")
                 print(f"{Colors.CYAN}Need to add the `task_specific_ground_truth` for each StructuredRAG test.{Colors.ENDC}")
