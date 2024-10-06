@@ -23,11 +23,11 @@ def run_single_test(output_model: Optional[BaseModel],
     try:
         if test_type == "ParaphraseQuestions":
             # will need to fix this in the `dspy_Program` code
-            output = program.forward(output_model, test_type, question=question, output_model=output_model) # output_model if present
+            output = program.forward(output_model, test_type, question=question)
         elif test_type == "RAGAS":
-            output = program.forward(output_model, test_type, context, question, answer, output_model=output_model) # output_model if present
+            output = program.forward(output_model, test_type, context, question, answer)
         else:
-            output = program.forward(output_model, test_type, context, question, output_model=output_model) # output_model if present
+            output = program.forward(output_model, test_type, context, question)
         
         print(f"{Colors.CYAN}{program.__class__.__name__} Output: {output}{Colors.ENDC}\n")
         
@@ -180,7 +180,7 @@ def run_test(args):
                     title=title, 
                     context=context, 
                     question=question, 
-                    answerable=answerable,
+                    answer=answerable,
                     task_specific_ground_truth=answerable)
                 fstring_single_test_result = run_single_test(output_model=output_model,
                     program=fstring_program, 
@@ -188,7 +188,7 @@ def run_test(args):
                     title=title, 
                     context=context, 
                     question=question, 
-                    answerable=answerable,
+                    answer=answerable,
                     task_specific_ground_truth=answerable)
             else:
                 print(f"{Colors.RED}NOT IMPLEMENTED YET!!\n{Colors.ENDC}")
