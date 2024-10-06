@@ -17,16 +17,17 @@ from structured_rag.run_test.utils_and_metrics.metrics import is_valid_json_outp
 from structured_rag.models import Experiment, PromptWithResponse, PromptingMethod, SingleTestResult
 from structured_rag.models import test_params, test_to_output_model
 
+# Need to clean up how `task_specific_ground_truth` is interfaced
 def run_single_test(output_model: Optional[BaseModel],
-                    program, test_type, title, context, question, task_specific_ground_truth, answer=None) -> SingleTestResult:
+                    program, test_type, title, context, question, answer, task_specific_ground_truth) -> SingleTestResult:
     try:
         if test_type == "ParaphraseQuestions":
             # will need to fix this in the `dspy_Program` code
-            output = program.forward(test_type, question=question, output_model=output_model) # output_model if present
+            output = program.forward(output_model, test_type, question=question, output_model=output_model) # output_model if present
         elif test_type == "RAGAS":
-            output = program.forward(test_type, context, question, answer, output_model=output_model) # output_model if present
+            output = program.forward(output_model, test_type, context, question, answer, output_model=output_model) # output_model if present
         else:
-            output = program.forward(test_type, context, question, output_model=output_model) # output_model if present
+            output = program.forward(output_model, test_type, context, question, output_model=output_model) # output_model if present
         
         print(f"{Colors.CYAN}{program.__class__.__name__} Output: {output}{Colors.ENDC}\n")
         
@@ -61,10 +62,9 @@ def run_test(args):
     test_to_run = test_params[args.test]
     output_model = test_to_output_model[args.test]
 
-    dspy_program = dspy_Program(output_model=output_model, test_params=test_to_run, 
+    dspy_program = dspy_Program(test_params=test_to_run, 
                                 model_name=args.model_name, model_provider=args.model_provider, api_key=args.api_key)
-    # ToDo, set Structured Outputs to be `true`, for now just hardcoding it in the `fString_Program`
-    fstring_program = fstring_Program(output_model=output_model, test_params=test_to_run, 
+    fstring_program = fstring_Program(test_params=test_to_run, 
                                      model_name=args.model_name, model_provider=args.model_provider, api_key=args.api_key)
 
     dspy_experiment = Experiment(
@@ -161,13 +161,18 @@ def run_test(args):
             print(f"{Colors.UNDERLINE}Title: {title}{Colors.ENDC}")
             print(f"{Colors.UNDERLINE}Question: {question}{Colors.ENDC}\n")
             
-            dspy_single_test_result = run_single_test(dspy_program, args.test, title, context, 
-                                                      question, answerable)
-            # add the `output_model` argument here
-            # ah, so the problem is that `run_single_test` assumes a program with the same arguments
-            # now the f-string program requires different arguments. `
-            fstring_single_test_result = run_single_test(fstring_program, args.test, title, context, 
-                                                         question, answerable)
+            if args.test == "AssessAnswerability":
+                dspy_single_test_result = run_single_test(dspy_program, args.test, title, context, 
+                                                        question, answerable, answerable)
+                # add the `output_model` argument here
+                # ah, so the problem is that `run_single_test` assumes a program with the same arguments
+                # now the f-string program requires different arguments. `
+                fstring_single_test_result = run_single_test(fstring_program, args.test, title, context, 
+                                                            question, answerable, answerable)
+            else:
+                print(f"{Colors.RED}NOT IMPLEMENTED YET!!\n{Colors.ENDC}")
+                print(f"{Colors.CYAN}Need to add the `task_specific_ground_truth` for each StructuredRAG test.{Colors.ENDC}")
+                print(f"{Colors.GREEN}The tests implemented now are `AssessAnswerability`.{Colors.ENDC}")
             
             if dspy_single_test_result:
                 dspy_experiment.all_responses.append(dspy_single_test_result.prompt_with_response)
