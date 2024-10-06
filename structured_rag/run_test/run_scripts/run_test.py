@@ -25,6 +25,9 @@ def run_single_test(program, test_type, title, context, question, task_specific_
         
         print(f"{Colors.CYAN}{program.__class__.__name__} Output: {output}{Colors.ENDC}\n")
         
+        is_valid = False
+        task_metric = 0
+        
         if is_valid_json_output(output, test_type):
             print(f"{Colors.GREEN}Valid output for {test_type}{Colors.ENDC}")
             is_valid = True
@@ -35,16 +38,13 @@ def run_single_test(program, test_type, title, context, question, task_specific_
                 print(f"{Colors.BOLD}Task Metric: {task_metric}{Colors.ENDC}")
         else:
             print(f"{Colors.RED}Invalid output for {test_type}{Colors.ENDC}")
-            is_valid = False
-            task_metric = 0
     
         return SingleTestResult(prompt_with_response=PromptWithResponse(prompt=f"Title: {title}\nContext: {context}\nQuestion: {question}", response=output), is_valid=is_valid, task_metric=task_metric)
-
 
     except Exception as e:
         print(f"{Colors.YELLOW}Error occurred: {str(e)}{Colors.ENDC}")
         print(f"{Colors.RED}Skipping this test due to error.{Colors.ENDC}")
-        return None, False
+        return SingleTestResult(prompt_with_response=PromptWithResponse(prompt=f"Title: {title}\nContext: {context}\nQuestion: {question}", response="Error"), is_valid=False, task_metric=0)
 
 def run_test(args):
     filename = "../../../data/WikiQuestions.json"
@@ -90,42 +90,94 @@ def run_test(args):
 
     total_start_time = time.time()
 
-    for entry in json_data:
-        title = entry.get('title', '')
-        context = entry.get('context', '')
-        question = entry.get('question', '')
-        answer = entry.get('answer', '')
-        answerable = entry.get('answerable', '')
-        
-        print(f"{Colors.UNDERLINE}Title: {title}{Colors.ENDC}")
-        print(f"{Colors.UNDERLINE}Question: {question}{Colors.ENDC}\n")
-        
-        # This is an ugly way to interface the ground truth answerable boolean with the test.
-        # ToDo: Fix this.
-        dspy_single_test_result = run_single_test(dspy_program, args.test, title, context, 
-                                                  question, answerable)
-        fstring_single_test_result = run_single_test(fstring_program, args.test, title, context, 
-                                                     question, answerable)
-        
-        if dspy_single_test_result:
-            dspy_experiment.all_responses.append(dspy_single_test_result.prompt_with_response)
-            dspy_experiment.num_attempts += 1
-            if dspy_single_test_result.is_valid:
-                dspy_experiment.num_successes += 1
-                # ToDo, fix the consistency of `task_performance` vs `task_metric`
-                dspy_experiment.total_task_performance += dspy_single_test_result.task_metric
-            else:
-                dspy_experiment.failed_responses.append(dspy_single_test_result.prompt_with_response)
-        
-        if fstring_single_test_result:
-            fstring_experiment.all_responses.append(fstring_single_test_result.prompt_with_response)
-            fstring_experiment.num_attempts += 1
-            if fstring_single_test_result.is_valid:
-                fstring_experiment.num_successes += 1
-                # ToDo, fix the consistency of `task_performance` vs `task_metric`
-                fstring_experiment.total_task_performance += fstring_single_test_result.task_metric
-            else:
-                fstring_experiment.failed_responses.append(fstring_single_test_result.prompt_with_response)
+    import os
+    from concurrent.futures import ThreadPoolExecutor, as_completed
+    import threading
+
+    # ToDo, move to config or cli argument
+    PARALLEL_EXECUTION = False
+
+    if PARALLEL_EXECUTION:
+        lock = threading.Lock()
+
+        def process_entry(entry, dspy_program, fstring_program, args):
+            title = entry.get('title', '')
+            context = entry.get('context', '')
+            question = entry.get('question', '')
+            answer = entry.get('answer', '')
+            answerable = entry.get('answerable', '')
+            
+            print(f"{Colors.UNDERLINE}Title: {title}{Colors.ENDC}")
+            print(f"{Colors.UNDERLINE}Question: {question}{Colors.ENDC}\n")
+            
+            dspy_single_test_result = run_single_test(dspy_program, args.test, title, context, 
+                                                      question, answerable)
+            fstring_single_test_result = run_single_test(fstring_program, args.test, title, context, 
+                                                         question, answerable)
+            
+            return dspy_single_test_result, fstring_single_test_result
+
+        with ThreadPoolExecutor(max_workers=10) as executor:
+            future_to_entry = {executor.submit(process_entry, entry, dspy_program, fstring_program, args): entry for entry in json_data}
+            
+            for future in as_completed(future_to_entry):
+                dspy_single_test_result, fstring_single_test_result = future.result()
+                
+                with lock:
+                    if dspy_single_test_result:
+                        dspy_experiment.all_responses.append(dspy_single_test_result.prompt_with_response)
+                        dspy_experiment.num_attempts += 1
+                        if dspy_single_test_result.is_valid:
+                            dspy_experiment.num_successes += 1
+                            dspy_experiment.total_task_performance += dspy_single_test_result.task_metric
+                        else:
+                            dspy_experiment.failed_responses.append(dspy_single_test_result.prompt_with_response)
+                    
+                    if fstring_single_test_result:
+                        fstring_experiment.all_responses.append(fstring_single_test_result.prompt_with_response)
+                        fstring_experiment.num_attempts += 1
+                        if fstring_single_test_result.is_valid:
+                            fstring_experiment.num_successes += 1
+                            fstring_experiment.total_task_performance += fstring_single_test_result.task_metric
+                        else:
+                            fstring_experiment.failed_responses.append(fstring_single_test_result.prompt_with_response)
+                
+                print(f"\n{Colors.BOLD}==============={Colors.ENDC}\n")
+    else:
+        for entry in json_data:
+            title = entry.get('title', '')
+            context = entry.get('context', '')
+            question = entry.get('question', '')
+            answer = entry.get('answer', '')
+            answerable = entry.get('answerable', '')
+            
+            print(f"{Colors.UNDERLINE}Title: {title}{Colors.ENDC}")
+            print(f"{Colors.UNDERLINE}Question: {question}{Colors.ENDC}\n")
+            
+            dspy_single_test_result = run_single_test(dspy_program, args.test, title, context, 
+                                                      question, answerable)
+            fstring_single_test_result = run_single_test(fstring_program, args.test, title, context, 
+                                                         question, answerable)
+            
+            if dspy_single_test_result:
+                dspy_experiment.all_responses.append(dspy_single_test_result.prompt_with_response)
+                dspy_experiment.num_attempts += 1
+                if dspy_single_test_result.is_valid:
+                    dspy_experiment.num_successes += 1
+                    dspy_experiment.total_task_performance += dspy_single_test_result.task_metric
+                else:
+                    dspy_experiment.failed_responses.append(dspy_single_test_result.prompt_with_response)
+            
+            if fstring_single_test_result:
+                fstring_experiment.all_responses.append(fstring_single_test_result.prompt_with_response)
+                fstring_experiment.num_attempts += 1
+                if fstring_single_test_result.is_valid:
+                    fstring_experiment.num_successes += 1
+                    fstring_experiment.total_task_performance += fstring_single_test_result.task_metric
+                else:
+                    fstring_experiment.failed_responses.append(fstring_single_test_result.prompt_with_response)
+            
+            print(f"\n{Colors.BOLD}==============={Colors.ENDC}\n")
         
         print(f"\n{Colors.BOLD}==============={Colors.ENDC}\n")
     
@@ -175,6 +227,7 @@ if __name__ == "__main__":
         "ParaphraseQuestions","RAGAS","RateMultipleAspects",
         "GenerateAnswerWithConfidence","GenerateAnswersWithConfidence"
     ], help="Type of test to run")
+    # Add --decode, "prompt" "constrained-gen" 
     parser.add_argument("--save-dir", type=str, required=True, help="Directory to save the results")
 
     args = parser.parse_args()

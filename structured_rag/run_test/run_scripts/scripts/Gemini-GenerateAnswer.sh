@@ -1,0 +1,1 @@
+python3 run_test.py --model_name "gemini-1.5-pro" --model_provider "google" --test "GenerateAnswer" --save-dir "10-6-24"
