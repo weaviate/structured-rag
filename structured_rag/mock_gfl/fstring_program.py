@@ -70,6 +70,7 @@ class fstring_Program():
         prompt = get_prompt(test, references, self.test_params)
 
         if self.model_provider == "ollama":
+            # ToDo, add structured outputs to Ollama
             response = ollama.chat(model=self.model_name, messages=[{"role": "user", "content": prompt}])
             return response['message']['content']
         elif self.model_provider == "google":
