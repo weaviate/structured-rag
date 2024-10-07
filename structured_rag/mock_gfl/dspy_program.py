@@ -1,21 +1,21 @@
 import dspy
 from typing import Optional, Any, Dict
-from structured_rag.mock_gfl.dspy_signatures import GenerateResponse
+from structured_rag.mock_gfl.dspy_signatures import GenerateResponse, OPRO_JSON
 from pydantic import BaseModel
 
 class dspy_Program(dspy.Module):
     def __init__(self, 
                  test_params: Dict[str, str],
                  model_name: str, model_provider: str, api_key: Optional[str] = None,
-                 OPRO_JSON: bool = False) -> None:
+                 use_OPRO_JSON: bool = False) -> None:
         super().__init__()
         self.test_params = test_params
         self.model_name = model_name
         self.model_provider = model_provider
-        self.OPRO_JSON = OPRO_JSON
+        self.use_OPRO_JSON = use_OPRO_JSON
         self.configure_llm(api_key)
         # ToDo, Interface `TypedPredictor` here
-        if self.OPRO_JSON:
+        if self.use_OPRO_JSON:
             self.generate_response = dspy.Predict(OPRO_JSON)
         else:
             self.generate_response = dspy.ChainOfThought(GenerateResponse)

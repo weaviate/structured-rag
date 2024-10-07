@@ -28,16 +28,20 @@ def run_single_test(output_model: Optional[BaseModel],
 
         print(f"{Colors.CYAN}{program.__class__.__name__} Output: {output}{Colors.ENDC}\n")
 
-        is_valid = False
         task_metric = 0
 
-        if is_valid_json_output(output, test_type):
+        parsed_output, is_valid = is_valid_json_output(output, test_type)
+
+        if is_valid:
             print(f"{Colors.GREEN}Valid output for {test_type}{Colors.ENDC}")
             is_valid = True
             if test_type == "AssessAnswerability":
-                assess_answerability_response = json.loads(output)["answerable_question"]
-                print(f"{Colors.BOLD}Assess Answerability Response: {assess_answerability_response}{Colors.ENDC}")
-                task_metric = assess_answerability_metric(assess_answerability_response, task_specific_ground_truth)
+                answerable_question_response = parsed_output # not necessary, but lazy
+                # print(f"{Colors.BOLD}Assess Answerability Response: {answerable_question_response}{Colors.ENDC}")
+                # print(f"{Colors.CYAN}Ground truth answerability: {task_specific_ground_truth}{Colors.ENDC}\n")
+                # print(f"Predicted type {type(answerable_question_response)}\n")
+                # print(f"Ground truth type {type(task_specific_ground_truth)}\n")
+                task_metric = assess_answerability_metric(answerable_question_response, task_specific_ground_truth)
                 print(f"{Colors.BOLD}Task Metric: {task_metric}{Colors.ENDC}")
         else:
             print(f"{Colors.RED}Invalid output for {test_type}{Colors.ENDC}")
@@ -68,7 +72,7 @@ def run_test(args):
             'name': 'dspy_NO_OPRO_JSON',
             'type': 'dspy',
             'params': {
-                'OPRO_JSON': False,
+                'use_OPRO_JSON': False,
                 'test_params': test_to_run,
                 'model_name': args.model_name,
                 'model_provider': args.model_provider,
@@ -79,7 +83,7 @@ def run_test(args):
             'name': 'dspy_WITH_OPRO_JSON',
             'type': 'dspy',
             'params': {
-                'OPRO_JSON': True,
+                'use_OPRO_JSON': True,
                 'test_params': test_to_run,
                 'model_name': args.model_name,
                 'model_provider': args.model_provider,
