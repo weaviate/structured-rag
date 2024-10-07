@@ -8,47 +8,67 @@ def _validate_int_score(score, min_val=0, max_val=5):
         try:
             score = int(score)
         except ValueError:
-            return False
-    return isinstance(score, int) and min_val <= score <= max_val
+            return None, False
+    return score, isinstance(score, int) and min_val <= score <= max_val
 
 def _validate_float_score(score, min_val=0, max_val=5):
     if isinstance(score, str):
         try:
             score = float(score)
         except ValueError:
-            return False
-    return isinstance(score, float) and min_val <= score <= max_val
+            return None, False
+    return score, isinstance(score, float) and min_val <= score <= max_val
 
-def is_valid_json_output(output: Any, test_type: str) -> bool:
+def _validate_boolean(value):
+    if isinstance(value, bool):
+        return value, True
+    if isinstance(value, str):
+        lower_value = value.lower()
+        if lower_value in ['true', 'false']:
+            return lower_value == 'true', True
+    return None, False
+
+def is_valid_json_output(output: Any, test_type: str) -> Tuple[Any, bool]:
     try:
         parsed = json.loads(output)
         if test_type == "GenerateAnswer":
-            return isinstance(parsed.get("answer"), str)
+            answer = parsed.get("answer")
+            return parsed, isinstance(answer, str)
         elif test_type == "RateContext":
-            return _validate_int_score(parsed.get("context_score"))
+            score, is_valid = _validate_int_score(parsed.get("context_score"))
+            return parsed if is_valid else None, is_valid
         elif test_type == "AssessAnswerability":
-            answerable = parsed.get("answerable_question")
-            if isinstance(answerable, str):
-                return answerable.lower() in ['true', 'false']
-            return isinstance(answerable, bool)
+            answerable, is_valid = _validate_boolean(parsed.get("answerable_question"))
+            return answerable if is_valid else None, is_valid
         elif test_type == "ParaphraseQuestions":
             questions = parsed.get("paraphrased_questions")
-            return isinstance(questions, list) and all(isinstance(q, str) for q in questions)
+            is_valid = isinstance(questions, list) and all(isinstance(q, str) for q in questions)
+            return parsed if is_valid else None, is_valid
         elif test_type == "RAGAS":
-            return all(_validate_float_score(parsed.get(score)) for score in ["faithfulness_score", "answer_relevance_score", "context_relevance_score"])
+            scores = ["faithfulness_score", "answer_relevance_score", "context_relevance_score"]
+            is_valid = all(_validate_float_score(parsed.get(score))[1] for score in scores)
+            return parsed if is_valid else None, is_valid
         elif test_type == "GenerateAnswerWithConfidence":
-            return isinstance(parsed.get("Answer"), str) and _validate_int_score(parsed.get("Confidence"))
+            answer_valid = isinstance(parsed.get("Answer"), str)
+            confidence, confidence_valid = _validate_int_score(parsed.get("Confidence"))
+            return parsed if answer_valid and confidence_valid else None, answer_valid and confidence_valid
         elif test_type == "GenerateAnswersWithConfidence":
             answers = parsed
-            return isinstance(answers, list) and all(isinstance(a.get("Answer"), str) and _validate_int_score(a.get("Confidence")) for a in answers)
+            is_valid = isinstance(answers, list) and all(
+                isinstance(a.get("Answer"), str) and _validate_int_score(a.get("Confidence"))[1]
+                for a in answers
+            )
+            return parsed if is_valid else None, is_valid
         elif test_type == "ClassifyDocument":
-            return isinstance(parsed.get('category'), str)
+            is_valid = isinstance(parsed.get('category'), str)
+            return parsed if is_valid else None, is_valid
         elif test_type == "ClassifyDocumentWithRationale":
-            return isinstance(parsed.get('category'), str) and isinstance(parsed.get('rationale'), str)
+            is_valid = isinstance(parsed.get('category'), str) and isinstance(parsed.get('rationale'), str)
+            return parsed if is_valid else None, is_valid
         else:
-            return False
+            return None, False
     except json.JSONDecodeError:
-        return False
+        return None, False
 
 # Although assess_answerability_metric and classification_metric currently do the same thing,
 # ==> we want to extend classification_metric in the future to put probabilties on more than one class.

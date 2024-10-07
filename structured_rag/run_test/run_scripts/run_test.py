@@ -9,7 +9,6 @@ from pydantic import BaseModel
 
 from structured_rag.mock_gfl.dspy_program import dspy_Program
 from structured_rag.mock_gfl.fstring_program import fstring_Program
-import dspy
 
 from structured_rag.run_test.utils_and_metrics.helpers import Colors, load_json_from_file
 from structured_rag.run_test.utils_and_metrics.metrics import is_valid_json_output, assess_answerability_metric
@@ -17,34 +16,36 @@ from structured_rag.run_test.utils_and_metrics.metrics import is_valid_json_outp
 from structured_rag.models import Experiment, PromptWithResponse, PromptingMethod, SingleTestResult
 from structured_rag.models import test_params, test_to_output_model
 
-# Need to clean up how `task_specific_ground_truth` is interfaced
 def run_single_test(output_model: Optional[BaseModel],
                     program, test_type, title, context, question, answer, task_specific_ground_truth) -> SingleTestResult:
     try:
         if test_type == "ParaphraseQuestions":
-            # will need to fix this in the `dspy_Program` code
             output = program.forward(output_model, test_type, question=question)
         elif test_type == "RAGAS":
             output = program.forward(output_model, test_type, context, question, answer)
         else:
             output = program.forward(output_model, test_type, context, question)
-        
+
         print(f"{Colors.CYAN}{program.__class__.__name__} Output: {output}{Colors.ENDC}\n")
-        
-        is_valid = False
+
         task_metric = 0
-        
-        if is_valid_json_output(output, test_type):
+
+        parsed_output, is_valid = is_valid_json_output(output, test_type)
+
+        if is_valid:
             print(f"{Colors.GREEN}Valid output for {test_type}{Colors.ENDC}")
             is_valid = True
             if test_type == "AssessAnswerability":
-                assess_answerability_response = json.loads(output)["answerable_question"]
-                print(f"{Colors.BOLD}Assess Answerability Response: {assess_answerability_response}{Colors.ENDC}")
-                task_metric = assess_answerability_metric(assess_answerability_response, task_specific_ground_truth)
+                answerable_question_response = parsed_output # not necessary, but lazy
+                # print(f"{Colors.BOLD}Assess Answerability Response: {answerable_question_response}{Colors.ENDC}")
+                # print(f"{Colors.CYAN}Ground truth answerability: {task_specific_ground_truth}{Colors.ENDC}\n")
+                # print(f"Predicted type {type(answerable_question_response)}\n")
+                # print(f"Ground truth type {type(task_specific_ground_truth)}\n")
+                task_metric = assess_answerability_metric(answerable_question_response, task_specific_ground_truth)
                 print(f"{Colors.BOLD}Task Metric: {task_metric}{Colors.ENDC}")
         else:
             print(f"{Colors.RED}Invalid output for {test_type}{Colors.ENDC}")
-    
+
         return SingleTestResult(prompt_with_response=PromptWithResponse(prompt=f"Title: {title}\nContext: {context}\nQuestion: {question}", response=output), is_valid=is_valid, task_metric=task_metric)
 
     except Exception as e:
@@ -55,216 +56,162 @@ def run_single_test(output_model: Optional[BaseModel],
 def run_test(args):
     filename = "../../../data/WikiQuestions.json"
     json_data = load_json_from_file(filename)
-    
-    # Print the number of samples in the dataset
+
     print(f"{Colors.BOLD}Number of samples in the dataset: {len(json_data)}{Colors.ENDC}")
-    
+
     if args.test not in test_params:
         raise ValueError(f"Unsupported test: {args.test}")
-    
+
     test_to_run = test_params[args.test]
     output_model = test_to_output_model[args.test]
 
-    dspy_program = dspy_Program(test_params=test_to_run, 
-                                model_name=args.model_name, model_provider=args.model_provider, api_key=args.api_key)
-    fstring_program = fstring_Program(test_params=test_to_run, 
-                                     model_name=args.model_name, model_provider=args.model_provider, api_key=args.api_key)
+    # Define program configurations
+    program_configs = [
+        # DSPy Programs
+        {
+            'name': 'dspy_NO_OPRO_JSON',
+            'type': 'dspy',
+            'params': {
+                'use_OPRO_JSON': False,
+                'test_params': test_to_run,
+                'model_name': args.model_name,
+                'model_provider': args.model_provider,
+                'api_key': args.api_key
+            }
+        },
+        {
+            'name': 'dspy_WITH_OPRO_JSON',
+            'type': 'dspy',
+            'params': {
+                'use_OPRO_JSON': True,
+                'test_params': test_to_run,
+                'model_name': args.model_name,
+                'model_provider': args.model_provider,
+                'api_key': args.api_key
+            }
+        },
+        # f-string Programs
+        {
+            'name': 'fstring_without_structured_outputs',
+            'type': 'fstring',
+            'params': {
+                'structured_outputs': False,
+                'test_params': test_to_run,
+                'model_name': args.model_name,
+                'model_provider': args.model_provider,
+                'api_key': args.api_key
+            }
+        },
+        {
+            'name': 'fstring_with_structured_outputs',
+            'type': 'fstring',
+            'params': {
+                'structured_outputs': True,
+                'test_params': test_to_run,
+                'model_name': args.model_name,
+                'model_provider': args.model_provider,
+                'api_key': args.api_key
+            }
+        }
+    ]
 
-    dspy_experiment = Experiment(
-        test_name=args.test,
-        model_name=args.model_name,
-        prompting_method=PromptingMethod.dspy,
-        num_successes=0,
-        total_task_performance=0,
-        num_attempts=0,
-        success_rate=0,
-        average_task_performance=0,
-        total_time=0,
-        all_responses=[],
-        failed_responses=[]
-    )
+    total_inference_count = 0  # Total inferences across all programs
 
-    fstring_experiment = Experiment(
-        test_name=args.test,
-        model_name=args.model_name,
-        prompting_method=PromptingMethod.fstring,
-        num_successes=0,
-        total_task_performance=0,
-        num_attempts=0,
-        success_rate=0,
-        average_task_performance=0,
-        total_time=0,
-        all_responses=[],
-        failed_responses=[]
-    )
+    # For each program configuration
+    for program_config in program_configs:
+        print(f"\n{Colors.BOLD}Running tests for program: {program_config['name']}{Colors.ENDC}")
+        # Initialize the program
+        if program_config['type'] == 'dspy':
+            program = dspy_Program(**program_config['params'])
+            prompting_method = PromptingMethod.dspy
+        elif program_config['type'] == 'fstring':
+            program = fstring_Program(**program_config['params'])
+            prompting_method = PromptingMethod.fstring
+        else:
+            raise ValueError(f"Unknown program type: {program_config['type']}")
 
-    total_start_time = time.time()
+        # Initialize the Experiment
+        experiment = Experiment(
+            test_name=args.test,
+            model_name=args.model_name,
+            prompting_method=prompting_method,
+            num_successes=0,
+            total_task_performance=0,
+            num_attempts=0,
+            success_rate=0,
+            average_task_performance=0,
+            total_time=0,
+            all_responses=[],
+            failed_responses=[]
+        )
 
-    import os
-    from concurrent.futures import ThreadPoolExecutor, as_completed
-    import threading
+        total_start_time = time.time()
+        inference_count = 0  # Inferences for this program
 
-    # ToDo, move to config or cli argument
-    PARALLEL_EXECUTION = False
-
-    inference_count = 0  # Initialize inference count
-
-    if PARALLEL_EXECUTION:
-        lock = threading.Lock()
-
-        def process_entry(entry, dspy_program, fstring_program, args):
-            nonlocal inference_count
-            title = entry.get('title', '')
-            context = entry.get('context', '')
-            question = entry.get('question', '')
-            answer = entry.get('answer', '')
-            answerable = entry.get('answerable', '')
-            
-            print(f"{Colors.UNDERLINE}Title: {title}{Colors.ENDC}")
-            print(f"{Colors.UNDERLINE}Question: {question}{Colors.ENDC}\n")
-            
-            dspy_single_test_result = run_single_test(output_model=output_model,
-                                                      program=dspy_program, 
-                                                      test_type=args.test, 
-                                                      title=title, 
-                                                      context=context, 
-                                                      question=question, 
-                                                      answerable=answerable,
-                                                      task_specific_ground_truth=answerable)
-            fstring_single_test_result = run_single_test(output_model=output_model,
-                                                         program=fstring_program, 
-                                                         test_type=args.test, 
-                                                         title=title, 
-                                                         context=context, 
-                                                         question=question, 
-                                                         answerable=answerable,
-                                                         task_specific_ground_truth=answerable)
-            
-            with lock:
-                inference_count += 2  # Increment by 2 for each pair of inferences
-            
-            return dspy_single_test_result, fstring_single_test_result
-
-        with ThreadPoolExecutor(max_workers=10) as executor:
-            future_to_entry = {executor.submit(process_entry, entry, dspy_program, fstring_program, args): entry for entry in json_data}
-            
-            for future in as_completed(future_to_entry):
-                dspy_single_test_result, fstring_single_test_result = future.result()
-                
-                with lock:
-                    if dspy_single_test_result:
-                        dspy_experiment.all_responses.append(dspy_single_test_result.prompt_with_response)
-                        dspy_experiment.num_attempts += 1
-                        if dspy_single_test_result.is_valid:
-                            dspy_experiment.num_successes += 1
-                            dspy_experiment.total_task_performance += dspy_single_test_result.task_metric
-                        else:
-                            dspy_experiment.failed_responses.append(dspy_single_test_result.prompt_with_response)
-                    
-                    if fstring_single_test_result:
-                        fstring_experiment.all_responses.append(fstring_single_test_result.prompt_with_response)
-                        fstring_experiment.num_attempts += 1
-                        if fstring_single_test_result.is_valid:
-                            fstring_experiment.num_successes += 1
-                            fstring_experiment.total_task_performance += fstring_single_test_result.task_metric
-                        else:
-                            fstring_experiment.failed_responses.append(fstring_single_test_result.prompt_with_response)
-                
-                print(f"\n{Colors.BOLD}==============={Colors.ENDC}\n")
-    else:
+        # Loop over dataset entries
         for entry in json_data:
             title = entry.get('title', '')
             context = entry.get('context', '')
             question = entry.get('question', '')
             answer = entry.get('answer', '')
             answerable = entry.get('answerable', '')
-            
+
             print(f"{Colors.UNDERLINE}Title: {title}{Colors.ENDC}")
             print(f"{Colors.UNDERLINE}Question: {question}{Colors.ENDC}\n")
-            
-            if args.test == "AssessAnswerability":
-                dspy_single_test_result = run_single_test(output_model=output_model,
-                    program=dspy_program, 
-                    test_type=args.test, 
-                    title=title, 
-                    context=context, 
-                    question=question, 
-                    answer=answerable,
-                    task_specific_ground_truth=answerable)
-                fstring_single_test_result = run_single_test(output_model=output_model,
-                    program=fstring_program, 
-                    test_type=args.test, 
-                    title=title, 
-                    context=context, 
-                    question=question, 
-                    answer=answerable,
-                    task_specific_ground_truth=answerable)
-                inference_count += 2  # Increment by 2 for each pair of inferences
-            else:
-                print(f"{Colors.RED}NOT IMPLEMENTED YET!!\n{Colors.ENDC}")
-                print(f"{Colors.CYAN}Need to add the `task_specific_ground_truth` for each StructuredRAG test.{Colors.ENDC}")
-                print(f"{Colors.GREEN}The tests implemented now are `AssessAnswerability`.{Colors.ENDC}")
-            
-            if dspy_single_test_result:
-                dspy_experiment.all_responses.append(dspy_single_test_result.prompt_with_response)
-                dspy_experiment.num_attempts += 1
-                if dspy_single_test_result.is_valid:
-                    dspy_experiment.num_successes += 1
-                    dspy_experiment.total_task_performance += dspy_single_test_result.task_metric
+
+            single_test_result = run_single_test(
+                output_model=output_model,
+                program=program,
+                test_type=args.test,
+                title=title,
+                context=context,
+                question=question,
+                answer=answer,
+                task_specific_ground_truth=answerable
+            )
+            inference_count += 1
+
+            # Record the result
+            if single_test_result:
+                experiment.all_responses.append(single_test_result.prompt_with_response)
+                experiment.num_attempts += 1
+                if single_test_result.is_valid:
+                    experiment.num_successes += 1
+                    experiment.total_task_performance += single_test_result.task_metric
                 else:
-                    dspy_experiment.failed_responses.append(dspy_single_test_result.prompt_with_response)
-            
-            if fstring_single_test_result:
-                fstring_experiment.all_responses.append(fstring_single_test_result.prompt_with_response)
-                fstring_experiment.num_attempts += 1
-                if fstring_single_test_result.is_valid:
-                    fstring_experiment.num_successes += 1
-                    fstring_experiment.total_task_performance += fstring_single_test_result.task_metric
-                else:
-                    fstring_experiment.failed_responses.append(fstring_single_test_result.prompt_with_response)
-            
+                    experiment.failed_responses.append(single_test_result.prompt_with_response)
+
             print(f"\n{Colors.BOLD}==============={Colors.ENDC}\n")
-        
-        print(f"\n{Colors.BOLD}==============={Colors.ENDC}\n")
-    
-    total_time = time.time() - total_start_time
-    dspy_experiment.total_time = int(total_time)
-    fstring_experiment.total_time = int(total_time)
 
-    print(f"{Colors.HEADER}Time to run test {args.test} with model {args.model_name} = {total_time} seconds.")
+        total_time = time.time() - total_start_time
+        experiment.total_time = int(total_time)
 
-    # Print the number of inferences run
-    print(f"{Colors.BOLD}Number of inferences run: {inference_count}{Colors.ENDC}")
+        # Calculate success rate and average task performance
+        if experiment.num_attempts > 0:
+            experiment.success_rate = experiment.num_successes / experiment.num_attempts
+            experiment.average_task_performance = experiment.total_task_performance / experiment.num_attempts
+        else:
+            experiment.success_rate = 0
+            experiment.average_task_performance = 0
 
-    # calculate success rate
-    dspy_experiment.success_rate = dspy_experiment.num_successes / dspy_experiment.num_attempts
-    fstring_experiment.success_rate = fstring_experiment.num_successes / fstring_experiment.num_attempts
+        # Print final scores
+        print(f"{Colors.HEADER}Final Scores for {program_config['name']}:{Colors.ENDC}")
+        print(f"{Colors.BOLD}JSON Success Rate: {Colors.GREEN}{experiment.num_successes}/{experiment.num_attempts} ({experiment.success_rate:.2%}){Colors.ENDC}")
+        print(f"{Colors.BOLD}Average Task Performance: {Colors.GREEN}{experiment.average_task_performance:.2f}{Colors.ENDC}")
 
-    dspy_experiment.average_task_performance = dspy_experiment.total_task_performance / dspy_experiment.num_attempts
-    fstring_experiment.average_task_performance = fstring_experiment.total_task_performance / fstring_experiment.num_attempts
+        # Save results to JSON file
+        os.makedirs("../results/" + args.save_dir, exist_ok=True)
+        result_file = os.path.join("../results/" + args.save_dir, f"{args.test}-{args.model_name}-{program_config['name']}.json")
 
-    # Print final scores
-    print(f"{Colors.HEADER}Final Scores:{Colors.ENDC}")
-    print(f"{Colors.BOLD}JSON Success Rates{Colors.ENDC}")
-    print(f"{Colors.BOLD}DSPy: {Colors.GREEN}{dspy_experiment.num_successes}/{dspy_experiment.num_attempts} ({dspy_experiment.num_successes/dspy_experiment.num_attempts:.2%}){Colors.ENDC}")
-    print(f"{Colors.BOLD}f-string: {Colors.GREEN}{fstring_experiment.num_successes}/{fstring_experiment.num_attempts} ({fstring_experiment.num_successes/fstring_experiment.num_attempts:.2%}){Colors.ENDC}")
+        with open(result_file, "w") as f:
+            json.dump(experiment.dict(), f, indent=2)
 
-    print(f"{Colors.BOLD}Average Task Performance{Colors.ENDC}")
-    print(f"{Colors.BOLD}DSPy: {dspy_experiment.average_task_performance:.2f}{Colors.ENDC}")
-    print(f"{Colors.BOLD}f-string: {fstring_experiment.average_task_performance:.2f}{Colors.ENDC}")
+        print(f"\nResults saved in {result_file}")
 
-    # Save results to JSON file in the specified save directory
-    os.makedirs("../results/" + args.save_dir, exist_ok=True)
-    dspy_result_file = os.path.join("../results/" + args.save_dir, f"{args.test}-{args.model_name}-dspy.json")
-    fstring_result_file = os.path.join("../results/" + args.save_dir, f"{args.test}-{args.model_name}-fstring.json")
+        total_inference_count += inference_count
 
-    with open(dspy_result_file, "w") as f:
-        json.dump(dspy_experiment.dict(), f, indent=2)
-    
-    with open(fstring_result_file, "w") as f:
-        json.dump(fstring_experiment.dict(), f, indent=2)
-
-    print(f"\nResults saved in {dspy_result_file} and {fstring_result_file}")
+    # Print total number of inferences run
+    print(f"{Colors.BOLD}Total number of inferences run: {total_inference_count}{Colors.ENDC}")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Run LLM testing with different models.")
@@ -276,7 +223,6 @@ if __name__ == "__main__":
         "ParaphraseQuestions","RAGAS","RateMultipleAspects",
         "GenerateAnswerWithConfidence","GenerateAnswersWithConfidence"
     ], help="Type of test to run")
-    # Add --decode, "prompt" "constrained-gen" 
     parser.add_argument("--save-dir", type=str, required=True, help="Directory to save the results")
 
     args = parser.parse_args()
