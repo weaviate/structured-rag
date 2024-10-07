@@ -8,12 +8,12 @@ import json
 
 class fstring_Program():
     def __init__(self,
-                 test_params: Dict[str, str],
+                 test_params: Dict[str, str], structured_outputs: bool,
                  model_name: str, model_provider: str, api_key: Optional[str]) -> None:
         self.test_params = test_params
         self.model_name = model_name
         self.model_provider = model_provider
-        self.structured_outputs = True # change to constructor argument
+        self.structured_outputs = structured_outputs
         if self.model_provider == "google":
             genai.configure(api_key=api_key)
             self.model = genai.GenerativeModel(self.model_name)
