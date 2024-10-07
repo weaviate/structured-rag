@@ -11,6 +11,7 @@ Please open an [issue](https://github.com/weaviate/structured-rag/issues/new) if
 ## Motivating Applications of Structured Outputs
 Most papers in this area focus on their role in Function Calling, with an emerging emphasis on their use in Chain-of-Thought generation.
 1. Chain of Thought Empowers Transformers to Solve Inherently Serial Problems. Zhiyuan Li, Hong Liu, Denny Zhou, Tengyu Ma. 2024. [Arxiv Link](https://arxiv.org/pdf/2402.12875)
+2. Reasoning with Inference Time Compute by Sean Welleck. Language Technologies Institute at Carnegie Mellon (LTI at CMU). [YouTube Link](https://www.youtube.com/watch?v=lGr-O2rK7WQ)
 
 # Deep Dive Reviews
 
