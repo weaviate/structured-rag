@@ -3,6 +3,17 @@ This file contains links and thoughts on related works measuring the impact of J
 
 Please open an [issue](https://github.com/weaviate/structured-rag/issues/new) if we have missed an important paper, and we will look into it!
 
+## Benchmarking Structured Output Generation Methods
+1. Let Me Speak Freely? A Study on the Impact of Format Restrictions on Performance of Large Language Models, Tam et al. 2024. [Arxiv Link](https://arxiv.org/pdf/2408.02442)
+2. Instruction-Following Evaluation for Large Language Models. Jeffrey Zhou, Tianjin Lu, Swaroop Mishra, Siddhartha Brahma, Sujoy Basu, Yi Luan, Denny Zhou, Le Hou. 2023. [Arxiv Link](https://arxiv.org/abs/2311.07911)
+3. InfoBench: Evaluating Instruction Following Ability in Large Language Models. Yiwei Qin, Kaiqiang Song, Yebowen Hu, Wenlin Yao, Sangwoo Cho, Xiaoyang Wang, Xuansheng Wu, Fei Liu, Pengfei Liu, Dong Yu. [Arxiv Link](https://arxiv.org/pdf/2401.03601)
+
+## Motivating Applications of Structured Outputs
+Most papers in this area focus on their role in Function Calling, with an emerging emphasis on their use in Chain-of-Thought generation.
+1. Chain of Thought Empowers Transformers to Solve Inherently Serial Problems. Zhiyuan Li, Hong Liu, Denny Zhou, Tengyu Ma. 2024. [Arxiv Link](https://arxiv.org/pdf/2402.12875)
+
+# Deep Dive Reviews
+
 ### 1. Let Me Speak Freely? A Study on the Impact of Format Restrictions on Performance of Large Language Models, Tam et al. 2024. [Arxiv Link](https://arxiv.org/pdf/2408.02442)
 
 Tests 3 methods for achieving structured outputs: (1) Constrained Decoding (JSON-mode), (2) Format-Restricting Instructions (FRI), and (3) NL-to-Format (interestingly they able using more powerful models for the format part). Tested across 3 reasoning tasks, (1) GSM8K, (2) Last Letter Concatenation, (3) Shuffled Objects, and 4 classification tasks, (1) DDXPlus (49 class medical diagnosis), (2) MultiFin (5 classes for financial paragraphs), (3) Sports Understanding (binary plausibility), and (4) NI - Task 280. Tests `gpt-3.5-turbo-0125`, `claude-3-haiku-20240307`, `gemini-1.5-flash`, `LLaMA-3-8B-Instruct`, and `Gemma-2-9B-Instruct`.
