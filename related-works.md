@@ -13,6 +13,10 @@ Most papers in this area focus on their role in Function Calling, with an emergi
 1. Chain of Thought Empowers Transformers to Solve Inherently Serial Problems. Zhiyuan Li, Hong Liu, Denny Zhou, Tengyu Ma. 2024. [Arxiv Link](https://arxiv.org/pdf/2402.12875)
 2. Reasoning with Inference Time Compute by Sean Welleck. Language Technologies Institute at Carnegie Mellon (LTI at CMU). [YouTube Link](https://www.youtube.com/watch?v=lGr-O2rK7WQ)
 
+## Tasks related to operating or constructing RAG Systems
+1. Baleen: Robust Multi-Hop Reasoning at Scale via Condensed Retrieval. Omar Khattab, Christopher Potts, and Matei Zaharia. 2022. [Arxiv Link](https://arxiv.org/pdf/2101.00436)
+2. RAGAS: Automated Evaluation of Retrieval Augmented Generation. Shahul Es, Jithin James, Espinosa-Anke, Steven Schockaert. 2023. [Arxiv Link](https://arxiv.org/abs/2309.15217)
+
 # Deep Dive Reviews
 
 ### 1. Let Me Speak Freely? A Study on the Impact of Format Restrictions on Performance of Large Language Models, Tam et al. 2024. [Arxiv Link](https://arxiv.org/pdf/2408.02442)
