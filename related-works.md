@@ -5,6 +5,9 @@ Please open an [issue](https://github.com/weaviate/structured-rag/issues/new) if
 
 ## Benchmarking Structured Output Generation Methods
 1. Let Me Speak Freely? A Study on the Impact of Format Restrictions on Performance of Large Language Models, Tam et al. 2024. [Arxiv Link](https://arxiv.org/pdf/2408.02442)
+
+Weaviate Podcast interview with Zhi Rui Tam! [YouTube Link](https://www.youtube.com/watch?v=UsVIX9NJ_a4) [Spotify Link](https://spotifyanchor-web.app.link/e/KkmrH99LkOb)
+
 2. Instruction-Following Evaluation for Large Language Models. Jeffrey Zhou, Tianjin Lu, Swaroop Mishra, Siddhartha Brahma, Sujoy Basu, Yi Luan, Denny Zhou, Le Hou. 2023. [Arxiv Link](https://arxiv.org/abs/2311.07911)
 3. InfoBench: Evaluating Instruction Following Ability in Large Language Models. Yiwei Qin, Kaiqiang Song, Yebowen Hu, Wenlin Yao, Sangwoo Cho, Xiaoyang Wang, Xuansheng Wu, Fei Liu, Pengfei Liu, Dong Yu. [Arxiv Link](https://arxiv.org/pdf/2401.03601)
 
