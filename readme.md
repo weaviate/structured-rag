@@ -2,6 +2,8 @@
 
 Our research paper is live on [ArXiv](https://arxiv.org/abs/2408.11061)!
 
+Our Weaviate Podcast with Zhi Rui Tam, lead author of "Let Me Speak Freely? A Study on the Impact of Format Restrictions on Performance of Large Language Models", is live on [YouTube](https://www.youtube.com/watch?v=UsVIX9NJ_a4) and [Spotify](https://spotifyanchor-web.app.link/e/KkmrH99LkOb)
+
 Large Language Models have become extremely powerful at Zero-Shot Instruction Following. This benchmarker aims to target how well LLMs can follow the instruction of formatting its output in a particular JSON template. It is extremely important for processing Generative Feedback Loops that these outputs follow these instructions.
 
 This benchmarker firstly compares `f-String` prompting with the `Follow the Format (FF)` method used in DSPy.
