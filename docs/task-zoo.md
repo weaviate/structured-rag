@@ -18,7 +18,7 @@ class RateContext(BaseModel):
 
 ```python
 class ParaphraseQuestions(BaseModel):
-  quesetions: list[str]
+  questions: list[str]
 ```
 
 ### RAGAS
