@@ -8,8 +8,14 @@ Please open an [issue](https://github.com/weaviate/structured-rag/issues/new) if
 
 Weaviate Podcast interview with Zhi Rui Tam! [YouTube Link](https://www.youtube.com/watch?v=UsVIX9NJ_a4) [Spotify Link](https://spotifyanchor-web.app.link/e/KkmrH99LkOb)
 
-2. Instruction-Following Evaluation for Large Language Models. Jeffrey Zhou, Tianjin Lu, Swaroop Mishra, Siddhartha Brahma, Sujoy Basu, Yi Luan, Denny Zhou, Le Hou. 2023. [Arxiv Link](https://arxiv.org/abs/2311.07911)
-3. InfoBench: Evaluating Instruction Following Ability in Large Language Models. Yiwei Qin, Kaiqiang Song, Yebowen Hu, Wenlin Yao, Sangwoo Cho, Xiaoyang Wang, Xuansheng Wu, Fei Liu, Pengfei Liu, Dong Yu. [Arxiv Link](https://arxiv.org/pdf/2401.03601)
+2. Say What You Mean: A Response to 'Let Me Speak Freely'. 2024. [Blog Post Link](https://blog.dottxt.co/say-what-you-mean.html)
+3. Does Prompt Formatting Have Any Impact on LLM Performance? Jia He, Mukund Rungta, David Koleczek, Arshdeep Sekhon, Franklin X. Wang, Sadid Hasan. 2024. [Arxiv Link](https://arxiv.org/pdf/2411.10541)
+4. Instruction-Following Evaluation for Large Language Models. Jeffrey Zhou, Tianjin Lu, Swaroop Mishra, Siddhartha Brahma, Sujoy Basu, Yi Luan, Denny Zhou, Le Hou. 2023. [Arxiv Link](https://arxiv.org/abs/2311.07911)
+5. InfoBench: Evaluating Instruction Following Ability in Large Language Models. Yiwei Qin, Kaiqiang Song, Yebowen Hu, Wenlin Yao, Sangwoo Cho, Xiaoyang Wang, Xuansheng Wu, Fei Liu, Pengfei Liu, Dong Yu. [Arxiv Link](https://arxiv.org/pdf/2401.03601)
+
+## Structured Generation
+1. Outlines
+2. XGrammar
 
 ## Motivating Applications of Structured Outputs
 Most papers in this area focus on their role in Function Calling, with an emerging emphasis on their use in Chain-of-Thought generation.
