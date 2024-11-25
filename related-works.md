@@ -15,7 +15,7 @@ Weaviate Podcast interview with Zhi Rui Tam! [YouTube Link](https://www.youtube.
 
 ## Structured Generation
 1. Outlines
-2. XGrammar
+2. XGrammar. [Blog Post](https://blog.mlc.ai/2024/11/22/achieving-efficient-flexible-portable-structured-generation-with-xgrammar)
 
 ## Motivating Applications of Structured Outputs
 Most papers in this area focus on their role in Function Calling, with an emerging emphasis on their use in Chain-of-Thought generation.
