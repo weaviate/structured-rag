@@ -27,6 +27,12 @@ Most papers in this area focus on their role in Function Calling, with an emergi
 2. RAGAS: Automated Evaluation of Retrieval Augmented Generation. Shahul Es, Jithin James, Espinosa-Anke, Steven Schockaert. 2023. [Arxiv Link](https://arxiv.org/abs/2309.15217)
 3. Introducing Contextual Retrieval. Anthropic, 2024. [Blog Post Link](https://www.anthropic.com/news/contextual-retrieval)
 
+## Tool Use and Structured Outputs
+1. CATP-LLM: Empowering Large Language Models for Cost-Aware Tool Planning. Duo Wu, Jinghe Wang, Yuan Meng, Yanning Zhang, Le Sun, Zhi Wang. 2024. [Arxiv Link](https://arxiv.org/pdf/2411.16313)
+
+## Adversarial Attacks and Structured Outputs
+1. Universal and Context-Independent Triggers for Precise Control of LLM Outputs. Jiashuo Liang, Guancheng Li, Yang Yu. 2024. [Arxiv Link](https://arxiv.org/abs/2411.14738).
+
 # Deep Dive Reviews
 
 ### 1. Let Me Speak Freely? A Study on the Impact of Format Restrictions on Performance of Large Language Models, Tam et al. 2024. [Arxiv Link](https://arxiv.org/pdf/2408.02442)
