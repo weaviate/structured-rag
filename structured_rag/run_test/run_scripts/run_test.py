@@ -1,6 +1,5 @@
 import json
 import os
-import argparse
 import datetime
 import time
 
@@ -15,6 +14,13 @@ from structured_rag.run_test.utils_and_metrics.metrics import is_valid_json_outp
 
 from structured_rag.models import Experiment, PromptWithResponse, PromptingMethod, SingleTestResult
 from structured_rag.models import test_params, test_to_output_model
+
+# Configuration variables
+MODEL_NAME = "gpt-4o"
+MODEL_PROVIDER = "openai" # one of: "ollama", "google", "openai", "anthropic"
+API_KEY = "your-api-key-here"
+TEST_TYPE = "AssessAnswerability" # one of: "GenerateAnswer", "RateContext", "AssessAnswerability", "ParaphraseQuestions", "RAGAS", "RateMultipleAspects", "GenerateAnswerWithConfidence", "GenerateAnswersWithConfidence"
+SAVE_DIR = "test_results"
 
 def run_single_test(output_model: Optional[BaseModel],
                     program, test_type, title, context, question, answer, task_specific_ground_truth) -> SingleTestResult:
@@ -53,17 +59,17 @@ def run_single_test(output_model: Optional[BaseModel],
         print(f"{Colors.RED}Skipping this test due to error.{Colors.ENDC}")
         return SingleTestResult(prompt_with_response=PromptWithResponse(prompt=f"Title: {title}\nContext: {context}\nQuestion: {question}", response="Error"), is_valid=False, task_metric=0)
 
-def run_test(args):
+def run_test():
     filename = "../../../data/WikiQuestions.json"
     json_data = load_json_from_file(filename)
 
     print(f"{Colors.BOLD}Number of samples in the dataset: {len(json_data)}{Colors.ENDC}")
 
-    if args.test not in test_params:
-        raise ValueError(f"Unsupported test: {args.test}")
+    if TEST_TYPE not in test_params:
+        raise ValueError(f"Unsupported test: {TEST_TYPE}")
 
-    test_to_run = test_params[args.test]
-    output_model = test_to_output_model[args.test]
+    test_to_run = test_params[TEST_TYPE]
+    output_model = test_to_output_model[TEST_TYPE]
 
     # Define program configurations
     program_configs = [
@@ -74,9 +80,9 @@ def run_test(args):
             'params': {
                 'use_OPRO_JSON': False,
                 'test_params': test_to_run,
-                'model_name': args.model_name,
-                'model_provider': args.model_provider,
-                'api_key': args.api_key
+                'model_name': MODEL_NAME,
+                'model_provider': MODEL_PROVIDER,
+                'api_key': API_KEY
             }
         },
         {
@@ -85,9 +91,9 @@ def run_test(args):
             'params': {
                 'use_OPRO_JSON': True,
                 'test_params': test_to_run,
-                'model_name': args.model_name,
-                'model_provider': args.model_provider,
-                'api_key': args.api_key
+                'model_name': MODEL_NAME,
+                'model_provider': MODEL_PROVIDER,
+                'api_key': API_KEY
             }
         },
         # f-string Programs
@@ -97,9 +103,9 @@ def run_test(args):
             'params': {
                 'structured_outputs': False,
                 'test_params': test_to_run,
-                'model_name': args.model_name,
-                'model_provider': args.model_provider,
-                'api_key': args.api_key
+                'model_name': MODEL_NAME,
+                'model_provider': MODEL_PROVIDER,
+                'api_key': API_KEY
             }
         },
         {
@@ -108,9 +114,9 @@ def run_test(args):
             'params': {
                 'structured_outputs': True,
                 'test_params': test_to_run,
-                'model_name': args.model_name,
-                'model_provider': args.model_provider,
-                'api_key': args.api_key
+                'model_name': MODEL_NAME,
+                'model_provider': MODEL_PROVIDER,
+                'api_key': API_KEY
             }
         }
     ]
@@ -132,8 +138,8 @@ def run_test(args):
 
         # Initialize the Experiment
         experiment = Experiment(
-            test_name=args.test,
-            model_name=args.model_name,
+            test_name=TEST_TYPE,
+            model_name=MODEL_NAME,
             prompting_method=prompting_method,
             num_successes=0,
             total_task_performance=0,
@@ -162,7 +168,7 @@ def run_test(args):
             single_test_result = run_single_test(
                 output_model=output_model,
                 program=program,
-                test_type=args.test,
+                test_type=TEST_TYPE,
                 title=title,
                 context=context,
                 question=question,
@@ -200,9 +206,9 @@ def run_test(args):
         print(f"{Colors.BOLD}Average Task Performance: {Colors.GREEN}{experiment.average_task_performance:.2f}{Colors.ENDC}")
 
         # Save results to JSON file
-        os.makedirs("../results/" + args.save_dir, exist_ok=True)
+        os.makedirs("../results/" + SAVE_DIR, exist_ok=True)
         current_date = datetime.datetime.now().strftime("%Y-%m-%d")
-        result_file = os.path.join("../results/" + args.save_dir, f"{args.test}-{args.model_name}-{program_config['name']}-{current_date}.json")
+        result_file = os.path.join("../results/" + SAVE_DIR, f"{TEST_TYPE}-{MODEL_NAME}-{program_config['name']}-{current_date}.json")
 
         with open(result_file, "w") as f:
             json.dump(experiment.dict(), f, indent=2)
@@ -215,16 +221,4 @@ def run_test(args):
     print(f"{Colors.BOLD}Total number of inferences run: {total_inference_count}{Colors.ENDC}")
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Run LLM testing with different models.")
-    parser.add_argument("--model_name", type=str, required=True, help="Name of the model to use")
-    parser.add_argument("--model_provider", type=str, required=True, choices=["ollama", "google", "openai", "anthropic"], help="Provider of the model")
-    parser.add_argument("--api_key", type=str, required=False, help="API key for the model provider (if required)")
-    parser.add_argument("--test", type=str, required=True, choices=[
-        "GenerateAnswer","RateContext","AssessAnswerability",
-        "ParaphraseQuestions","RAGAS","RateMultipleAspects",
-        "GenerateAnswerWithConfidence","GenerateAnswersWithConfidence"
-    ], help="Type of test to run")
-    parser.add_argument("--save-dir", type=str, required=True, help="Directory to save the results")
-
-    args = parser.parse_args()
-    run_test(args)
+    run_test()
