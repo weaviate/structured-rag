@@ -201,7 +201,8 @@ def run_test(args):
 
         # Save results to JSON file
         os.makedirs("../results/" + args.save_dir, exist_ok=True)
-        result_file = os.path.join("../results/" + args.save_dir, f"{args.test}-{args.model_name}-{program_config['name']}.json")
+        current_date = datetime.datetime.now().strftime("%Y-%m-%d")
+        result_file = os.path.join("../results/" + args.save_dir, f"{args.test}-{args.model_name}-{program_config['name']}-{current_date}.json")
 
         with open(result_file, "w") as f:
             json.dump(experiment.dict(), f, indent=2)
