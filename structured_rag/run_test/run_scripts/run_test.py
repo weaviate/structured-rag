@@ -215,6 +215,10 @@ def run_test():
 
         print(f"\nResults saved in {result_file}")
 
+        # Append results to experiment log
+        with open("experiment-log.md", "a") as f:
+            f.write(f"| {MODEL_NAME} | {experiment.success_rate:.2%} | {TEST_TYPE} | {current_date} |\n")
+
         total_inference_count += inference_count
 
     # Print total number of inferences run
