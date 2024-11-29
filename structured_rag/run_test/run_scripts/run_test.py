@@ -18,9 +18,9 @@ from structured_rag.models import test_params, test_to_output_model
 # Configuration variables
 MODEL_NAME = "gpt-4o"
 MODEL_PROVIDER = "openai" # one of: "ollama", "google", "openai", "anthropic"
-API_KEY = "your-api-key-here"
+API_KEY = ""
 TEST_TYPE = "AssessAnswerability" # one of: "GenerateAnswer", "RateContext", "AssessAnswerability", "ParaphraseQuestions", "RAGAS", "RateMultipleAspects", "GenerateAnswerWithConfidence", "GenerateAnswersWithConfidence"
-SAVE_DIR = "test_results"
+SAVE_DIR = "results"
 
 def run_single_test(output_model: Optional[BaseModel],
                     program, test_type, title, context, question, answer, task_specific_ground_truth) -> SingleTestResult:
@@ -208,7 +208,7 @@ def run_test():
         # Save results to JSON file
         os.makedirs("../results/" + SAVE_DIR, exist_ok=True)
         current_date = datetime.datetime.now().strftime("%Y-%m-%d")
-        result_file = os.path.join("../results/" + SAVE_DIR, f"{TEST_TYPE}-{MODEL_NAME}-{program_config['name']}-{current_date}.json")
+        result_file = os.path.join("../results/", f"{TEST_TYPE}-{MODEL_NAME}-{program_config['name']}-{current_date}.json")
 
         with open(result_file, "w") as f:
             json.dump(experiment.dict(), f, indent=2)
@@ -217,7 +217,7 @@ def run_test():
 
         # Append results to experiment log
         with open("experiment-log.md", "a") as f:
-            f.write(f"| {MODEL_NAME} | {experiment.success_rate:.2%} | {TEST_TYPE} | {current_date} |\n")
+            f.write(f"| {MODEL_NAME} | {experiment.success_rate:.2%} | {TEST_TYPE} | {program_config['type']} | {current_date} |\n")
 
         total_inference_count += inference_count
 

@@ -1,4 +1,4 @@
 # Experiment Log
 
-| Model Name | Success Rate | Task | Date Tested |
-|------------|-------------|------|-------------|
+| Model Name | Success Rate | Task | Prompting Method | Date Tested |
+|------------|-------------|------|-----------------|-------------|
