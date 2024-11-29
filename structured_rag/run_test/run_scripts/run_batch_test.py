@@ -3,7 +3,6 @@ import json
 import os
 import requests
 import time
-import argparse
 from pydantic import BaseModel
 
 from structured_rag.run_test.utils_and_metrics.helpers import Colors, load_json_from_file
@@ -20,8 +19,12 @@ from structured_rag.models import create_enum, _ClassifyDocument, _ClassifyDocum
 
 from structured_rag.models import Experiment, PromptWithResponse, PromptingMethod
 
+# Configuration variables
 url = "YOUR_MODAL_URL"
 openai_api_key = "sk-foobar"
+test_type = "AssessAnswerability"
+save_dir = "results"
+dataset_filepath = "SuperBEIR"
 
 headers = {
     "Content-Type": "application/json",
@@ -130,7 +133,7 @@ def run_batch_test(dataset_filepath, test_type, save_dir, with_outlines):
 
     # check the `int` valued total_time, I don't think that's right
     batch_experiment = Experiment(
-        test_name=args.test,
+        test_name=test_type,
         model_name="llama3.2-3B-Instruct-Modal",
         prompting_method=PromptingMethod.fstring,
         num_successes=0,
@@ -204,11 +207,10 @@ def run_batch_test(dataset_filepath, test_type, save_dir, with_outlines):
         print(f"{Colors.GREEN}Time to run experiment: {total_time} seconds{Colors.ENDC}")
         
         # serialize experiment to JSON
-        os.makedirs(args.save_dir, exist_ok=True)
-        # ToDo, ablate `args.model_name`
+        os.makedirs(save_dir, exist_ok=True)
 
         # Fix this save path
-        batch_result_file = os.path.join(args.save_dir, f"{args.test}-Modal-vLLM.json")
+        batch_result_file = os.path.join(save_dir, f"{test_type}-Modal-vLLM.json")
 
         with open(batch_result_file, "w") as f:
             json.dump(batch_experiment.dict(), f, indent=2)
@@ -220,13 +222,4 @@ def run_batch_test(dataset_filepath, test_type, save_dir, with_outlines):
         print(response.text)
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Run test with or without Outlines")
-    # ToDo, update to ablate `with_outlines`
-    #parser.add_argument("--with-outlines", action="store_true", help="Run test with Outlines")
-    parser.add_argument("--test", type=str, default="AssessAnswerability", help="Test to run")
-    parser.add_argument("--save-dir", type=str, default="results", help="Directory to save results")
-    args = parser.parse_args()
-
-    #dataset_filepath = "../../../data/WikiQuestions.json"
-    dataset_filepath = "SuperBEIR"
-    run_batch_test(dataset_filepath, args.test, args.save_dir, with_outlines=True)
+    run_batch_test(dataset_filepath, test_type, save_dir, with_outlines=True)
