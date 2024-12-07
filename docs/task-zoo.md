@@ -44,3 +44,12 @@ class AnswerWithConfidence(BaseModel):
 class AnswersWithConfidences(BaseModel):
   answers_with_confidences: list[AnswerWithConfidence]
 ```
+
+### ResponseOrToolCall
+
+```python
+class ResponseOrToolCalls(BaseModel):
+  final_response: bool
+  response: str
+  tool_calls: list[ToolCall]
+```
