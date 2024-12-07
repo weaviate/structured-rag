@@ -7,18 +7,18 @@ class GenerateAnswer(BaseModel):
   answer: str
 ```
 
-### RateContext
-
-```python
-class RateContext(BaseModel):
-  context_score: int
-```
-
 ### ParaphraseQuestions
 
 ```python
 class ParaphraseQuestions(BaseModel):
   questions: list[str]
+```
+
+### RateContext
+
+```python
+class RateContext(BaseModel):
+  context_score: int
 ```
 
 ### RAGAS
