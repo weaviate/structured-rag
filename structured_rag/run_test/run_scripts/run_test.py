@@ -1,3 +1,4 @@
+import argparse
 import json
 import os
 import datetime
@@ -224,5 +225,31 @@ def run_test():
     # Print total number of inferences run
     print(f"{Colors.BOLD}Total number of inferences run: {total_inference_count}{Colors.ENDC}")
 
+ALL_TESTS = [
+    "GenerateAnswer",
+    "RateContext",
+    "AssessAnswerability",
+    "ParaphraseQuestions",
+    "GenerateAnswerWithConfidence",
+    "GenerateAnswersWithConfidence",
+    "RAGAS",
+]
+
 if __name__ == "__main__":
-    run_test()
+    parser = argparse.ArgumentParser(description="Run StructuredRAG benchmark tests.")
+    parser.add_argument("--model_name", type=str, default=MODEL_NAME, help="Name of the model to use.")
+    parser.add_argument("--model_provider", type=str, default=MODEL_PROVIDER, help="Provider: ollama, google, openai, anthropic.")
+    parser.add_argument("--api_key", type=str, default=API_KEY, help="API key (not needed for Ollama).")
+    parser.add_argument("--test", type=str, default=TEST_TYPE, help="Test type to run.")
+    parser.add_argument("--all", action="store_true", help="Run all supported test types.")
+    args = parser.parse_args()
+
+    MODEL_NAME = args.model_name
+    MODEL_PROVIDER = args.model_provider
+    API_KEY = args.api_key
+
+    tests_to_run = ALL_TESTS if args.all else [args.test]
+    for test in tests_to_run:
+        TEST_TYPE = test
+        print(f"\n{'='*60}\nRunning test: {TEST_TYPE}\n{'='*60}")
+        run_test()
