@@ -7,9 +7,10 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.10"
-dspy_ai = "^2.4.13"
-ollama = "^0.2.1"
+dspy_ai = "2.4.13"
+ollama = ">=0.4.0"
 matplotlib = "^3.9.1"
+google-generativeai = "^0.8.6"
 
 [build-system]
 requires = ["poetry-core"]

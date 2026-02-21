@@ -23,6 +23,9 @@ class dspy_Program(dspy.Module):
     def configure_llm(self, api_key: Optional[str] = None):
         if self.model_provider == "ollama":
             llm = dspy.OllamaLocal(model=self.model_name, max_tokens=4000, timeout_s=480)
+        elif self.model_provider == "ollama_cloud":
+            llm = dspy.OpenAI(model=self.model_name, api_key=api_key,
+                              api_base="https://ollama.com/v1/", model_type="chat", max_tokens=4000)
         elif self.model_provider == "google":
             llm = dspy.Google(model=self.model_name, api_key=api_key)
         elif self.model_provider == "openai":
