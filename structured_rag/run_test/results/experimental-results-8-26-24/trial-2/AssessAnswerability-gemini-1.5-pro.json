@@ -1,9 +1,0 @@
-{
-  "test_type": "AssessAnswerability",
-  "model_name": "gemini-1.5-pro",
-  "model_provider": "google",
-  "dspy_score": 105,
-  "fstring_score": 103,
-  "dspy_total_attempts": 112,
-  "fstring_total_attempts": 112
-}

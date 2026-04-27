@@ -1,50 +1,131 @@
 # StructuredRAG: JSON Response Formatting with Large Language Models
 
-## News 📯
+A benchmark for measuring how well LLMs follow JSON response format instructions across RAG-inspired tasks. Supports OpenAI, Anthropic, Google, Ollama, and Modal/vLLM providers out of the box.
 
-Weaviate Podcast #119 with Will Kurt and Cameron Pfiffer from dottxt.ai is live on [YouTube](https://www.youtube.com/watch?v=3PdEYG6OusA) and [Spotify](https://spotifycreators-web.app.link/e/b8MEmkkbrSb)
+Our research paper is on [ArXiv](https://arxiv.org/abs/2408.11061).
 
-Our research paper is live on [ArXiv](https://arxiv.org/abs/2408.11061)!
+![Experimental Results](./structured_rag/success_rates_per_test.png)
 
-Weaviate Podcast #108 with Zhi Rui Tam, lead author of "Let Me Speak Freely? A Study on the Impact of Format Restrictions on Performance of Large Language Models", is live on [YouTube](https://www.youtube.com/watch?v=UsVIX9NJ_a4) and [Spotify](https://spotifyanchor-web.app.link/e/KkmrH99LkOb)!
+## Quick Start
 
-Large Language Models have become extremely powerful at Zero-Shot Instruction Following. This benchmarker aims to target how well LLMs can follow the instruction of formatting its output in a particular JSON template. It is extremely important that these outputs follow these instructions for building reliably LLM systems such as metadata extraction, reasoning, report generation, agents, and more!
-
-This benchmarker firstly compares `f-String` prompting with the `Follow the Format (FF)` method used in DSPy.
-
-This benchmarker secondly compares `Gemini` with `Llama3 (Ollama)`.
-
-The benchmarker explores different RAG inspired tasks with structured outputs as follows:
-
-| Output Type                        | Task                        | Example                                                                                                                                           |
-|-----------------------------|-----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|
-| `string`                      | GenerateAnswer              | {"answer": "The National Gallery of Art, Washington D.C., and the Pinacoteca di Brera, Milan, Italy."}                                             |
-| `integer`                     | RateContext                 | {"context_score": 5}                                                                                                                              |
-| `boolean`                     | AssessAnswerability         | {"answerable_question": True}                                                                                                                     |
-| `List[string]`                | ParaphraseQuestions         | {"paraphrased_questions": ["Where can some of Vincenzo Civerchio’s works be found?", "Where are some pieces by Vincenzo Civerchio displayed?", "Where can I find some of Vincenzo Civerchio’s art?"]} |
-| `RAGASmetrics`                 | RAGAS                       | {"faithfulness_score": 2.5, "answer_relevance_score": 1.0, "context_relevance_score": 3.5}
-| `AnswerWithConfidence`        | GenerateAnswerWithConfidence| {"answer": "The National Gallery of Art, Washington D.C., and the Pinacoteca di Brera, Milan, Italy.", "confidence": 5}                            |
-| `List[AnswerWithConfidence]`  | GenerateAnswersWithConfidence| [{"answer": "National Gallery of Art, Washington D.C.", "confidence": 5}, {"answer": "Pinacoteca di Brera, Milan, Italy", "confidence": 4}]         |
-
-## Additional Models
-
-```python
-class RAGASmetrics(BaseModel):
-  faithfulness_score: float
-  answer_relevance_score: float
-  context_relevance_score: float
-
-class AnswerWithConfidence(BaseModel):
-  answer: str
-  confidence: float
+```bash
+uv sync
 ```
 
-The WikiQuestions dataset can also be found on [HuggingFace Datasets](https://huggingface.co/datasets/weaviate/Wiki-Answerable-Questions)!
+Set your API key and configure `structured_rag/configs/benchmark.yaml`:
 
-![Experimental Results](./structured_rag/run_test/result_visualization/success_rates_per_test.png)
+```bash
+export OPENAI_API_KEY=sk-...
+```
+
+```yaml
+provider: openai          # openai | anthropic | google | ollama | ollama_cloud | modal_vllm
+model: gpt-5.4-nano
+api_key_env: OPENAI_API_KEY  # which env var to read the key from
+
+strategy: fstring          # fstring | fstring_structured | dspy | dspy_opro | all
+tasks:
+  - AssessAnswerability    # or "all" for all 7 tasks
+
+save_dir: results
+```
+
+Run:
+
+```bash
+uv run python -m structured_rag.scripts.run_benchmark
+```
+
+Or point to a custom config:
+
+```bash
+uv run python -m structured_rag.scripts.run_benchmark path/to/custom.yaml
+```
+
+## Tasks
+
+The benchmark tests 7 RAG-inspired structured output tasks across different JSON complexity levels:
+
+| Output Type | Task | Example |
+|---|---|---|
+| `string` | GenerateAnswer | `{"answer": "The National Gallery of Art..."}` |
+| `integer` | RateContext | `{"context_score": 5}` |
+| `boolean` | AssessAnswerability | `{"answerable_question": true}` |
+| `List[string]` | ParaphraseQuestions | `{"paraphrased_questions": ["...", "...", "..."]}` |
+| `composite` | GenerateAnswerWithConfidence | `{"answer": "...", "confidence": 5}` |
+| `List[composite]` | GenerateAnswersWithConfidence | `[{"answer": "...", "confidence": 5}, ...]` |
+| `composite` | RAGAS | `{"faithfulness_score": 2.5, "answer_relevance_score": 1.0, ...}` |
+
+### Composite Models
+
+```python
+class GenerateAnswerWithConfidence(BaseModel):
+    answer: str
+    confidence: int
+
+class RAGASMetrics(BaseModel):
+    faithfulness_score: float
+    answer_relevance_score: float
+    context_relevance_score: float
+```
+
+## Prompting Strategies
+
+| Strategy | Description |
+|---|---|
+| `fstring` | f-string prompting with inline JSON format instructions |
+| `fstring_structured` | f-string prompting with provider-native structured outputs (OpenAI, Google) |
+| `dspy` | DSPy Follow-the-Format (FF) prompting |
+| `dspy_opro` | DSPy with OPRO-optimized JSON signature |
+| `all` | Run all 4 strategies |
+
+## Supported Providers
+
+| Provider | Config value | API key env var |
+|---|---|---|
+| OpenAI | `openai` | `OPENAI_API_KEY` |
+| Anthropic | `anthropic` | `ANTHROPIC_API_KEY` |
+| Google Gemini | `google` | `GOOGLE_API_KEY` |
+| Ollama (local) | `ollama` | -- |
+| Ollama Cloud | `ollama_cloud` | `OLLAMA_API_KEY` |
+| Modal vLLM | `modal_vllm` | `MODAL_API_KEY` |
+
+## Metrics
+
+The benchmark reports two separate scores:
+
+- **JSON Format Success Rate** -- did the LLM produce valid, parseable JSON matching the expected schema?
+- **Task Accuracy** -- for tasks with ground truth (e.g. AssessAnswerability), did the LLM get the right answer?
+
+## Architecture
+
+The codebase follows hexagonal (ports & adapters) architecture:
+
+```
+structured_rag/
+  core/
+    domain/       # Pydantic models, task definitions, validation metrics
+    ports/        # Abstract interfaces (LLMPort, PromptingStrategy)
+    services/     # Experiment runner, result saving
+  adapters/
+    llm/          # One adapter per provider (OpenAI, Anthropic, Google, Ollama, Modal/vLLM)
+    prompting/    # Strategy implementations (f-string, DSPy)
+  configs/        # benchmark.yaml
+  scripts/        # run_benchmark.py entry point
+```
+
+Adding a new LLM provider requires creating one adapter file implementing `LLMPort` and registering it in `adapters/llm/registry.py`.
+
+## Dataset
+
+The WikiQuestions dataset contains 112 samples built from Wikipedia title-abstract pairs with generated answerable/unanswerable questions. Also available on [HuggingFace Datasets](https://huggingface.co/datasets/weaviate/Wiki-Answerable-Questions).
+
+## News
+
+- Weaviate Podcast #119 with Will Kurt and Cameron Pfiffer from dottxt.ai -- [YouTube](https://www.youtube.com/watch?v=3PdEYG6OusA) | [Spotify](https://spotifycreators-web.app.link/e/b8MEmkkbrSb)
+- Weaviate Podcast #108 with Zhi Rui Tam on "Let Me Speak Freely?" -- [YouTube](https://www.youtube.com/watch?v=UsVIX9NJ_a4) | [Spotify](https://spotifyanchor-web.app.link/e/KkmrH99LkOb)
 
 ## Citation
-Please consider citing our paper if you find this work useful:
 
 ```bibtex
 @misc{shorten2024,
