@@ -11,6 +11,10 @@ dspy_ai = "2.4.13"
 ollama = ">=0.4.0"
 matplotlib = "^3.9.1"
 google-generativeai = "^0.8.6"
+openai = ">=1.0.0"
+anthropic = ">=0.20.0"
+pydantic = ">=2.0.0"
+pyyaml = ">=6.0"
 
 [build-system]
 requires = ["poetry-core"]

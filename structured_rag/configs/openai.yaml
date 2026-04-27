@@ -1,0 +1,10 @@
+# OpenAI benchmark config
+provider: openai
+model: gpt-5.4-nano
+api_key_env: OPENAI_API_KEY     # reads from this env var
+
+strategy: fstring               # fstring | fstring_structured | dspy | dspy_opro | all
+tasks:                          # list of tasks, or "all"
+  - AssessAnswerability
+
+save_dir: results/openai

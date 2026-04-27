@@ -1,0 +1,21 @@
+# Modal vLLM + Outlines benchmark config
+#
+# Prerequisites:
+#   1. Deploy the Modal endpoint:
+#      cd structured_rag/adapters/llm/modal_deployment
+#      modal deploy vllm_outlines_setup.py
+#   2. Set your Modal endpoint URL and API key below
+#
+provider: modal_vllm
+model: https://YOUR_MODAL_ENDPOINT_URL   # endpoint URL goes here
+api_key_env: MODAL_API_KEY
+
+strategy: fstring
+tasks:
+  - AssessAnswerability
+
+# Modal-specific options (passed through to ModalVLLMAdapter)
+use_outlines: true            # use Outlines structured decoding
+use_llama3_template: true     # wrap prompts in Llama 3 chat template
+
+save_dir: results/modal-vllm
