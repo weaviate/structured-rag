@@ -9,7 +9,7 @@ Our research paper is on [ArXiv](https://arxiv.org/abs/2408.11061).
 ## Quick Start
 
 ```bash
-pip install -e .
+uv sync
 ```
 
 Set your API key and configure `structured_rag/configs/benchmark.yaml`:
@@ -33,13 +33,13 @@ save_dir: results
 Run:
 
 ```bash
-python -m structured_rag.scripts.run_benchmark
+uv run python -m structured_rag.scripts.run_benchmark
 ```
 
 Or point to a custom config:
 
 ```bash
-python -m structured_rag.scripts.run_benchmark path/to/custom.yaml
+uv run python -m structured_rag.scripts.run_benchmark path/to/custom.yaml
 ```
 
 ## Tasks
