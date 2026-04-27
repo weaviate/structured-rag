@@ -2,7 +2,7 @@
 
 To run the tests, create the python environment using `poetry install`.
 
-You can then run the script using `poetry run python tests/run_test.py`.
+You can then run the script using `poetry run python structured_rag/run_test/run_scripts/run_test.py`.
 
 `run_test.py` accepts the following command-line arguments:
 
