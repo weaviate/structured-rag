@@ -54,7 +54,7 @@ The benchmark tests 7 RAG-inspired structured output tasks across different JSON
 | `List[string]` | ParaphraseQuestions | `{"paraphrased_questions": ["...", "...", "..."]}` |
 | `composite` | GenerateAnswerWithConfidence | `{"answer": "...", "confidence": 5}` |
 | `List[composite]` | GenerateAnswersWithConfidence | `[{"answer": "...", "confidence": 5}, ...]` |
-| `multi-float` | `RAGAS` | `{"faithfulness_score": 2.5, "answer_relevance_score": 1.0, ...}` |
+| `multi-float` | RAGAS | `{"faithfulness_score": 2.5, "answer_relevance_score": 1.0, ...}` |
 
 ### Composite Models
 
@@ -63,7 +63,7 @@ class GenerateAnswerWithConfidence(BaseModel):
     answer: str
     confidence: int
 
-class RAGAS(BaseModel):
+class RAGASMetrics(BaseModel):
     faithfulness_score: float
     answer_relevance_score: float
     context_relevance_score: float
