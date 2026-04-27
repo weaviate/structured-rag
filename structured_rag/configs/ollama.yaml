@@ -1,9 +1,0 @@
-# Ollama (local) benchmark config
-provider: ollama
-model: llama3:8b-instruct-q4_0
-
-strategy: fstring
-tasks:
-  - AssessAnswerability
-
-save_dir: results/ollama

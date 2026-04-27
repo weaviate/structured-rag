@@ -3,9 +3,10 @@ StructuredRAG Benchmark Runner
 ==============================
 
 Usage:
-  python -m structured_rag.scripts.run_benchmark openai
-  python -m structured_rag.scripts.run_benchmark anthropic
-  python -m structured_rag.scripts.run_benchmark full_sweep
+  python -m structured_rag.scripts.run_benchmark
+  python -m structured_rag.scripts.run_benchmark path/to/custom.yaml
+
+Edit structured_rag/configs/benchmark.yaml to configure provider, model, tasks, etc.
 """
 
 import sys
@@ -122,14 +123,12 @@ def _resolve_config_path(arg: str) -> str:
 
 
 def main():
-    if len(sys.argv) < 2:
-        available = [f.removesuffix(".yaml").removesuffix(".yml")
-                     for f in os.listdir(CONFIGS_DIR) if f.endswith((".yaml", ".yml"))]
-        print("Usage: python -m structured_rag.scripts.run_benchmark <config>")
-        print(f"\nAvailable configs: {', '.join(sorted(available))}")
-        sys.exit(1)
+    DEFAULT_CONFIG = os.path.join(CONFIGS_DIR, "benchmark.yaml")
 
-    config_path = _resolve_config_path(sys.argv[1])
+    if len(sys.argv) < 2:
+        config_path = DEFAULT_CONFIG
+    else:
+        config_path = _resolve_config_path(sys.argv[1])
     with open(config_path, 'r') as f:
         cfg = yaml.safe_load(f)
 

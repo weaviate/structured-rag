@@ -1,9 +1,0 @@
-# Full sweep: all tasks x all strategies
-provider: openai
-model: gpt-5.4-nano
-api_key_env: OPENAI_API_KEY
-
-strategy: all                   # runs fstring, fstring_structured, dspy, dspy_opro
-tasks: all                      # runs all 7 tasks
-
-save_dir: results/full-sweep

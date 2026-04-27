@@ -1,0 +1,15 @@
+# StructuredRAG Benchmark Config
+# ================================
+# provider: openai | anthropic | google | ollama | ollama_cloud | modal_vllm
+# strategy: fstring | fstring_structured | dspy | dspy_opro | all
+# tasks:    list of task names, or "all"
+
+provider: openai
+model: gpt-5.4-nano
+api_key_env: OPENAI_API_KEY
+
+strategy: fstring
+tasks:
+  - AssessAnswerability
+
+save_dir: results
