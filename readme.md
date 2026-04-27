@@ -12,12 +12,16 @@ Our research paper is on [ArXiv](https://arxiv.org/abs/2408.11061).
 pip install -e .
 ```
 
-Configure `structured_rag/configs/benchmark.yaml` with your provider and model:
+Set your API key and configure `structured_rag/configs/benchmark.yaml`:
+
+```bash
+export OPENAI_API_KEY=sk-...
+```
 
 ```yaml
 provider: openai          # openai | anthropic | google | ollama | ollama_cloud | modal_vllm
 model: gpt-5.4-nano
-api_key_env: OPENAI_API_KEY
+api_key_env: OPENAI_API_KEY  # which env var to read the key from
 
 strategy: fstring          # fstring | fstring_structured | dspy | dspy_opro | all
 tasks:
@@ -29,7 +33,6 @@ save_dir: results
 Run:
 
 ```bash
-export OPENAI_API_KEY=sk-...
 python -m structured_rag.scripts.run_benchmark
 ```
 
