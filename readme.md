@@ -2,7 +2,7 @@
 
 A benchmark for measuring how well LLMs follow JSON response format instructions across RAG-inspired tasks. Supports OpenAI, Anthropic, Google, Ollama, and Modal/vLLM providers out of the box.
 
-Our research paper is on [ArXiv](https://arxiv.org/abs/2408.11061).
+You can find our research paper is on [ArXiv](https://arxiv.org/abs/2408.11061)!
 
 ![Experimental Results](./structured_rag/success_rates_per_test.png)
 
