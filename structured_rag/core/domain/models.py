@@ -54,7 +54,7 @@ class ParaphraseQuestions(BaseModel):
     paraphrased_questions: List[str]
 
 
-class RAGAS(BaseModel):
+class RAGASMetrics(BaseModel):
     faithfulness_score: float
     answer_relevance_score: float
     context_relevance_score: float

@@ -1,6 +1,6 @@
 from structured_rag.core.domain.models import (
     GenerateAnswer, RateContext, AssessAnswerability, ParaphraseQuestions,
-    RAGAS, GenerateAnswerWithConfidence, GenerateAnswersWithConfidence,
+    RAGASMetrics, GenerateAnswerWithConfidence, GenerateAnswersWithConfidence,
     ClassifyDocument, ClassifyDocumentWithRationale,
 )
 
@@ -48,7 +48,7 @@ test_to_output_model = {
     "RateContext": RateContext,
     "AssessAnswerability": AssessAnswerability,
     "ParaphraseQuestions": ParaphraseQuestions,
-    "RAGAS": RAGAS,
+    "RAGAS": RAGASMetrics,
     "GenerateAnswerWithConfidence": GenerateAnswerWithConfidence,
     "GenerateAnswersWithConfidence": GenerateAnswersWithConfidence,
     "ClassifyDocument": ClassifyDocument,
