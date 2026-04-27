@@ -20,6 +20,11 @@ class fstring_Program():
         elif self.model_provider == "openai":
             import openai
             self.model = openai.OpenAI(api_key=api_key)
+        elif self.model_provider == "ollama_cloud":
+            self.ollama_client = ollama.Client(
+                host="https://ollama.com",
+                headers={"Authorization": f"Bearer {api_key}"}
+            )
         elif self.model_provider == "anthropic":
             import anthropic
             self.model = anthropic.Anthropic(api_key=api_key)
@@ -36,6 +41,9 @@ class fstring_Program():
             return response.text
         elif self.model_provider == "ollama":
             response = ollama.chat(model=self.model_name, messages=[{"role": "user", "content": connection_prompt}])
+            return response['message']['content']
+        elif self.model_provider == "ollama_cloud":
+            response = self.ollama_client.chat(model=self.model_name, messages=[{"role": "user", "content": connection_prompt}])
             return response['message']['content']
         elif self.model_provider == "openai":
             response = self.model.chat.completions.create(
@@ -72,6 +80,9 @@ class fstring_Program():
         if self.model_provider == "ollama":
             # ToDo, add structured outputs to Ollama
             response = ollama.chat(model=self.model_name, messages=[{"role": "user", "content": prompt}])
+            return response['message']['content']
+        elif self.model_provider == "ollama_cloud":
+            response = self.ollama_client.chat(model=self.model_name, messages=[{"role": "user", "content": prompt}])
             return response['message']['content']
         elif self.model_provider == "google":
             if self.structured_outputs:
